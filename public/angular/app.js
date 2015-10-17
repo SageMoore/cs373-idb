@@ -21,6 +21,14 @@ crime_cast_app.config(['$stateProvider', '$urlRouterProvider',
             url: '/crime_types',
             templateUrl: '../public/crime_types.html',
             controller: 'crime_cast_ctrl'
+        }).state('zips', {
+            url: '/zips',
+            templateUrl: '../public/zips.html',
+            controller: 'crime_cast_ctrl'
+        }).state('about', {
+            url: '/about',
+            templateUrl: '../public/about.html',
+            controller: 'crime_cast_ctrl'
         })
         $urlRouterProvider.otherwise('splash');
     }]);
