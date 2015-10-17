@@ -1,10 +1,10 @@
 from flask import Flask
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path = "")
 
 #crimes page
 @app.route('/crimes')
-def splash():
+def crimes():
 	return app.send_static_file('crimes.html')
 
 
