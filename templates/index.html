@@ -7,9 +7,17 @@
             src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.min.js"></script>
     <script
             src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-route.min.js"></script>
-    <link rel="stylesheet" href="../static/angular/app.js" />
-    <link rel="stylesheet" href="../static/angular/controllers.js" />
+    <link rel="application/javascript" href="../static/angular/app.js" />
+    <link rel="application/javascript" href="../static/angular/controllers.js" />
     <link rel="stylesheet" href="../static/css/bootstrap.css">
+
+    <script type='text/javascript'>
+        function startApp() {
+            console.log(angular)
+            angular.bootstrap(document, [ 'crime_cast_app' ]);
+        }
+//        startApp()
+    </script>
 </head>
 <body>
 <div class="nav-bar-straight-edge navbar navbar-default" id="bs-example-navbar-collapse-7">
@@ -20,4 +28,21 @@
     </ul>
 </div>
 <ui-view></ui-view>
+
+<script type="text/javascript">
+    window.___gcfg = {
+        parsetags : 'explicit'
+    };
+    (function() {
+        var po = document.createElement('script');
+        po.type = 'text/javascript';
+        po.async = true;
+        po.src = 'https://apis.google.com/js/auth:plusone.js?onload=startApp';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(po, s);
+    })();
+    $(function() {
+        $("#sort").buttonset();
+    });
+</script>
 </body>
