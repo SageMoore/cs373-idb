@@ -7,7 +7,7 @@ app = Flask(__name__, static_url_path = "")
 def crimes():
 	return app.send_static_file('crimes.html')
 
-@app.rout('/weeks')
+@app.route('/weeks')
 def weeks():
     return app.send_static_file('weeks.html')
 
