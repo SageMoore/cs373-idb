@@ -6,7 +6,7 @@ app = Flask(__name__, static_url_path="")
 # Homepage
 @app.route('/')
 def splash():
-    return render_template('splash.html')
+    return app.send_static_file('index.html')
 
 
 # Static crimes page
