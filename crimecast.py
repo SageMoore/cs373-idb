@@ -24,12 +24,15 @@ def weeks():
 # Crime Type
 @app.route('/crimetype')
 def crimetype_home():
-    return app.send_static_file('crimeTypes.html')
+    return render_template('crimeType_1.html')
 
 
 @app.route('/crimetype/<crimetype_id>')
 def crimetype(crimetype_id):
-    return app.send_static_file('crimeType_' + str(crimetype_id) + ' .html')
+    print(crimetype_id)
+    type_file = 'crimeType_' + str(crimetype_id) + '.html'
+    print(type_file)
+    return render_template(type_file)
 
 @app.route('/zip')
 def zip_home():
