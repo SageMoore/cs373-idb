@@ -33,7 +33,7 @@ crime_cast_app.config(['$stateProvider', '$urlRouterProvider',
             url: '/crime_types',
             templateUrl: 'crimetypes.html',
             controller: 'crime_cast_ctrl'
-        }).state('zips', {
+        }).state('zip', {
             url: '/zip',
             templateUrl: 'zip.html',
             controller: 'crime_cast_ctrl'
