@@ -35,6 +35,10 @@ def crimetype(crimetype_id):
 def zip():
     return render_template('zip.html')
 
+@app.route('/zip/<zip_id>')
+def zip(zip_id):
+	return render_template('zip.html', zip_id=zip_id)
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
