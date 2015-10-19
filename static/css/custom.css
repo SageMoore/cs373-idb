@@ -106,10 +106,6 @@ body, html {
     height: 100%;
 }
 
-/*div#menu-keys {*/
-    /*/!*padding-bottom: 10px;*!/*/
-    /*/!*width: 100%;*!/*/
-/*}*/
 .add-margins {
     padding-left: 5%; padding-right:5%;
 }
@@ -119,42 +115,35 @@ div#menu-keys div {
     border: 1px solid;
     padding: 10px 20px;
     color: white;
+    text-align: center;
 }
 
 div#menu-keys #crime-type-key {
     background-color: dimgrey;
+    text-align: center;
 }
 
 #crime-type-key {
     background-color: darkslategrey;
     border-radius: 10px 10px 5px 5px;
-    /*border: 1px solid;*/
     color: black;
 }
 
 div#menu-vals #crime-type-val {
     border-radius: 5px 5px 25px 25px;
-    /*border: 1px solid;*/
+    text-align: center;
     color: black;
 }
 
 div#menu-vals .field {
-    /*background-color: lavender;*/
-    /*border-bottom-color: white;*/
-    /*border-color: white;*/
-    /*border: 1px solid;*/
     padding: 10px 20px;
     color: black;
+    text-align: center;
 }
 
 div#menu-vals a {
-    /*word-wrap: break-word;*/
-    /*width: 100%;*/
-    /*padding-top: 20px;*/
     color: black;
-    /*border: 1px solid;*/
-    /*padding: 10px 40px;*/
 }
 div#menu-vals a:hover {
-    background-color: red;
+    background-color: lightskyblue;
 }
