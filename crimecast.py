@@ -32,7 +32,7 @@ def crimetype(crimetype_id):
     return app.send_static_file('crimeType_' + str(crimetype_id) + ' .html')
 
 @app.route('/zip')
-def zip()
+def zip():
     return render_template('zip.html')
 
 
