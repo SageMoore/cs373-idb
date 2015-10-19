@@ -17,6 +17,18 @@ crime_cast_app.config(['$stateProvider', '$urlRouterProvider',
             url: '/weeks',
             templateUrl: 'weeks.html',
             controller: 'crime_cast_ctrl'
+        }).state('week1', {
+            url: '/week1',
+            templateUrl: 'week1.html',
+            controller: 'crime_cast_ctrl'
+        }).state('week2', {
+            url: '/week2',
+            templateUrl: 'week2.html',
+            controller: 'crime_cast_ctrl'
+        }).state('week3', {
+            url: '/week3',
+            templateUrl: 'week3.html',
+            controller: 'crime_cast_ctrl'
         }).state('crime_types', {
             url: '/crime_types',
             templateUrl: 'crime_types.html',
