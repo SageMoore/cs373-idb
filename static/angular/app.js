@@ -41,6 +41,18 @@ crime_cast_app.config(['$stateProvider', '$urlRouterProvider',
             url: '/about',
             templateUrl: 'about.html',
             controller: 'crime_cast_ctrl'
+        }).state('crime1', {
+            url: '/crime1',
+            templateUrl: 'crime1.html',
+            controller: 'crime_cast_ctrl'
+        }).state('crime2', {
+            url: '/crime2',
+            templateUrl: 'crime2.html',
+            controller: 'crime_cast_ctrl'
+        }).state('crime3', {
+            url: '/crime3',
+            templateUrl: 'crime3.html',
+            controller: 'crime_cast_ctrl'
         })
         $urlRouterProvider.otherwise('splash');
     }]);
