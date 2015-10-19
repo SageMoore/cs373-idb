@@ -1,0 +1,57 @@
+
+
+/*div#menu-keys {*/
+    /*/!*padding-bottom: 10px;*!/*/
+    /*/!*width: 100%;*!/*/
+/*}*/
+
+div#menu-keys div {
+    background-color: black;
+    border: 1px solid;
+    padding: 10px 20px;
+    color: white;
+}
+
+/*div#menu-keys a {*/
+    /*/!*width: 100%;*!/*/
+    /*background-color: black;*/
+    /*color: white;*/
+    /*border: 1px solid;*/
+    /*/!*padding: 10px 40px;*!/*/
+    /*/!*text-decoration: none;*!/*/
+    /*/!*border-radius: 4px 4px 0 0;*!/*/
+/*}*/
+
+/*div#menu-vals {*/
+    /*/!*padding-top: 10px;*!/*/
+    /*/!*width: 100%;*!/*/
+    /*/!*word-wrap: break-word;*!/*/
+/*}*/
+
+div#menu-vals.alert-danger div {
+    background-color: red;
+    border: 1px solid;
+    padding: 10px 20px;
+    color: black;
+}
+
+div#menu-vals div {
+    background-color: lavender;
+    border-bottom-color: white;
+    border-color: white;
+    border: 1px solid;
+    padding: 10px 20px;
+    color: black;
+}
+
+div#menu-vals a {
+    /*word-wrap: break-word;*/
+    /*width: 100%;*/
+    /*padding-top: 20px;*/
+    color: black;
+    /*border: 1px solid;*/
+    /*padding: 10px 40px;*/
+}
+div#menu-vals a:hover {
+    background-color: red;
+}
