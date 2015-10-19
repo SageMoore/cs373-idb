@@ -10,10 +10,20 @@ div#menu-keys div {
     color: white;
 }
 
-div#menu-vals #crime-type {
-    background-color: red;
-    border: 1px solid;
-    padding: 10px 20px;
+div#menu-keys #crime-type-key {
+    background-color: dimgrey;
+}
+
+#crime-type-key {
+    background-color: darkslategrey;
+    border-radius: 10px 10px 5px 5px;
+    /*border: 1px solid;*/
+    color: black;
+}
+
+div#menu-vals #crime-type-val {
+    border-radius: 5px 5px 25px 25px;
+    /*border: 1px solid;*/
     color: black;
 }
 
