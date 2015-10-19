@@ -6,7 +6,7 @@ app = Flask(__name__, static_url_path="")
 # Homepage
 @app.route('/')
 def splash():
-    return render_template('splash.html')
+    return app.send_static_file('index.html')
 
 
 # Static crimes page
@@ -33,6 +33,14 @@ def crimetype(crimetype_id):
     type_file = 'crimeType_' + str(crimetype_id) + '.html'
     print(type_file)
     return render_template(type_file)
+
+@app.route('/zip')
+def zip_home():
+    return render_template('zip.html')
+
+@app.route('/zip/<zip_id>')
+def zip(zip_id):
+	return render_template('zip.html', zip_id=zip_id)
 
 
 if __name__ == "__main__":
