@@ -34,13 +34,13 @@ def crimetype(crimetype_id):
     print(type_file)
     return render_template(type_file)
 
-@app.route('/zip')
+@app.route('/zips')
 def zip_home():
-    return render_template('zip.html')
+    return render_template('zips.html')
 
 @app.route('/zips/<zip_id>')
 def zip(zip_id):
-	return render_template('zips.html', zip_id=zip_id)
+	return render_template('zips1.html', zip_id=zip_id)
 
 
 if __name__ == "__main__":
