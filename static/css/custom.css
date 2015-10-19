@@ -1,45 +1,138 @@
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
 
+@-webkit-keyframes STAR-MOVE {
+	from {
+		-webkit-transform: translateX(0);
+	}
+	to {
+		-webkit-transform: translateX(-187%);
+	}
+}
+
+#animate-splash	{
+    height: 70%;
+    width: 100%;
+	background-image: url('../images/ATX.gif');
+	background-position: 0px 0px;
+	background-repeat: repeat-x;
+
+	animation: animatedBackground 150s linear infinite;
+}
+
+#one-liner {
+    line-height: 1.5;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.navbar-default {
+    background-color: #323C46;
+}
+
+.navbar-default .navbar-nav li a,
+.navbar-default .navbar-nav li a:visited {
+    color: #B7BBBE;
+}
+
+.navbar-default .navbar-nav li a:hover {
+    color: #fff;
+}
+
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:visited {
+    color: #fff;
+}
+
+.search-box {
+    width: 40%;
+    margin: 18em auto;
+}
+
+.site-description {
+    margin: 5em auto 2em;
+    text-align: center;
+}
+
+.dark-bg {
+    color: #323C46;
+    background-color: #EAEAF2;
+}
+
+.site-cards {
+    text-align: center;
+}
+
+.card {
+    background-color: #fff;
+    overflow: hidden;
+    margin-bottom: 3em;
+    border-bottom: 2px solid #DADAF2;
+}
+
+.card-img {
+    float: left;
+    height: 100%;
+}
+
+.card-description {
+    text-align: left;
+    float: left;
+    height: 100%;
+    background-color: #fff;
+    color: #323C46;
+    padding: 1em;
+}
+
+.profile {
+    text-align: left;
+}
+
+.portrait {
+    width: 100%;
+    height: 100%;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+}
 
 /*div#menu-keys {*/
     /*/!*padding-bottom: 10px;*!/*/
     /*/!*width: 100%;*!/*/
 /*}*/
+.add-margins {
+    padding-left: 5%; padding-right:5%;
+}
 
 div#menu-keys div {
-    background-color: black;
+    background-color: darkgrey;
     border: 1px solid;
     padding: 10px 20px;
     color: white;
 }
 
-/*div#menu-keys a {*/
-    /*/!*width: 100%;*!/*/
-    /*background-color: black;*/
-    /*color: white;*/
-    /*border: 1px solid;*/
-    /*/!*padding: 10px 40px;*!/*/
-    /*/!*text-decoration: none;*!/*/
-    /*/!*border-radius: 4px 4px 0 0;*!/*/
-/*}*/
-
-/*div#menu-vals {*/
-    /*/!*padding-top: 10px;*!/*/
-    /*/!*width: 100%;*!/*/
-    /*/!*word-wrap: break-word;*!/*/
-/*}*/
-
-div#menu-vals.crime-type {
+div#menu-vals #crime-type {
     background-color: red;
     border: 1px solid;
     padding: 10px 20px;
     color: black;
 }
 
-div#menu-vals div {
-    background-color: lavender;
-    border-bottom-color: white;
-    border-color: white;
-    border: 1px solid;
+div#menu-vals .field {
+    /*background-color: lavender;*/
+    /*border-bottom-color: white;*/
+    /*border-color: white;*/
+    /*border: 1px solid;*/
     padding: 10px 20px;
     color: black;
 }
