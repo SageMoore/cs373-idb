@@ -26,6 +26,11 @@
     line-height: 1.5;
 }
 
+#footer {
+    min-height: 50px;
+    background-color: #323C46;
+}
+
 .navbar {
     margin-bottom: 0;
 }
@@ -69,6 +74,12 @@
 
 .site-cards {
     text-align: center;
+}
+
+.about-col {
+    padding-left: 0;
+    padding-right: 30px;
+    text-align: left;
 }
 
 .card {
