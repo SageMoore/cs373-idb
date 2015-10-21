@@ -97,6 +97,8 @@
 .about-subheader {
     margin: 0 0 1.8em;
     color: #A0A0A0;
+    word-spacing: 5px;
+    line-height: 200%;
 }
 
 .card {
@@ -129,6 +131,10 @@
     height: 100%;
     margin: 1em 0 2em;
     border-radius: 100%;
+}
+
+p {
+    line-height: 170%;
 }
 
 body, html {
