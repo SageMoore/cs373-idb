@@ -62,11 +62,6 @@
     text-align: center;
 }
 
-.dark-bg {
-    color: #323C46;
-    background-color: #EAEAF2;
-}
-
 .site-cards {
     text-align: center;
 }
@@ -75,6 +70,33 @@
     padding-left: 0;
     padding-right: 30px;
     text-align: left;
+}
+
+.about-description {
+    height: 40%;
+}
+
+.about-header {
+    margin: 3em 0 .3em;
+    font-size: 400%;
+}
+
+.about-tagline {   
+    margin-bottom: 1.8em;
+}
+
+.dark {
+    color: #323C46;
+    font-weight: bold;
+}
+
+.light {
+    color: #959595;
+}
+
+.about-subheader {
+    margin: 0 0 1.8em;
+    color: #A0A0A0;
 }
 
 .card {
@@ -105,11 +127,15 @@
 .portrait {
     width: 100%;
     height: 100%;
+    margin: 1em 0 2em;
+    border-radius: 100%;
 }
 
 body, html {
     width: 100%;
     height: 100%;
+    background-color: rgb(240, 242, 245);
+    color: #323C46;
 }
 
 .add-margins {
