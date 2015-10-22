@@ -1,35 +1,58 @@
-<div class = "container">
-    <h3>Weeks</h3>
-    <div class="container">
-        <table class="table table-hover">
-            <thead>
+<div class="jumbotron">
+    <div style="padding-top: 1px; padding-left: 5%">
+        <h1>Weeks</h1>
+    </div>
+    <br>
+    <div class="well" style="background-color: aliceblue;">
+        <div class="well">
+            <table class="table table-hover table-bordered table-striped">
+                <thead>
                 <tr>
-                    <td>Week Id</td>
-                    <td>Start Date</td>
-                    <td>End Date</td>
-                    <td>Most Popular Crime</td>
+                    <td><a ng-click="sortType = 'id'; sortReverse = !sortReverse">
+                        Week Id
+                        <span ng-show="sortType == 'id'"  class="caret"></span>
+                    </a></td>
+                    <td><a href= "" ng-click="sortType = 'weekcode'; sortReverse = !sortReverse">
+                        Start Date
+                        <span ng-show="sortType == 'weekcode'" class="caret"></span>
+                    </a></td>
+                    <td><a ng-click="sortType = 'latitude'; sortReverse = !sortReverse">
+                        End Date
+                        <span ng-show="sortType == 'latitude'" class="caret"></span>
+                    </a></td>
+                    <td><a ng-click="sortType = 'longitude'; sortReverse = !sortReverse">
+                        Most Popular Crime
+                        <span ng-show="sortType == 'longitude'" class="caret"></span>
+                    </a></td>
+                    <td><a ng-click="sortType = 'crimes'; sortReverse = !sortReverse">
+                        Crimes
+                        <span ng-show="sortType == 'crimes'" class="caret"></span>
+                    </a></td>
                 </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="#/week1">Week 1</a></td>
-                    <td>10/11/15</td>
-                    <td>10/17/15</td>
-                    <td><a href="#">Assualt</a></td>
+                </thead>
+
+                <tbody>
+                <tr ng-repeat="week in weeks | orderBy:sortType:sortReverse">
+                    <td><a href="#/weeks{{week.id}}">{{ week.id }}</a></td>
+                    <td><a href="#/weeks{{week.id}}">{{ week.start_date }}</a></td>
+                    <td><a href="#/weeks{{week.id}}">{{ week.end_date }}</a></td>
+                    <td><a href="#/crimetype{{week.popular_crime}}">{{ week.popular_crime }}</a></td>
+                    <td>
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>Crime Id</tr>
+                            </thead>
+
+                            <tbody>
+                            <tr ng-repeat="crime in week.crimes">
+                                <td><a href="#/crime{{week.id}}">{{ week.id }}</a></td>
+                                <td>{{ week.description }}</td>
+                            </tbody>
+                        </table>
+                    </td>
                 </tr>
-                <tr>
-                    <td><a href="#/week2">Week 2</a></td>
-                    <td>10/18/15</td>
-                    <td>10/24/15</td>
-                    <td><a href="#">Assualt</a></td>
-                </tr>
-                <tr>
-                    <td><a href="#/week3">Week 3</a></td>
-                    <td>10/25/15</td>
-                    <td>11/1/15</td>
-                    <td><a href="#">Assualt</a></td>
-                </tr>
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

@@ -3,42 +3,43 @@
         <h1>Crime Types</h1>
     </div>
     <br>
-    <div class="well">
-        <table class="table table-hover table-bordered table-striped">
-            <thead>
-            <tr>
-                <td><a ng-click="sortType = 'id'; sortReverse = !sortReverse">
-                    ID
-                    <span ng-show="sortType == 'id'"  class="caret"></span>
-                </a></td>
-                <td><a href= "" ng-click="sortType = 'crime_type'; sortReverse = !sortReverse">
-                    Crime Type
-                    <span ng-show="sortType == 'crime_type'" class="caret"></span>
-                </a></td>
-                <td><a ng-click="sortType = 'description'; sortReverse = !sortReverse">
-                    Description
-                    <span ng-show="sortType == 'description'" class="caret"></span>
-                </a></td>
-                <td><a ng-click="sortType = 'crimes'; sortReverse = !sortReverse">
-                    Crimes
-                    <span ng-show="sortType == 'crimes'" class="caret"></span>
-                </a></td>
-                <td><a ng-click="sortType = 'worst_zipcode'; sortReverse = !sortReverse">
+    <div class="well" style="background-color: aliceblue;">
+        <div class="well">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <td><a ng-click="sortType = 'id'; sortReverse = !sortReverse">
+                        Crime Type Id
+                        <span ng-show="sortType == 'id'"  class="caret"></span>
+                    </a></td>
+                    <td><a href= "" ng-click="sortType = 'crime_type'; sortReverse = !sortReverse">
+                        Crime Type
+                        <span ng-show="sortType == 'crime_type'" class="caret"></span>
+                    </a></td>
+                    <td><a ng-click="sortType = 'description'; sortReverse = !sortReverse">
+                        Description
+                        <span ng-show="sortType == 'description'" class="caret"></span>
+                    </a></td>
+                    <td><a ng-click="sortType = 'crimes'; sortReverse = !sortReverse">
+                        Crimes
+                        <span ng-show="sortType == 'crimes'" class="caret"></span>
+                    </a></td>
+                    <td><a ng-click="sortType = 'worst_zipcode'; sortReverse = !sortReverse">
                         Worst Zipcode
                         <span ng-show="sortType == 'worst_zipcode'" class="caret"></span>
-                </a></td>
-            </tr>
-            </thead>
+                    </a></td>
+                </tr>
+                </thead>
 
-            <tbody>
-            <tr ng-repeat="type in crimetypes | orderBy:sortType:sortReverse">
+                <tbody>
+                <tr ng-repeat="type in crimetypes | orderBy:sortType:sortReverse"">
                 <td><a href="#/crimetype{{type.id}}">{{ type.id }}</a></td>
                 <td><a href="#/crimetype{{type.id}}">{{ type.crime_type }}</a></td>
                 <td>{{ type.description }}</td>
                 <td>
                     <table class="table table-hover">
                         <thead>
-                        <tr>ID</tr>
+                        <tr>Crime Id</tr>
                         </thead>
 
                         <tbody>
@@ -49,8 +50,12 @@
                     </table>
                 </td>
                 <td>{{ type.worst_zipcode }}</td>
-            </tr>
-            </tbody>
-        </table>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="well" style="width: 100%">
+            <div class="gmap" id="map"></div>
+        </div>
     </div>
 </div>

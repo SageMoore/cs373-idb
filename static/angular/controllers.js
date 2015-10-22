@@ -58,4 +58,14 @@ crime_cast_app.controller('crime_cast_ctrl', function($scope) {
         { id: 1, crime_type: 'Assault', description: "Assault is bad", "crimes" : [{"id":3}], worst_zipcode: "78704" },
         { id: 3, crime_type: 'Vandalism', description: "Vandalism is bad", "crimes" : [{"id":1}], worst_zipcode: "78706" }
     ];
+    $scope.zipcodes = [
+        { id: 1, zipcode: 78704, latitude: 32.123,longitude: 32.123, "crimes" : [{"id":1}]  },
+        { id: 2, zipcode: 78705, latitude: 30.123,longitude: 30.123, "crimes" : [{"id":2}]  },
+        { id: 3, zipcode: 78706, latitude: 35.123,longitude: 35.123, "crimes" : [{"id":3}]  }
+    ];
+    $scope.weeks = [
+        { id: 1, start_date: "10/11/15", end_date: "10/17/15",popular_crime: "1", "crimes" : [{"id":1}]  },
+        { id: 2, start_date: "10/18/15", end_date: "10/24/15",popular_crime: "2", "crimes" : [{"id":2}]  },
+        { id: 3, start_date: "10/25/15", end_date: "10/31/15",popular_crime: "3", "crimes" : [{"id":3}]  },
+    ];
 });

@@ -1,35 +1,58 @@
-<div class = "container">
-    <h3>Zipcodes</h3>
-    <div class="container">
-        <table class="table table-hover">
-            <thead>
+<div class="jumbotron">
+    <div style="padding-top: 1px; padding-left: 5%">
+        <h1>Zipcodes</h1>
+    </div>
+    <br>
+    <div class="well" style="background-color: aliceblue;">
+        <div class="well">
+            <table class="table table-hover">
+                <thead>
                 <tr>
-                    <td>Zipcode Id</td>
-                    <td>Zipcode</td>
-                    <td>Latitude</td>
-                    <td>Longitude</td>
+                    <td><a ng-click="sortType = 'id'; sortReverse = !sortReverse">
+                        Zipcode Id
+                        <span ng-show="sortType == 'id'"  class="caret"></span>
+                    </a></td>
+                    <td><a href= "" ng-click="sortType = 'zipcode'; sortReverse = !sortReverse">
+                        Zipcode
+                        <span ng-show="sortType == 'zipcode'" class="caret"></span>
+                    </a></td>
+                    <td><a ng-click="sortType = 'latitude'; sortReverse = !sortReverse">
+                        Latitude
+                        <span ng-show="sortType == 'latitude'" class="caret"></span>
+                    </a></td>
+                    <td><a ng-click="sortType = 'longitude'; sortReverse = !sortReverse">
+                        Longitude
+                        <span ng-show="sortType == 'longitude'" class="caret"></span>
+                    </a></td>
+                    <td><a ng-click="sortType = 'crimes'; sortReverse = !sortReverse">
+                        Crimes
+                        <span ng-show="sortType == 'crimes'" class="caret"></span>
+                    </a></td>
                 </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td><a href="#/zips1">78704</a></td>
-                    <td>32.123</td>
-                    <td>32.123</td>
+                </thead>
+
+                <tbody>
+                <tr ng-repeat="zip in zipcodes | orderBy:sortType:sortReverse">
+                    <td><a href="#/zips{{zip.id}}">{{ zip.id }}</a></td>
+                    <td><a href="#/zips{{zip.id}}">{{ zip.zipcode }}</a></td>
+                    <td>{{ zip.latitude }}</td>
+                    <td>{{ zip.longitude }}</td>
+                    <td>
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>Crime Id</tr>
+                            </thead>
+
+                            <tbody>
+                            <tr ng-repeat="crime in zip.crimes">
+                                <td><a href="#/crime{{zip.id}}">{{ zip.id }}</a></td>
+                                <td>{{ zip.description }}</td>
+                            </tbody>
+                        </table>
+                    </td>
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td><a href="#/zips2">78705</a></td>
-                    <td>30.123</td>
-                    <td>30.123</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td><a href="#/zips3">78706</a></td>
-                    <td>35.123</td>
-                    <td>35.123</td>
-                </tr>
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
