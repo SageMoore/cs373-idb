@@ -4,106 +4,53 @@
     </div>
     <br>
     <div class="well">
-        <table class="table table-hover" data-toggle="table">
+        <table class="table table-hover table-bordered table-striped">
             <thead>
-                <tr>
-                    <th data-sortable="true">id</th>
-                    <th data-sortable="true">Crime Type</th>
-                    <th data-sortable="true">Description</th>
-                    <th data-sortable="true">Crimes</th>
-                    <th data-sortable="true">Worst Zipcode</th>
-                </tr>
+            <tr>
+                <td><a ng-click="sortType = 'id'; sortReverse = !sortReverse">
+                    ID
+                    <span ng-show="sortType == 'id'"  class="caret"></span>
+                </a></td>
+                <td><a href= "" ng-click="sortType = 'crime_type'; sortReverse = !sortReverse">
+                    Crime Type
+                    <span ng-show="sortType == 'crime_type'" class="caret"></span>
+                </a></td>
+                <td><a ng-click="sortType = 'description'; sortReverse = !sortReverse">
+                    Description
+                    <span ng-show="sortType == 'description'" class="caret"></span>
+                </a></td>
+                <td><a ng-click="sortType = 'crimes'; sortReverse = !sortReverse">
+                    Crimes
+                    <span ng-show="sortType == 'crimes'" class="caret"></span>
+                </a></td>
+                <td><a ng-click="sortType = 'worst_zipcode'; sortReverse = !sortReverse">
+                        Worst Zipcode
+                        <span ng-show="sortType == 'worst_zipcode'" class="caret"></span>
+                </a></td>
+            </tr>
             </thead>
+
             <tbody>
-            <tr class="danger" >
-                <th scope="row"><a href="#/crimetype1">1</a></th>
-                <td><a href="#/crimetype1">Assault</a></td>
-                <td>Assault is bad</td>
+            <tr ng-repeat="type in crimetypes | orderBy:sortType:sortReverse">
+                <td><a href="#/crimetype{{type.id}}">{{ type.id }}</a></td>
+                <td><a href="#/crimetype{{type.id}}">{{ type.crime_type }}</a></td>
+                <td>{{ type.description }}</td>
                 <td>
                     <table class="table table-hover">
                         <thead>
-                            <tr>
-                                <th>Crime Id</th>
-                                <th>Description</th>
-                            </tr>
+                        <tr>ID</tr>
                         </thead>
+
                         <tbody>
-                            <tr class="success">
-                                <td>3</td>
-                                <td><a href="#/crime3">Murder on 12th and Chicon</a></td>
-                            </tr>
+                        <tr ng-repeat="crime in type.crimes">
+                            <td><a href="#/crime{{crime.id}}">{{ crime.id }}</a></td>
+                            <td>{{ crime.description }}</td>
                         </tbody>
                     </table>
                 </td>
-                <td><a href="#/zipcode1">78704</a></td>
-            </tr>
-            <tr class="warning" >
-                <th scope="row"><a href="#/crimetype2">2</a></th>
-                <td><a href="#/crimetype2">Burglary</a></td>
-                <td>Burglary is bad</td>
-                <td>
-                    <table class="table table-hover">
-                        <thead>
-                        <tr>
-                            <th>Crime Id</th>
-                            <th>Description</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="success">
-                                <td>2</td>
-                                <td><a href="#/crime2">Burglary at Quacks Bakery</a></td>
-                            </tr>
-                            <tr class="success">
-                                <td>2</td>
-                                <td><a href="#/crime2">Burglary at Quacks Bakery</a></td>
-                            </tr>
-                            <tr class="success">
-                                <td>2</td>
-                                <td><a href="#/crime2">Burglary at Quacks Bakery</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-                <td><a href="#/zipcode2">78705</a></td>
-            </tr>
-            <tr class="success" >
-                <th scope="row"><a href="#/crimetype3">3</a></th>
-                <td><a href="#/crimetype3">Vandalism</a></td>
-                <td>Vandalism is bad</td>
-                <td>
-                    <table class="table table-hover">
-                        <thead>
-                        <tr>
-                            <th>Crime Id</th>
-                            <th>Description</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="success">
-                                <td>1</td>
-                                <td><a href="#/crime1">Graffiti of pig on building</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-                <td><a href="#/zipcode3">78706</a></td>
+                <td>{{ type.worst_zipcode }}</td>
             </tr>
             </tbody>
-        </table>
-    </div>
-</div>
-
-<div class="well">
-    <div class="bootstrap-table">
-        <table data-toggle="table" data-url="http://wenzhixin.net.cn/p/bootstrap-table/docs/data1.json" data-cache="false" data-height="299">
-            <thead>
-                <tr>
-                    <th data-field="id">Item ID</th>
-                    <th data-field="name">Item Name</th>
-                    <th data-field="price">Item Price</th>
-                </tr>
-            </thead>
         </table>
     </div>
 </div>

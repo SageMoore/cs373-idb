@@ -50,4 +50,12 @@ crime_cast_app.controller('crime_cast_ctrl', function($scope) {
 
     $scope.get_map = get_map();
     $scope.go_to_link = go_to_link;
+
+    $scope.sortType     = 'id'; // set the default sort type
+    $scope.sortReverse  = false;  // set the default sort order
+    $scope.crimetypes = [
+        { id: 2, crime_type: 'Burglary', description: "Burglary is bad", "crimes" : [{"id":2},{"id":2},{"id":2}], worst_zipcode: "78705" },
+        { id: 1, crime_type: 'Assault', description: "Assault is bad", "crimes" : [{"id":3}], worst_zipcode: "78704" },
+        { id: 3, crime_type: 'Vandalism', description: "Vandalism is bad", "crimes" : [{"id":1}], worst_zipcode: "78706" }
+    ];
 });
