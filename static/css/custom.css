@@ -178,10 +178,23 @@ div#menu-vals #crime-type-val {
     color: black;
 }
 
+
 div#menu-vals .field {
     padding: 10px 20px;
     color: black;
     text-align: center;
+}
+
+@media screen and (max-width: 1044px) {
+    div#menu-keys div {
+        min-height: 65px;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    div#menu-vals .field {
+        min-height: 65px;
+    }
 }
 
 div#menu-vals a {
@@ -189,4 +202,9 @@ div#menu-vals a {
 }
 div#menu-vals a:hover {
     background-color: lightskyblue;
+}
+
+#map {
+    width: 100%;
+    height: 300px;
 }
