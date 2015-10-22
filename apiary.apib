@@ -1,0 +1,201 @@
+FORMAT: 1A
+HOST: http://crimecast.xyz/api
+
+# CrimeCast
+
+CrimeCast is an API that allows users to access crime data for Austin neighborhoods, paired with demographics and analysis
+# Group Crimes
+
+## Crimes [/crimes]
+### Get a list of all the crimes [GET]
+
++ Response 200 (application/json)
+        
+        {
+            "crimes" : [
+                12345,
+                12346,
+                12347,
+                12348,
+                12349
+            ]
+        }
+
+## Single Crime [/crime?crime_id={crime_id}]
+
++ Parameters 
+    + crime_id (number) - Unique id of the crime requested
+    
+### Information about a specific crime [GET]
+
++ Response 200 (application/json)
+        
+        {
+            "id": 12345,
+            "address": "123 Street Name Dr",
+            "crime_type": 22222,
+            "zipcode": 33333,
+            "date": "1-1-2016"
+            "nearby_crimes" : [
+                12346,
+                12347,
+                12348,
+                12349
+            ]
+        }
+
+# Group Weeks
+
+## Weeks [/weeks]
+### Get a list of all the weeks [GET]
+
++ Response 200 (application/json)
+        
+        {
+            "weeks" : [
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        }
+
+
+## Week [/week?week_id={week_id}]
+
++ Parameters 
+    + week_id (number) - Unique id of the week requested
+
+### Get crime information for a certain week [GET]
+
++ Response 200 (application/json)
+        
+        {
+            "id" : 11111,
+            "crimes" : [
+                    12345,
+                    12346,
+                    12347
+            ],
+            "start_date":"1-1-2015",
+            "end_date":"1-7-2015",
+            "popular_crime":1,
+            demographics: {
+                "number_sampled" : 50000
+                "breakdown" : {
+                    "1-1-2016" : "10%",
+                    "1-2-2016" : "20%",
+                    "1-3-2016" : "40%",
+                    "1-4-2016" : "20%",
+                    "1-5-2016" : "10%"
+                    "1-6-2016" : "0%"
+                    "1-7-2016" : "0%"
+                }
+            }                
+        }
+
+# Group Crime Types
+
+## Crime Types [/crimetypes]
+### Get a list of all the crime types [GET]
+
++ Response 200 (application/json)
+        
+        {
+            "crimetypes" : [
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        }
+
+
+## Crime Type [/crimeType?crimeType_id={crimeType_id}]
+
++ Parameters 
+    + crimeType_id (number) - Unique id of the crime type requested
+
+### Get information about certain crime type [GET]
+
++ Response 200 (application/json)
+        
+        {
+            "id" : 22222,
+            "crimes" : [
+                    12345,
+                    12346,
+                    12347
+            ],
+            "title": "Assault",
+            "description": "Assaults are bad",
+            "worst_zipcode": 33333,
+            demographics: {
+                "number_sampled" : 100000
+                "breakdown" : {
+                    "78704" : "10%",
+                    "78705" : "20%",
+                    "78706" : "40%",
+                    "78707" : "20%",
+                    "78708" : "10%"
+                }
+            }
+        }
+
+# Group Zipcodes
+
+## Zipcodes [/zipcodes]
+### Get a list of all the zipcodes [GET]
+
++ Response 200 (application/json)
+        
+        {
+            "zipcodes" : [
+                78704,
+                78705,
+                78706,
+                78707,
+                78708
+            ]
+        }
+
+
+## Zipcode [/zipcode?zipcode_id={zipcode_id}]
+
++ Parameters 
+    + zipcode_id (number) - Unique id of the zipcode requested
+
+### Get crime information for a zip code [GET]
+
++ Response 200 (application/json)
+        
+        {
+            "id" : 33333,
+            "crimes" : [
+                    12345,
+                    12346,
+                    12347 
+            ],
+            "zipcode": 78705,
+            "lat": 32.123,
+            "long": 32.123,
+            demographics: {
+                "population" : 100000
+                "economic" : {
+                    "<10000" : "10%",
+                    "<20000" : "20%",
+                    "<50000" : "40%",
+                    "<100000" : "20%",
+                    "<500000" : "10%"
+                }
+                "age" : {
+                    "<20" : "10%",
+                    "<40" : "20%",
+                    "<60" : "40%",
+                    "<80" : "20%",
+                    "<100" : "10%"
+                }
+            }
+        }
