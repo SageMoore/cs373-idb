@@ -68,4 +68,9 @@ crime_cast_app.controller('crime_cast_ctrl', function($scope) {
         { id: 2, start_date: "10/18/15", end_date: "10/24/15",popular_crime: "2", "crimes" : [{"id":2}]  },
         { id: 3, start_date: "10/25/15", end_date: "10/31/15",popular_crime: "3", "crimes" : [{"id":3}]  },
     ];
+    $scope.crimes = [
+        { id: 1, description: "Graffiti of pig on building", time: "10-20-2015 19:12:00" ,address: "GDC", "crime_type" : 3  },
+        { id: 2, description: "Burglary at Quacks Bakery", time: "10-20-2015 19:20:00" ,address: "Duval Rd", "crime_type" : 2  },
+        { id: 3, description: "Murder on 12th and Chicon", time: "10-20-2015 22:20:00" ,address: "12th and Chicon", "crime_type" : 1  }
+    ];
 });
