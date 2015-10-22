@@ -29,12 +29,15 @@ class Week(Base):
     end = Column(DateTime, nullable=False)
     mostPopular = Column(Integer, ForeignKey('CrimeType.crimeType_id'))
 
-class Area(Base):
-    __tablename__ = 'Area'
-    # Here we define columns for the table Area.
+class Zip(Base):
+    __tablename__ = 'Zip'
+    # Here we define columns for the table Zip.
     # Notice that each column is also a normal Python instance attribute.
-    area_id = Column(Integer, primary_key=True)
+    zip_id = Column(Integer, primary_key=True)
+    lat = Column(Float, nullable=False)
+    lng = Column(Float, nullable=False)
     pop = Column(Integer, nullable=False)
+    crimeId = Column(Integer, ForeignKey('Crime.crime_id')
 
 
 class CrimeType(Base):
