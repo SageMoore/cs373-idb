@@ -3,18 +3,16 @@
         <h1>Crime Types</h1>
     </div>
     <br>
-
     <div class="well">
-
-        <table class="table table-hover">
+        <table class="table table-hover" data-toggle="table">
             <thead>
-            <tr>
-                <th>id</th>
-                <th>Crime Type</th>
-                <th>Description</th>
-                <th>Crimes</th>
-                <th>Worst Zipcode</th>
-            </tr>
+                <tr>
+                    <th data-sortable="true">id</th>
+                    <th data-sortable="true">Crime Type</th>
+                    <th data-sortable="true">Description</th>
+                    <th data-sortable="true">Crimes</th>
+                    <th data-sortable="true">Worst Zipcode</th>
+                </tr>
             </thead>
             <tbody>
             <tr class="danger" >
@@ -24,10 +22,10 @@
                 <td>
                     <table class="table table-hover">
                         <thead>
-                        <tr></tr>
-                            <th>Crime Id</th>
-                            <th>Description</th>
-                        </tr>
+                            <tr>
+                                <th>Crime Id</th>
+                                <th>Description</th>
+                            </tr>
                         </thead>
                         <tbody>
                             <tr class="success">
@@ -46,7 +44,7 @@
                 <td>
                     <table class="table table-hover">
                         <thead>
-                        <tr></tr>
+                        <tr>
                             <th>Crime Id</th>
                             <th>Description</th>
                         </tr>
@@ -76,7 +74,7 @@
                 <td>
                     <table class="table table-hover">
                         <thead>
-                        <tr></tr>
+                        <tr>
                             <th>Crime Id</th>
                             <th>Description</th>
                         </tr>
@@ -92,6 +90,20 @@
                 <td><a href="#/zipcode3">78706</a></td>
             </tr>
             </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="well">
+    <div class="bootstrap-table">
+        <table data-toggle="table" data-url="http://wenzhixin.net.cn/p/bootstrap-table/docs/data1.json" data-cache="false" data-height="299">
+            <thead>
+                <tr>
+                    <th data-field="id">Item ID</th>
+                    <th data-field="name">Item Name</th>
+                    <th data-field="price">Item Price</th>
+                </tr>
+            </thead>
         </table>
     </div>
 </div>
