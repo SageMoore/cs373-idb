@@ -45,11 +45,30 @@ crime_cast_app.controller('crime_cast_ctrl', function($scope) {
             }
     }
 
-    get_map();
 
+    var get_twitter = function(d,s,id){
+        try {
+            var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+            if(!d.getElementById(id)){js=d.createElement(s);
+                js.id=id;js.src=p+"://platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js,fjs);
+            }
+        }
+        catch(err) {
+            console.log(err.message);
+        }
+    }
+    //(document,"script","twitter-wjs");
+
+
+    get_map();
+    get_twitter(document,"script","twitter-wjs");
+    //$scope.$apply();
+    //get_twitter(document,"script","twitter-wjs");
 
     $scope.get_map = get_map();
     $scope.go_to_link = go_to_link;
+    $scope.get_twitter = get_twitter(document,"script","twitter-wjs");
 
     $scope.sortType     = 'id'; // set the default sort type
     $scope.sortReverse  = false;  // set the default sort order
@@ -73,4 +92,7 @@ crime_cast_app.controller('crime_cast_ctrl', function($scope) {
         { id: 2, description: "Burglary at Quacks Bakery", time: "10-20-2015 19:20:00" ,address: "Duval Rd", "crime_type" : 2  },
         { id: 3, description: "Murder on 12th and Chicon", time: "10-20-2015 22:20:00" ,address: "12th and Chicon", "crime_type" : 1  }
     ];
+    $scope.$on('$routeChangeSuccess', function () {
+        get_twitter(document,"script","twitter-wjs");
+    });
 });
