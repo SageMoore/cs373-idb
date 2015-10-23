@@ -1,0 +1,277 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module models</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>models</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/chance/Dropbox/Assignments/cs373/cs373-idb/models.py">/Users/chance/Dropbox/Assignments/cs373/cs373-idb/models.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial">sqlalchemy.ext.declarative.api.Base(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="models.html#Crime">Crime</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#CrimeType">CrimeType</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Week">Week</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Zip">Zip</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Crime">class <strong>Crime</strong></a>(sqlalchemy.ext.declarative.api.Base)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Here&nbsp;we&nbsp;define&nbsp;columns&nbsp;for&nbsp;the&nbsp;table&nbsp;<a href="#Crime">Crime</a><br>
+This&nbsp;model&nbsp;represents&nbsp;all&nbsp;the&nbsp;information&nbsp;contained&nbsp;about&nbsp;a&nbsp;crime.<br>
+Some&nbsp;of&nbsp;the&nbsp;extra&nbsp;fields&nbsp;here&nbsp;are&nbsp;foreign&nbsp;keys&nbsp;because&nbsp;many&nbsp;other&nbsp;models&nbsp;contain&nbsp;Crimes.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Crime">Crime</a></dd>
+<dd>sqlalchemy.ext.declarative.api.Base</dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Crime-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>address</strong></dt>
+</dl>
+<dl><dt><strong>crimeTypeId</strong></dt>
+</dl>
+<dl><dt><strong>crime_id</strong></dt>
+</dl>
+<dl><dt><strong>description</strong></dt>
+</dl>
+<dl><dt><strong>lat</strong></dt>
+</dl>
+<dl><dt><strong>lng</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<dl><dt><strong>time</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x101245550; Crime&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('Crime', MetaData(bind=None), Column('crim... String(length=500), table=&lt;Crime&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'Crime'</dl>
+
+<hr>
+Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="CrimeType">class <strong>CrimeType</strong></a>(sqlalchemy.ext.declarative.api.Base)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Here&nbsp;we&nbsp;define&nbsp;columns&nbsp;for&nbsp;the&nbsp;table&nbsp;CrimeTypes.<br>
+This&nbsp;model&nbsp;represents&nbsp;a&nbsp;type&nbsp;of&nbsp;crime,&nbsp;for&nbsp;instance&nbsp;'Assault'<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#CrimeType">CrimeType</a></dd>
+<dd>sqlalchemy.ext.declarative.api.Base</dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="CrimeType-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>crimeType_id</strong></dt>
+</dl>
+<dl><dt><strong>desc</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<dl><dt><strong>worstArea</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x101273510; CrimeType&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('CrimeType', MetaData(bind=None), Column('...'Area.area_id'), table=&lt;CrimeType&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'CrimeType'</dl>
+
+<hr>
+Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Week">class <strong>Week</strong></a>(sqlalchemy.ext.declarative.api.Base)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Here&nbsp;we&nbsp;define&nbsp;columns&nbsp;for&nbsp;the&nbsp;table&nbsp;<a href="#Week">Week</a>.<br>
+This&nbsp;model&nbsp;represents&nbsp;a&nbsp;particular&nbsp;week,&nbsp;for&nbsp;instance&nbsp;1-1-15&nbsp;through&nbsp;1-7-15<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Week">Week</a></dd>
+<dd>sqlalchemy.ext.declarative.api.Base</dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Week-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>end</strong></dt>
+</dl>
+<dl><dt><strong>mostPopular</strong></dt>
+</dl>
+<dl><dt><strong>start</strong></dt>
+</dl>
+<dl><dt><strong>week_id</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x101245b50; Week&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('Week', MetaData(bind=None), Column('week_...eType.crimeType_id'), table=&lt;Week&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'Week'</dl>
+
+<hr>
+Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Zip">class <strong>Zip</strong></a>(sqlalchemy.ext.declarative.api.Base)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Here&nbsp;we&nbsp;define&nbsp;columns&nbsp;for&nbsp;the&nbsp;table&nbsp;<a href="#Zip">Zip</a>.<br>
+This&nbsp;model&nbsp;represents&nbsp;a&nbsp;zipcode&nbsp;in&nbsp;Austin,&nbsp;for&nbsp;instance&nbsp;78705<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Zip">Zip</a></dd>
+<dd>sqlalchemy.ext.declarative.api.Base</dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Zip-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>crimeId</strong></dt>
+</dl>
+<dl><dt><strong>lat</strong></dt>
+</dl>
+<dl><dt><strong>lng</strong></dt>
+</dl>
+<dl><dt><strong>pop</strong></dt>
+</dl>
+<dl><dt><strong>zip_id</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x101273090; Zip&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('Zip', MetaData(bind=None), Column('zip_id...Key('Crime.crime_id'), table=&lt;Zip&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'Zip'</dl>
+
+<hr>
+Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+</td></tr></table></td></tr></table>
+</body></html>

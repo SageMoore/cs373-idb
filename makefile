@@ -48,10 +48,10 @@ status:
 
 test: crimecast_test.tmp
 
-crimecast.html: crimecast.py
-	pydoc3 -w model.html
+model.html: models.py
+	pydoc -w models
 
-crimecast.log:
+IDB1.log:
 	git log > IDB1.log
 
 crimecast-test.tmp: tests.py

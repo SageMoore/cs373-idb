@@ -6,11 +6,14 @@ from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
  
 Base = declarative_base()
- 
+
 class Crime(Base):
+    """
+    Here we define columns for the table Crime
+    This model represents all the information contained about a crime.
+    Some of the extra fields here are foreign keys because many other models contain Crimes.
+    """
     __tablename__ = 'Crime'
-    # Here we define columns for the table Crime
-    # Notice that each column is also a normal Python instance attribute.
     crime_id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False)
     lat = Column(Float, nullable=False)
@@ -21,29 +24,35 @@ class Crime(Base):
     description = Column(String(500))
  
 class Week(Base):
+    """
+    Here we define columns for the table Week.
+    This model represents a particular week, for instance 1-1-15 through 1-7-15
+    """
     __tablename__ = 'Week'
-    # Here we define columns for the table Week.
-    # Notice that each column is also a normal Python instance attribute.
     week_id = Column(Integer, primary_key=True)
     start = Column(DateTime, nullable=False)
     end = Column(DateTime, nullable=False)
     mostPopular = Column(Integer, ForeignKey('CrimeType.crimeType_id'))
 
 class Zip(Base):
+    """
+    Here we define columns for the table Zip.
+    This model represents a zipcode in Austin, for instance 78705
+    """
     __tablename__ = 'Zip'
-    # Here we define columns for the table Zip.
-    # Notice that each column is also a normal Python instance attribute.
     zip_id = Column(Integer, primary_key=True)
     lat = Column(Float, nullable=False)
     lng = Column(Float, nullable=False)
     pop = Column(Integer, nullable=False)
-    crimeId = Column(Integer, ForeignKey('Crime.crime_id')
+    crimeId = Column(Integer, ForeignKey('Crime.crime_id'))
 
 
 class CrimeType(Base):
+    """
+    Here we define columns for the table CrimeTypes.
+    This model represents a type of crime, for instance 'Assault'
+    """
     __tablename__ = 'CrimeType'
-    # Here we define columns for the table CrimeTypes.
-    # Notice that each column is also a normal Python instance attribute.
     crimeType_id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False)
     desc = Column(String(500), nullable=False)
@@ -53,8 +62,8 @@ class CrimeType(Base):
 
 # Create an engine that stores data in the local directory's
 # stuff.db file.
-engine = create_engine('mysql:///stuff.db')
+# engine = create_engine('mysql:///stuff.db')
  
 # Create all tables in the engine. This is equivalent to "Create Table"
 # statements in raw SQL.
-Base.metadata.create_all(engine)
+# Base.metadata.create_all(engine)
