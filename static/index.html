@@ -24,15 +24,8 @@
     </script>
 </head>
 <body  ng-controller = "crime_cast_ctrl">
-<!--<div class="nav-bar-straight-edge navbar navbar-default" id="bs-example-navbar-collapse-7">-->
-    <!--<ul class="nav navbar-nav">-->
-        <!--<li class="active"><a href="#">Home</a></li>-->
-        <!--<li><a href="#/crimes">Crimes</a></li>-->
-        <!--<li><a href="#/weeks">Weeks</a></li>-->
-    <!--</ul>-->
-<!--</div>-->
 <div>
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -44,7 +37,7 @@
             </button>
             <a class="navbar-brand" href="#"><b>Crime</b>cast</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
+        <div id="navbar" class="navbar-collapse collapse in" style="height: auto;">
             <ul class="nav navbar-nav">
                 <li ng-click = "get_twitter()"><a href="#/crimes">Crimes</a></li>
                 <li><a href="#/crime_types">Crime Types</a></li>
@@ -55,18 +48,12 @@
                 <li><a href="#/about">About</a></li>
             </ul>
         </div>
-        <!--/.nav-collapse -->
     </div>
 </nav>
 </div>
 
 
 <ui-view></ui-view>
-
-# Here it is Mark!
-
-<!--<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>-->
-
 
 <script type="text/javascript">
     var po = document.createElement('script');
