@@ -1,3 +1,35 @@
+commit e3eaa7fc1f2862172c6049fbb89dd2b4b1434feb
+Merge: 499cbbc 6b0aab8
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Oct 22 20:27:59 2015 -0500
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 499cbbc8eeff3288dcd7df064f8f425fe841f258
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Oct 22 20:27:30 2015 -0500
+
+    added commit log
+
+commit 6b0aab80ca570d0bce85253d095f1b59bb25a329
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Oct 22 20:24:50 2015 -0500
+
+    Adding histogram to weeks
+
+commit da95485403ba4c832730586c44d5bbe6b7035e68
+Merge: c793d20 5e19a04
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Oct 22 20:17:48 2015 -0500
+
+    modifying twitter
+
+commit c793d20f45c2885acd0643338720ae3350182e21
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Oct 22 20:16:51 2015 -0500
+
+    modifying twitter
+
 commit 5e19a041d0eea0ccda4b8614c7a34010687767b5
 Merge: 1f24113 fe5ce86
 Author: chance raine <chanceraine@gmail.com>
