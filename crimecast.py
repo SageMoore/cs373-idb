@@ -59,7 +59,7 @@ def zip(zip_id):
 	return app.send_static_file('zips1.html', zip_id=zip_id)
 
 
-#todo: move to other files 
+#todo: move to other files
 # Crime
 # returns a crime by id
 class Crime(Resource):
@@ -85,7 +85,7 @@ class Crimes(Resource):
 ##
 ## Actually setup the Api resource routing here
 ##
-api.add_resource(Crimes, 'api/v1/todos')
+api.add_resource(Crimes, 'api/v1/crimes')
 api.add_resource(Crime, 'api/v1/crimes/<crime_id>')
 
 
