@@ -1,7 +1,19 @@
-from flask import Flask, send_file, send_from_directory
+from flask import Flask
+from flask_restful import reqparse, abort, Api, Resource
 from flask import render_template
 
 app = Flask(__name__, static_url_path="")
+api = Api(app)
+
+parser = reqparse.RequestParser()
+parser.add_argument('task')
+
+CRIMES = {
+    'crime1': {'crime': 'Burglary at Quacks'},
+    'crime2': {'crime': 'Vandalism at GDC'},
+    'crime3': {'crime': 'Murder at 12th and Chicon'},
+}
+
 
 # Homepage
 @app.route('/')
@@ -45,6 +57,36 @@ def zip_home():
 @app.route('/zips/<zip_id>')
 def zip(zip_id):
 	return app.send_static_file('zips1.html', zip_id=zip_id)
+
+
+#todo: move to other files 
+# Crime
+# returns a crime by id
+class Crime(Resource):
+    def get(self):
+        pass #todo later
+
+    def post(self):
+        pass
+
+# Crimes
+# shows a list of all crimes, and lets you POST to add new tasks
+class Crimes(Resource):
+    def get(self):
+        return CRIMES
+
+    def post(self):
+        args = parser.parse_args()
+        crime_id = int(max(CRIMES.keys()).lstrip('crime')) + 1
+        crime_id = 'crime%i' % crime_id
+        CRIMES[crime_id] = {'crime': args['crime']}
+        return CRIMES[crime_id], 201
+
+##
+## Actually setup the Api resource routing here
+##
+api.add_resource(Crimes, 'api/v1/todos')
+api.add_resource(Crime, 'api/v1/crimes/<crime_id>')
 
 
 if __name__ == "__main__":
