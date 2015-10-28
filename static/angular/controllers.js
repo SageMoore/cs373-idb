@@ -1,11 +1,11 @@
 'use strict';
-crime_cast_app.controller('crime_cast_ctrl', function($scope, $timeout) {
+crimeCastApp.controller('crimeCastCtrl', function($scope, $timeout) {
 
-    var go_to_link = function(link) {
+    var goToLink = function(link) {
         //todo
     }
 
-    var get_map = function() {
+    var getMap = function() {
         try {
             var map = new GMaps({
                 el: '.gmap',
@@ -56,12 +56,12 @@ crime_cast_app.controller('crime_cast_ctrl', function($scope, $timeout) {
             twitter.remove();
     };
 
-    get_map();
+    getMap();
     destroyAllWidgets();
     loadAllWidgets();
 
-    $scope.get_map = get_map();
-    $scope.go_to_link = go_to_link;
+    $scope.getMap = getMap();
+    $scope.goToLink = goToLink;
 
     $scope.sortType     = 'id'; // set the default sort type
     $scope.sortReverse  = false;  // set the default sort order

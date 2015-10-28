@@ -6,7 +6,7 @@ app = Flask(__name__, static_url_path="")
 api = Api(app)
 
 parser = reqparse.RequestParser()
-parser.add_argument('task')
+parser.add_argument('crime')
 
 CRIMES = {
     'crime1': {'crime': 'Burglary at Quacks'},
@@ -17,6 +17,7 @@ CRIMES = {
 
 # Homepage
 @app.route('/')
+@app.route('/splash')
 def splash():
     return app.send_static_file('index.html')
 
@@ -85,8 +86,8 @@ class Crimes(Resource):
 ##
 ## Actually setup the Api resource routing here
 ##
-api.add_resource(Crimes, 'api/v1/crimes')
-api.add_resource(Crime, 'api/v1/crimes/<crime_id>')
+# api.add_resource(Crimes, '/api/v1/crimes')
+api.add_resource(Crime, '/api/v1/crimes/<crime_id>')
 
 
 if __name__ == "__main__":
