@@ -1,5 +1,13 @@
 'use strict';
-crimeCastApp.controller('crimeCastCtrl', function($scope, $timeout) {
+crimeCastApp.controller('crimeCastCtrl', function($scope, rest) {
+
+    var getCrimes = function() {
+        rest.getRequestGeneric('crimes').then(function(data) {
+            console.log('data for crimes is: ', data)
+        })
+    }
+
+    getCrimes();
 
     var goToLink = function(link) {
         //todo

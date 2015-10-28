@@ -72,7 +72,7 @@ class Crime(Resource):
 
 # Crimes
 # shows a list of all crimes, and lets you POST to add new tasks
-class Crimes(Resource):
+class Crime(Resource):
     def get(self):
         return CRIMES
 
@@ -86,8 +86,8 @@ class Crimes(Resource):
 ##
 ## Actually setup the Api resource routing here
 ##
-# api.add_resource(Crimes, '/api/v1/crimes')
-api.add_resource(Crime, '/api/v1/crimes/<crime_id>')
+api.add_resource(Crime, '/api/v1/crimes')
+# api.add_resource(Crime, '/api/v1/crimes/<crime_id>')
 
 
 if __name__ == "__main__":
