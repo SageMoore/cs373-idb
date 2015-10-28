@@ -3,8 +3,11 @@
  */
 var crime_cast_app = angular.module('crime_cast_app', ['ui.router', 'ngRoute']);
 
-crime_cast_app.config(['$stateProvider', '$urlRouterProvider',
-    function($stateProvider, $urlRouterProvider) {
+crime_cast_app.config(['$stateProvider', '$urlRouterProvider', '$routeProvider', '$locationProvider',
+    function($stateProvider, $urlRouterProvider, $routeProvider, $locationProvider) {
+
+        $locationProvider.html5Mode(true);
+
         $stateProvider.state('splash', {
             url: '/splash',
             templateUrl: 'splash.html',
@@ -79,4 +82,5 @@ crime_cast_app.config(['$stateProvider', '$urlRouterProvider',
             controller: 'crime_cast_ctrl'
         });
         $urlRouterProvider.otherwise('splash');
+
     }]);

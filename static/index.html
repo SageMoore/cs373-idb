@@ -16,12 +16,13 @@
     <!-- stylesheets -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/custom.css">
-
+    <base href="/index.html">
     <script type='text/javascript'>
         function startApp() {
             angular.bootstrap(document, [ 'crime_cast_app' ]);
         }
     </script>
+
 </head>
 <body  ng-controller = "crime_cast_ctrl">
 <div>
@@ -39,13 +40,13 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse in" style="height: auto;">
             <ul class="nav navbar-nav">
-                <li ng-click = "get_twitter()"><a href="#/crimes">Crimes</a></li>
-                <li><a href="#/crime_types">Crime Types</a></li>
-                <li><a href="#/zips">Zips</a></li>
-                <li><a href="#/weeks">Weeks</a></li>
+                <li ng-click = "get_twitter()"><a href="/crimes">Crimes</a></li>
+                <li><a href="/crime_types">Crime Types</a></li>
+                <li><a href="/zips">Zips</a></li>
+                <li><a href="/weeks">Weeks</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#/about">About</a></li>
+                <li><a href="/about">About</a></li>
             </ul>
         </div>
     </div>
