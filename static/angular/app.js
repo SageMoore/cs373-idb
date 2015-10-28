@@ -1,10 +1,10 @@
 /**
  * Created by markdaniel on 10/17/15.
  */
-var crimeCastApp = angular.module('crimeCastApp', ['ui.router', 'ngRoute']);
+var crimeCastApp = angular.module('crimeCastApp', ['ui.router', 'ngRoute', 'crimeCastApp.restServices']);
 
-crimeCastApp.config(['$stateProvider', '$urlRouterProvider', '$routeProvider', '$locationProvider',
-    function($stateProvider, $urlRouterProvider, $routeProvider, $locationProvider) {
+crimeCastApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
+    function($stateProvider, $urlRouterProvider, $locationProvider) {
 
         $locationProvider.html5Mode(true);
 

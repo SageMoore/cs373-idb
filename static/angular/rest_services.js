@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('crimeCastApp.restServices', [])
     .factory('rest', function($http, $q){
         return {
