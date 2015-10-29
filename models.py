@@ -67,3 +67,20 @@ class CrimeType(Base):
 # Create all tables in the engine. This is equivalent to "Create Table"
 # statements in raw SQL.
 # Base.metadata.create_all(engine)
+
+
+# to run database:
+# install postgresql (brew install postgresql)
+# install psycopg2 (pip3 install psycopg2)
+# init postgres server (pg_ctl init -D database)
+# run postgres server (postgres -D database/ -p 8080)
+
+
+# To connect to db and execute csommand
+# from sqlalchemy import create_engine
+# from sqlalchemy.orm import sessionmaker
+# engine = create_engine('postgres://localhost:8080/postgres')
+# session = sessionmaker(bind=engine)()
+# result = session.execute('select * from test where id=1')
+# for row in result:
+#     print(row)
