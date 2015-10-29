@@ -8,11 +8,17 @@ api = Api(app)
 parser = reqparse.RequestParser()
 parser.add_argument('crime')
 
-CRIMES = {
-    'crime1': {'crime': 'Burglary at Quacks'},
-    'crime2': {'crime': 'Vandalism at GDC'},
-    'crime3': {'crime': 'Murder at 12th and Chicon'},
-}
+# CRIMES = {
+#     'crime1': {'crime': 'Burglary at Quacks'},
+#     'crime2': {'crime': 'Vandalism at GDC'},
+#     'crime3': {'crime': 'Murder at 12th and Chicon'},
+# }
+
+CRIMES = [
+    { 'id': 1, 'description': "Graffiti of pig on building", 'time': "10-20-2015 19:12:00" ,'address': "GDC", 'crime_type' : 3  },
+    { 'id': 2, 'description': "Burglary at Quacks Bakery", 'time': "10-20-2015 19:20:00" ,'address': "Duval Rd", 'crime_type' : 2  },
+    { 'id': 3, 'description': "Murder on 12th and Chicon", 'time': "10-20-2015 22:20:00" ,'address': "12th and Chicon", 'crime_type' : 1  }
+]
 
 
 # Homepage
@@ -83,11 +89,20 @@ class Crime(Resource):
         CRIMES[crime_id] = {'crime': args['crime']}
         return CRIMES[crime_id], 201
 
+# Unit Tests
+# Returns the results of running tests.py -- for use on the 'About' page
+class Tests(Resource):
+    def get(self):
+        tests_proc = subprocess.Popen(['python', 'tests.py'], 
+            stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        return tests_proc.communicate()[0]
+
 ##
 ## Actually setup the Api resource routing here
 ##
 api.add_resource(Crime, '/api/v1/crimes')
 # api.add_resource(Crime, '/api/v1/crimes/<crime_id>')
+api.add_resource(Tests, '/api/v1/tests')
 
 
 if __name__ == "__main__":
