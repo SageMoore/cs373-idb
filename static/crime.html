@@ -1,0 +1,25 @@
+<div class="jumbotron ">
+    <div class="add-margins" >
+        <h1 class="add-margins">Graffiti of pig on building</h1>
+    </div>
+    <br>
+
+    <div class="well" style="margin-left: auto">
+        <div class="bs-docs-grid add-margins" style="margin-left: auto">
+            <div class="row show-grid" id="menu-keys" style="margin-left: auto">
+                <div class="col-md-2 " id="crime-type-key">Crime type</div>
+                <div class="col-md-2 col-md-offset-1">Crime description</div>
+                <div class="col-md-2">Location</div>
+                <div class="col-md-2">Time</div>
+                <div class="col-md-1">Id</div>
+            </div>
+            <div ng-model="crime" class="row show-grid" id="menu-vals" style="margin-left: auto">
+                <div class="col-md-2 field alert-danger" id="crime-type-val"><a class="alert-danger" href="/crimetype1">{{crime.crimetype}}</a></div>
+                <div class="col-md-2 col-md-offset-1 field alert-info"><a href="/crime1">{{crime.description}}</a></div>
+                <div class="col-md-2 field alert-info"><a >{{crime.location}}</a></div>
+                <div class="col-md-2 field alert-info"><a >{{crime.date}}</a></div>
+                <div class="col-md-1 field alert-info"><a >{{crime.id}}</a></div>
+            </div>
+        </div>
+    </div>
+</div>
