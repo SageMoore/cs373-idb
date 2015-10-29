@@ -4,7 +4,8 @@ angular.module('crimeCastApp.restServices', [])
     .factory('rest', function($http, $q){
         return {
             getRequestGeneric : getRequestGeneric,
-            postRequestGeneric : postRequestGeneric
+            postRequestGeneric : postRequestGeneric,
+            getCrime : getCrime
         }
 
         function getRequestGeneric(pathParam){
@@ -25,9 +26,22 @@ angular.module('crimeCastApp.restServices', [])
                 data : data
             }
             return $http(req).then(function(response) {
+                return response.data;
             }, function(response){
                 console.log('rejecting promise');
                 return $q.reject(response.data);
             });
+        }
+
+        function getCrime(id) {
+            var req = {
+                method: 'GET',
+                url: '/api/v1/crimes/' + id
+            }
+            return $http(req).then(function(response) {
+            }, function(response) {
+                console.log('rejecting promise');
+                return $q.reject(response.data);
+            })
         }
     });

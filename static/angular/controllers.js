@@ -41,21 +41,6 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, rest) {
             }
     }
 
-    //var loadAllWidgets = function() {
-    //    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-    //};
-    //
-    //var destroyAllWidgets = function() {
-    //    var $ = function (id) { return document.getElementById(id); };
-    //    var twitter = $('twitter-wjs');
-    //    if (twitter != null)
-    //        twitter.remove();
-    //};
-    //
-    //getMap();
-    //destroyAllWidgets();
-    //loadAllWidgets();
-
     $scope.getMap = getMap();
 
     $scope.sortType     = 'id'; // set the default sort type
@@ -75,7 +60,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, rest) {
         { id: 2, start_date: "10/18/15", end_date: "10/24/15",popular_crime: "2", "crimes" : [{"id":2}]  },
         { id: 3, start_date: "10/25/15", end_date: "10/31/15",popular_crime: "3", "crimes" : [{"id":3}]  },
     ];
-}).controller('crimeCtrl', function ($scope, rest) {
+}).controller('crimesCtrl', function ($scope, rest, $location) {
     var getMap = function() {
         try {
             var map = new GMaps({
@@ -139,7 +124,33 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, rest) {
         })
     }
 
+    //var getCrime = function(crimeId) {
+    //    rest.getCrime(crimeId).then(function(data) {
+    //        console.log('data for crime is : ', data);
+    //        $scope.crime = data;
+    //    })
+    //}
 
-    $scope.getMap = getMap();
+    var goToCrime = function (crimeId) {
+        console.log('going to crime')
+        $location.path('/crime/' + crimeId);
+    }
+
     $scope.crimes = getCrimes();
+    //$scope.crime = getCrime;
+    $scope.getMap = getMap;
+    $scope.goToCrime = goToCrime;
+}).controller('crimeCtrl', function ($scope, rest, $location, $stateParams) {
+
+    var crimeId = $stateParams.crimeId;
+
+    var getCrime = function(crimeId) {
+        console.log(crimeId);
+        rest.getCrime(crimeId).then(function(data) {
+            console.log('data for crime is : ', data);
+            $scope.crime = data;
+        })
+    }
+
+    $scope.crime = getCrime(crimeId);
 });
