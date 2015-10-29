@@ -8,11 +8,17 @@ api = Api(app)
 parser = reqparse.RequestParser()
 parser.add_argument('crime')
 
-CRIMES = {
-    'crime1': {'crime': 'Burglary at Quacks'},
-    'crime2': {'crime': 'Vandalism at GDC'},
-    'crime3': {'crime': 'Murder at 12th and Chicon'},
-}
+# CRIMES = {
+#     'crime1': {'crime': 'Burglary at Quacks'},
+#     'crime2': {'crime': 'Vandalism at GDC'},
+#     'crime3': {'crime': 'Murder at 12th and Chicon'},
+# }
+
+CRIMES = [
+    { 'id': 1, 'description': "Graffiti of pig on building", 'time': "10-20-2015 19:12:00" ,'address': "GDC", 'crime_type' : 3  },
+    { 'id': 2, 'description': "Burglary at Quacks Bakery", 'time': "10-20-2015 19:20:00" ,'address': "Duval Rd", 'crime_type' : 2  },
+    { 'id': 3, 'description': "Murder on 12th and Chicon", 'time': "10-20-2015 22:20:00" ,'address': "12th and Chicon", 'crime_type' : 1  }
+]
 
 
 # Homepage

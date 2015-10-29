@@ -15,7 +15,7 @@ crimeCastApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider'
         }).state('crimes', {
             url: '/crimes',
             templateUrl: 'crimes.html',
-            controller: 'crimeCastCtrl'
+            controller: 'crimeCtrl'
         }).state('weeks', {
             url: '/weeks',
             templateUrl: 'weeks.html',
