@@ -83,11 +83,20 @@ class Crime(Resource):
         CRIMES[crime_id] = {'crime': args['crime']}
         return CRIMES[crime_id], 201
 
+# Unit Tests
+# Returns the results of running tests.py -- for use on the 'About' page
+class Tests(Resource):
+    def get(self):
+        tests_proc = subprocess.Popen(['python', 'tests.py'], 
+            stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        return tests_proc.communicate()[0]
+
 ##
 ## Actually setup the Api resource routing here
 ##
 api.add_resource(Crime, '/api/v1/crimes')
 # api.add_resource(Crime, '/api/v1/crimes/<crime_id>')
+api.add_resource(Tests, '/api/v1/tests')
 
 
 if __name__ == "__main__":
