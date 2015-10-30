@@ -15,11 +15,10 @@ parser.add_argument('crime')
 # }
 
 CRIMES = [
-    { 'id': 1, 'description': "Graffiti of pig on building", 'time': "10-20-2015 19:12:00" ,'address': "GDC", 'crime_type' : 3  },
-    { 'id': 2, 'description': "Burglary at Quacks Bakery", 'time': "10-20-2015 19:20:00" ,'address': "Duval Rd", 'crime_type' : 2  },
-    { 'id': 3, 'description': "Murder on 12th and Chicon", 'time': "10-20-2015 22:20:00" ,'address': "12th and Chicon", 'crime_type' : 1  }
+    { 'id': 1, 'description': "Graffiti of pig on building", 'time': "10-20-2015 19:12:00" ,'address': "GDC", 'crime_type' : 3, 'lat' : 30.28500, 'lng' : -97.7320000  },
+    { 'id': 2, 'description': "Burglary at Quacks Bakery", 'time': "10-20-2015 19:20:00" ,'address': "Duval Rd", 'crime_type' : 2, 'lat' : 30.30000, 'lng' : -97.730000  },
+    { 'id': 3, 'description': "Murder on 12th and Chicon", 'time': "10-20-2015 22:20:00" ,'address': "12th and Chicon", 'crime_type' : 1, 'lat' : 30.27000, 'lng' : -97.7190000  }
 ]
-
 
 # Homepage
 @app.route('/')

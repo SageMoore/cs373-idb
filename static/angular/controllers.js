@@ -1,47 +1,8 @@
 'use strict';
-crimeCastApp.controller('crimeCastCtrl', function($scope, rest) {
+crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service) {
 
-    var getMap = function() {
-        try {
-            var map = new GMaps({
-                el: '.gmap',
-                zoom: 12,
-                lat: 30.280000,
-                lng: -97.740000
-            });
-            map.addMarker({
-                lat: 30.30000,
-                lng: -97.730000,
-                title: 'Quacks',
-                click: function(e) {
-                    alert('Alert: Burglary at Quacks Bakery.');
-                }
-            });
 
-            map.addMarker({
-                lat: 30.27000,
-                lng: -97.7190000,
-                title: '12th and Chicon',
-                click: function(e) {
-                    alert('Alert: Murder at 12th and Chicon.');
-                }
-            });
-
-            map.addMarker({
-                lat: 30.28500,
-                lng: -97.7320000,
-                title: 'GDC',
-                click: function(e) {
-                    alert('Alert: Graffiti on GDC.');
-                }
-            });
-        }
-        catch(err) {
-                console.log(err.message);
-            }
-    }
-
-    $scope.getMap = getMap();
+    services.getMap();
 
     $scope.sortType     = 'id'; // set the default sort type
     $scope.sortReverse  = false;  // set the default sort order
@@ -60,46 +21,10 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, rest) {
         { id: 2, start_date: "10/18/15", end_date: "10/24/15",popular_crime: "2", "crimes" : [{"id":2}]  },
         { id: 3, start_date: "10/25/15", end_date: "10/31/15",popular_crime: "3", "crimes" : [{"id":3}]  },
     ];
-}).controller('crimesCtrl', function ($scope, rest, $location) {
-    var getMap = function() {
-        try {
-            var map = new GMaps({
-                el: '.gmap',
-                zoom: 12,
-                lat: 30.280000,
-                lng: -97.740000
-            });
-            map.addMarker({
-                lat: 30.30000,
-                lng: -97.730000,
-                title: 'Quacks',
-                click: function(e) {
-                    alert('Alert: Burglary at Quacks Bakery.');
-                }
-            });
 
-            map.addMarker({
-                lat: 30.27000,
-                lng: -97.7190000,
-                title: '12th and Chicon',
-                click: function(e) {
-                    alert('Alert: Murder at 12th and Chicon.');
-                }
-            });
+}).controller('crimesCtrl', function ($scope, http_service, services, $location) {
 
-            map.addMarker({
-                lat: 30.28500,
-                lng: -97.7320000,
-                title: 'GDC',
-                click: function(e) {
-                    alert('Alert: Graffiti on GDC.');
-                }
-            });
-        }
-        catch(err) {
-            console.log(err.message);
-        }
-    }
+    var map = services.getMap();
 
     var loadAllWidgets = function() {
         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
@@ -112,20 +37,22 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, rest) {
             twitter.remove();
     };
 
-    getMap();
     destroyAllWidgets();
     loadAllWidgets();
 
 
     var getCrimes = function() {
-        rest.getRequestGeneric('crimes').then(function(data) {
+        http_service.getRequestGeneric('crimes').then(function(data) {
             console.log('data for crimes is...: ', data);
             $scope.crimes = data;
+            angular.forEach($scope.crimes, function(value, key) {
+                services.addMarker(value.lat, value.lng, value.address, map);
+            })
         })
     }
 
     //var getCrime = function(crimeId) {
-    //    rest.getCrime(crimeId).then(function(data) {
+    //    http_service.getCrime(crimeId).then(function(data) {
     //        console.log('data for crime is : ', data);
     //        $scope.crime = data;
     //    })
@@ -138,15 +65,16 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, rest) {
 
     $scope.crimes = getCrimes();
     //$scope.crime = getCrime;
-    $scope.getMap = getMap;
+    //$scope.getMap = getMap;
     $scope.goToCrime = goToCrime;
-}).controller('crimeCtrl', function ($scope, rest, $location, $stateParams) {
+
+}).controller('crimeCtrl', function ($scope, http_service, $location, $stateParams) {
 
     var crimeId = $stateParams.crimeId;
 
     var getCrime = function(crimeId) {
         console.log(crimeId);
-        rest.getCrime(crimeId).then(function(data) {
+        http_service.getCrime(crimeId).then(function(data) {
             console.log('data for crime is : ', data);
             $scope.crime = data;
         })
