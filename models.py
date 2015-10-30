@@ -4,7 +4,8 @@ from sqlalchemy import Column, ForeignKey, Integer, String, DateTime, Float
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
- 
+from sqlalchemy.orm import sessionmaker
+
 Base = declarative_base()
 
 class Crime(Base):
@@ -56,19 +57,43 @@ class CrimeType(Base):
     crimeType_id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False)
     desc = Column(String(500), nullable=False)
-    worstArea = Column(Integer, ForeignKey('Area.area_id'))
+    worstArea = Column(Integer, ForeignKey('Zip.zip_id'))
 
 
 
 # Create an engine that stores data in the local directory's
 # stuff.db file.
-# engine = create_engine('mysql:///stuff.db')
+engine = create_engine('postgres://localhost:8080/postgres')
+
  
 # Create all tables in the engine. This is equivalent to "Create Table"
 # statements in raw SQL.
-# Base.metadata.create_all(engine)
+Base.metadata.create_all(engine)
 
 
+# Bind the engine to the metadata of the Base class so that the
+# declaratives can be accessed through a DBSession instance
+Base.metadata.bind = engine
+ 
+DBSession = sessionmaker(bind=engine)
+#A DBSession() instance establishes all conversations with the database
+# and represents a "staging zone" for all the objects loaded into the
+# database session object. Any change made against the objects in the 
+# session won't be persisted into the database until you call
+# session.commit(). If you're not happy about the changes, you can
+# revert all of them back to the last commit by calling
+# session.rollback()
+session = DBSession()
+  
+# Insert a Person in the person table
+new_crime_type = CrimeType(name='new person', desc = "poop" )
+session.add(new_crime_type)
+session.commit()
+
+session.query(CrimeType).all()
+person = session.query(CrimeType).first()
+print(person.name)
+# Insert an Address in the address table
 # to run database:
 # install postgresql (brew install postgresql)
 # install psycopg2 (pip3 install psycopg2)
