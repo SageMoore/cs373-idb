@@ -2,7 +2,7 @@ import os
 import sys
 from sqlalchemy import Column, ForeignKey, Integer, String, DateTime, Float
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, backref
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -23,6 +23,7 @@ class Crime(Base):
     crimeTypeId = Column(Integer, ForeignKey('CrimeType.crimeType_id'))
     time = Column(DateTime, nullable=False)
     description = Column(String(500))
+    crimetype = relationship("CrimeType", backref=backref('addresses', order_by=crime_id))
  
 class Week(Base):
     """
@@ -58,6 +59,10 @@ class CrimeType(Base):
     name = Column(String(250), nullable=False)
     desc = Column(String(500), nullable=False)
     worstArea = Column(Integer, ForeignKey('Zip.zip_id'))
+    # I think this is optional. just checking to see if it helps.
+    def __repr__(self):
+        return "<User(crimeType_id='%s', name='%s', desc='%s', worstarea='%f')>" % (
+            self.crimeType_id, self.name, self.desc, self.worstArea)
 
 
 
@@ -86,13 +91,15 @@ DBSession = sessionmaker(bind=engine)
 session = DBSession()
   
 # Insert a Person in the person table
-new_crime_type = CrimeType(name='new person', desc = "poop" )
+new_crime_type = CrimeType(name='new person 2', desc = "poop" )
 session.add(new_crime_type)
 session.commit()
 
 session.query(CrimeType).all()
-person = session.query(CrimeType).first()
+person = session.query(CrimeType).get(4)
 print(person.name)
+
+session.close()
 # Insert an Address in the address table
 # to run database:
 # install postgresql (brew install postgresql)
