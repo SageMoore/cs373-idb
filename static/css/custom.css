@@ -208,3 +208,37 @@ div#menu-vals a:hover {
     width: 100%;
     height: 300px;
 }
+
+.center {
+    margin: auto;
+    width: 90%;
+    border:1px solid lightskyblue;
+    padding: 3px;
+}
+
+.left {
+    left: 0px;
+    /*width: 300px;*/
+    padding-left: 80px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.overlay {
+    /*left: 0px;*/
+    /*width: 100%;*/
+    /*border:3px solid #8AC007;*/
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+}
+
+.overlay-red {
+    background-color: lightsalmon;
+}
+
+.overlay-blue {
+    background-color: lightskyblue;
+}
