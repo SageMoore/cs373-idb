@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('crimeCastApp.restServices', [])
-    .factory('rest', function($http, $q){
+angular.module('crimeCastApp.httpServices', [])
+    .factory('http_service', function($http, $q){
         return {
             getRequestGeneric : getRequestGeneric,
             postRequestGeneric : postRequestGeneric,
