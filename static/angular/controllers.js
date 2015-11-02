@@ -51,21 +51,11 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
         })
     }
 
-    //var getCrime = function(crimeId) {
-    //    http_service.getCrime(crimeId).then(function(data) {
-    //        console.log('data for crime is : ', data);
-    //        $scope.crime = data;
-    //    })
-    //}
-
     var goToCrime = function (crimeId) {
-        console.log('going to crime')
         $location.path('/crime/' + crimeId);
     }
 
     $scope.crimes = getCrimes();
-    //$scope.crime = getCrime;
-    //$scope.getMap = getMap;
     $scope.goToCrime = goToCrime;
 
 }).controller('crimeCtrl', function ($scope, http_service, $location, $stateParams) {
@@ -73,12 +63,8 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
     var crimeId = $stateParams.crimeId;
 
     var getCrime = function(crimeId) {
-        console.log(crimeId);
         http_service.getCrime(crimeId).then(function(data) {
-            console.log('data for crime is : ', data);
             $scope.crime = data;
-            console.log($scope.crime.time)
-            console.log($scope.crime.crime_type)
         })
     }
 

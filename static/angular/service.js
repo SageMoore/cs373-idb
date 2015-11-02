@@ -21,7 +21,7 @@ angular.module('crimeCastApp.services', [])
                 return map;
             }
             catch(err) {
-                console.log(err.message);
+                console.log('map not available: ', err);
             }
         }
 
