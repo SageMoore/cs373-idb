@@ -77,6 +77,8 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
         http_service.getCrime(crimeId).then(function(data) {
             console.log('data for crime is : ', data);
             $scope.crime = data;
+            console.log($scope.crime.time)
+            console.log($scope.crime.crime_type)
         })
     }
 
