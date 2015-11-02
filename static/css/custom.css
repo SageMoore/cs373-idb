@@ -242,3 +242,15 @@ div#menu-vals a:hover {
 .overlay-blue {
     background-color: lightskyblue;
 }
+
+.overlay-yellow {
+    background-color: lightyellow;
+}
+
+.overlay-pink {
+    background-color: lightcoral;
+}
+
+.overlay-green {
+    background-color: lightgreen;
+}
