@@ -36,9 +36,10 @@ angular.module('crimeCastApp.httpServices', [])
         function getCrime(id) {
             var req = {
                 method: 'GET',
-                url: '/api/v1/crimes/' + id
+                url: '/api/v1/crime/' + id
             }
             return $http(req).then(function(response) {
+                return response.data;
             }, function(response) {
                 console.log('rejecting promise');
                 return $q.reject(response.data);
