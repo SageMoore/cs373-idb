@@ -151,15 +151,4 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
     $scope.zip = getZip(zipId);
 });
 
-}).controller('aboutCtrl', function ($scope, http_service, $location, $stateParams) {
 
-    var crimeId = $stateParams.crimeId;
-
-    var runTests = function() {
-        http_service.runTests().then(function(data) {
-            $scope.testResults = data;
-        })
-    }
-
-    $scope.testResults = runTests();
-});
