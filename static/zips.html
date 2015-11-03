@@ -32,7 +32,7 @@
                 </thead>
 
                 <tbody>
-                <tr ng-repeat="zip in zipcodes | orderBy:sortType:sortReverse">
+                <tr ng-repeat="zip in zips | orderBy:sortType:sortReverse">
                     <td><a href="/zips{{zip.id}}">{{ zip.id }}</a></td>
                     <td><a href="/zips{{zip.id}}">{{ zip.zipcode }}</a></td>
                     <td>{{ zip.latitude }}</td>

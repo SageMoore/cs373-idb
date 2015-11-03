@@ -71,6 +71,18 @@ CRIMETYPES = [
     {'id': 3, 'crime_type': 'Vandalism', 'description': "Vandalism is bad", "crimes": [{"id": 1}], 'worst_zipcode': "78706"}
 ]
 
+ZIPS = [
+        {'id': 1, 'zipcode': 78704, 'latitude': 32.123, 'longitude': 32.123, "crimes": [{"id": 1}]},
+        {'id': 2, 'zipcode': 78705, 'latitude': 30.123, 'longitude': 30.123, "crimes": [{"id": 2}]},
+        {'id': 3, 'zipcode': 78706, 'latitude': 35.123, 'longitude': 35.123, "crimes": [{"id": 3}]}
+]
+
+WEEKS = [
+        {'id': 1, 'start_date': "10/11/15", 'end_date': "10/17/15", 'popular_crime': "1", "crimes": [{"id": 1}]},
+        {'id': 2, 'start_date': "10/18/15", 'end_date': "10/24/15", 'popular_crime': "2", "crimes": [{"id": 2}]},
+        {'id': 3, 'start_date': "10/25/15", 'end_date': "10/31/15", 'popular_crime': "3", "crimes": [{"id": 3}]},
+]
+
 # TODO: add ur own fake data!
 
 # Crimes
@@ -116,7 +128,42 @@ class CrimeTypeById(Resource):
     def post(self):
         pass
 
-#TODO: add similar classes for weeks and zipcodes here
+# Weeks
+# shows a list of all weeks
+class WeekList(Resource):
+    def get(self):
+        return WEEKS
+
+    def post(self):
+        pass
+
+# Week
+# returns a week by id
+class WeekById(Resource):
+    def get(self, week_id):
+        return WEEKS[int(week_id) - 1]
+
+    def post(self):
+        pass
+
+# Zipcodes
+# shows a list of all zipcodes
+class ZipList(Resource):
+    def get(self):
+        return ZIPS
+
+    def post(self):
+        pass
+
+# Zipcode
+# returns a zipcode by id
+class ZipById(Resource):
+    def get(self, week_id):
+        return ZIPS[int(week_id) - 1]
+
+    def post(self):
+        pass
+
 
 # Unit Tests
 # Returns the results of running tests.py -- for use on the 'About' page
@@ -133,7 +180,10 @@ api.add_resource(CrimeList, '/api/v1/crimes')
 api.add_resource(CrimeById, '/api/v1/crime/<crime_id>')
 api.add_resource(CrimeTypeList, '/api/v1/crime_types')
 api.add_resource(CrimeTypeById, '/api/v1/crime_type/<crime_type_id>')
-#TODO: add similar api resources for weeks and zipcodes here
+api.add_resource(WeekList, '/api/v1/weeks')
+api.add_resource(WeekById, '/api/v1/week/<week_id>')
+api.add_resource(ZipList, '/api/v1/zips')
+api.add_resource(ZipById, '/api/v1/zip/<zip_id>')
 
 api.add_resource(Tests, '/api/v1/tests')
 
