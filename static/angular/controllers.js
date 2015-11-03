@@ -70,3 +70,16 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
 
     $scope.crime = getCrime(crimeId);
 });
+
+}).controller('aboutCtrl', function ($scope, http_service, $location, $stateParams) {
+
+    var crimeId = $stateParams.crimeId;
+
+    var runTests = function() {
+        http_service.runTests().then(function(data) {
+            $scope.testResults = data;
+        })
+    }
+
+    $scope.testResults = runTests();
+});

@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_restful import reqparse, abort, Api, Resource
+import subprocess
 # from Crime import CrimeById
 # import CrimeList
 
@@ -92,9 +93,9 @@ class CrimeById(Resource):
 # Returns the results of running tests.py -- for use on the 'About' page
 class Tests(Resource):
     def get(self):
-        tests_proc = subprocess.Popen(['python', 'tests.py'], 
-            stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-        return tests_proc.communicate()[0]
+        p = subprocess.Popen('python tests.py', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        output, errors = p.communicate()
+        return { 'results': str(errors) }
 
 ##
 ## Actually setup the Api resource routing here
