@@ -12,74 +12,42 @@ crimeCastApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider'
             url: '/splash',
             templateUrl: 'splash.html',
             controller: 'crimeCastCtrl'
-        }).state('crimes', {
-            url: '/crimes',
-            templateUrl: 'crimes.html',
-            controller: 'crimesCtrl'
-        }).state('weeks', {
-            url: '/weeks',
-            templateUrl: 'weeks.html',
-            controller: 'crimeCastCtrl'
-        }).state('week/', {
-            url: '/week1',
-            templateUrl: 'week1.html',
-            controller: 'crimeCastCtrl'
-        }).state('week2', {
-            url: '/week2',
-            templateUrl: 'week2.html',
-            controller: 'crimeCastCtrl'
-        }).state('week3', {
-            url: '/week3',
-            templateUrl: 'week3.html',
-            controller: 'crimeCastCtrl'
-        }).state('crime_types', {
-            url: '/crime_types',
-            templateUrl: 'crimetypes.html',
-            controller: 'crimeCastCtrl'
-        }).state('zips', {
-            url: '/zips',
-            templateUrl: 'zips.html',
-            controller: 'crimeCastCtrl'
-        }).state('zips1', {
-            url: '/zips1',
-            templateUrl: 'zips1.html',
-            controller: 'crimeCastCtrl'
-        }).state('zips2', {
-            url: '/zips2',
-            templateUrl: 'zips2.html',
-            controller: 'crimeCastCtrl'
-        }).state('zips3', {
-            url: '/zips3',
-            templateUrl: 'zips3.html',
-            controller: 'crimeCastCtrl'
         }).state('about', {
             url: '/about',
             templateUrl: 'about.html',
             controller: 'crimeCastCtrl'
+        }).state('crimes', {
+            url: '/crimes',
+            templateUrl: 'crimes.html',
+            controller: 'crimesCtrl'
         }).state('crime/:crimeId', {
             url: '/crime/:crimeId',
             templateUrl: 'crime.html',
             controller: 'crimeCtrl'
-        }).state('crime2', {
-            url: '/crime2',
-            templateUrl: 'crime2.html',
-            controller: 'crimeCastCtrl'
-        }).state('crime3', {
-            url: '/crime3',
-            templateUrl: 'crime3.html',
-            controller: 'crimeCastCtrl'
-        }).state('crimetype1', {
-            url: '/crimetype1',
-            templateUrl: 'crimetype1.html',
-            controller: 'crimeCastCtrl'
-        }).state('crimetype2', {
-            url: '/crimetype2',
-            templateUrl: 'crimetype2.html',
-            controller: 'crimeCastCtrl'
-        }).state('crimetype3', {
-            url: '/crimetype3',
-            templateUrl: 'crimetype3.html',
-            controller: 'crimeCastCtrl'
+        }).state('crime_types', {
+            url: '/crime_types',
+            templateUrl: 'crimetypes.html',
+            controller: 'crimeTypesCtrl'
+        }).state('crime_type/:crime_type', {
+            url: '/crime/:crime_type_id',
+            templateUrl: 'crimetype.html',
+            controller: 'crimeTypeCtrl'
+        }).state('weeks', {
+            url: '/weeks',
+            templateUrl: 'weeks.html',
+            controller: 'weeksCtrl'
+        }).state('week/:week', {
+            url: '/week/:week_id',
+            templateUrl: 'week.html',
+            controller: 'weekCtrl'
+        }).state('zips', {
+            url: '/zips',
+            templateUrl: 'zips.html',
+            controller: 'zipsCtrl'
+        }).state('zip/:zip_id', {
+            url: '/zip/:zip_id',
+            templateUrl: 'zip.html',
+            controller: 'zipCtrl'
         });
         $urlRouterProvider.otherwise('splash');
 

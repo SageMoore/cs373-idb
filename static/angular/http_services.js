@@ -5,7 +5,10 @@ angular.module('crimeCastApp.httpServices', [])
         return {
             getRequestGeneric : getRequestGeneric,
             postRequestGeneric : postRequestGeneric,
-            getCrime : getCrime
+            getCrime : getCrime,
+            getCrimeType : getCrimeType,
+            getWeek : getWeek,
+            getZip : getZip
         }
 
         function getRequestGeneric(pathParam){
@@ -37,6 +40,45 @@ angular.module('crimeCastApp.httpServices', [])
             var req = {
                 method: 'GET',
                 url: '/api/v1/crime/' + id
+            }
+            return $http(req).then(function(response) {
+                return response.data;
+            }, function(response) {
+                console.log('rejecting promise');
+                return $q.reject(response.data);
+            })
+        }
+
+        function getCrimeType(id) {
+            var req = {
+                method: 'GET',
+                url: '/api/v1/crime_type/' + id
+            }
+            return $http(req).then(function(response) {
+                return response.data;
+            }, function(response) {
+                console.log('rejecting promise');
+                return $q.reject(response.data);
+            })
+        }
+
+        function getWeek(id) {
+            var req = {
+                method: 'GET',
+                url: '/api/v1/week/' + id
+            }
+            return $http(req).then(function(response) {
+                return response.data;
+            }, function(response) {
+                console.log('rejecting promise');
+                return $q.reject(response.data);
+            })
+        }
+
+        function getZip(id) {
+            var req = {
+                method: 'GET',
+                url: '/api/v1/zip/' + id
             }
             return $http(req).then(function(response) {
                 return response.data;
