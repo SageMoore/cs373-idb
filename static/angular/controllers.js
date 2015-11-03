@@ -138,3 +138,5 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
 
     $scope.zip = getZip(zipId);
 });
+
+

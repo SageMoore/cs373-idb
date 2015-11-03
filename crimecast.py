@@ -1,10 +1,30 @@
 from flask import Flask
 from flask_restful import reqparse, abort, Api, Resource
+import subprocess
 # from Crime import CrimeById
 # import CrimeList
 
 app = Flask(__name__, static_url_path="")
 api = Api(app)
+
+#engine = create_engine('postgres://localhost:8080/postgres')
+#connection = engine.connect()
+
+#Query a specific table in database example
+#result = engine.execute("select latitude from zipcode")
+
+#convert rows to dictionary
+#my_dict = {}
+#for row in result:
+#go through the columns and add to the dictionary
+#    d["latitude"] = row['latitude']
+#    print "latitude:", row['latitude']
+
+#convert dictionary to json
+#json.dumps(my_dict)
+
+
+
 
 parser = reqparse.RequestParser()
 # parser.add_argument('crime')
@@ -169,9 +189,9 @@ class ZipById(Resource):
 # Returns the results of running tests.py -- for use on the 'About' page
 class Tests(Resource):
     def get(self):
-        tests_proc = subprocess.Popen(['python', 'tests.py'], 
-            stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-        return tests_proc.communicate()[0]
+        p = subprocess.Popen('python tests.py', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        output, errors = p.communicate()
+        return { 'results': str(errors) }
 
 ##
 ## Actually setup the Api resource routing here
