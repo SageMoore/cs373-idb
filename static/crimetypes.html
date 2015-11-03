@@ -32,9 +32,9 @@
                 </thead>
 
                 <tbody>
-                <tr ng-repeat="type in crimetypes | orderBy:sortType:sortReverse"">
-                <td><a href="/crimetype{{type.id}}">{{ type.id }}</a></td>
-                <td><a href="/crimetype{{type.id}}">{{ type.crime_type }}</a></td>
+                <tr ng-repeat="type in crimeTypes | orderBy:sortType:sortReverse"">
+                <td><a ng-click="goToCrimeType(type.id)">{{ type.id }}</a></td>
+                <td><a ng-click="goToCrimeType(type.id)">{{ type.crime_type }}</a></td>
                 <td>{{ type.description }}</td>
                 <td>
                     <table class="table table-hover">

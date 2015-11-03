@@ -65,6 +65,14 @@ CRIMES = [
     { 'id': 3, 'description': "Murder on 12th and Chicon", 'time': "10-20-2015 22:20:00" ,'address': "12th and Chicon", 'crime_type' : 'Murder', 'lat' : 30.27000, 'lng' : -97.7190000  }
 ]
 
+CRIMETYPES = [
+    {'id': 2, 'crime_type': 'Burglary', 'description': "Burglary is bad", "crimes": [{"id": 2},{"id": 2},{"id": 2}], 'worst_zipcode': "78705"},
+    {'id': 1, 'crime_type': 'Assault', 'description': "Assault is bad", "crimes": [{"id": 3}], 'worst_zipcode': "78704"},
+    {'id': 3, 'crime_type': 'Vandalism', 'description': "Vandalism is bad", "crimes": [{"id": 1}], 'worst_zipcode': "78706"}
+]
+
+# TODO: add ur own fake data!
+
 # Crimes
 # shows a list of all crimes, and lets you POST to add new tasks
 class CrimeList(Resource):
@@ -88,6 +96,28 @@ class CrimeById(Resource):
     def post(self):
         pass
 
+# Crime Types
+# shows a list of all crime types
+class CrimeTypeList(Resource):
+    def get(self):
+        # select id from CRIMETYPES
+        return CRIMETYPES
+
+    def post(self):
+        pass
+
+# Crime Type
+# returns a crime type by id
+class CrimeTypeById(Resource):
+    def get(self, crime_type_id):
+        # select * from CRIMETYPES as c where crime_id = c.id
+        return CRIMETYPES[int(crime_type_id) - 1]
+
+    def post(self):
+        pass
+
+#TODO: add similar classes for weeks and zipcodes here
+
 # Unit Tests
 # Returns the results of running tests.py -- for use on the 'About' page
 class Tests(Resource):
@@ -101,6 +131,10 @@ class Tests(Resource):
 ##
 api.add_resource(CrimeList, '/api/v1/crimes')
 api.add_resource(CrimeById, '/api/v1/crime/<crime_id>')
+api.add_resource(CrimeTypeList, '/api/v1/crime_types')
+api.add_resource(CrimeTypeById, '/api/v1/crime_type/<crime_type_id>')
+#TODO: add similar api resources for weeks and zipcodes here
+
 api.add_resource(Tests, '/api/v1/tests')
 
 
