@@ -68,41 +68,22 @@ class CrimeType(Base):
 
 # Create an engine that stores data in the local directory's
 # stuff.db file.
-engine = create_engine('postgres://localhost:8080/postgres')
+def db_connect():
+    engine = create_engine('postgresql://crimedata@localhost/crimedata')
+    return engine
 
  
 # Create all tables in the engine. This is equivalent to "Create Table"
 # statements in raw SQL.
-Base.metadata.create_all(engine)
+def create_tables(engine):
+    Base.metadata.create_all(engine)
 
 
-# Bind the engine to the metadata of the Base class so that the
-# declaratives can be accessed through a DBSession instance
-Base.metadata.bind = engine
  
-DBSession = sessionmaker(bind=engine)
-#A DBSession() instance establishes all conversations with the database
-# and represents a "staging zone" for all the objects loaded into the
-# database session object. Any change made against the objects in the 
-# session won't be persisted into the database until you call
-# session.commit(). If you're not happy about the changes, you can
-# revert all of them back to the last commit by calling
-# session.rollback()
-session = DBSession()
-  
-# Insert a Person in the person table
-new_crime_type = CrimeType(name='new person 2', desc = "poop" )
-session.add(new_crime_type)
-session.commit()
 
-session.query(CrimeType).all()
-person = session.query(CrimeType).get(4)
-print(person.name)
-
-session.close()
-# Insert an Address in the address table
 # to run database:
 # install postgresql (brew install postgresql)
+# make sure that libpq-dev is installed (apt-get install libqp-dev)
 # install psycopg2 (pip3 install psycopg2)
 # init postgres server (pg_ctl init -D database)
 # run postgres server (postgres -D database/ -p 8080)
