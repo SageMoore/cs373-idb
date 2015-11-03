@@ -34,9 +34,9 @@
 
                 <tbody>
                 <tr ng-repeat="week in weeks | orderBy:sortType:sortReverse">
-                    <td><a href="/weeks{{week.id}}">{{ week.id }}</a></td>
-                    <td><a href="/weeks{{week.id}}">{{ week.start_date }}</a></td>
-                    <td><a href="/weeks{{week.id}}">{{ week.end_date }}</a></td>
+                    <td><a ng-click="goToWeek(week.id)">{{ week.id }}</a></td>
+                    <td><a ng-click="goToWeek(week.id)">{{ week.start_date }}</a></td>
+                    <td><a ng-click="goToWeek(week.id)">{{ week.end_date }}</a></td>
                     <td><a href="/crimetype{{week.popular_crime}}">{{ week.popular_crime }}</a></td>
                     <td>
                         <table class="table table-hover">

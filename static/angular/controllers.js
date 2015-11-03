@@ -1,22 +1,10 @@
 'use strict';
 crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service) {
 
-
     services.getMap();
 
     $scope.sortType     = 'id'; // set the default sort type
     $scope.sortReverse  = false;  // set the default sort order
-    //TODO: delete these when API calls are implemented
-    $scope.zipcodes = [
-        { id: 1, zipcode: 78704, latitude: 32.123,longitude: 32.123, "crimes" : [{"id":1}]  },
-        { id: 2, zipcode: 78705, latitude: 30.123,longitude: 30.123, "crimes" : [{"id":2}]  },
-        { id: 3, zipcode: 78706, latitude: 35.123,longitude: 35.123, "crimes" : [{"id":3}]  }
-    ];
-    $scope.weeks = [
-        { id: 1, start_date: "10/11/15", end_date: "10/17/15",popular_crime: "1", "crimes" : [{"id":1}]  },
-        { id: 2, start_date: "10/18/15", end_date: "10/24/15",popular_crime: "2", "crimes" : [{"id":2}]  },
-        { id: 3, start_date: "10/25/15", end_date: "10/31/15",popular_crime: "3", "crimes" : [{"id":3}]  },
-    ];
 
 }).controller('crimesCtrl', function ($scope, http_service, services, $location) {
 
@@ -98,7 +86,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
 
     var getWeeks = function() {
         http_service.getRequestGeneric('weeks').then(function(data) {
-            $scope.crimeTypes = data;
+            $scope.weeks = data;
             console.log('data for weeks is...: ', data);
         })
     };
@@ -135,7 +123,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
         $location.path('/zips/' + zipId);
     };
 
-    $scope.zips = getZips();
+    getZips();
     $scope.goToZip = goToZip;
 
 }).controller('zipCtrl', function ($scope, http_service, $location, $stateParams) {
