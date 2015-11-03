@@ -6,11 +6,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
 
     $scope.sortType     = 'id'; // set the default sort type
     $scope.sortReverse  = false;  // set the default sort order
-    $scope.crimetypes = [
-        { id: 2, crime_type: 'Burglary', description: "Burglary is bad", "crimes" : [{"id":2},{"id":2},{"id":2}], worst_zipcode: "78705" },
-        { id: 1, crime_type: 'Assault', description: "Assault is bad", "crimes" : [{"id":3}], worst_zipcode: "78704" },
-        { id: 3, crime_type: 'Vandalism', description: "Vandalism is bad", "crimes" : [{"id":1}], worst_zipcode: "78706" }
-    ];
+    //TODO: delete these when API calls are implemented
     $scope.zipcodes = [
         { id: 1, zipcode: 78704, latitude: 32.123,longitude: 32.123, "crimes" : [{"id":1}]  },
         { id: 2, zipcode: 78705, latitude: 30.123,longitude: 30.123, "crimes" : [{"id":2}]  },
@@ -69,6 +65,90 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
     }
 
     $scope.crime = getCrime(crimeId);
+
+}).controller('crimeTypesCtrl', function ($scope, http_service, services, $location) {
+
+    var getCrimeTypes = function() {
+        http_service.getRequestGeneric('crime_types').then(function(data) {
+            $scope.crimeTypes = data;
+            console.log('data for crimetypes is...: ', data);
+        })
+    };
+
+    var goToCrimeType = function (crimeId) {
+        $location.path('/crime_types/' + crimeId);
+    };
+
+    $scope.crimeTypes = getCrimeTypes();
+    $scope.goToCrimeType = goToCrimeType;
+
+}).controller('crimeTypeCtrl', function ($scope, http_service, $location, $stateParams) {
+
+    var crimeId = $stateParams.crimeTypeId;
+
+    var getCrimeType = function(crimeTypeId) {
+        http_service.getCrimeType(crimeTypeId).then(function(data) {
+            $scope.crimeType = data;
+        })
+    };
+
+    $scope.crimeType = getCrimeType(crimeId);
+
+}).controller('weeksCtrl', function ($scope, http_service, services, $location) {
+
+    var getWeeks = function() {
+        http_service.getRequestGeneric('weeks').then(function(data) {
+            $scope.crimeTypes = data;
+            console.log('data for weeks is...: ', data);
+        })
+    };
+
+    var goToWeek = function (weekId) {
+        $location.path('/weeks/' + weekId);
+    };
+
+    $scope.weeks = getWeeks();
+    $scope.goToWeek = goToWeek;
+
+}).controller('weekCtrl', function ($scope, http_service, $location, $stateParams) {
+
+    var weekId = $stateParams.weekId;
+
+    var getWeek = function(weekId) {
+        http_service.getWeek(weekId).then(function(data) {
+            $scope.week = data;
+        })
+    };
+
+    $scope.week = getWeek(weekId);
+
+}).controller('zipsCtrl', function ($scope, http_service, services, $location) {
+
+    var getZips = function() {
+        http_service.getRequestGeneric('zips').then(function(data) {
+            $scope.zips = data;
+            console.log('data for zips is...: ', data);
+        })
+    };
+
+    var goToZip = function (zipId) {
+        $location.path('/zips/' + zipId);
+    };
+
+    $scope.zips = getZips();
+    $scope.goToZip = goToZip;
+
+}).controller('zipCtrl', function ($scope, http_service, $location, $stateParams) {
+
+    var zipId = $stateParams.zipId;
+
+    var getZip = function(zipId) {
+        http_service.getZip(zipId).then(function(data) {
+            $scope.zip = data;
+        })
+    };
+
+    $scope.zip = getZip(zipId);
 });
 
 }).controller('aboutCtrl', function ($scope, http_service, $location, $stateParams) {
