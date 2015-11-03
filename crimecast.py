@@ -7,6 +7,25 @@ import subprocess
 app = Flask(__name__, static_url_path="")
 api = Api(app)
 
+#engine = create_engine('postgres://localhost:8080/postgres')
+#connection = engine.connect()
+
+#Query a specific table in database example
+#result = engine.execute("select latitude from zipcode")
+
+#convert rows to dictionary
+#my_dict = {}
+#for row in result:
+#go through the columns and add to the dictionary
+#    d["latitude"] = row['latitude']
+#    print "latitude:", row['latitude']
+
+#convert dictionary to json
+#json.dumps(my_dict)
+
+
+
+
 parser = reqparse.RequestParser()
 # parser.add_argument('crime')
 
