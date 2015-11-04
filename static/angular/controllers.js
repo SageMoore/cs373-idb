@@ -137,6 +137,13 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
     };
 
     $scope.zip = getZip(zipId);
+
+}).controller('aboutCtrl', function ($scope, http_service, $location, $stateParams) {
+    $scope.results = "No test results yet..."
+
+    $scope.runTests = function() {
+        http_service.getRequestGeneric('tests').then(function(data) {
+            $scope.results = data.results;
+        })
+    };
 });
-
-
