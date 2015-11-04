@@ -6,7 +6,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, backref
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from models import db_connect, CrimeType
+from models import db_connect, CrimeType, Crime, Week, Zip
 engine = db_connect()
 DBSession = sessionmaker(bind=engine)
 #A DBSession() instance establishes all conversations with the database
