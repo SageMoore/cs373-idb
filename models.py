@@ -16,7 +16,6 @@ class Crime(Base):
     """
     __tablename__ = 'Crime'
     crime_id = Column(Integer, primary_key=True)
-    name = Column(String(250), nullable=False)
     lat = Column(Float, nullable=False)
     lng = Column(Float, nullable=False)
     address = Column(String(250), nullable=False)

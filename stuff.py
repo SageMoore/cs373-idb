@@ -19,10 +19,25 @@ session = DBSession()
   
 # Insert a Person in the person table
 def add():
-
-    new_crime_type = CrimeType(name='new person 3', desc = "poop")
+    crime_1 = Crime(lat=30.28500, lng=-97.7320000, address="gdc", description="Graffiti of pig on building")
+    crime_2 = Crime(lat=30.30000, lng=-97.730000, address="Duval Rd", description="Burglary at Quacks Bakery")
+    crime_3 = Crime(lat=30.27000, lng=-97.719000, address="12th and Chicon", description="Murder on 12th and Chicon")
+    crime_type_1 = CrimeType(name='Assault', desc = "Assault is bad")
+    crime_type_2 = CrimeType(name='Burglary', desc = "Burglary is bad")
+    crime_type_3 = CrimeType(name='Vandalism', desc = "Vandalism is bad")
+    zip_1 = Zip(zipcode=78704, lat=32.123, lng=32.123, pop=5)
+    zip_2 = Zip(zipcode=78705, lat=30.123, lng=30.123, pop=5)
+    zip_3 = Zip(zipcode=78706, lat=35.123, lng=35.123, pop=5)
     try:
-        session.add(new_crime_type)
+        session.add(crime_1)
+        session.add(crime_2)
+        session.add(crime_3)
+        session.add(crime_type_1)
+        session.add(crime_type_2)
+        session.add(crime_type_3)
+        session.add(zip_1)
+        session.add(zip_2)
+        session.add(zip_3)
         print("commiting to database")
         session.commit()
     except:
