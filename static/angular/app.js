@@ -20,32 +20,32 @@ crimeCastApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider'
             url: '/crimes',
             templateUrl: 'crimes.html',
             controller: 'crimesCtrl'
-        }).state('crime/:crimeId', {
-            url: '/crime/:crimeId',
+        }).state('crimes/:crimeId', {
+            url: '/crimes/:crimeId',
             templateUrl: 'crime.html',
             controller: 'crimeCtrl'
         }).state('crime_types', {
             url: '/crime_types',
             templateUrl: 'crimetypes.html',
             controller: 'crimeTypesCtrl'
-        }).state('crime_type/:crime_type', {
-            url: '/crime/:crime_type_id',
+        }).state('crime_types/:crime_type', {
+            url: '/crime_types/:crime_type_id',
             templateUrl: 'crimetype.html',
             controller: 'crimeTypeCtrl'
         }).state('weeks', {
             url: '/weeks',
             templateUrl: 'weeks.html',
             controller: 'weeksCtrl'
-        }).state('week/:week', {
-            url: '/week/:week_id',
+        }).state('weeks/:week', {
+            url: '/weeks/:week_id',
             templateUrl: 'week.html',
             controller: 'weekCtrl'
         }).state('zips', {
             url: '/zips',
             templateUrl: 'zips.html',
             controller: 'zipsCtrl'
-        }).state('zip/:zip_id', {
-            url: '/zip/:zip_id',
+        }).state('zips/:zip_id', {
+            url: '/zips/:zip_id',
             templateUrl: 'zip.html',
             controller: 'zipCtrl'
         });

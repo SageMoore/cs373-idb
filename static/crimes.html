@@ -37,11 +37,11 @@
 
                             <tbody>
                             <tr ng-repeat="crime in crimes | orderBy:sortType:sortReverse">
-                                <td><a ng-click="goToCrime(crime.id)">{{ crime.id }}</a></td>
-                                <td><a href="" ng-click="goToCrime(crime.id)">{{ crime.description }}</a></td>
+                                <td><a href="crimes/{{crime.id}}">{{ crime.id }}</a></td>
+                                <td><a href="crimes/{{crime.id}}">{{ crime.description }}</a></td>
                                 <td>{{ crime.time }}</td>
                                 <td> {{ crime.address }}</td>
-                                <td><a href="" ng-click="goToCrime(crime.id)">{{ crime.crime_type.crime_type_name }}</a></td>
+                                <td><a href="crime_type/{{crime.crime_type.crime_type_id}}">{{ crime.crime_type.crime_type_name }}</a></td>
                             </tr>
                             </tbody>
                         </table>

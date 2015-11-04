@@ -49,7 +49,7 @@ def crimes():
     return app.send_static_file('index.html')
 
 # Static crime page
-@app.route('/crime/<crime_id>')
+@app.route('/crimes/<crime_id>')
 def crime(crime_id):
     return app.send_static_file('index.html')
 
@@ -57,6 +57,11 @@ def crime(crime_id):
 # Static weeks page
 @app.route('/weeks')
 def weeks():
+    return app.send_static_file('index.html')
+
+# Static week page
+@app.route('/weeks/<week_id>')
+def week(week_id):
     return app.send_static_file('index.html')
 
 
@@ -200,13 +205,13 @@ class Tests(Resource):
 ## Actually setup the Api resource routing here
 ##
 api.add_resource(CrimeList, '/api/v1/crimes')
-api.add_resource(CrimeById, '/api/v1/crime/<crime_id>')
+api.add_resource(CrimeById, '/api/v1/crimes/<crime_id>')
 api.add_resource(CrimeTypeList, '/api/v1/crime_types')
-api.add_resource(CrimeTypeById, '/api/v1/crime_type/<crime_type_id>')
+api.add_resource(CrimeTypeById, '/api/v1/crime_types/<crime_type_id>')
 api.add_resource(WeekList, '/api/v1/weeks')
-api.add_resource(WeekById, '/api/v1/week/<week_id>')
+api.add_resource(WeekById, '/api/v1/weeks/<week_id>')
 api.add_resource(ZipList, '/api/v1/zips')
-api.add_resource(ZipById, '/api/v1/zip/<zip_id>')
+api.add_resource(ZipById, '/api/v1/zips/<zip_id>')
 
 api.add_resource(Tests, '/api/v1/tests')
 

@@ -35,12 +35,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
         })
     }
 
-    var goToCrime = function (crimeId) {
-        services.goToPath('crime', crimeId);
-    }
-
     $scope.crimes = getCrimes();
-    $scope.goToCrime = goToCrime;
 
 }).controller('crimeCtrl', function ($scope, http_service, $location, $stateParams) {
 

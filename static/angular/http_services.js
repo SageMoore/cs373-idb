@@ -39,7 +39,7 @@ angular.module('crimeCastApp.httpServices', [])
         function getCrime(id) {
             var req = {
                 method: 'GET',
-                url: '/api/v1/crime/' + id
+                url: '/api/v1/crimes/' + id
             }
             return $http(req).then(function(response) {
                 return response.data;
@@ -52,7 +52,7 @@ angular.module('crimeCastApp.httpServices', [])
         function getCrimeType(id) {
             var req = {
                 method: 'GET',
-                url: '/api/v1/crime_type/' + id
+                url: '/api/v1/crime_types/' + id
             }
             return $http(req).then(function(response) {
                 return response.data;
@@ -65,7 +65,7 @@ angular.module('crimeCastApp.httpServices', [])
         function getWeek(id) {
             var req = {
                 method: 'GET',
-                url: '/api/v1/week/' + id
+                url: '/api/v1/weeks/' + id
             }
             return $http(req).then(function(response) {
                 return response.data;
@@ -78,7 +78,7 @@ angular.module('crimeCastApp.httpServices', [])
         function getZip(id) {
             var req = {
                 method: 'GET',
-                url: '/api/v1/zip/' + id
+                url: '/api/v1/zips/' + id
             }
             return $http(req).then(function(response) {
                 return response.data;
