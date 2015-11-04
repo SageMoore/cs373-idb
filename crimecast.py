@@ -3,12 +3,19 @@ from flask_restful import reqparse, abort, Api, Resource
 import subprocess
 # from Crime import CrimeById
 # import CrimeList
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from models import db_connect, Crime, Week, Zip, CrimeType
 
 app = Flask(__name__, static_url_path="")
 api = Api(app)
 
-#engine = create_engine('postgres://localhost:8080/postgres')
-#connection = engine.connect()
+#//username:password@host:port/database
+
+# engine = create_engine('postgres://crimedata:poop@crimecast.xyz:5432/crimedata')
+# engine = db_connect()
+# DBSession = sessionmaker(bind=engine)
+# session = DBSession()
 
 #Query a specific table in database example
 #result = engine.execute("select latitude from zipcode")
@@ -117,6 +124,8 @@ WEEKS = [
 # shows a list of all crimes, and lets you POST to add new tasks
 class CrimeList(Resource):
     def get(self):
+        # all_crimes = session.query(Crime).all()
+        # return all_crimes
         return CRIMES
 
     def post(self):
@@ -140,7 +149,8 @@ class CrimeById(Resource):
 # shows a list of all crime types
 class CrimeTypeList(Resource):
     def get(self):
-        # select id from CRIMETYPES
+        # all_crime_types = session.query(CrimeType).all()
+        # return all_crime_types
         return CRIMETYPES
 
     def post(self):
@@ -160,6 +170,8 @@ class CrimeTypeById(Resource):
 # shows a list of all weeks
 class WeekList(Resource):
     def get(self):
+        # all_weeks = session.query(Week).all()
+        # return all_weeks
         return WEEKS
 
     def post(self):
@@ -178,6 +190,8 @@ class WeekById(Resource):
 # shows a list of all zipcodes
 class ZipList(Resource):
     def get(self):
+        # all_zips = session.query(Zip).all()
+        # return all_zips
         return ZIPS
 
     def post(self):
