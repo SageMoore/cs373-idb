@@ -86,6 +86,10 @@ def zip_home():
 def zip(zip_id):
 	return app.send_static_file('zips1.html', zip_id=zip_id)
 
+@app.route('/about')
+def zip_home():
+    return app.send_static_file('index.html')
+
 
 CRIMES = [
     { 'id': 1, 'description': "Graffiti of pig on building", 'time': "10-20-2015 19:12:00" ,'address': "GDC", 'crime_type' : {'crime_type_id' : 3, 'crime_type_name' : 'Vandalism'}, 'lat' : 30.28500, 'lng' : -97.7320000  },

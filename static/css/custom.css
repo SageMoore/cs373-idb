@@ -34,6 +34,14 @@
     background-color: #323C46;
 }
 
+.navbar-default .navbar-nav li {
+    border-bottom: 5px solid #323C46;
+}
+
+.navbar-default .navbar-nav li:hover {
+    border-bottom: 5px solid white;
+}
+
 .navbar-default .navbar-nav li a {
     color: #B7BBBE;
 }
@@ -145,7 +153,7 @@
 }
 
 .top-buffer {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 p {
