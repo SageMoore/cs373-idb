@@ -44,6 +44,7 @@ class Zip(Base):
     """
     __tablename__ = 'Zip'
     zip_id = Column(Integer, primary_key=True)
+    zip_code = Column(Integer, nullable=False)
     lat = Column(Float, nullable=False)
     lng = Column(Float, nullable=False)
     pop = Column(Integer, nullable=False)
