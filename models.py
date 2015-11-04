@@ -81,7 +81,7 @@ def db_connect():
 def create_tables(engine):
     Base.metadata.create_all(engine)
 
-
+create_tables(db_connect())
  
 
 # to run database:
