@@ -43,6 +43,11 @@ def splash():
     print('in splash')
     return app.send_static_file('index.html')
 
+@app.errorhandler(404)
+def page_not_found(e):
+    # your processing here
+    return app.send_static_file('index.html')
+
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')

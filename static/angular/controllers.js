@@ -40,7 +40,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
             console.log('data for crimes is...: ', data);
             $scope.crimes = data;
             angular.forEach($scope.crimes, function(value, key) {
-                services.addMarker(value.lat, value.lng, value.address, map);
+                services.addMarker(value.lat, value.lng, value.address, map, value.crime_type.crime_type_name);
             })
         })
     }

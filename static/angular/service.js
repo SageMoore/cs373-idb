@@ -26,13 +26,13 @@ angular.module('crimeCastApp.services', [])
             }
         }
 
-        function addMarker(lat, lng, address, map) {
+        function addMarker(lat, lng, address, map, crime_type) {
             map.addMarker({
                 lat: lat,
                 lng: lng,
                 title: address,
                 click: function (e) {
-                    alert('Alert: Burglary at ' + address);
+                    alert('Alert:' + crime_type + ' at ' + address);
                 }
             });
         }
