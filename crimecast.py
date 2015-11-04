@@ -1,10 +1,30 @@
 from flask import Flask
 from flask_restful import reqparse, abort, Api, Resource
+import subprocess
 # from Crime import CrimeById
 # import CrimeList
 
 app = Flask(__name__, static_url_path="")
 api = Api(app)
+
+#engine = create_engine('postgres://localhost:8080/postgres')
+#connection = engine.connect()
+
+#Query a specific table in database example
+#result = engine.execute("select latitude from zipcode")
+
+#convert rows to dictionary
+#my_dict = {}
+#for row in result:
+#go through the columns and add to the dictionary
+#    d["latitude"] = row['latitude']
+#    print "latitude:", row['latitude']
+
+#convert dictionary to json
+#json.dumps(my_dict)
+
+
+
 
 parser = reqparse.RequestParser()
 # parser.add_argument('crime')
@@ -68,6 +88,26 @@ CRIMES = [
     { 'id': 3, 'description': "Murder on 12th and Chicon", 'time': "10-20-2015 22:20:00" ,'address': "12th and Chicon", 'crime_type' : {'crime_type_id' : 1, 'crime_type_name' : 'Assault'}, 'lat' : 30.27000, 'lng' : -97.7190000  }
 ]
 
+CRIMETYPES = [
+    {'id': 2, 'crime_type': 'Burglary', 'description': "Burglary is bad", "crimes": [{"id": 2},{"id": 2},{"id": 2}], 'worst_zipcode': "78705"},
+    {'id': 1, 'crime_type': 'Assault', 'description': "Assault is bad", "crimes": [{"id": 3}], 'worst_zipcode': "78704"},
+    {'id': 3, 'crime_type': 'Vandalism', 'description': "Vandalism is bad", "crimes": [{"id": 1}], 'worst_zipcode': "78706"}
+]
+
+ZIPS = [
+        {'id': 1, 'zipcode': 78704, 'latitude': 32.123, 'longitude': 32.123, "crimes": [{"id": 1}]},
+        {'id': 2, 'zipcode': 78705, 'latitude': 30.123, 'longitude': 30.123, "crimes": [{"id": 2}]},
+        {'id': 3, 'zipcode': 78706, 'latitude': 35.123, 'longitude': 35.123, "crimes": [{"id": 3}]}
+]
+
+WEEKS = [
+        {'id': 1, 'start_date': "10/11/15", 'end_date': "10/17/15", 'popular_crime': "1", "crimes": [{"id": 1}]},
+        {'id': 2, 'start_date': "10/18/15", 'end_date': "10/24/15", 'popular_crime': "2", "crimes": [{"id": 2}]},
+        {'id': 3, 'start_date': "10/25/15", 'end_date': "10/31/15", 'popular_crime': "3", "crimes": [{"id": 3}]},
+]
+
+# TODO: add ur own fake data!
+
 # Crimes
 # shows a list of all crimes, and lets you POST to add new tasks
 class CrimeList(Resource):
@@ -91,19 +131,83 @@ class CrimeById(Resource):
     def post(self):
         pass
 
+# Crime Types
+# shows a list of all crime types
+class CrimeTypeList(Resource):
+    def get(self):
+        # select id from CRIMETYPES
+        return CRIMETYPES
+
+    def post(self):
+        pass
+
+# Crime Type
+# returns a crime type by id
+class CrimeTypeById(Resource):
+    def get(self, crime_type_id):
+        # select * from CRIMETYPES as c where crime_id = c.id
+        return CRIMETYPES[int(crime_type_id) - 1]
+
+    def post(self):
+        pass
+
+# Weeks
+# shows a list of all weeks
+class WeekList(Resource):
+    def get(self):
+        return WEEKS
+
+    def post(self):
+        pass
+
+# Week
+# returns a week by id
+class WeekById(Resource):
+    def get(self, week_id):
+        return WEEKS[int(week_id) - 1]
+
+    def post(self):
+        pass
+
+# Zipcodes
+# shows a list of all zipcodes
+class ZipList(Resource):
+    def get(self):
+        return ZIPS
+
+    def post(self):
+        pass
+
+# Zipcode
+# returns a zipcode by id
+class ZipById(Resource):
+    def get(self, week_id):
+        return ZIPS[int(week_id) - 1]
+
+    def post(self):
+        pass
+
+
 # Unit Tests
 # Returns the results of running tests.py -- for use on the 'About' page
 class Tests(Resource):
     def get(self):
-        tests_proc = subprocess.Popen(['python', 'tests.py'], 
-            stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-        return tests_proc.communicate()[0]
+        p = subprocess.Popen('python tests.py', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        output, errors = p.communicate()
+        return { 'results': str(errors) }
 
 ##
 ## Actually setup the Api resource routing here
 ##
 api.add_resource(CrimeList, '/api/v1/crimes')
 api.add_resource(CrimeById, '/api/v1/crime/<crime_id>')
+api.add_resource(CrimeTypeList, '/api/v1/crime_types')
+api.add_resource(CrimeTypeById, '/api/v1/crime_type/<crime_type_id>')
+api.add_resource(WeekList, '/api/v1/weeks')
+api.add_resource(WeekById, '/api/v1/week/<week_id>')
+api.add_resource(ZipList, '/api/v1/zips')
+api.add_resource(ZipById, '/api/v1/zip/<zip_id>')
+
 api.add_resource(Tests, '/api/v1/tests')
 
 
