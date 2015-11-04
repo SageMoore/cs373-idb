@@ -4,10 +4,11 @@
 'use strict';
 
 angular.module('crimeCastApp.services', [])
-    .factory('services', function () {
+    .factory('services', function ($location) {
         return {
             getMap: getMap,
-            addMarker: addMarker
+            addMarker: addMarker,
+            goToPath: goToPath
         }
         function getMap() {
             try {
@@ -34,6 +35,10 @@ angular.module('crimeCastApp.services', [])
                     alert('Alert: Burglary at ' + address);
                 }
             });
+        }
+
+        function goToPath(path, id) {
+            $location.path('/' + path + '/' + id);
         }
 
     })

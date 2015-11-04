@@ -33,11 +33,14 @@ parser = reqparse.RequestParser()
 @app.route('/')
 @app.route('/splash')
 def splash():
+    print('in splash')
     return app.send_static_file('index.html')
 
-@app.route("/", defaults={"path": ""})
-@app.route("/<path:path>")
+
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
 def index(path):
+    print('in default')
     return app.send_static_file('index.html')
 
 # Static crimes page
@@ -46,7 +49,7 @@ def crimes():
     return app.send_static_file('index.html')
 
 # Static crime page
-@app.route('/crime/<crime_id>')
+@app.route('/crimes/<crime_id>')
 def crime(crime_id):
     return app.send_static_file('index.html')
 
@@ -54,6 +57,11 @@ def crime(crime_id):
 # Static weeks page
 @app.route('/weeks')
 def weeks():
+    return app.send_static_file('index.html')
+
+# Static week page
+@app.route('/weeks/<week_id>')
+def week(week_id):
     return app.send_static_file('index.html')
 
 
@@ -80,9 +88,9 @@ def zip(zip_id):
 
 
 CRIMES = [
-    { 'id': 1, 'description': "Graffiti of pig on building", 'time': "10-20-2015 19:12:00" ,'address': "GDC", 'crime_type' : 'Vandalism', 'lat' : 30.28500, 'lng' : -97.7320000  },
-    { 'id': 2, 'description': "Burglary at Quacks Bakery", 'time': "10-20-2015 19:20:00" ,'address': "Duval Rd", 'crime_type' : 'Burglary', 'lat' : 30.30000, 'lng' : -97.730000  },
-    { 'id': 3, 'description': "Murder on 12th and Chicon", 'time': "10-20-2015 22:20:00" ,'address': "12th and Chicon", 'crime_type' : 'Murder', 'lat' : 30.27000, 'lng' : -97.7190000  }
+    { 'id': 1, 'description': "Graffiti of pig on building", 'time': "10-20-2015 19:12:00" ,'address': "GDC", 'crime_type' : {'crime_type_id' : 3, 'crime_type_name' : 'Vandalism'}, 'lat' : 30.28500, 'lng' : -97.7320000  },
+    { 'id': 2, 'description': "Burglary at Quacks Bakery", 'time': "10-20-2015 19:20:00" ,'address': "Duval Rd", 'crime_type' : {'crime_type_id' : 2, 'crime_type_name' : 'Burglary'}, 'lat' : 30.30000, 'lng' : -97.730000  },
+    { 'id': 3, 'description': "Murder on 12th and Chicon", 'time': "10-20-2015 22:20:00" ,'address': "12th and Chicon", 'crime_type' : {'crime_type_id' : 1, 'crime_type_name' : 'Assault'}, 'lat' : 30.27000, 'lng' : -97.7190000  }
 ]
 
 CRIMETYPES = [
@@ -197,13 +205,13 @@ class Tests(Resource):
 ## Actually setup the Api resource routing here
 ##
 api.add_resource(CrimeList, '/api/v1/crimes')
-api.add_resource(CrimeById, '/api/v1/crime/<crime_id>')
+api.add_resource(CrimeById, '/api/v1/crimes/<crime_id>')
 api.add_resource(CrimeTypeList, '/api/v1/crime_types')
-api.add_resource(CrimeTypeById, '/api/v1/crime_type/<crime_type_id>')
+api.add_resource(CrimeTypeById, '/api/v1/crime_types/<crime_type_id>')
 api.add_resource(WeekList, '/api/v1/weeks')
-api.add_resource(WeekById, '/api/v1/week/<week_id>')
+api.add_resource(WeekById, '/api/v1/weeks/<week_id>')
 api.add_resource(ZipList, '/api/v1/zips')
-api.add_resource(ZipById, '/api/v1/zip/<zip_id>')
+api.add_resource(ZipById, '/api/v1/zips/<zip_id>')
 
 api.add_resource(Tests, '/api/v1/tests')
 
