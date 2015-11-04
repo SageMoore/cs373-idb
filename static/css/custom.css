@@ -298,3 +298,14 @@ div#menu-vals a:hover {
     padding-bottom: 20%;
     height: 300px;
 }
+
+.page-header {
+    margin-top: 7%;
+    font-family: 'Passion One', cursive;
+}
+
+.page-image {
+    margin-right: 0%;
+    width:100%;
+    height:150px;
+}
