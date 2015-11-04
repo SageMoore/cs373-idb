@@ -72,7 +72,7 @@ class CrimeType(Base):
 # Create an engine that stores data in the local directory's
 # stuff.db file.
 def db_connect():
-    engine = create_engine('postgresql://crimedata@localhost/crimedata')
+    engine = create_engine('postgresql://crimedata:poop@localhost/crimedata')
     return engine
 
  
