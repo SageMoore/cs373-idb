@@ -93,6 +93,7 @@
 .about-header {
     margin: 3em 0 .3em;
     font-size: 400%;
+    margin-top: 10%
 }
 
 .about-tagline {   
@@ -271,4 +272,29 @@ div#menu-vals a:hover {
 
 .overlay-green {
     background-color: lightgreen;
+}
+
+.overlay-aliceblue {
+    background-color: aliceblue;
+}
+
+.passion-large {
+    font-family: 'Passion One';
+    font-size: large;
+}
+
+.ul-no-indent {
+    padding: 0;
+    list-style-type: none;
+}
+
+.about-container {
+    padding-top: 0px;
+    background-color: lightsalmon;
+}
+
+.about-description-container {
+    margin-top: 0%;
+    padding-bottom: 20%;
+    height: 300px;
 }
