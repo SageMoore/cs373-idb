@@ -14,7 +14,7 @@ class Week(Base):
     Here we define columns for the table Week.
     This model represents a particular week, for instance 1-1-15 through 1-7-15
     """
-    __tablename__ = 'zeek'
+    __tablename__ = 'week'
     week_id = Column(Integer, primary_key=True)
     start = Column(DateTime, nullable=False)
     end = Column(DateTime, nullable=False)
