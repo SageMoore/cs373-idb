@@ -8,22 +8,6 @@ from sqlalchemy.orm import sessionmaker
 
 Base = declarative_base()
 
-class Crime(Base):
-    """
-    Here we define columns for the table Crime
-    This model represents all the information contained about a crime.
-    Some of the extra fields here are foreign keys because many other models contain Crimes.
-    """
-    __tablename__ = 'Crime'
-    crime_id = Column(Integer, primary_key=True)
-    lat = Column(Float, nullable=False)
-    lng = Column(Float, nullable=False)
-    address = Column(String(250), nullable=False)
-    crimeType = Column(Integer, ForeignKey('CrimeType.crimeType_id'))
-    time = Column(DateTime, nullable=False)
-    description = Column(String(500))
-    zip_code = Column(Integer, ForeignKey('Zip.zip_id'))
-    week = Column(Integer, ForeignKey('Week.week_id'))
 
 class Week(Base):
     """
@@ -62,6 +46,7 @@ class CrimeType(Base):
     desc = Column(String(500), nullable=False)
     worstZip = Column(Integer, ForeignKey('Zip.zip_id'))
     # I think this is optional. just checking to see if it helps.
+    crimes = relationship("Crime")
     def __repr__(self):
         return "<User(crimeType_id='%s', name='%s', desc='%s', worstarea='%f')>" % (
             self.crimeType_id, self.name, self.desc, self.worstArea)
@@ -69,6 +54,22 @@ class CrimeType(Base):
     worstWeek = Column(Integer, ForeignKey('Week.week_id'))
 
 
+class Crime(Base):
+    """
+    Here we define columns for the table Crime
+    This model represents all the information contained about a crime.
+    Some of the extra fields here are foreign keys because many other models contain Crimes.
+    """
+    __tablename__ = 'Crime'
+    crime_id = Column(Integer, primary_key=True)
+    lat = Column(Float, nullable=False)
+    lng = Column(Float, nullable=False)
+    address = Column(String(250), nullable=False)
+    crimeType = Column(Integer, ForeignKey('CrimeType.crimeType_id'))
+    time = Column(DateTime, nullable=False)
+    description = Column(String(500))
+    zip_code = Column(Integer, ForeignKey('Zip.zip_id'))
+    week = Column(Integer, ForeignKey('Week.week_id'))
 # Create an engine that stores data in the local directory's
 # stuff.db file.
 def db_connect():
