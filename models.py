@@ -22,7 +22,7 @@ class Crime(Base):
     crimeType = Column(Integer, ForeignKey('CrimeType.crimeType_id'))
     time = Column(DateTime, nullable=False)
     description = Column(String(500))
-    zip = Column(Integer, ForeignKey('Zip.zip_id'))
+    zip_code = Column(Integer, ForeignKey('Zip.zip_id'))
     week = Column(Integer, ForeignKey('Week.week_id'))
 
 class Week(Base):
