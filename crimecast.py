@@ -70,7 +70,6 @@ def week(week_id):
 def crimetype_home():
     return app.send_static_file('index.html')
 
-
 @app.route('/crime_types/<crimetype_id>')
 def crimetype(crimetype_id):
     print(crimetype_id)
@@ -87,7 +86,7 @@ def zip(zip_id):
 	return app.send_static_file('zips1.html', zip_id=zip_id)
 
 @app.route('/about')
-def zip_home():
+def about():
     return app.send_static_file('index.html')
 
 
