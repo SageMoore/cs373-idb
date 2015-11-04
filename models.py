@@ -20,11 +20,12 @@ class Crime(Base):
     lat = Column(Float, nullable=False)
     lng = Column(Float, nullable=False)
     address = Column(String(250), nullable=False)
-    crimeTypeId = Column(Integer, ForeignKey('CrimeType.crimeType_id'))
+    crimeType = Column(Integer, ForeignKey('CrimeType.crimeType_id'))
     time = Column(DateTime, nullable=False)
     description = Column(String(500))
-    crimetype = relationship("CrimeType", backref=backref('addresses', order_by=crime_id))
- 
+    zip = Column(Integer, ForeignKey('Zip.zip_id'))
+    week = Column(Integer, ForeignKey('Week.week_id'))
+
 class Week(Base):
     """
     Here we define columns for the table Week.
@@ -35,6 +36,7 @@ class Week(Base):
     start = Column(DateTime, nullable=False)
     end = Column(DateTime, nullable=False)
     mostPopular = Column(Integer, ForeignKey('CrimeType.crimeType_id'))
+    worstZip = Column(Integer, ForeignKey('Zip.zip_id'))
 
 class Zip(Base):
     """
@@ -46,7 +48,7 @@ class Zip(Base):
     lat = Column(Float, nullable=False)
     lng = Column(Float, nullable=False)
     pop = Column(Integer, nullable=False)
-    crimeId = Column(Integer, ForeignKey('Crime.crime_id'))
+    family_income = Column(Integer, nullable=False)
 
 
 class CrimeType(Base):
@@ -64,6 +66,7 @@ class CrimeType(Base):
         return "<User(crimeType_id='%s', name='%s', desc='%s', worstarea='%f')>" % (
             self.crimeType_id, self.name, self.desc, self.worstArea)
 
+    worstWeek = Column(Integer, ForeignKey('Week.week_id'))
 
 
 # Create an engine that stores data in the local directory's
