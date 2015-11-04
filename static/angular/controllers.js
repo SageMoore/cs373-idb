@@ -6,9 +6,19 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
     $scope.sortType     = 'id'; // set the default sort type
     $scope.sortReverse  = false;  // set the default sort order
 
-}).controller('crimesCtrl', function ($scope, http_service, services, $location) {
+}).controller('crimesCtrl', function ($scope, http_service, services, disqusApi, $location) {
 
     var map = services.getMap();
+
+    var params = {
+        limit: 5,
+        related: 'thread'
+    }
+
+    disqusApi.get('forums', 'listPosts', params).then(function (comments) {
+        $scope.comments = comments;
+        console.log(comments);
+    });
 
     var loadAllWidgets = function() {
         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");

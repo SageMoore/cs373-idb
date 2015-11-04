@@ -1,0 +1,19 @@
+{
+  "name": "cs373-idb",
+  "version": "0.0.0",
+  "homepage": "https://github.com/SageMoore/cs373-idb",
+  "authors": [
+    "Mark Daniel <mark.r.daniel@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-disqus-api": "*"
+  }
+}
