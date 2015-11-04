@@ -47,7 +47,8 @@ def add():
 #        session.add(week_3)
         print("commiting to database")
         session.commit()
-    except:
+    except Exception as e:
+        print(type(e))
         session.rollback()
         print("Everything broke")
     finally:
