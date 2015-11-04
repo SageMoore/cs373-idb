@@ -60,7 +60,7 @@ class CrimeType(Base):
     crimeType_id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False)
     desc = Column(String(500), nullable=False)
-    worstArea = Column(Integer, ForeignKey('Zip.zip_id'))
+    worstZip = Column(Integer, ForeignKey('Zip.zip_id'))
     # I think this is optional. just checking to see if it helps.
     def __repr__(self):
         return "<User(crimeType_id='%s', name='%s', desc='%s', worstarea='%f')>" % (
