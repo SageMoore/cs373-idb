@@ -18,8 +18,8 @@ class Week(Base):
     week_id = Column(Integer, primary_key=True)
     start = Column(DateTime, nullable=False)
     end = Column(DateTime, nullable=False)
-    mostPopular = Column(Integer, ForeignKey('CrimeType.crime_type_id'))
-    worstZip = Column(Integer, ForeignKey('Zip.zip_id'))
+    mostPopular = Column(Integer, ForeignKey('crime_type.crime_type_id'))
+    worstZip = Column(Integer, ForeignKey('zip.zip_id'))
 
 class Zip(Base):
     """
@@ -44,14 +44,11 @@ class CrimeType(Base):
     crime_type_id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False)
     desc = Column(String(500), nullable=False)
-    worstZip = Column(Integer, ForeignKey('Zip.zip_id'))
+    worstZip = Column(Integer, ForeignKey('zip.zip_id'))
     # I think this is optional. just checking to see if it helps.
     crimes = relationship("Crime")
-    def __repr__(self):
-        return "<User(crimeType_id='%s', name='%s', desc='%s', worstarea='%f')>" % (
-            self.crimeType_id, self.name, self.desc, self.worstArea)
 
-    worstWeek = Column(Integer, ForeignKey('Week.week_id'))
+    worstWeek = Column(Integer, ForeignKey('week.week_id'))
 
 
 class Crime(Base):
@@ -65,11 +62,11 @@ class Crime(Base):
     lat = Column(Float, nullable=False)
     lng = Column(Float, nullable=False)
     address = Column(String(250), nullable=False)
-    crimeType = Column(Integer, ForeignKey('CrimeType.crime_type_id'))
+    crimeType = Column(Integer, ForeignKey('crime_type.crime_type_id'))
     time = Column(DateTime, nullable=False)
     description = Column(String(500))
-    zip_code = Column(Integer, ForeignKey('Zip.zip_id'))
-    week = Column(Integer, ForeignKey('Week.week_id'))
+    zip_code = Column(Integer, ForeignKey('zip.zip_id'))
+    week = Column(Integer, ForeignKey('week.week_id'))
 # Create an engine that stores data in the local directory's
 # stuff.db file.
 def db_connect():
