@@ -45,7 +45,6 @@ def splash():
 
 @app.errorhandler(404)
 def page_not_found(e):
-    # your processing here
     return app.send_static_file('index.html')
 
 
