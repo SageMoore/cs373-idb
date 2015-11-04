@@ -5,7 +5,7 @@ import subprocess
 # import CrimeList
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from models import db_connect, Crime, Week, Zip, CrimeType
+# from models import db_connect, Crime, Week, Zip, CrimeType
 
 app = Flask(__name__, static_url_path="")
 api = Api(app)
