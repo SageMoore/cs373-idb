@@ -1,6 +1,6 @@
 <div class="jumbotron overlay-red" style="padding-bottom: 30%">
-    <div class="overlay" >
-        <h1 class="left" style="font-family: 'Passion One', cursive;" >Crimes</h1>
+    <div class="overlay">
+        <h1 class="left" style="font-family: 'Passion One', cursive;">Crimes</h1>
     </div>
     <br>
 
@@ -41,7 +41,8 @@
                                 <td><a href="crimes/{{crime.id}}">{{ crime.description }}</a></td>
                                 <td>{{ crime.time }}</td>
                                 <td> {{ crime.address }}</td>
-                                <td><a href="crime_type/{{crime.crime_type.crime_type_id}}">{{ crime.crime_type.crime_type_name }}</a></td>
+                                <td><a href="crime_type/{{crime.crime_type.crime_type_id}}">{{
+                                    crime.crime_type.crime_type_name }}</a></td>
                             </tr>
                             </tbody>
                         </table>
@@ -51,18 +52,24 @@
                     <div class="well" style="height: 350px">
                         <div class="gmap" id="map"></div>
                     </div>
-                    <div class="well" style="margin-left: auto">
-                        <div class="center">
-                            <a class="twitter-timeline" data-dnt="true" ng-init="get_twitter()"
-                               href="https://twitter.com/Austin_Police"
-                               data-widget-id="657287406689763329">Tweets by @Austin_Police</a>
-                        </div>
-                    </div>
+
                 </div>
 
+                <div class=" col-md-8 ">
+                    <div class="well" style="margin-left: 50px">
+                        <div recent-comments params="{limit: 5, related:'thread'}"></div>
+                    </div>
+                </div>
+                <div class=" col-md-4 " style="margin-left: auto">
+                    <div class="well" class="center">
+                        <a class="twitter-timeline" data-dnt="true" ng-init="get_twitter()"
+                           href="https://twitter.com/Austin_Police"
+                           data-widget-id="657287406689763329">Tweets by @Austin_Police</a>
+                    </div>
+                </div>
             </div>
         </div>
-        <div recent-comments params="{limit: 5, related:'thread'}"></div>
+
 
     </div>
 </div>
