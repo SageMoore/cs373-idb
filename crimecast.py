@@ -1,3 +1,4 @@
+import json
 from flask import Flask
 from flask_restful import reqparse, abort, Api, Resource
 import subprocess
@@ -205,6 +206,8 @@ class CrimeList(Resource):
         all_crimes = session.query(Crime).all()
         print('all_crimes is')
         print(all_crimes)
+        for c in all_crimes:
+            print(json.dumps(c.__dict__))
         return all_crimes
         # return CRIMES
 
