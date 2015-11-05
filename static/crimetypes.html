@@ -25,7 +25,7 @@
                                         Crime Type Id
                                         <span ng-show="sortType == 'crime_type_id'"  class="caret"></span>
                                     </a></td>
-                                    <td><a href= "" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+                                    <td><a ng-click="sortType = 'name'; sortReverse = !sortReverse">
                                         Crime Type
                                         <span ng-show="sortType == 'name'" class="caret"></span>
                                     </a></td>
@@ -33,13 +33,13 @@
                                         Description
                                         <span ng-show="sortType == 'desc'" class="caret"></span>
                                     </a></td>
-                                    <td><a ng-click="sortType = 'crimes'; sortReverse = !sortReverse">
-                                        Crimes
-                                        <span ng-show="sortType == 'crimes'" class="caret"></span>
+                                    <td><a ng-click="sortType = 'worstWeek.start_date'; sortReverse = !sortReverse">
+                                        Worst Week
+                                        <span ng-show="sortType == 'worstWeek.start_date'" class="caret"></span>
                                     </a></td>
-                                    <td><a ng-click="sortType = 'worstZip'; sortReverse = !sortReverse">
+                                    <td><a ng-click="sortType = 'worstZip.zip_code'; sortReverse = !sortReverse">
                                         Worst Zipcode
-                                        <span ng-show="sortType == 'worstZip'" class="caret"></span>
+                                        <span ng-show="sortType == 'worstZip.zip_code'" class="caret"></span>
                                     </a></td>
                                 </tr>
                                 </thead>
@@ -49,16 +49,7 @@
                                     <td><a href="crime_types/{{ type.crime_type_id }}">{{ type.crime_type_id }}</a></td>
                                     <td><a href="crime_types/{{ type.crime_type_id }}">{{ type.name }}</a></td>
                                     <td>{{ type.desc }}</td>
-                                    <td>
-                                        <table class="table table-hover">
-                                            <tbody>
-                                            <tr ng-repeat="crime in type.crimes">
-                                                <td><a href="crimes/{{crime.crime_id}}">{{ crime.crime_id }}</a></td>
-                                                <td>{{ crime.description }}</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </td>
+                                    <td><a href="weeks/{{type.worstWeek.week_id}}">{{ type.worstWeek.start_date }}</a></td>
                                     <td><a href="zips/{{type.worstZip.zip_id}}">{{ type.worstZip.zip_code }}</a></td>
                                 </tr>
                                 </tbody>
