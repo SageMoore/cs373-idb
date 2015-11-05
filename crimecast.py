@@ -224,6 +224,10 @@ class CrimeList(Resource):
                 print(dir(c))
                 print('description')
                 print(c.description)
+                crime_json = {'crime_id' : c.crime_id, 'lat' : c.lat, 'lng' : c.lat, 'address' : c.address, 'crime_type' : c.crime_type, 'time', c.time, 'description', c.description, 'zip_code', c.week}
+                print('crime json worked')
+                print(crime_json)
+                crimes_json.append(crimes_json)
                 reader = codecs.getreader("utf-8")
                 obj = json.load(reader(c))
                 print('obj is')
@@ -233,7 +237,7 @@ class CrimeList(Resource):
                 print('there was an error')
                 print(c)
                 print(c.crime_id)
-            crimes_json.append(json.dumps(str(dict(c))))
+            # crimes_json.append(json.dumps(str(dict(c))))
         return crimes_json
         # return CRIMES
 
