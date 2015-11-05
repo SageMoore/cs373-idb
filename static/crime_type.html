@@ -1,6 +1,6 @@
 <div class="jumbotron overlay-blue" style="padding-bottom: 30%">
     <div class="overlay" >
-        <h1 class="left" style="font-family: 'Passion One';"  ng-model="crime" class="add-margins">{{crime.description}}</h1>
+        <h1 class="left" style="font-family: 'Passion One';"  ng-model="crime_type" class="add-margins">{{crime_type.description}}</h1>
     </div>
     <br>
 
@@ -13,12 +13,12 @@
                 <div class="col-md-2">Time</div>
                 <div class="col-md-1">Id</div>
             </div>
-            <div ng-model="crime" class="row show-grid" id="menu-vals" style="margin-left: auto">
-                <div class="col-md-2 field alert-danger" id="crime-type-val"><a class="alert-danger" href="/crime_types/{{crime.crime_type.crime_type_id}}">{{crime.crime_type.name}}</a></div>
+            <div ng-model="crime_type" class="row show-grid" id="menu-vals" style="margin-left: auto">
+                <div class="col-md-2 field alert-danger" id="crime-type-val"><a class="alert-danger" href="/crime_types/{{crime.crime_type.crime_type_id}}">{{crime.crime_type.crime_type_name}}</a></div>
                 <div class="col-md-2 col-md-offset-1 field alert-info"><a href="/crimes/{{crime.id}}">{{crime.description}}</a></div>
                 <div class="col-md-2 field alert-info"><a >{{crime.address}}</a></div>
                 <div class="col-md-2 field alert-info"><a >{{crime.time}}</a></div>
-                <div class="col-md-1 field alert-info"><a >{{crime.crime_id}}</a></div>
+                <div class="col-md-1 field alert-info"><a >{{crime.id}}</a></div>
             </div>
         </div>
     </div>

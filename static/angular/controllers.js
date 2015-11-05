@@ -61,6 +61,8 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
 
 }).controller('crimeTypesCtrl', function ($scope, http_service, services, $location) {
 
+    var map = services.getMap();
+
     var getCrimeTypes = function() {
         http_service.getRequestGeneric('crime_types').then(function(data) {
             $scope.crimeTypes = data;
@@ -89,6 +91,8 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
 
 }).controller('weeksCtrl', function ($scope, http_service, services, $location) {
 
+    var map = services.getMap();
+
     var getWeeks = function() {
         http_service.getRequestGeneric('weeks').then(function(data) {
             $scope.weeks = data;
@@ -116,6 +120,8 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
     $scope.week = getWeek(weekId);
 
 }).controller('zipsCtrl', function ($scope, http_service, services, $location) {
+
+    var map = services.getMap();
 
     var getZips = function() {
         http_service.getRequestGeneric('zips').then(function(data) {
