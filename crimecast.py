@@ -58,52 +58,6 @@ def index(path):
     print('in default')
     return app.send_static_file('index.html')
 
-# # Static crimes page
-# @app.route('/crimes')
-# def crimes():
-#     return app.send_static_file('index.html')
-#
-# # Static crime page
-# @app.route('/crimes/<crime_id>')
-# def crime(crime_id):
-#     return app.send_static_file('index.html')
-#
-#
-# # Static weeks page
-# @app.route('/weeks')
-# def weeks():
-#     return app.send_static_file('index.html')
-#
-# # Static week page
-# @app.route('/weeks/<week_id>')
-# def week(week_id):
-#     return app.send_static_file('index.html')
-#
-#
-# # Crime Type
-# @app.route('/crime_types')
-# def crimetype_home():
-#     return app.send_static_file('index.html')
-#
-# @app.route('/crime_types/<crimetype_id>')
-# def crimetype(crimetype_id):
-#     print(crimetype_id)
-#     type_file = 'crimeType_' + str(crimetype_id) + '.html'
-#     print(type_file)
-#     return app.send_static_file(type_file)
-#
-# @app.route('/zips')
-# def zip_home():
-#     return app.send_static_file('index.html')
-#
-# @app.route('/zips/<zip_id>')
-# def zip(zip_id):
-# 	return app.send_static_file('index.html')
-#
-# @app.route('/about')
-# def about():
-#     return app.send_static_file('index.html')
-
 
 CRIMES = [
     {
@@ -272,8 +226,17 @@ class CrimeById(Resource):
         # assert len(CRIMES) > crime_id
         crime = session.query(Crime).from_statement(text("select * from crime where crime_id=:crime_id")).param(crime_id=crime_id).all()
         
-        print(str(crime.__dict__))
-        return json.dumps(crime.__dict__)
+        crime_json = {'crime_id': crime.crime_id, 
+                      'lat': crime.lat, 
+                      'lng': crime.lng,
+                      'address': crime.address,
+                      'crime_type': crime.crime_type,
+                      'time': str(crime.time),
+                      'description': crime.description,
+                      'zip_code': crime.zip_code,
+                      'week': crime.week}
+
+        return crime_json
 
     def post(self):
         pass
@@ -282,19 +245,33 @@ class CrimeById(Resource):
 # shows a list of all crime types
 class CrimeTypeList(Resource):
     def get(self):
-        # all_crime_types = session.query(CrimeType).all()
+        all_crime_types = session.query(CrimeType).all()
+        crime_types_json = []
+        for crime_type in all_crime_types:
+            crime_type_json = {'crime_type_id':crime_type.crime_type_id,
+                               'name':crime_type.name,
+                               'desc':crime_type.desc,
+                               'worst_zip':crime_type.worst_zip,
+                               'worst_week':crime_type.worst_week}
+            crime_types_json += [crime_type_json]
         # return all_crime_types
-        return CRIMETYPES
+        return crime_types_json
 
     def post(self):
         pass
 
 # Crime Type
 # returns a crime type by id
-class CrimeTypeById(Resource):
+class CrimeTypeById(Resource, crime_type_id):
     def get(self, crime_type_id):
         # select * from CRIMETYPES as c where crime_id = c.id
-        return CRIMETYPES[int(crime_type_id) - 1]
+        crime_type = session.query(CrimeType).from_statement(text("select * from crime_type where crime_type_id=:crime_type_id")).param(crime_type_id=crime_type_id).all()
+        crime_type_json = {'crime_type_id':crime_type.crime_type_id,
+                           'name':crime_type.name,
+                           'desc':crime_type.desc,
+                           'worst_zip':crime_type.worst_zip,
+                           'worst_week':crime_type.worst_week}
+        return crime_type_json
 
     def post(self):
         pass
@@ -303,9 +280,18 @@ class CrimeTypeById(Resource):
 # shows a list of all weeks
 class WeekList(Resource):
     def get(self):
-        # all_weeks = session.query(Week).all()
+        all_weeks = session.query(Week).all()
         # return all_weeks
-        return WEEKS
+        weeks_json = []
+        for week in all_weeks:
+            week_json= {'week_id':week.week_id,
+                        'start':crime_type.name,
+                        'end':crime_type.desc,
+                        'most_popular':week.most_popular,
+                        'worst_zip':week.worst_zip}
+            weeks_json += [week_json]
+        # return all weeks
+        return weeks_json
 
     def post(self):
         pass
@@ -314,8 +300,15 @@ class WeekList(Resource):
 # returns a week by id
 class WeekById(Resource):
     def get(self, week_id):
-        return WEEKS[int(week_id) - 1]
 
+        week = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).param(week_id=week_id).all()
+        
+        week_json= {'week_id':week.week_id,
+                    'start':crime_type.name,
+                    'end':crime_type.desc,
+                    'most_popular':week.most_popular,
+                    'worst_zip':week.worst_zip}
+        return week_json
     def post(self):
         pass
 
@@ -325,16 +318,36 @@ class ZipList(Resource):
     def get(self):
         # all_zips = session.query(Zip).all()
         # return all_zips
-        return ZIPS
+        all_zips = session.query(Zip).all()
+        # return all_weeks
+        zips_json = []
+        for z in all_zips:
+            z_json= {'zip_id':z.zip_id,
+                     'zip_code':z.zip_code,
+                     'lat':z.lat,
+                     'lng':z.lng,
+                     'pop':z.pop,
+                     'family_income':z.family_income}
+            zips_json += [z_json]
+        # return all weeks
+        return zips_json
 
     def post(self):
         pass
 
 # Zipcode
 # returns a zipcode by id
-class ZipById(Resource):
+class ZipById(Resource, zip_id):
     def get(self, zip_id):
-        return ZIPS[int(zip_id) - 1]
+        z = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).param(zip_id=zip_id).all()
+        z_json= {'zip_id':z.zip_id,
+                 'zip_code':z.zip_code,
+                 'lat':z.lat,
+                 'lng':z.lng,
+                 'pop':z.pop,
+                 'family_income':z.family_income}
+
+        return z_json
 
     def post(self):
         pass
