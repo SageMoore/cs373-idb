@@ -162,8 +162,8 @@ ZIPS = [
         {
             'zip_id': '1',
             'zip_code': '78704',
-            'lat': '32.123',
-            'lng': '32.123',
+            'lat': '30.28500',
+            'lng': '-97.7320000',
             'pop': '12345',
             'family_income': '12345',
             'crimes':
@@ -225,7 +225,7 @@ class CrimeList(Resource):
                 print('description')
                 print(c.description)
                 print('got description. getting crimejson')
-                crime_json = {'crime_id' : c.crime_id, 'lat' : c.lat, 'lng' : c.lat, 'address' : c.address, 'crime_type' : c.crime_type, 'time', c.time, 'description', c.description, 'zip_code', c.week}
+                crime_json = {'crime_id' : c.crime_id, 'lat' : c.lat, 'lng' : c.lng, 'address' : c.address, 'crime_type' : c.crime_type, 'time' : c.time, 'description' : c.description, 'zip_code' : c.zip_code, 'week' : c.week}
                 print('crime json worked')
                 print(crime_json)
                 crimes_json.append(crimes_json)
