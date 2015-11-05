@@ -205,10 +205,12 @@ class CrimeList(Resource):
         print(session)
         all_crimes = session.query(Crime).all()
         print('all_crimes is')
+        crimes_json = []
         print(all_crimes)
         for c in all_crimes:
             print(json.dumps(c.__dict__))
-        return all_crimes
+            crimes_json.append(json.dumps(c.__dict__))
+        return crimes_json
         # return CRIMES
 
     def post(self):
