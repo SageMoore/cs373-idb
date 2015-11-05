@@ -17,11 +17,7 @@ api = Api(app)
 # engine = create_engine('postgres://crimedata:poop@crimecast.xyz:5000/crimedata')
 # engine = create_engine('postgresql://crimedata:poop@localhost/crimedata')
 engine = db_connect()
-print('engine is: ')
-print(engine)
 DBSession = sessionmaker(bind=engine)
-print('debsession is: ')
-print(DBSession)
 session = DBSession()
 
 #Query a specific table in database example
