@@ -288,9 +288,10 @@ class ZipById(Resource):
 # Returns the results of running tests.py -- for use on the 'About' page
 class Tests(Resource):
     def get(self):
-        p = subprocess.Popen('python3 cs373-idb/tests.py', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        #p = subprocess.Popen('python cs373-idb/tests.py', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen('echo "Test process HERP DERP FLERP"', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         output, errors = p.communicate()
-        return { 'results': str(errors) }
+        return { 'results': str(output) }
         #return { 'results': 'HERP DERP FLERP' }
 
 ##
