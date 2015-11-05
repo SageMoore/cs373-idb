@@ -46,7 +46,7 @@ class CrimecastDBTestCase(unittest.TestCase):
     def test_find_crime(self):
         self.session.add(Crime(lat=30.28500, lng=-97.7320000, time=datetime.date(year=2015, month=10, day=28), address="gdc", description="Graffiti of pig on building"))
         self.session.commit()
-        query = self.session.query(Crime).filter_by(Crime.address == "gdc").all()
+        query = self.session.query(Crime).filter(Crime.address == "gdc").all()
         q_size = len(query)
 
         assert q_size == 1
@@ -55,7 +55,7 @@ class CrimecastDBTestCase(unittest.TestCase):
         self.session.add(Crime(lat=30.28500, lng=-97.7320000, time=datetime.date(year=2015, month=10, day=28), address="gdc", description="Graffiti of pig on building"))
         self.session.add(Crime(lat=30.28500, lng=-97.7320000, time=datetime.date(year=2015, month=10, day=28), address="gdc", description="Graffiti of cow on building"))
         self.session.commit()
-        query = self.session.query(Crime).filter_by(Crime.address == "gdc").all()
+        query = self.session.query(Crime).filter(Crime.address == "gdc").all()
         q_size = len(query)
 
         assert q_size == 2
@@ -64,7 +64,7 @@ class CrimecastDBTestCase(unittest.TestCase):
         self.session.add(Crime(lat=30.28500, lng=-97.7320000, time=datetime.date(year=2015, month=10, day=28), address="gdc", description="Graffiti of pig on building"))
         self.session.add(Crime(lat=30.28500, lng=-97.7320000, time=datetime.date(year=2015, month=10, day=28), address="gdc", description="Graffiti of cow on building"))
         self.session.commit()
-        query = self.session.query(Crime).filter_by(Crime.address == "gdc").first()
+        query = self.session.query(Crime).filter(Crime.address == "gdc").first()
 
         assert query.description == "Graffiti of pig on building"
 
@@ -87,7 +87,7 @@ class CrimecastDBTestCase(unittest.TestCase):
     def test_find_crime_type(self):
         self.session.add(CrimeType(name='Vandalism', desc = "Vandalism is bad"))
         self.session.commit()
-        query = self.session.query(CrimeType).filter_by(CrimeType.name == "Vandalism").all()
+        query = self.session.query(CrimeType).filter(CrimeType.name == "Vandalism").all()
         q_size = len(query)
 
         assert q_size == 1
@@ -95,7 +95,7 @@ class CrimecastDBTestCase(unittest.TestCase):
     def test_crime_type_attributes(self):
         self.session.add(CrimeType(name='Vandalism', desc = "Vandalism is bad"))
         self.session.commit()
-        query = self.session.query(CrimeType).filter_by(CrimeType.name == "Vandalism").first()
+        query = self.session.query(CrimeType).filter(CrimeType.name == "Vandalism").first()
 
         assert query.desc == "Vandalism is bad"
 
@@ -118,7 +118,7 @@ class CrimecastDBTestCase(unittest.TestCase):
     def test_find_zipcode(self):
         self.session.add(Zip(zip_code=78704, lat=32.123, lng=32.123, pop=20000, family_income=50000))
         self.session.commit()
-        query = self.session.query(Zip).filter_by(Zip.pop == 20000).all()
+        query = self.session.query(Zip).filter(Zip.pop == 20000).all()
         q_size = len(query)
 
         assert q_size == 1
@@ -127,7 +127,7 @@ class CrimecastDBTestCase(unittest.TestCase):
         self.session.add(Zip(zip_code=78704, lat=32.123, lng=32.123, pop=20000, family_income=50000))
         self.session.add(Zip(zip_code=78705, lat=32.123, lng=32.123, pop=20000, family_income=40000))
         self.session.commit()
-        query = self.session.query(Zip).filter_by(Zip.pop == 20000).all()
+        query = self.session.query(Zip).filter(Zip.pop == 20000).all()
         q_size = len(query)
 
         assert q_size == 2
@@ -136,7 +136,7 @@ class CrimecastDBTestCase(unittest.TestCase):
         self.session.add(Zip(zip_code=78704, lat=32.123, lng=32.123, pop=20000, family_income=40000))
         self.session.add(Zip(zip_code=78705, lat=32.123, lng=32.123, pop=20000, family_income=50000))
         self.session.commit()
-        query = self.session.query(Zip).filter_by(Zip.pop == 20000).first()
+        query = self.session.query(Zip).filter(Zip.pop == 20000).first()
 
         assert query.family_income == 40000
 
@@ -159,7 +159,7 @@ class CrimecastDBTestCase(unittest.TestCase):
     def test_find_week(self):
         self.session.add(Week(start=datetime.date(year=2015, month=10, day=11), end=datetime.date(year=2015, month=10, day=17)))
         self.session.commit()
-        query = self.session.query(Week).filter_by(Week.start == datetime.date(year=2015, month=10, day=11)).all()
+        query = self.session.query(Week).filter(Week.start == datetime.date(year=2015, month=10, day=11)).all()
         q_size = len(query)
 
         assert q_size == 1
@@ -168,7 +168,7 @@ class CrimecastDBTestCase(unittest.TestCase):
         self.session.add(Week(start=datetime.date(year=2015, month=10, day=11), end=datetime.date(year=2015, month=10, day=17)))
         self.session.add(Week(start=datetime.date(year=2015, month=10, day=11), end=datetime.date(year=2015, month=10, day=17)))
         self.session.commit()
-        query = self.session.query(Week).filter_by(Week.start == datetime.date(year=2015, month=10, day=11)).all()
+        query = self.session.query(Week).filter(Week.start == datetime.date(year=2015, month=10, day=11)).all()
         q_size = len(query)
 
         assert q_size == 2
@@ -177,7 +177,7 @@ class CrimecastDBTestCase(unittest.TestCase):
         self.session.add(Week(start=datetime.date(year=2015, month=10, day=11), end=datetime.date(year=2015, month=10, day=17)))
         self.session.add(Week(start=datetime.date(year=2015, month=10, day=18), end=datetime.date(year=2015, month=10, day=24)))
         self.session.commit()
-        query = self.session.query(Week).filter_by(Week.start == datetime.date(year=2015, month=10, day=11)).first()
+        query = self.session.query(Week).filter(Week.start == datetime.date(year=2015, month=10, day=11)).first()
 
         assert query.end == datetime.date(year=2015, month=10, day=17)
 
