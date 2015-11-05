@@ -201,11 +201,12 @@ class CrimeTypeList(Resource):
         all_crime_types = session.query(CrimeType).all()
         crime_types_json = []
         for crime_type in all_crime_types:
-            crime_type_json = {'crime_type_id':crime_type.crime_type_id,
-                               'name':crime_type.name,
-                               'desc':crime_type.desc,
-                               'worst_zip':crime_type.worst_zip,
-                               'worst_week':crime_type.worst_week}
+            # crime_type_json = {'crime_type_id':crime_type.crime_type_id,
+            #                    'name':crime_type.name,
+            #                    'desc':crime_type.desc,
+            #                    'worst_zip':crime_type.worst_zip,
+            #                    'worst_week':crime_type.worst_week}
+            crime_type_json = row_to_dict(crime_type)
             crime_types_json += [crime_type_json]
         # return all_crime_types
         return json.dumps(crime_types_json)
@@ -237,10 +238,14 @@ class WeekList(Resource):
         # return all_weeks
         weeks_json = []
         for week in all_weeks:
+            most_popular = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).params(week_id=week.most_popular).first()
             week_json= {'week_id':week.week_id,
                         'start': str(week.start),
                         'end': str(week.end),
-                        'most_popular':week.most_popular,
+                        'most_popular': {
+                            'week_id': most_popular.week_id,
+                            'start': most_popular.start
+                        },
                         'worst_zip':week.worst_zip}
             weeks_json += [week_json]
         # return all weeks
@@ -304,6 +309,13 @@ class ZipById(Resource):
 
     def post(self):
         pass
+
+# Helper method, converts SQLAlchemy row to a dictionary
+def row_to_dict(row):
+    d = {}
+    for column in row.__table__.columns:
+        d[column.name] = str(getattr(row, column.name))
+    return d
 
 # Unit Tests
 # Returns the results of running tests.py -- for use on the 'About' page
