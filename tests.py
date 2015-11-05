@@ -16,6 +16,7 @@ class CrimecastDBTestCase(unittest.TestCase):
         self.engine = create_engine('postgresql://crimedata:poop@localhost/test')
         self.DBSession = sessionmaker(bind=self.engine)
         self.session = self.DBSession()
+        Base.metadata.create_all(self.engine)
 
     def tearDown(self):
         pass
