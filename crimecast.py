@@ -250,7 +250,7 @@ class WeekList(Resource):
             #             },
             #             'worst_zip':week.worst_zip}
             week_json = row_to_dict(week)
-            week['most_popular'] = row_to_dict(most_popular)
+            week_json['most_popular'] = row_to_dict(most_popular)
             weeks_json += [week_json]
         # return all weeks
         return json.dumps(weeks_json)
