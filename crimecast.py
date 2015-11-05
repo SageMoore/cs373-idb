@@ -204,7 +204,6 @@ WEEKS = [
 # shows a list of all crimes, and lets you POST to add new tasks
 class CrimeList(Resource):
     def get(self):
-        print('picking up code changes ')
         print('session is')
         print(session)
         print('printed session')
