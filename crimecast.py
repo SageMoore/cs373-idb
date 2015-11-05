@@ -182,7 +182,7 @@ class CrimeList(Resource):
                 crime_json = {'crime_id' : c.crime_id, 'lat' : c.lat, 'lng' : c.lng, 'address' : c.address, 'crime_type' : c.crime_type, 'time' : c.time, 'description' : c.description, 'zip_code' : c.zip_code, 'week' : c.week}
                 print('crime json worked')
                 print(crime_json)
-                crimes_json.append(crimes_json)
+                crimes_json += [crimes_json]
                 # reader = codecs.getreader("utf-8")
                 # obj = json.load(reader(c))
                 # print('obj is')
@@ -194,8 +194,22 @@ class CrimeList(Resource):
                 print(c.crime_id)
             # crimes_json.append(json.dumps(str(dict(c))))
         print('finished loop')
-        print(crimes_json)
-        return crimes_json
+        for c in crimes_json:
+            print(c)
+        obj = 'o'
+        try:
+            reader = codecs.getreader("utf-8")
+            obj = json.load(reader(c))
+        except Exception:
+            print('exception occured on geting obj')
+
+        print('object is ')
+        try:
+            print(str(obj))
+        except Exception:
+            pass
+        return obj
+
         # return CRIMES
 
     def post(self):
@@ -222,7 +236,7 @@ class CrimeById(Resource):
                       'zip_code': crime.zip_code,
                       'week': crime.week}
 
-        return crime_json
+        return json.dumps(crime_json)
 
     def post(self):
         pass
@@ -241,7 +255,7 @@ class CrimeTypeList(Resource):
                                'worst_week':crime_type.worst_week}
             crime_types_json += [crime_type_json]
         # return all_crime_types
-        return crime_types_json
+        return json.dumps(crime_types_json)
 
     def post(self):
         pass
@@ -257,7 +271,7 @@ class CrimeTypeById(Resource, crime_type_id):
                            'desc':crime_type.desc,
                            'worst_zip':crime_type.worst_zip,
                            'worst_week':crime_type.worst_week}
-        return crime_type_json
+        return json.dumps(crime_type_json)
 
     def post(self):
         pass
@@ -277,7 +291,7 @@ class WeekList(Resource):
                         'worst_zip':week.worst_zip}
             weeks_json += [week_json]
         # return all weeks
-        return weeks_json
+        return json.dumps(weeks_json)
 
     def post(self):
         pass
@@ -294,7 +308,7 @@ class WeekById(Resource):
                     'end':none,
                     'most_popular':week.most_popular,
                     'worst_zip':week.worst_zip}
-        return week_json
+        return json.dumps(week_json)
     def post(self):
         pass
 
@@ -316,7 +330,7 @@ class ZipList(Resource):
                      'family_income':z.family_income}
             zips_json += [z_json]
         # return all weeks
-        return zips_json
+        return json.dumps(zips_json)
 
     def post(self):
         pass
@@ -333,7 +347,7 @@ class ZipById(Resource, zip_id):
                  'pop':z.pop,
                  'family_income':z.family_income}
 
-        return z_json
+        return json.dumps(z_json)
 
     def post(self):
         pass
