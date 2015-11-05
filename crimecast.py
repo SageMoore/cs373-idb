@@ -179,20 +179,22 @@ class CrimeList(Resource):
                 print('description')
                 print(c.description)
                 print('got description. getting crimejson')
-                crime_json = {'crime_id' : c.crime_id, 'lat' : c.lat, 'lng' : c.lat, 'address' : c.address, 'crime_type' : c.crime_type, 'time': c.time, 'description': c.description, 'zip_code': c.week}
+                crime_json = {'crime_id' : c.crime_id, 'lat' : c.lat, 'lng' : c.lng, 'address' : c.address, 'crime_type' : c.crime_type, 'time' : c.time, 'description' : c.description, 'zip_code' : c.zip_code, 'week' : c.week}
                 print('crime json worked')
                 print(crime_json)
                 crimes_json.append(crimes_json)
-                reader = codecs.getreader("utf-8")
-                obj = json.load(reader(c))
-                print('obj is')
-                print(obj)
-                print(str(c))
+                # reader = codecs.getreader("utf-8")
+                # obj = json.load(reader(c))
+                # print('obj is')
+                # print(obj)
+                # print(str(c))
             except Exception:
-                print('there was an error')
+                print('there was an error... picking up changes')
                 print(c)
                 print(c.crime_id)
             # crimes_json.append(json.dumps(str(dict(c))))
+        print('finished loop')
+        print(crimes_json)
         return crimes_json
         # return CRIMES
 
