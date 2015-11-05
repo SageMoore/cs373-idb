@@ -33,17 +33,13 @@
                                         End Date
                                         <span ng-show="sortType == 'end_date'" class="caret"></span>
                                     </a></td>
-                                    <td><a ng-click="sortType = 'mostPopular'; sortReverse = !sortReverse">
+                                    <td><a ng-click="sortType = 'mostPopular.name'; sortReverse = !sortReverse">
                                         Most Popular Crime
-                                        <span ng-show="sortType == 'mostPopular'" class="caret"></span>
+                                        <span ng-show="sortType == 'mostPopular.name'" class="caret"></span>
                                     </a></td>
-                                    <td><a ng-click="sortType = 'worstZip'; sortReverse = !sortReverse">
+                                    <td><a ng-click="sortType = 'worstZip.zip_code'; sortReverse = !sortReverse">
                                         Worst Zipcode
-                                        <span ng-show="sortType == 'worstZip'" class="caret"></span>
-                                    </a></td>
-                                    <td><a ng-click="sortType = 'crimes'; sortReverse = !sortReverse">
-                                        Crimes
-                                        <span ng-show="sortType == 'crimes'" class="caret"></span>
+                                        <span ng-show="sortType == 'worstZip.zip_code'" class="caret"></span>
                                     </a></td>
                                 </tr>
                                 </thead>
@@ -55,15 +51,6 @@
                                     <td><a href="weeks/{{ week.week_id }}">{{ week.end_date }}</a></td>
                                     <td><a href="crime_types/{{week.mostPopular.crime_type_id}}">{{ week.mostPopular.name }}</a></td>
                                     <td><a href="zips/{{week.worstZip.zip_id}}">{{ week.worstZip.zip_code }}</a></td>
-                                    <td>
-                                        <table class="table table-hover">
-                                            <tbody>
-                                            <tr ng-repeat="crime in week.crimes">
-                                                <td><a href="crimes/{{crime.crime_id}}">{{ crime.crime_id }}</a></td>
-                                                <td>{{ crime.description }}</td>
-                                            </tbody>
-                                        </table>
-                                    </td>
                                 </tr>
                                 </tbody>
                             </table>

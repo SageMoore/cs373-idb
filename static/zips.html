@@ -45,10 +45,6 @@
                                         Average Income
                                         <span ng-show="sortType == 'family_income'" class="caret"></span>
                                     </a></td>
-                                    <td><a ng-click="sortType = 'crimes'; sortReverse = !sortReverse">
-                                        Crimes
-                                        <span ng-show="sortType == 'crimes'" class="caret"></span>
-                                    </a></td>
                                 </tr>
                                 </thead>
 
@@ -60,15 +56,6 @@
                                     <td>{{ zip.lng }}</td>
                                     <td>{{ zip.pop }}</td>
                                     <td>{{ zip.family_income }}</td>
-                                    <td>
-                                        <table class="table table-hover">
-                                            <tbody>
-                                            <tr ng-repeat="crime in zip.crimes">
-                                                <td><a href="/crimes/{{crime.crime_id}}">{{ crime.crime_id }}</a></td>
-                                                <td>{{ crime.description }}</td>
-                                            </tbody>
-                                        </table>
-                                    </td>
                                 </tr>
                                 </tbody>
                             </table>

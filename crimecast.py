@@ -58,52 +58,6 @@ def index(path):
     print('in default')
     return app.send_static_file('index.html')
 
-# # Static crimes page
-# @app.route('/crimes')
-# def crimes():
-#     return app.send_static_file('index.html')
-#
-# # Static crime page
-# @app.route('/crimes/<crime_id>')
-# def crime(crime_id):
-#     return app.send_static_file('index.html')
-#
-#
-# # Static weeks page
-# @app.route('/weeks')
-# def weeks():
-#     return app.send_static_file('index.html')
-#
-# # Static week page
-# @app.route('/weeks/<week_id>')
-# def week(week_id):
-#     return app.send_static_file('index.html')
-#
-#
-# # Crime Type
-# @app.route('/crime_types')
-# def crimetype_home():
-#     return app.send_static_file('index.html')
-#
-# @app.route('/crime_types/<crimetype_id>')
-# def crimetype(crimetype_id):
-#     print(crimetype_id)
-#     type_file = 'crimeType_' + str(crimetype_id) + '.html'
-#     print(type_file)
-#     return app.send_static_file(type_file)
-#
-# @app.route('/zips')
-# def zip_home():
-#     return app.send_static_file('index.html')
-#
-# @app.route('/zips/<zip_id>')
-# def zip(zip_id):
-# 	return app.send_static_file('index.html')
-#
-# @app.route('/about')
-# def about():
-#     return app.send_static_file('index.html')
-
 
 CRIMES = [
     {
@@ -162,8 +116,8 @@ ZIPS = [
         {
             'zip_id': '1',
             'zip_code': '78704',
-            'lat': '32.123',
-            'lng': '32.123',
+            'lat': '30.28500',
+            'lng': '-97.7320000',
             'pop': '12345',
             'family_income': '12345',
             'crimes':
@@ -224,16 +178,23 @@ class CrimeList(Resource):
                 print(dir(c))
                 print('description')
                 print(c.description)
-                reader = codecs.getreader("utf-8")
-                obj = json.load(reader(c))
-                print('obj is')
-                print(obj)
-                print(str(c))
+                print('got description. getting crimejson')
+                crime_json = {'crime_id' : c.crime_id, 'lat' : c.lat, 'lng' : c.lng, 'address' : c.address, 'crime_type' : c.crime_type, 'time' : c.time, 'description' : c.description, 'zip_code' : c.zip_code, 'week' : c.week}
+                print('crime json worked')
+                print(crime_json)
+                crimes_json.append(crimes_json)
+                # reader = codecs.getreader("utf-8")
+                # obj = json.load(reader(c))
+                # print('obj is')
+                # print(obj)
+                # print(str(c))
             except Exception:
-                print('there was an error')
+                print('there was an error... picking up changes')
                 print(c)
                 print(c.crime_id)
-            crimes_json.append(json.dumps(str(dict(c))))
+            # crimes_json.append(json.dumps(str(dict(c))))
+        print('finished loop')
+        print(crimes_json)
         return crimes_json
         # return CRIMES
 
