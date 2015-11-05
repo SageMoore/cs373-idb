@@ -219,6 +219,8 @@ class CrimeList(Resource):
             print('iter....')
             try:
                 print(dir(c))
+                print('description')
+                print(c.description)
                 reader = codecs.getreader("utf-8")
                 obj = json.load(reader(c))
                 print('obj is')
