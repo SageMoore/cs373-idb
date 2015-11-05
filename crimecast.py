@@ -14,9 +14,9 @@ api = Api(app)
 #//username:password@host:port/database
 
 # engine = create_engine('postgres://crimedata:poop@crimecast.xyz:5000/crimedata')
-engine = db_connect()
-DBSession = sessionmaker(bind=engine)
-session = DBSession()
+#engine = db_connect()
+#DBSession = sessionmaker(bind=engine)
+#session = DBSession()
 
 #Query a specific table in database example
 #result = engine.execute("select latitude from zipcode")
