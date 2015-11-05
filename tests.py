@@ -18,7 +18,7 @@ class CrimecastDBTestCase(unittest.TestCase):
         self.session = self.DBSession()
 
     def tearDown(self):
-        Base.metadata.drop_all(self.engine)
+        #Base.metadata.drop_all(self.engine)
 
     # -----------------
     # Crimes unit tests
