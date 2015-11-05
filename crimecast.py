@@ -158,20 +158,8 @@ WEEKS = [
 # shows a list of all crimes, and lets you POST to add new tasks
 class CrimeList(Resource):
     def get(self):
-        print('session is')
-        print(session)
-        print('printed session')
-        try:
-            print('in try')
-            all_crimes = session.query(Crime).all()
-        except Exception as e:
-            print('exceptions: ')
-            print(e)
-
-        print('all_crimes is')
+        all_crimes = session.query(Crime).all()
         crimes_json = []
-        print(all_crimes)
-        print('iterating')
         for c in all_crimes:
             print('iter....')
             try:
@@ -194,21 +182,21 @@ class CrimeList(Resource):
                 print(c.crime_id)
             # crimes_json.append(json.dumps(str(dict(c))))
         print('finished loop')
-        for c in crimes_json:
-            print(c)
-        obj = 'o'
-        try:
-            reader = codecs.getreader("utf-8")
-            obj = json.load(reader(c))
-        except Exception:
-            print('exception occured on geting obj')
-
-        print('object is ')
-        try:
-            print(str(obj))
-        except Exception:
-            pass
-        return obj
+        # for c in crimes_json:
+        #     print(c)
+        # obj = 'o'
+        # try:
+        #     reader = codecs.getreader("utf-8")
+        #     obj = json.load(reader(c))
+        # except Exception:
+        #     print('exception occured on geting obj')
+        #
+        # print('object is ')
+        # try:
+        #     print(str(obj))
+        # except Exception:
+        #     pass
+        return json.dumps(crimes_json)
 
         # return CRIMES
 
