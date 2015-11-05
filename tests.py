@@ -218,12 +218,13 @@ class CrimecastAPITestCase(unittest.TestCase):
 
     def test_crimes_non_empty_response(self):
         rv = self.app.get('/api/v1/crimes')
-        assert len(rv.data) > 0
+        data = json.loads(rv.data)
+        assert len(data) > 0
 
     def test_crimes_has_id(self):
         rv = self.app.get('/api/v1/crimes/1')
         data = json.loads(rv.data)
-        assert data["id"] == "1"
+        assert data["crime_id"] == "1"
 
     def test_crimes_has_address(self):
         rv = self.app.get('/api/v1/crimes/1')
