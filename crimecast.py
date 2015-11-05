@@ -262,7 +262,7 @@ class CrimeTypeList(Resource):
 
 # Crime Type
 # returns a crime type by id
-class CrimeTypeById(Resource, crime_type_id):
+class CrimeTypeById(Resource):
     def get(self, crime_type_id):
         # select * from CRIMETYPES as c where crime_id = c.id
         crime_type = session.query(CrimeType).from_statement(text("select * from crime_type where crime_type_id=:crime_type_id")).param(crime_type_id=crime_type_id).all()
@@ -285,8 +285,8 @@ class WeekList(Resource):
         weeks_json = []
         for week in all_weeks:
             week_json= {'week_id':week.week_id,
-                        'start': none,
-                        'end': none,
+                        'start': str(week.start),
+                        'end': str(week.end),
                         'most_popular':week.most_popular,
                         'worst_zip':week.worst_zip}
             weeks_json += [week_json]
@@ -304,8 +304,8 @@ class WeekById(Resource):
         week = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).param(week_id=week_id).all()
         
         week_json= {'week_id':week.week_id,
-                    'start':none,
-                    'end':none,
+                    'start':str(week.start),
+                    'end':str(week.end),
                     'most_popular':week.most_popular,
                     'worst_zip':week.worst_zip}
         return json.dumps(week_json)
@@ -337,7 +337,7 @@ class ZipList(Resource):
 
 # Zipcode
 # returns a zipcode by id
-class ZipById(Resource, zip_id):
+class ZipById(Resource):
     def get(self, zip_id):
         z = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).param(zip_id=zip_id).all()
         z_json= {'zip_id':z.zip_id,
