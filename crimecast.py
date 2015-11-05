@@ -235,7 +235,7 @@ class CrimeList(Resource):
                 # print(obj)
                 # print(str(c))
             except Exception:
-                print('there was an error')
+                print('there was an error... picking up changes')
                 print(c)
                 print(c.crime_id)
             # crimes_json.append(json.dumps(str(dict(c))))
