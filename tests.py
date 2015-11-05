@@ -8,6 +8,11 @@ from flask import json, jsonify
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
+from sqlalchemy import DateTime
+from sqlalchemy.ext.declarative import declarative_base
+
+Base = declarative_base()
+
 from models import CrimeType, Crime, Week, Zip
 
 class CrimecastDBTestCase(unittest.TestCase):
@@ -16,10 +21,11 @@ class CrimecastDBTestCase(unittest.TestCase):
         self.engine = create_engine('postgresql://crimedata:poop@localhost/test')
         self.DBSession = sessionmaker(bind=self.engine)
         self.session = self.DBSession()
+        Base.metadata.create_all(self.engine)
 
     def tearDown(self):
-        pass
-        #Base.metadata.drop_all(self.engine)
+        #pass
+        Base.metadata.drop_all(self.engine)
 
     # -----------------
     # Crimes unit tests

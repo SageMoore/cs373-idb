@@ -86,7 +86,6 @@ def create_tables(engine):
 
 # create_tables(db_connect())
 
-print('tables created')
  
 
 # to run database:
