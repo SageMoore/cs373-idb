@@ -337,7 +337,7 @@ class ZipList(Resource):
 
 # Zipcode
 # returns a zipcode by id
-class ZipById(Resource, zip_id):
+class ZipById(Resource):
     def get(self, zip_id):
         z = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).param(zip_id=zip_id).all()
         z_json= {'zip_id':z.zip_id,
