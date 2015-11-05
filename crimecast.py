@@ -102,30 +102,99 @@ def about():
 
 
 CRIMES = [
-    { 'id': 1, 'description': "Graffiti of pig on building", 'time': "10-20-2015 19:12:00" ,'address': "GDC", 'crime_type' : {'crime_type_id' : 3, 'crime_type_name' : 'Vandalism'}, 'lat' : 30.28500, 'lng' : -97.7320000  },
-    { 'id': 2, 'description': "Burglary at Quacks Bakery", 'time': "10-20-2015 19:20:00" ,'address': "Duval Rd", 'crime_type' : {'crime_type_id' : 2, 'crime_type_name' : 'Burglary'}, 'lat' : 30.30000, 'lng' : -97.730000  },
-    { 'id': 3, 'description': "Murder on 12th and Chicon", 'time': "10-20-2015 22:20:00" ,'address': "12th and Chicon", 'crime_type' : {'crime_type_id' : 1, 'crime_type_name' : 'Assault'}, 'lat' : 30.27000, 'lng' : -97.7190000  }
+    {
+        'crime_id': '1',
+        'lat': '30.28500',
+        'lng': '-97.7320000',
+        'address': 'GDC',
+        'crime_type':
+            {
+                'crime_type_id': '1',
+                'name': 'Vandalism'
+             },
+        'time': '10-12-2015 19:12:00',
+        'description': 'Graffiti of pig on building',
+        'zip_code':
+            {
+                'zip_id': '1',
+                'zip_code': '78704'
+            },
+        'week':
+            {
+                'week_id': '1',
+                'start_date': '10/11/15'
+            }
+    },
+    {'crime_id': '2', 'lat': '30.30000', 'lng': '-97.730000', 'address': 'Duval Rd', 'crime_type': {'crime_type_id': '2', 'name': 'Burglary'}, 'time': '10-20-2015 19:20:00', 'description': 'Burglary at Quacks Bakery', 'zip_code': {'zip_id': '2', 'zip_code': '78705'}, 'week': {'week_id': '2', 'start_date': '10/18/15'}},
+    {'crime_id': '3', 'lat': '30.27000', 'lng': '-97.7190000', 'address': '12th and Chicon', 'crime_type': {'crime_type_id': '3', 'name': 'Assault'}, 'time': '10-30-2015 22:20:00', 'description': 'Murder on 12th and Chicon', 'zip_code': {'zip_id': '3', 'zip_code': '78706'}, 'week': {'week_id': '3', 'start_date': '10/25/15'}}
 ]
 
 CRIMETYPES = [
-    {'id': 2, 'crime_type': 'Burglary', 'description': "Burglary is bad", "crimes": [{"id": 2},{"id": 2},{"id": 2}], 'worst_zipcode': "78705"},
-    {'id': 1, 'crime_type': 'Assault', 'description': "Assault is bad", "crimes": [{"id": 3}], 'worst_zipcode': "78704"},
-    {'id': 3, 'crime_type': 'Vandalism', 'description': "Vandalism is bad", "crimes": [{"id": 1}], 'worst_zipcode': "78706"}
+    {
+        'crime_type_id': '1',
+        'name': 'Vandalism',
+        'desc': 'Vandalism is bad',
+        'worstZip':
+            {
+                'zip_id': '1',
+                'zip_code': '78704'
+            },
+        'worstWeek':
+            {
+                'week_id': '1',
+                'start_date': '10/11/15'
+            }
+        , 'crimes':
+        [
+            {'crime_id': '1',
+             'description': 'Graffiti of pig on building'}
+        ]
+    },
+    {'crime_type_id': '2', 'name': 'Burglary', 'desc': 'Burglary is bad', 'worstZip': {'zip_id': '2', 'zip_code': '78705'}, 'worstWeek': {'week_id': '2', 'start_date': '10/18/15'}, 'crimes': [{'crime_id': '2', 'description': 'Burglary at Quacks Bakery'}, {'crime_id': '2', 'description': 'Burglary at Quacks Bakery'}, {'crime_id': '2', 'description': 'Burglary at Quacks Bakery'}]},
+    {'crime_type_id': '3', 'name': 'Assault', 'desc': 'Assault is bad', 'worstZip': {'zip_id': '3', 'zip_code': '78706'}, 'worstWeek': {'week_id': '3', 'start_date': '10/25/15'}, 'crimes': [{'crime_id': '3', 'description': 'Murder on 12th and Chicon'}]},
 ]
 
 ZIPS = [
-        {'id': 1, 'zipcode': 78704, 'latitude': 32.123, 'longitude': 32.123, "crimes": [{"id": 1}]},
-        {'id': 2, 'zipcode': 78705, 'latitude': 30.123, 'longitude': 30.123, "crimes": [{"id": 2}]},
-        {'id': 3, 'zipcode': 78706, 'latitude': 35.123, 'longitude': 35.123, "crimes": [{"id": 3}]}
+        {
+            'zip_id': '1',
+            'zip_code': '78704',
+            'lat': '32.123',
+            'lng': '32.123',
+            'pop': '12345',
+            'family_income': '12345',
+            'crimes':
+                [
+                    {'crime_id': '1',
+                     'description': 'Graffiti of pig on building'}
+                ]
+        },
+        {'zip_id': '2', 'zip_code': '78705', 'lat': '30.123', 'lng': '30.123', 'pop': '12345', 'family_income':'12345', 'crimes': [{'crime_id': '2', 'description': 'Burglary at Quacks Bakery'}]},
+        {'zip_id': '3', 'zip_code': '78706', 'lat': '35.123', 'lng': '35.123', 'pop': '12345', 'family_income':'12345', 'crimes': [{'crime_id': '3', 'description': 'Murder on 12th and Chicon'}]}
 ]
 
 WEEKS = [
-        {'id': 1, 'start_date': "10/11/15", 'end_date': "10/17/15", 'popular_crime': "1", "crimes": [{"id": 1}]},
-        {'id': 2, 'start_date': "10/18/15", 'end_date': "10/24/15", 'popular_crime': "2", "crimes": [{"id": 2}]},
-        {'id': 3, 'start_date': "10/25/15", 'end_date': "10/31/15", 'popular_crime': "3", "crimes": [{"id": 3}]},
+        {
+            'week_id': '1',
+            'start_date': "10/11/15",
+            'end_date': "10/17/15",
+            'mostPopular': {
+                'crime_type_id': '1',
+                'name': 'Vandalism'
+            },
+            'worstZip': {
+                'zip_id': '1',
+                'zip_code': '78704'
+            },
+            'crimes':
+                [
+                    {'crime_id': '1',
+                     'description': 'Graffiti of pig on building'}
+                ]
+        },
+        {'week_id': '2', 'start_date': "10/18/15", 'end_date': "10/24/15", 'mostPopular': {'crime_type_id': '2', 'name': 'Burglary'}, 'worstZip': {'zip_id': '2', 'zip_code': '78705'}, 'crimes': [{'crime_id': '2', 'description': 'Burglary at Quacks Bakery'}]},
+        {'week_id': '3', 'start_date': "10/25/15", 'end_date': "10/31/15", 'mostPopular': {'crime_type_id': '3', 'name': 'Assault'}, 'worstZip': {'zip_id': '3', 'zip_code': '78706'}, 'crimes': [{'crime_id': '3', 'description': 'Murder on 12th and Chicon'}]},
 ]
 
-# TODO: add ur own fake data!
 
 # Crimes
 # shows a list of all crimes, and lets you POST to add new tasks
@@ -216,11 +285,12 @@ class ZipById(Resource):
 
 # Unit Tests
 # Returns the results of running tests.py -- for use on the 'About' page
-class Tests(Resource):
+class UnitTests(Resource):
     def get(self):
-        p = subprocess.Popen('python tests.py', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        output, errors = p.communicate()
-        return { 'results': str(errors) }
+        #p = subprocess.Popen('python tests.py', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        #output, errors = p.communicate()
+        #return { 'results': str(errors) }
+        return []
 
 ##
 ## Actually setup the Api resource routing here
@@ -234,8 +304,9 @@ api.add_resource(WeekById, '/api/v1/weeks/<week_id>')
 api.add_resource(ZipList, '/api/v1/zips')
 api.add_resource(ZipById, '/api/v1/zips/<zip_id>')
 
-api.add_resource(Tests, '/api/v1/tests')
+# api.add_resource(Tests, '/api/v1/tests')
 api.init_app(app)
+api.add_resource(UnitTests, '/api/v1/tests')
 
 
 if __name__ == "__main__":
