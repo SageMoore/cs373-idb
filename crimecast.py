@@ -15,6 +15,7 @@ api = Api(app)
 #//username:password@host:port/database
 
 # engine = create_engine('postgres://crimedata:poop@crimecast.xyz:5000/crimedata')
+
 # engine = create_engine('postgresql://crimedata:poop@localhost/crimedata')
 engine = db_connect()
 DBSession = sessionmaker(bind=engine)
@@ -57,51 +58,51 @@ def index(path):
     print('in default')
     return app.send_static_file('index.html')
 
-# Static crimes page
-@app.route('/crimes')
-def crimes():
-    return app.send_static_file('index.html')
-
-# Static crime page
-@app.route('/crimes/<crime_id>')
-def crime(crime_id):
-    return app.send_static_file('index.html')
-
-
-# Static weeks page
-@app.route('/weeks')
-def weeks():
-    return app.send_static_file('index.html')
-
-# Static week page
-@app.route('/weeks/<week_id>')
-def week(week_id):
-    return app.send_static_file('index.html')
-
-
-# Crime Type
-@app.route('/crime_types')
-def crimetype_home():
-    return app.send_static_file('index.html')
-
-@app.route('/crime_types/<crimetype_id>')
-def crimetype(crimetype_id):
-    print(crimetype_id)
-    type_file = 'crimeType_' + str(crimetype_id) + '.html'
-    print(type_file)
-    return app.send_static_file(type_file)
-
-@app.route('/zips')
-def zip_home():
-    return app.send_static_file('index.html')
-
-@app.route('/zips/<zip_id>')
-def zip(zip_id):
-	return app.send_static_file('index.html')
-
-@app.route('/about')
-def about():
-    return app.send_static_file('index.html')
+# # Static crimes page
+# @app.route('/crimes')
+# def crimes():
+#     return app.send_static_file('index.html')
+#
+# # Static crime page
+# @app.route('/crimes/<crime_id>')
+# def crime(crime_id):
+#     return app.send_static_file('index.html')
+#
+#
+# # Static weeks page
+# @app.route('/weeks')
+# def weeks():
+#     return app.send_static_file('index.html')
+#
+# # Static week page
+# @app.route('/weeks/<week_id>')
+# def week(week_id):
+#     return app.send_static_file('index.html')
+#
+#
+# # Crime Type
+# @app.route('/crime_types')
+# def crimetype_home():
+#     return app.send_static_file('index.html')
+#
+# @app.route('/crime_types/<crimetype_id>')
+# def crimetype(crimetype_id):
+#     print(crimetype_id)
+#     type_file = 'crimeType_' + str(crimetype_id) + '.html'
+#     print(type_file)
+#     return app.send_static_file(type_file)
+#
+# @app.route('/zips')
+# def zip_home():
+#     return app.send_static_file('index.html')
+#
+# @app.route('/zips/<zip_id>')
+# def zip(zip_id):
+# 	return app.send_static_file('index.html')
+#
+# @app.route('/about')
+# def about():
+#     return app.send_static_file('index.html')
 
 
 CRIMES = [
