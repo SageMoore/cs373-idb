@@ -224,6 +224,7 @@ class CrimeList(Resource):
                 print(dir(c))
                 print('description')
                 print(c.description)
+                print('got description. getting crimejson')
                 crime_json = {'crime_id' : c.crime_id, 'lat' : c.lat, 'lng' : c.lat, 'address' : c.address, 'crime_type' : c.crime_type, 'time', c.time, 'description', c.description, 'zip_code', c.week}
                 print('crime json worked')
                 print(crime_json)
