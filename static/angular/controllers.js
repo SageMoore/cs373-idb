@@ -148,6 +148,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
 
     $scope.runTests = function() {
         http_service.getRequestGeneric('tests').then(function(data) {
+            alert("Running tests...")
             $scope.results = data.results;
         })
     };
