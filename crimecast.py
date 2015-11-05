@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_restful import reqparse, abort, Api, Resource
-import subprocess
+import subprocess, os
 # from Crime import CrimeById
 # import CrimeList
 from sqlalchemy import create_engine
@@ -297,7 +297,8 @@ class Tests(Resource):
         #return { 'results': 'HERP DERP FLERP' }
 
         res = ''
-        for i in run_command(('python3 cs373-idb/tests.py').split()):
+        path = os.path.dirname(os.path.realpath(__file__))
+        for i in run_command(('python3 ' + path + '/tests.py').split()):
             res += i.decode("utf-8")
 
         return { 'results': res }
