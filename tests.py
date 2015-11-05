@@ -217,21 +217,21 @@ class CrimecastAPITestCase(unittest.TestCase):
     # -----------------
 
     def test_crimes_non_empty_response(self):
-        rv = self.app.get('/crimes')
+        rv = self.app.get('/api/v1/crimes')
         assert len(rv.data) > 0
 
     def test_crimes_has_id(self):
-        rv = self.app.get('/crimes/1')
+        rv = self.app.get('/api/v1/crimes/1')
         data = json.loads(rv.data)
         self.assert_equal(data["id"], "1")
 
     def test_crimes_has_address(self):
-        rv = self.app.get('/crimes/1')
+        rv = self.app.get('/api/v1/crimes/1')
         data = json.loads(rv.data)
         self.assert_equal(data["address"], "GDC")
 
     def test_crimes_has_type(self):
-        rv = self.app.get('/crimes/1')
+        rv = self.app.get('/api/v1/crimes/1')
         data = json.loads(rv.data)
         self.assert_equal(data["crime_type"], {
                 'crime_type_id': '1',
@@ -239,7 +239,7 @@ class CrimecastAPITestCase(unittest.TestCase):
              })
 
     def test_crimes_has_zip(self):
-        rv = self.app.get('/crimes/1')
+        rv = self.app.get('/api/v1/crimes/1')
         data = json.loads(rv.data)
         self.assert_equal(data["zip_code"], {
                 'zip_id': '1',
@@ -247,7 +247,7 @@ class CrimecastAPITestCase(unittest.TestCase):
             })
 
     def test_crimes_has_week(self):
-        rv = self.app.get('/crimes/1')
+        rv = self.app.get('/api/v1/crimes/1')
         data = json.loads(rv.data)
         self.assert_equal(data["week"], {
                 'week_id': '1',
