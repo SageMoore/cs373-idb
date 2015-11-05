@@ -209,8 +209,10 @@ class CrimeTypeList(Resource):
             #                    'worst_zip':crime_type.worst_zip,
             #                    'worst_week':crime_type.worst_week}
             crime_type_json = row_to_dict(crime_type)
-            crime_type_json['worst_week'] = row_to_dict(worst_week)
-            crime_type_json['worst_zip'] = row_to_dict(worst_zip)
+            if worst_week is not None:
+                crime_type_json['worst_week'] = row_to_dict(worst_week)
+            if worst_zip is not None:
+                crime_type_json['worst_zip'] = row_to_dict(worst_zip)
             print("all crime types", crime_type_json)
             crime_types_json += [crime_type_json]
         # return all_crime_types
@@ -233,8 +235,10 @@ class CrimeTypeById(Resource):
         #                    'worst_zip':crime_type.worst_zip,
         #                    'worst_week':crime_type.worst_week}
         crime_type_json = row_to_dict(crime_type)
-        crime_type_json['worst_week'] = row_to_dict(worst_week)
-        crime_type_json['worst_zip'] = row_to_dict(worst_zip)
+        if worst_week is not None:
+            crime_type_json['worst_week'] = row_to_dict(worst_week)
+        if worst_zip is not None:
+            crime_type_json['worst_zip'] = row_to_dict(worst_zip)
         print("individual crime asdffdsa", crime_type_json)
         return json.dumps(crime_type_json)
 
@@ -263,8 +267,10 @@ class WeekList(Resource):
             #             'worst_zip':week.worst_zip}
             week_json = row_to_dict(week)
             print(week_json)
-            week_json['most_popular'] = row_to_dict(most_popular)
-            week_json['worst_zip'] = row_to_dict(worst_zip)
+            if most_popular is not None:
+                week_json['most_popular'] = row_to_dict(most_popular)
+            if worst_zip is not None:
+                week_json['worst_zip'] = row_to_dict(worst_zip)
             print("all weeks fdafasdda",week_json)
             weeks_json += [week_json]
         # return all weeks
@@ -286,8 +292,10 @@ class WeekById(Resource):
         #             'most_popular':week.most_popular,
         #             'worst_zip':week.worst_zip}
         week_json = row_to_dict(week)
-        week_json['most_popular'] = row_to_dict(most_popular)
-        week_json['worst_zip'] = row_to_dict(worst_zip)
+        if most_popular is not None:
+            week_json['most_popular'] = row_to_dict(most_popular)
+        if worst_zip is not None:
+            week_json['worst_zip'] = row_to_dict(worst_zip)
         print("individual week asdfasdf",week_json)
         return json.dumps(week_json)
     def post(self):
