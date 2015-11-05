@@ -1,4 +1,5 @@
 import json
+import codecs
 from flask import Flask
 from flask_restful import reqparse, abort, Api, Resource
 import subprocess, os
@@ -218,6 +219,10 @@ class CrimeList(Resource):
             print('iter....')
             try:
                 print(dir(c))
+                reader = codecs.getreader("utf-8")
+                obj = json.load(reader(c))
+                print('obj is')
+                print(obj)
                 print(str(c))
             except Exception:
                 print('there was an error')
