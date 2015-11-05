@@ -2,13 +2,13 @@ import os
 import crimecast
 import unittest
 import tempfile
+import datetime
 
 from flask import json, jsonify
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from sqlalchemy import DateTime
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
@@ -41,37 +41,32 @@ class CrimecastDBTestCase(unittest.TestCase):
 
         end_size = len(query)
 
-        self.assertEqual(start_size + 1, end_size)
+        assert (start_size + 1) == end_size
 
     def test_find_crime(self):
-        self.session.add(Crime(name="crime", lat=43.21, lng=12.34, addres="123 place",
-                               time="11/11/11", description="asdf", zip=1, week=1))
+        self.session.add(Crime(lat=30.28500, lng=-97.7320000, time=datetime.date(year=2015, month=10, day=28), address="gdc", description="Graffiti of pig on building"))
         self.session.commit()
-        query = self.session.query(Crime).filter(Crime.name == "crime")
+        query = self.session.query(Crime).filter(Crime.description == "Graffiti of pig on building")
         q_size = len(query)
 
-        self.assertEqual(q_size, 1)
+        assert q_size == 1
 
     def test_find_crime_multiple(self):
-        self.session.add(Crime(name="crime", lat=43.21, lng=12.34, addres="123 place",
-                               time="11/11/11", description="asdf", zip=1, week=1))
-        self.session.add(Crime(name="crime", lat=43.21, lng=12.34, addres="123 place",
-                               time="11/11/11", description="fdsa", zip=1, week=1))
+        self.session.add(Crime(lat=30.28500, lng=-97.7320000, time=datetime.date(year=2015, month=10, day=28), address="gdc", description="Graffiti of pig on building"))
+        self.session.add(Crime(lat=30.28500, lng=-97.7320000, time=datetime.date(year=2015, month=10, day=28), address="gdc", description="Graffiti of cow on building"))
         self.session.commit()
-        query = self.session.query(Crime).filter(Crime.name == "crime")
+        query = self.session.query(Crime).filter(Crime.address == "gdc")
         q_size = len(query)
 
-        self.assertEqual(q_size, 2)
+        assert q_size == 2
 
     def test_crime_attributes(self):
-        self.session.add(Crime(name="crime", lat=43.21, lng=12.34, addres="123 place",
-                               time="11/11/11", description="asdf", zip=1, week=1))
-        self.session.add(Crime(name="crime2", lat=43.21, lng=12.34, addres="123 place",
-                               time="11/11/11", description="fdsa", zip=1, week=1))
+        self.session.add(Crime(lat=30.28500, lng=-97.7320000, time=datetime.date(year=2015, month=10, day=28), address="gdc", description="Graffiti of pig on building"))
+        self.session.add(Crime(lat=30.28500, lng=-97.7320000, time=datetime.date(year=2015, month=10, day=28), address="gdc", description="Graffiti of cow on building"))
         self.session.commit()
-        query = self.session.query(Crime).filter(Crime.name == "crime").first()
+        query = self.session.query(Crime).filter(Crime.address == "gdc").first()
 
-        self.assertEqual(query.description, "asdf")
+        assert query.description == "Graffiti of pig on building"
 
     # -----------------
     # Crime Types unit tests
@@ -81,38 +76,28 @@ class CrimecastDBTestCase(unittest.TestCase):
         query = self.session.query(CrimeType).all()
         start_size = len(query)
 
-        self.session.add(CrimeType(name="crimetype", desc="asdf", worstArea=1, worst_week=1))
+        self.session.add(CrimeType(name='Vandalism', desc = "Vandalism is bad"))
         self.session.commit()
         query = self.session.query(CrimeType).all()
 
         end_size = len(query)
 
-        self.assertEqual(start_size + 1, end_size)
+        assert (start_size + 1) == end_size
 
     def test_find_crime_type(self):
-        self.session.add(CrimeType(name="crimetype", desc="asdf", worstArea=1, worst_week=1))
+        self.session.add(CrimeType(name='Vandalism', desc = "Vandalism is bad"))
         self.session.commit()
-        query = self.session.query(CrimeType).filter(CrimeType.name == "crimetype")
+        query = self.session.query(CrimeType).filter(CrimeType.name == "Vandalism")
         q_size = len(query)
 
-        self.assertEqual(q_size, 1)
-
-    def test_find_crime_type_multiple(self):
-        self.session.add(CrimeType(name="crimetype", desc="asdf", worstArea=1, worst_week=1))
-        self.session.add(CrimeType(name="crimetype", desc="fdsa", worstArea=1, worst_week=1))
-        self.session.commit()
-        query = self.session.query(CrimeType).all()
-        q_size = len(query)
-
-        self.assertEqual(q_size, 2)
+        assert q_size == 1
 
     def test_crime_type_attributes(self):
-        self.session.add(CrimeType(name="crimetype", desc="asdf", worstArea=1, worst_week=1))
-        self.session.add(CrimeType(name="crimetype2", desc="fdas", worstArea=1, worst_week=1))
+        self.session.add(CrimeType(name='Vandalism', desc = "Vandalism is bad"))
         self.session.commit()
-        query = self.session.query(CrimeType).filter(CrimeType.name == "crimetype").first()
+        query = self.session.query(CrimeType).filter(CrimeType.name == "Vandalism").first()
 
-        self.assertEqual(query.description, "asdf")
+        assert query.desc == "Vandalism is bad"
 
     # -----------------
     # Zipcodes unit tests

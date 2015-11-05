@@ -204,10 +204,16 @@ WEEKS = [
 # shows a list of all crimes, and lets you POST to add new tasks
 class CrimeList(Resource):
     def get(self):
-        print('picking up code changes ')
         print('session is')
         print(session)
-        all_crimes = session.query(Crime).all()
+        print('printed session')
+        try:
+            print('in try')
+            all_crimes = session.query(Crime).all()
+        except Exception as e:
+            print('exceptions: ')
+            print(e)
+
         print('all_crimes is')
         crimes_json = []
         print(all_crimes)
