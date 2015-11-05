@@ -207,7 +207,11 @@ class CrimeList(Resource):
         print('picking up code changes ')
         print('session is')
         print(session)
-        all_crimes = session.query(Crime).all()
+        try:
+            all_crimes = session.query(Crime).all()
+        except Exception as e:
+            print(e)
+
         print('all_crimes is')
         crimes_json = []
         print(all_crimes)
