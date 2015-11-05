@@ -161,44 +161,9 @@ class CrimeList(Resource):
         all_crimes = session.query(Crime).all()
         crimes_json = []
         for c in all_crimes:
-            print('iter....')
-            try:
-                print(dir(c))
-                print('description')
-                print(c.description)
-                print('got description. getting crimejson')
-                crime_json = {'crime_id' : c.crime_id, 'lat' : c.lat, 'lng' : c.lng, 'address' : c.address, 'crime_type' : c.crime_type, 'time' : c.time, 'description' : c.description, 'zip_code' : c.zip_code, 'week' : c.week}
-                print('crime json worked')
-                print(crime_json)
-                crimes_json += [crimes_json]
-                # reader = codecs.getreader("utf-8")
-                # obj = json.load(reader(c))
-                # print('obj is')
-                # print(obj)
-                # print(str(c))
-            except Exception:
-                print('there was an error... picking up changes')
-                print(c)
-                print(c.crime_id)
-            # crimes_json.append(json.dumps(str(dict(c))))
-        print('finished loop')
-        # for c in crimes_json:
-        #     print(c)
-        # obj = 'o'
-        # try:
-        #     reader = codecs.getreader("utf-8")
-        #     obj = json.load(reader(c))
-        # except Exception:
-        #     print('exception occured on geting obj')
-        #
-        # print('object is ')
-        # try:
-        #     print(str(obj))
-        # except Exception:
-        #     pass
+            crime_json = {'crime_id' : c.crime_id, 'lat' : c.lat, 'lng' : c.lng, 'address' : c.address, 'crime_type' : c.crime_type, 'time' : c.time, 'description' : c.description, 'zip_code' : c.zip_code, 'week' : c.week}
+            crimes_json += [crime_json]
         return json.dumps(crimes_json)
-
-        # return CRIMES
 
     def post(self):
         args = parser.parse_args()
