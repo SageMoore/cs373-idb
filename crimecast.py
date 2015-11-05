@@ -5,7 +5,7 @@ from flask_restful import reqparse, abort, Api, Resource
 import subprocess, os
 # from Crime import CrimeById
 # import CrimeList
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
 from models import db_connect, Crime, Week, Zip, CrimeType
 
