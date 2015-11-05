@@ -87,17 +87,18 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
     $scope.crimeTypes = getCrimeTypes();
     $scope.goToCrimeType = goToCrimeType;
 
-}).controller('crimeTypeCtrl', function ($scope, http_service, $location, $stateParams) {
+}).controller('crimeTypeCtrl', function ($scope, http_service, $location, $stateParams, services) {
 
-    var crimeId = $stateParams.crimeTypeId;
+    var crime_type_id = $stateParams.crime_type_id;
+    var map = services.getMap();
 
-    var getCrimeType = function(crimeTypeId) {
-        http_service.getCrimeType(crimeTypeId).then(function(data) {
-            $scope.crimeType = data;
+    var getCrimeType = function(crime_type_id) {
+        http_service.getCrimeType(crime_type_id).then(function(data) {
+            $scope.crime_type = data;
         })
     };
 
-    $scope.crimeType = getCrimeType(crimeId);
+    $scope.crime_type = getCrimeType(crime_type_id);
 
 }).controller('weeksCtrl', function ($scope, http_service, services, $location) {
 
@@ -117,17 +118,18 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
     $scope.weeks = getWeeks();
     $scope.goToWeek = goToWeek;
 
-}).controller('weekCtrl', function ($scope, http_service, $location, $stateParams) {
+}).controller('weekCtrl', function ($scope, http_service, $location, $stateParams, services) {
 
-    var weekId = $stateParams.weekId;
+    var week_id = $stateParams.week_id;
+    var map = services.getMap();
 
-    var getWeek = function(weekId) {
-        http_service.getWeek(weekId).then(function(data) {
+    var getWeek = function(week_id) {
+        http_service.getWeek(week_id).then(function(data) {
             $scope.week = data;
         })
     };
 
-    $scope.week = getWeek(weekId);
+    $scope.week = getWeek(week_id);
 
 }).controller('zipsCtrl', function ($scope, http_service, services, $location) {
 
@@ -147,17 +149,18 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
     getZips();
     $scope.goToZip = goToZip;
 
-}).controller('zipCtrl', function ($scope, http_service, $location, $stateParams) {
+}).controller('zipCtrl', function ($scope, http_service, $location, $stateParams, services) {
 
-    var zipId = $stateParams.zipId;
+    var zip_id = $stateParams.zip_id;
+    var map = services.getMap();
 
-    var getZip = function(zipId) {
-        http_service.getZip(zipId).then(function(data) {
+    var getZip = function(zip_id) {
+        http_service.getZip(zip_id).then(function(data) {
             $scope.zip = data;
         })
     };
 
-    $scope.zip = getZip(zipId);
+    $scope.zip = getZip(zip_id);
 
 }).controller('aboutCtrl', function ($scope, http_service, $location, $stateParams) {
     $scope.results = "No test results yet..."
