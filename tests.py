@@ -260,84 +260,82 @@ class CrimecastAPITestCase(unittest.TestCase):
     # ----------------------
 
     def test_crime_types_non_empty_response(self):
-        rv = self.app.get('/crimetype')
-        assert len(rv.data) > 0
-
-    def test_crime_types_has_crimes(self):
-        rv = self.app.get('/crimetype/22222')
+        rv = self.app.get('/api/v1/crime_types')
         data = json.loads(rv.data)
-        self.assert_equal(data["crimes"], [12345, 12346, 12347])
+        assert len(data) > 0
 
-    def test_crime_types_has_title(self):
-        rv = self.app.get('/crimetype/22222')
+    def test_crime_types_has_name(self):
+        rv = self.app.get('/api/v1/crime_types/1')
         data = json.loads(rv.data)
-        self.assert_equal(data["title"], "Assault")
+        assert data["name"] == "Vandalism"
 
-    def test_crime_types_has_description(self):
-        rv = self.app.get('/crimetype/22222')
+    def test_crime_types_has_desc(self):
+        rv = self.app.get('/api/v1/crime_types/1')
         data = json.loads(rv.data)
-        self.assert_equal(data["description"], "Assaults are bad")
+        assert data["desc"] == "Vandalism is bad"
 
     # ---------------
     # Zips unit tests
     # ---------------
 
     def test_zips_non_empty_response(self):
-        rv = self.app.get('/zips')
-        assert len(rv.data) > 0
+        rv = self.app.get('/api/v1/zips')
+        data = json.loads(rv.data)
+        assert len(data) > 0
 
     def test_zips_has_id(self):
-        rv = self.app.get('/zips/33333')
+        rv = self.app.get('/api/v1/zips/1')
         data = json.loads(rv.data)
-        self.assert_equal(data["id"], "33333")
+        assert data["zip_id"] == "1"
 
-    def test_zips_has_crimes(self):
-        rv = self.app.get('/zips/33333')
+    def test_zips_has_zip(self):
+        rv = self.app.get('/api/v1/zips/1')
         data = json.loads(rv.data)
-        self.assert_equal(data["crimes"], [12345, 12346, 12347])
-
-    def test_zips_has_zipcode(self):
-        rv = self.app.get('/zips/33333')
-        data = json.loads(rv.data)
-        self.assert_equal(data["zipcode"], "78705")
+        assert data["zip_code"] == "78704"
 
     def test_zips_has_lat(self):
-        rv = self.app.get('/zips/33333')
+        rv = self.app.get('/api/v1/zips/1')
         data = json.loads(rv.data)
-        self.assert_equal(data["lat"], "32.123")
+        assert data["lat"] == "32.123"
 
-    def test_zips_has_long(self):
-        rv = self.app.get('/zips/33333')
+    def test_zips_has_lng(self):
+        rv = self.app.get('/api/v1/zips/1')
         data = json.loads(rv.data)
-        self.assert_equal(data["long"], "32.123")
+        assert data["lng"] == "32.123"
+
+    def test_zips_has_pop(self):
+        rv = self.app.get('/api/v1/zips/1')
+        data = json.loads(rv.data)
+        assert data["pop"] == "12345"
+
+    def test_zips_has_family_income(self):
+        rv = self.app.get('/api/v1/zips/1')
+        data = json.loads(rv.data)
+        assert data["family_income"] == "12345"
 
     # ----------------
     # Weeks unit tests
     # ----------------
 
     def test_weeks_non_empty_response(self):
-        rv = self.app.get('/weeks')
-        assert len(rv.data) > 0
+        rv = self.app.get('/api/v1/weeks')
+        data = json.loads(rv.data)
+        assert len(data) > 0
 
     def test_weeks_has_id(self):
-        rv = self.app.get('/weeks/33333')
+        rv = self.app.get('/api/v1/weeks/1')
         data = json.loads(rv.data)
-        self.assert_equal(data["id"], "11111")
-
-    def test_weeks_has_crimes(self):
-        rv = self.app.get('/weeks/33333')
-        data = json.loads(rv.data)
-        self.assert_equal(data["crimes"], [12345, 12346, 12347])
+        assert data["week_id"] == "1"
 
     def test_weeks_has_start_date(self):
-        rv = self.app.get('/weeks/33333')
+        rv = self.app.get('/api/v1/weeks/1')
         data = json.loads(rv.data)
-        self.assert_equal(data["start_date"], "1-1-2015")
+        assert data["start_date"] == "10/11/15"
 
     def test_weeks_has_end_date(self):
-        rv = self.app.get('/weeks/33333')
+        rv = self.app.get('/api/v1/weeks/1')
         data = json.loads(rv.data)
-        self.assert_equal(data["end_date"], "1-7-2015")
+        assert data["end_date"] == "10/17/15"
 
 if __name__ == '__main__':
     unittest.main() 
