@@ -1,6 +1,7 @@
+import json
 from flask import Flask
 from flask_restful import reqparse, abort, Api, Resource
-import subprocess
+import subprocess, os
 # from Crime import CrimeById
 # import CrimeList
 from sqlalchemy import create_engine
@@ -94,7 +95,7 @@ def zip_home():
 
 @app.route('/zips/<zip_id>')
 def zip(zip_id):
-	return app.send_static_file('zips1.html', zip_id=zip_id)
+	return app.send_static_file('index.html')
 
 @app.route('/about')
 def about():
@@ -203,8 +204,15 @@ class CrimeList(Resource):
         print('session is')
         print(session)
         all_crimes = session.query(Crime).all()
+        print('all_crimes is')
+        crimes_json = []
         print(all_crimes)
-        return all_crimes
+        for c in all_crimes:
+
+            print(c.__dict__)
+            print(dir(c))
+            crimes_json.append(json.dumps(c.__dict__))
+        return crimes_json
         # return CRIMES
 
     def post(self):
@@ -279,22 +287,36 @@ class ZipList(Resource):
 # Zipcode
 # returns a zipcode by id
 class ZipById(Resource):
-    def get(self, week_id):
-        return ZIPS[int(week_id) - 1]
+    def get(self, zip_id):
+        return ZIPS[int(zip_id) - 1]
 
     def post(self):
         pass
-
 
 # Unit Tests
 # Returns the results of running tests.py -- for use on the 'About' page
 class Tests(Resource):
     def get(self):
         #p = subprocess.Popen('python cs373-idb/tests.py', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        p = subprocess.Popen('echo "Test process HERP DERP FLERP"', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        output, errors = p.communicate()
-        return { 'results': str(output) }
+        #output, errors = p.communicate()
+        #return { 'results': str(output) }
         #return { 'results': 'HERP DERP FLERP' }
+
+        res = ''
+        path = os.path.dirname(os.path.realpath(__file__))
+        for i in run_command(('python3 ' + path + '/tests.py').split()):
+            res += i.decode("utf-8")
+
+        return { 'results': res }
+
+def run_command(exe):
+    p = subprocess.Popen(exe, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    while True:
+        retcode = p.poll()  # returns None while subprocess is running
+        line = p.stdout.readline()
+        yield line
+        if retcode is not None:
+            break
 
 ##
 ## Actually setup the Api resource routing here
