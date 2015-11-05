@@ -22,20 +22,4 @@
             </div>
         </div>
     </div>
-
-    <div class="well" style="margin-left: 50px">
-        <div recent-comments params="{limit: 5, related:'thread'}"></div>
-        <!-- directive can be used as an attribute -->
-        <div disqus="id"></div>
-
-        <!-- directive can be used as a class attribute -->
-        <div class="disqus : id"></div>
-        <a href="#!/test/1">test page 1</a> |
-        <a href="#!/test/1" data-disqus-identifier="1"></a>
-        <dir-disqus disqus-shortname="YOUR_DISQUS_SHORTNAME"
-                    disqus-identifier="{{ article.id }}"
-                    disqus-url="{{ article.url }}"
-                    ready-to-bind="{{ contentLoaded }}">
-        </dir-disqus>
-    </div>
 </div>
