@@ -208,8 +208,10 @@ class CrimeList(Resource):
         print('session is')
         print(session)
         try:
+            print('in try')
             all_crimes = session.query(Crime).all()
         except Exception as e:
+            print('exceptions: ')
             print(e)
 
         print('all_crimes is')
