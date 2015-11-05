@@ -66,7 +66,7 @@ class CrimecastDBTestCase(unittest.TestCase):
         self.session.commit()
         query = self.session.query(Crime).filter(Crime.address == "gdc").first()
 
-        assert query.description == "Graffiti of pig on building")
+        assert query.description == "Graffiti of pig on building"
 
     # -----------------
     # Crime Types unit tests
