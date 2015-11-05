@@ -95,7 +95,7 @@ def zip_home():
 
 @app.route('/zips/<zip_id>')
 def zip(zip_id):
-	return app.send_static_file('zips1.html', zip_id=zip_id)
+	return app.send_static_file('index.html')
 
 @app.route('/about')
 def about():
@@ -287,12 +287,11 @@ class ZipList(Resource):
 # Zipcode
 # returns a zipcode by id
 class ZipById(Resource):
-    def get(self, week_id):
-        return ZIPS[int(week_id) - 1]
+    def get(self, zip_id):
+        return ZIPS[int(zip_id) - 1]
 
     def post(self):
         pass
-
 
 # Unit Tests
 # Returns the results of running tests.py -- for use on the 'About' page
