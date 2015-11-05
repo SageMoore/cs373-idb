@@ -168,7 +168,7 @@ class CrimecastDBTestCase(unittest.TestCase):
         self.session.add(Week(start=datetime.date(year=2015, month=10, day=11), end=datetime.date(year=2015, month=10, day=17)))
         self.session.add(Week(start=datetime.date(year=2015, month=10, day=11), end=datetime.date(year=2015, month=10, day=17)))
         self.session.commit()
-        query = self.session.query(Week).filter(Week.start == datetime.date(year=2015, month=10, day=*)).all()
+        query = self.session.query(Week).filter(Week.start == datetime.date(year=2015, month=10, day=11)).all()
         q_size = len(query)
 
         assert q_size == 2
