@@ -201,8 +201,8 @@ class CrimeTypeList(Resource):
         all_crime_types = session.query(CrimeType).all()
         crime_types_json = []
         for crime_type in all_crime_types:
-            worst_week = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).params(week_id=week.most_popular).first()
-            worst_zip = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).params(zip_id=week.worst_zip).first()
+            worst_week = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).params(week_id=crime_type.most_popular).first()
+            worst_zip = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).params(zip_id=crime_type.worst_zip).first()
             # crime_type_json = {'crime_type_id':crime_type.crime_type_id,
             #                    'name':crime_type.name,
             #                    'desc':crime_type.desc,
@@ -225,8 +225,8 @@ class CrimeTypeById(Resource):
     def get(self, crime_type_id):
         # select * from CRIMETYPES as c where crime_id = c.id
         crime_type = session.query(CrimeType).from_statement(text("select * from crime_type where crime_type_id=:crime_type_id")).params(crime_type_id=crime_type_id).all()
-        worst_week = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).params(week_id=week.most_popular).first()
-        worst_zip = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).params(zip_id=week.worst_zip).first()
+        worst_week = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).params(week_id=crime_type.most_popular).first()
+        worst_zip = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).params(zip_id=crime_type.worst_zip).first()
         # crime_type_json = {'crime_type_id':crime_type.crime_type_id,
         #                    'name':crime_type.name,
         #                    'desc':crime_type.desc,
@@ -250,7 +250,9 @@ class WeekList(Resource):
         weeks_json = []
         for week in all_weeks:
             most_popular = session.query(CrimeType).from_statement(text("select * from crime_type where crime_type_id=:crime_type_id")).params(crime_type_id=week.most_popular).first()
+            print("made it past popular")
             worst_zip = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).params(zip_id=week.worst_zip).first()
+            print("made it past zip")
             # week_json= {'week_id':week.week_id,
             #             'start': str(week.start),
             #             'end': str(week.end),
@@ -274,7 +276,6 @@ class WeekList(Resource):
 # returns a week by id
 class WeekById(Resource):
     def get(self, week_id):
-
         week = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).params(week_id=week_id).all()
         most_popular = session.query(CrimeType).from_statement(text("select * from crime_type where crime_type_id=:crime_type_id")).params(crime_type_id=week.most_popular).first()
         worst_zip = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).params(zip_id=week.worst_zip).first()
