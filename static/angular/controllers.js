@@ -156,6 +156,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
 
     var getZip = function(zip_id) {
         http_service.getZip(zip_id).then(function(data) {
+            services.addMarker(data.lat, data.lng, data.zip_code, map, data.pop);
             $scope.zip = data;
         })
     };
