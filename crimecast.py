@@ -250,9 +250,9 @@ class WeekList(Resource):
         weeks_json = []
         for week in all_weeks:
             most_popular = session.query(CrimeType).from_statement(text("select * from crime_type where crime_type_id=:crime_type_id")).params(crime_type_id=week.most_popular).first()
-            print("made it past popular")
+            print("made it past popular", most_popular)
             worst_zip = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).params(zip_id=week.worst_zip).first()
-            print("made it past zip")
+            print("made it past zip", worst_zip)
             # week_json= {'week_id':week.week_id,
             #             'start': str(week.start),
             #             'end': str(week.end),
@@ -262,6 +262,7 @@ class WeekList(Resource):
             #             },
             #             'worst_zip':week.worst_zip}
             week_json = row_to_dict(week)
+            print(week_json)
             week_json['most_popular'] = row_to_dict(most_popular)
             week_json['worst_zip'] = row_to_dict(worst_zip)
             print("all weeks fdafasdda",week_json)
