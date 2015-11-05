@@ -58,52 +58,6 @@ def index(path):
     print('in default')
     return app.send_static_file('index.html')
 
-# # Static crimes page
-# @app.route('/crimes')
-# def crimes():
-#     return app.send_static_file('index.html')
-#
-# # Static crime page
-# @app.route('/crimes/<crime_id>')
-# def crime(crime_id):
-#     return app.send_static_file('index.html')
-#
-#
-# # Static weeks page
-# @app.route('/weeks')
-# def weeks():
-#     return app.send_static_file('index.html')
-#
-# # Static week page
-# @app.route('/weeks/<week_id>')
-# def week(week_id):
-#     return app.send_static_file('index.html')
-#
-#
-# # Crime Type
-# @app.route('/crime_types')
-# def crimetype_home():
-#     return app.send_static_file('index.html')
-#
-# @app.route('/crime_types/<crimetype_id>')
-# def crimetype(crimetype_id):
-#     print(crimetype_id)
-#     type_file = 'crimeType_' + str(crimetype_id) + '.html'
-#     print(type_file)
-#     return app.send_static_file(type_file)
-#
-# @app.route('/zips')
-# def zip_home():
-#     return app.send_static_file('index.html')
-#
-# @app.route('/zips/<zip_id>')
-# def zip(zip_id):
-# 	return app.send_static_file('index.html')
-#
-# @app.route('/about')
-# def about():
-#     return app.send_static_file('index.html')
-
 
 CRIMES = [
     {
@@ -225,7 +179,7 @@ class CrimeList(Resource):
                 print('description')
                 print(c.description)
                 print('got description. getting crimejson')
-                crime_json = {'crime_id' : c.crime_id, 'lat' : c.lat, 'lng' : c.lat, 'address' : c.address, 'crime_type' : c.crime_type, 'time', c.time, 'description', c.description, 'zip_code', c.week}
+                crime_json = {'crime_id' : c.crime_id, 'lat' : c.lat, 'lng' : c.lat, 'address' : c.address, 'crime_type' : c.crime_type, 'time': c.time, 'description': c.description, 'zip_code': c.week}
                 print('crime json worked')
                 print(crime_json)
                 crimes_json.append(crimes_json)
