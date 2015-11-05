@@ -179,7 +179,6 @@ class CrimeById(Resource):
     def get(self, crime_id):
         # assert len(CRIMES) > crime_id
         crime = session.query(Crime).from_statement(text("select * from crime where crime_id=:crime_id")).params(crime_id=crime_id).all()
-        
         # crime_json = {'crime_id': crime.crime_id,
         #               'lat': crime.lat,
         #               'lng': crime.lng,
@@ -202,12 +201,17 @@ class CrimeTypeList(Resource):
         all_crime_types = session.query(CrimeType).all()
         crime_types_json = []
         for crime_type in all_crime_types:
+            worst_week = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).params(week_id=week.most_popular).first()
+            worst_zip = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).params(zip_id=week.worst_zip).first()
             # crime_type_json = {'crime_type_id':crime_type.crime_type_id,
             #                    'name':crime_type.name,
             #                    'desc':crime_type.desc,
             #                    'worst_zip':crime_type.worst_zip,
             #                    'worst_week':crime_type.worst_week}
             crime_type_json = row_to_dict(crime_type)
+            crime_type_json['worst_week'] = row_to_dict(worst_week)
+            crime_type_json['worst_zip'] = row_to_dict(worst_zip)
+            print("all crime types", crime_type_json)
             crime_types_json += [crime_type_json]
         # return all_crime_types
         return json.dumps(crime_types_json)
@@ -221,12 +225,17 @@ class CrimeTypeById(Resource):
     def get(self, crime_type_id):
         # select * from CRIMETYPES as c where crime_id = c.id
         crime_type = session.query(CrimeType).from_statement(text("select * from crime_type where crime_type_id=:crime_type_id")).params(crime_type_id=crime_type_id).all()
+        worst_week = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).params(week_id=week.most_popular).first()
+        worst_zip = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).params(zip_id=week.worst_zip).first()
         # crime_type_json = {'crime_type_id':crime_type.crime_type_id,
         #                    'name':crime_type.name,
         #                    'desc':crime_type.desc,
         #                    'worst_zip':crime_type.worst_zip,
         #                    'worst_week':crime_type.worst_week}
         crime_type_json = row_to_dict(crime_type)
+        crime_type_json['worst_week'] = row_to_dict(worst_week)
+        crime_type_json['worst_zip'] = row_to_dict(worst_zip)
+        print("individual crime asdffdsa", crime_type_json)
         return json.dumps(crime_type_json)
 
     def post(self):
@@ -240,7 +249,8 @@ class WeekList(Resource):
         # return all_weeks
         weeks_json = []
         for week in all_weeks:
-            most_popular = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).params(week_id=week.most_popular).first()
+            most_popular = session.query(CrimeType).from_statement(text("select * from crime_type where crime_type_id=:crime_type_id")).params(crime_type_id=week.most_popular).first()
+            worst_zip = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).params(zip_id=week.worst_zip).first()
             # week_json= {'week_id':week.week_id,
             #             'start': str(week.start),
             #             'end': str(week.end),
@@ -251,6 +261,8 @@ class WeekList(Resource):
             #             'worst_zip':week.worst_zip}
             week_json = row_to_dict(week)
             week_json['most_popular'] = row_to_dict(most_popular)
+            week_json['worst_zip'] = row_to_dict(worst_zip)
+            print("all weeks fdafasdda",week_json)
             weeks_json += [week_json]
         # return all weeks
         return json.dumps(weeks_json)
@@ -264,13 +276,17 @@ class WeekById(Resource):
     def get(self, week_id):
 
         week = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).params(week_id=week_id).all()
-        
+        most_popular = session.query(CrimeType).from_statement(text("select * from crime_type where crime_type_id=:crime_type_id")).params(crime_type_id=week.most_popular).first()
+        worst_zip = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).params(zip_id=week.worst_zip).first()
         # week_json= {'week_id':week.week_id,
         #             'start':str(week.start),
         #             'end':str(week.end),
         #             'most_popular':week.most_popular,
         #             'worst_zip':week.worst_zip}
         week_json = row_to_dict(week)
+        week_json['most_popular'] = row_to_dict(most_popular)
+        week_json['worst_zip'] = row_to_dict(worst_zip)
+        print("individual week asdfasdf",week_json)
         return json.dumps(week_json)
     def post(self):
         pass
