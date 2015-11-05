@@ -14,6 +14,7 @@ api = Api(app)
 #//username:password@host:port/database
 
 # engine = create_engine('postgres://crimedata:poop@crimecast.xyz:5000/crimedata')
+# engine = create_engine('postgresql://crimedata:poop@localhost/crimedata')
 engine = db_connect()
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
