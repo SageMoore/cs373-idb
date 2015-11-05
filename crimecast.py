@@ -218,9 +218,10 @@ class ZipById(Resource):
 # Returns the results of running tests.py -- for use on the 'About' page
 class Tests(Resource):
     def get(self):
-        p = subprocess.Popen('python tests.py', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        output, errors = p.communicate()
-        return { 'results': str(errors) }
+        #p = subprocess.Popen('python tests.py', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        #output, errors = p.communicate()
+        #return { 'results': str(errors) }
+        return { 'results': 'HERP DERP FLERP' }
 
 ##
 ## Actually setup the Api resource routing here
