@@ -239,7 +239,10 @@ class CrimeList(Resource):
 class CrimeById(Resource):
     def get(self, crime_id):
         # assert len(CRIMES) > crime_id
-        return CRIMES[int(crime_id) - 1]
+        crime = session.query(Crime).from_statement(text("select * from crime where crime_id=:crime_id")).param(crime_id=crime_id).all()
+        
+        print(str(crime.__dict__))
+        return json.dumps(crime.__dict__)
 
     def post(self):
         pass
