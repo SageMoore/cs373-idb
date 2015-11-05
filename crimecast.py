@@ -5,7 +5,7 @@ from flask_restful import reqparse, abort, Api, Resource
 import subprocess, os
 # from Crime import CrimeById
 # import CrimeList
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
 from models import db_connect, Crime, Week, Zip, CrimeType
 
@@ -158,20 +158,8 @@ WEEKS = [
 # shows a list of all crimes, and lets you POST to add new tasks
 class CrimeList(Resource):
     def get(self):
-        print('session is')
-        print(session)
-        print('printed session')
-        try:
-            print('in try')
-            all_crimes = session.query(Crime).all()
-        except Exception as e:
-            print('exceptions: ')
-            print(e)
-
-        print('all_crimes is')
+        all_crimes = session.query(Crime).all()
         crimes_json = []
-        print(all_crimes)
-        print('iterating')
         for c in all_crimes:
             print('iter....')
             try:
@@ -194,21 +182,21 @@ class CrimeList(Resource):
                 print(c.crime_id)
             # crimes_json.append(json.dumps(str(dict(c))))
         print('finished loop')
-        for c in crimes_json:
-            print(c)
-        obj = 'o'
-        try:
-            reader = codecs.getreader("utf-8")
-            obj = json.load(reader(c))
-        except Exception:
-            print('exception occured on geting obj')
-
-        print('object is ')
-        try:
-            print(str(obj))
-        except Exception:
-            pass
-        return obj
+        # for c in crimes_json:
+        #     print(c)
+        # obj = 'o'
+        # try:
+        #     reader = codecs.getreader("utf-8")
+        #     obj = json.load(reader(c))
+        # except Exception:
+        #     print('exception occured on geting obj')
+        #
+        # print('object is ')
+        # try:
+        #     print(str(obj))
+        # except Exception:
+        #     pass
+        return json.dumps(crimes_json)
 
         # return CRIMES
 
@@ -224,7 +212,7 @@ class CrimeList(Resource):
 class CrimeById(Resource):
     def get(self, crime_id):
         # assert len(CRIMES) > crime_id
-        crime = session.query(Crime).from_statement(text("select * from crime where crime_id=:crime_id")).param(crime_id=crime_id).all()
+        crime = session.query(Crime).from_statement(text("select * from crime where crime_id=:crime_id")).params(crime_id=crime_id).all()
         
         crime_json = {'crime_id': crime.crime_id, 
                       'lat': crime.lat, 
@@ -265,7 +253,7 @@ class CrimeTypeList(Resource):
 class CrimeTypeById(Resource):
     def get(self, crime_type_id):
         # select * from CRIMETYPES as c where crime_id = c.id
-        crime_type = session.query(CrimeType).from_statement(text("select * from crime_type where crime_type_id=:crime_type_id")).param(crime_type_id=crime_type_id).all()
+        crime_type = session.query(CrimeType).from_statement(text("select * from crime_type where crime_type_id=:crime_type_id")).params(crime_type_id=crime_type_id).all()
         crime_type_json = {'crime_type_id':crime_type.crime_type_id,
                            'name':crime_type.name,
                            'desc':crime_type.desc,
@@ -301,7 +289,7 @@ class WeekList(Resource):
 class WeekById(Resource):
     def get(self, week_id):
 
-        week = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).param(week_id=week_id).all()
+        week = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).params(week_id=week_id).all()
         
         week_json= {'week_id':week.week_id,
                     'start':str(week.start),
@@ -339,7 +327,7 @@ class ZipList(Resource):
 # returns a zipcode by id
 class ZipById(Resource):
     def get(self, zip_id):
-        z = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).param(zip_id=zip_id).all()
+        z = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).params(zip_id=zip_id).all()
         z_json= {'zip_id':z.zip_id,
                  'zip_code':z.zip_code,
                  'lat':z.lat,
