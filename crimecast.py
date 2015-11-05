@@ -221,7 +221,7 @@ class UnitTests(Resource):
         #p = subprocess.Popen('python tests.py', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         #output, errors = p.communicate()
         #return { 'results': str(errors) }
-        return { 'results': 'HERP DERP FLERP' }
+        return []
 
 ##
 ## Actually setup the Api resource routing here
