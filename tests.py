@@ -8,18 +8,18 @@ from flask import json, jsonify
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from models import (Base, Crime, Week, Zip, CrimeType)
-
+from models import CrimeType, Crime, Week, Zip
 
 class CrimecastDBTestCase(unittest.TestCase):
 
     def setUp(self):
-        self.engine = create_engine('postgresql+psycopg2://localhost:3000/postgres')
-        self.session = sessionmaker(bind=self.engine)()
-        Base.metadata.create_all(self.engine)
+        self.engine = create_engine('postgresql://crimedata:poop@localhost/test')
+        self.DBSession = sessionmaker(bind=self.engine)
+        self.session = self.DBSession()
 
     def tearDown(self):
-        Base.metadata.drop_all(self.engine)
+        pass
+        #Base.metadata.drop_all(self.engine)
 
     # -----------------
     # Crimes unit tests
@@ -29,8 +29,7 @@ class CrimecastDBTestCase(unittest.TestCase):
         query = self.session.query(Crime).all()
         start_size = len(query)
 
-        self.session.add(Crime(name="crime", lat=43.21, lng=12.34, addres="123 place",
-                               crimeType=1, time="11/11/11", description="asdf", zip=1, week=1))
+        self.session.add(Crime(lat=30.28500, lng=-97.7320000, time=datetime.date(year=2015, month=10, day=28), address="gdc", description="Graffiti of pig on building"))
         self.session.commit()
         query = self.session.query(Crime).all()
 
@@ -40,7 +39,7 @@ class CrimecastDBTestCase(unittest.TestCase):
 
     def test_find_crime(self):
         self.session.add(Crime(name="crime", lat=43.21, lng=12.34, addres="123 place",
-                               crimeType=1, time="11/11/11", description="asdf", zip=1, week=1))
+                               time="11/11/11", description="asdf", zip=1, week=1))
         self.session.commit()
         query = self.session.query(Crime).filter(Crime.name == "crime")
         q_size = len(query)
@@ -49,9 +48,9 @@ class CrimecastDBTestCase(unittest.TestCase):
 
     def test_find_crime_multiple(self):
         self.session.add(Crime(name="crime", lat=43.21, lng=12.34, addres="123 place",
-                               crimeType=1, time="11/11/11", description="asdf", zip=1, week=1))
+                               time="11/11/11", description="asdf", zip=1, week=1))
         self.session.add(Crime(name="crime", lat=43.21, lng=12.34, addres="123 place",
-                               crimeType=1, time="11/11/11", description="fdsa", zip=1, week=1))
+                               time="11/11/11", description="fdsa", zip=1, week=1))
         self.session.commit()
         query = self.session.query(Crime).filter(Crime.name == "crime")
         q_size = len(query)
@@ -60,9 +59,9 @@ class CrimecastDBTestCase(unittest.TestCase):
 
     def test_crime_attributes(self):
         self.session.add(Crime(name="crime", lat=43.21, lng=12.34, addres="123 place",
-                               crimeType=1, time="11/11/11", description="asdf", zip=1, week=1))
+                               time="11/11/11", description="asdf", zip=1, week=1))
         self.session.add(Crime(name="crime2", lat=43.21, lng=12.34, addres="123 place",
-                               crimeType=1, time="11/11/11", description="fdsa", zip=1, week=1))
+                               time="11/11/11", description="fdsa", zip=1, week=1))
         self.session.commit()
         query = self.session.query(Crime).filter(Crime.name == "crime").first()
 

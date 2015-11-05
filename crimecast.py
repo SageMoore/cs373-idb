@@ -1,4 +1,5 @@
 import json
+import codecs
 from flask import Flask
 from flask_restful import reqparse, abort, Api, Resource
 import subprocess, os
@@ -14,9 +15,15 @@ api = Api(app)
 #//username:password@host:port/database
 
 # engine = create_engine('postgres://crimedata:poop@crimecast.xyz:5000/crimedata')
-# engine = db_connect()
-# DBSession = sessionmaker(bind=engine)
-# session = DBSession()
+
+# engine = create_engine('postgresql://crimedata:poop@localhost/crimedata')
+engine = db_connect()
+print('engine is: ')
+print(engine)
+DBSession = sessionmaker(bind=engine)
+print('debsession is: ')
+print(DBSession)
+session = DBSession()
 
 #Query a specific table in database example
 #result = engine.execute("select latitude from zipcode")
@@ -201,6 +208,7 @@ WEEKS = [
 # shows a list of all crimes, and lets you POST to add new tasks
 class CrimeList(Resource):
     def get(self):
+        print('picking up code changes ')
         print('session is')
         print(session)
         all_crimes = session.query(Crime).all()
@@ -210,8 +218,19 @@ class CrimeList(Resource):
         print('iterating')
         for c in all_crimes:
             print('iter....')
-            print(str(dict(c)))
-            print(dir(c))
+            try:
+                print(dir(c))
+                print('description')
+                print(c.description)
+                reader = codecs.getreader("utf-8")
+                obj = json.load(reader(c))
+                print('obj is')
+                print(obj)
+                print(str(c))
+            except Exception:
+                print('there was an error')
+                print(c)
+                print(c.crime_id)
             crimes_json.append(json.dumps(str(dict(c))))
         return crimes_json
         # return CRIMES
@@ -228,7 +247,10 @@ class CrimeList(Resource):
 class CrimeById(Resource):
     def get(self, crime_id):
         # assert len(CRIMES) > crime_id
-        return CRIMES[int(crime_id) - 1]
+        crime = session.query(Crime).from_statement(text("select * from crime where crime_id=:crime_id")).param(crime_id=crime_id).all()
+        
+        print(str(crime.__dict__))
+        return json.dumps(crime.__dict__)
 
     def post(self):
         pass
