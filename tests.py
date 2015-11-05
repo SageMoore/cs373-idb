@@ -66,7 +66,7 @@ class CrimecastDBTestCase(unittest.TestCase):
         self.session.commit()
         query = self.session.query(Crime).filter(Crime.address == "gdc").first()
 
-        assert query.description == "Graffiti of pig on building")
+        assert query.description == "Graffiti of pig on building"
 
     # -----------------
     # Crime Types unit tests
@@ -76,38 +76,28 @@ class CrimecastDBTestCase(unittest.TestCase):
         query = self.session.query(CrimeType).all()
         start_size = len(query)
 
-        self.session.add(CrimeType(name="crimetype", desc="asdf", worstArea=1, worst_week=1))
+        self.session.add(CrimeType(name='Vandalism', desc = "Vandalism is bad"))
         self.session.commit()
         query = self.session.query(CrimeType).all()
 
         end_size = len(query)
 
-        self.assertEqual(start_size + 1, end_size)
+        assert (start_size + 1) == end_size
 
     def test_find_crime_type(self):
-        self.session.add(CrimeType(name="crimetype", desc="asdf", worstArea=1, worst_week=1))
+        self.session.add(CrimeType(name='Vandalism', desc = "Vandalism is bad"))
         self.session.commit()
-        query = self.session.query(CrimeType).filter(CrimeType.name == "crimetype")
+        query = self.session.query(CrimeType).filter(CrimeType.name == "Vandalism")
         q_size = len(query)
 
-        self.assertEqual(q_size, 1)
-
-    def test_find_crime_type_multiple(self):
-        self.session.add(CrimeType(name="crimetype", desc="asdf", worstArea=1, worst_week=1))
-        self.session.add(CrimeType(name="crimetype", desc="fdsa", worstArea=1, worst_week=1))
-        self.session.commit()
-        query = self.session.query(CrimeType).all()
-        q_size = len(query)
-
-        self.assertEqual(q_size, 2)
+        assert q_size == 1
 
     def test_crime_type_attributes(self):
-        self.session.add(CrimeType(name="crimetype", desc="asdf", worstArea=1, worst_week=1))
-        self.session.add(CrimeType(name="crimetype2", desc="fdas", worstArea=1, worst_week=1))
+        self.session.add(CrimeType(name='Vandalism', desc = "Vandalism is bad"))
         self.session.commit()
-        query = self.session.query(CrimeType).filter(CrimeType.name == "crimetype").first()
+        query = self.session.query(CrimeType).filter(CrimeType.name == "Vandalism").first()
 
-        self.assertEqual(query.description, "asdf")
+        assert query.desc == "Vandalism is bad"
 
     # -----------------
     # Zipcodes unit tests
