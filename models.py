@@ -18,8 +18,8 @@ class Week(Base):
     week_id = Column(Integer, primary_key=True)
     start = Column(DateTime, nullable=False)
     end = Column(DateTime, nullable=False)
-    mostPopular = Column(Integer, ForeignKey('crime_type.crime_type_id'))
-    worstZip = Column(Integer, ForeignKey('zip.zip_id'))
+    most_popular = Column(Integer, ForeignKey('crime_type.crime_type_id'))
+    worst_zip = Column(Integer, ForeignKey('zip.zip_id'))
 
 class Zip(Base):
     """
@@ -44,11 +44,11 @@ class CrimeType(Base):
     crime_type_id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False)
     desc = Column(String(500), nullable=False)
-    worstZip = Column(Integer, ForeignKey('zip.zip_id'))
+    worst_zip = Column(Integer, ForeignKey('zip.zip_id'))
     # I think this is optional. just checking to see if it helps.
     crimes = relationship("Crime")
 
-    worstWeek = Column(Integer, ForeignKey('week.week_id'))
+    worst_week = Column(Integer, ForeignKey('week.week_id'))
 
 
 class Crime(Base):
@@ -62,7 +62,7 @@ class Crime(Base):
     lat = Column(Float, nullable=False)
     lng = Column(Float, nullable=False)
     address = Column(String(250), nullable=False)
-    crimeType = Column(Integer, ForeignKey('crime_type.crime_type_id'))
+    crime_type = Column(Integer, ForeignKey('crime_type.crime_type_id'))
     time = Column(DateTime, nullable=False)
     description = Column(String(500))
     zip_code = Column(Integer, ForeignKey('zip.zip_id'))
