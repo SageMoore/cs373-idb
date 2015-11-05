@@ -285,8 +285,8 @@ class WeekList(Resource):
         weeks_json = []
         for week in all_weeks:
             week_json= {'week_id':week.week_id,
-                        'start': none,
-                        'end': none,
+                        'start': str(week.start),
+                        'end': str(week.end),
                         'most_popular':week.most_popular,
                         'worst_zip':week.worst_zip}
             weeks_json += [week_json]
@@ -304,8 +304,8 @@ class WeekById(Resource):
         week = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).param(week_id=week_id).all()
         
         week_json= {'week_id':week.week_id,
-                    'start':none,
-                    'end':none,
+                    'start':str(week.start),
+                    'end':str(week.end),
                     'most_popular':week.most_popular,
                     'worst_zip':week.worst_zip}
         return json.dumps(week_json)
