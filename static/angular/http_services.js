@@ -15,7 +15,7 @@ angular.module('crimeCastApp.httpServices', [])
             return $http
                 .get(
                 '/api/v1/' + pathParam ).then(function(response) {
-                    return response.data;
+                    return JSON.parse(response.data);
                 }, function(response){
                     console.log('rejecting promise');
                     return $q.reject(response.data);
@@ -29,7 +29,7 @@ angular.module('crimeCastApp.httpServices', [])
                 data : data
             }
             return $http(req).then(function(response) {
-                return response.data;
+                return JSON.parse(response.data);
             }, function(response){
                 console.log('rejecting promise');
                 return $q.reject(response.data);
@@ -42,7 +42,7 @@ angular.module('crimeCastApp.httpServices', [])
                 url: '/api/v1/crimes/' + id
             }
             return $http(req).then(function(response) {
-                return response.data;
+                return JSON.parse(response.data);
             }, function(response) {
                 console.log('rejecting promise');
                 return $q.reject(response.data);
@@ -55,7 +55,7 @@ angular.module('crimeCastApp.httpServices', [])
                 url: '/api/v1/crime_types/' + id
             }
             return $http(req).then(function(response) {
-                return response.data;
+                return JSON.parse(response.data);
             }, function(response) {
                 console.log('rejecting promise');
                 return $q.reject(response.data);
@@ -68,7 +68,7 @@ angular.module('crimeCastApp.httpServices', [])
                 url: '/api/v1/weeks/' + id
             }
             return $http(req).then(function(response) {
-                return response.data;
+                return JSON.parse(response.data);
             }, function(response) {
                 console.log('rejecting promise');
                 return $q.reject(response.data);
@@ -81,7 +81,7 @@ angular.module('crimeCastApp.httpServices', [])
                 url: '/api/v1/zips/' + id
             }
             return $http(req).then(function(response) {
-                return response.data;
+                return JSON.parse(response.data);
             }, function(response) {
                 console.log('rejecting promise');
                 return $q.reject(response.data);

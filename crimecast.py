@@ -177,7 +177,7 @@ class CrimeList(Resource):
 class CrimeById(Resource):
     def get(self, crime_id):
         # assert len(CRIMES) > crime_id
-        crime = session.query(Crime).from_statement(text("select * from crime where crime_id=:crime_id")).param(crime_id=crime_id).all()
+        crime = session.query(Crime).from_statement(text("select * from crime where crime_id=:crime_id")).params(crime_id=crime_id).all()
         
         crime_json = {'crime_id': crime.crime_id, 
                       'lat': crime.lat, 
@@ -218,7 +218,7 @@ class CrimeTypeList(Resource):
 class CrimeTypeById(Resource):
     def get(self, crime_type_id):
         # select * from CRIMETYPES as c where crime_id = c.id
-        crime_type = session.query(CrimeType).from_statement(text("select * from crime_type where crime_type_id=:crime_type_id")).param(crime_type_id=crime_type_id).all()
+        crime_type = session.query(CrimeType).from_statement(text("select * from crime_type where crime_type_id=:crime_type_id")).params(crime_type_id=crime_type_id).all()
         crime_type_json = {'crime_type_id':crime_type.crime_type_id,
                            'name':crime_type.name,
                            'desc':crime_type.desc,
@@ -254,7 +254,7 @@ class WeekList(Resource):
 class WeekById(Resource):
     def get(self, week_id):
 
-        week = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).param(week_id=week_id).all()
+        week = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).params(week_id=week_id).all()
         
         week_json= {'week_id':week.week_id,
                     'start':str(week.start),
@@ -292,7 +292,7 @@ class ZipList(Resource):
 # returns a zipcode by id
 class ZipById(Resource):
     def get(self, zip_id):
-        z = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).param(zip_id=zip_id).all()
+        z = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).params(zip_id=zip_id).all()
         z_json= {'zip_id':z.zip_id,
                  'zip_code':z.zip_code,
                  'lat':z.lat,
