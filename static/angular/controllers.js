@@ -47,7 +47,17 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
 
     $scope.crimes = getCrimes();
 
-}).controller('crimeCtrl', function ($scope, http_service, $location, $stateParams) {
+}).controller('crimeCtrl', function ($scope, http_service, $location, $stateParams, disqusApi) {
+
+    var params = {
+        limit: 5,
+        related: 'thread'
+    }
+
+    disqusApi.get('forums', 'listPosts', params).then(function (comments) {
+        $scope.comments = comments;
+        console.log(comments);
+    });
 
     var crimeId = $stateParams.crimeId;
 
