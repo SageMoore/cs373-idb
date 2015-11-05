@@ -262,7 +262,7 @@ class CrimeTypeList(Resource):
 
 # Crime Type
 # returns a crime type by id
-class CrimeTypeById(Resource, crime_type_id):
+class CrimeTypeById(Resource):
     def get(self, crime_type_id):
         # select * from CRIMETYPES as c where crime_id = c.id
         crime_type = session.query(CrimeType).from_statement(text("select * from crime_type where crime_type_id=:crime_type_id")).param(crime_type_id=crime_type_id).all()
