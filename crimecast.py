@@ -228,7 +228,7 @@ class CrimeList(Resource):
                 crime_json = {'crime_id' : c.crime_id, 'lat' : c.lat, 'lng' : c.lng, 'address' : c.address, 'crime_type' : c.crime_type, 'time' : c.time, 'description' : c.description, 'zip_code' : c.zip_code, 'week' : c.week}
                 print('crime json worked')
                 print(crime_json)
-                crimes_json.append(crimes_json)
+                crimes_json += [crimes_json]
                 # reader = codecs.getreader("utf-8")
                 # obj = json.load(reader(c))
                 # print('obj is')
@@ -240,8 +240,22 @@ class CrimeList(Resource):
                 print(c.crime_id)
             # crimes_json.append(json.dumps(str(dict(c))))
         print('finished loop')
-        print(crimes_json)
-        return crimes_json
+        for c in crimes_json:
+            print(c)
+        obj = 'o'
+        try:
+            reader = codecs.getreader("utf-8")
+            obj = json.load(reader(c))
+        except Exception:
+            print('exception occured on geting obj')
+
+        print('object is ')
+        try:
+            print(str(obj))
+        except Exception:
+            pass
+        return obj
+
         # return CRIMES
 
     def post(self):
