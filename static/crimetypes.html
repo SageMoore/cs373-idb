@@ -33,13 +33,13 @@
                                         Description
                                         <span ng-show="sortType == 'desc'" class="caret"></span>
                                     </a></td>
-                                    <td><a ng-click="sortType = 'worstWeek.start_date'; sortReverse = !sortReverse">
+                                    <td><a ng-click="sortType = 'worst_week.start_date'; sortReverse = !sortReverse">
                                         Worst Week
-                                        <span ng-show="sortType == 'worstWeek.start_date'" class="caret"></span>
+                                        <span ng-show="sortType == 'worst_week.start_date'" class="caret"></span>
                                     </a></td>
-                                    <td><a ng-click="sortType = 'worstZip.zip_code'; sortReverse = !sortReverse">
+                                    <td><a ng-click="sortType = 'worst_zip.zip_code'; sortReverse = !sortReverse">
                                         Worst Zipcode
-                                        <span ng-show="sortType == 'worstZip.zip_code'" class="caret"></span>
+                                        <span ng-show="sortType == 'worst_zip.zip_code'" class="caret"></span>
                                     </a></td>
                                 </tr>
                                 </thead>
@@ -49,8 +49,8 @@
                                     <td><a href="crime_types/{{ type.crime_type_id }}">{{ type.crime_type_id }}</a></td>
                                     <td><a href="crime_types/{{ type.crime_type_id }}">{{ type.name }}</a></td>
                                     <td>{{ type.desc }}</td>
-                                    <td><a href="weeks/{{type.worstWeek.week_id}}">{{ type.worstWeek.start_date }}</a></td>
-                                    <td><a href="zips/{{type.worstZip.zip_id}}">{{ type.worstZip.zip_code }}</a></td>
+                                    <td><a href="weeks/{{type.worst_week.week_id}}">{{ type.worst_week.start_date }}</a></td>
+                                    <td><a href="zips/{{type.worst_zip.zip_id}}">{{ type.worst_zip.zip_code }}</a></td>
                                 </tr>
                                 </tbody>
                             </table>
