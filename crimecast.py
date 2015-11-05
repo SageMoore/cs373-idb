@@ -201,7 +201,7 @@ class CrimeTypeList(Resource):
         all_crime_types = session.query(CrimeType).all()
         crime_types_json = []
         for crime_type in all_crime_types:
-            worst_week = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).params(week_id=crime_type.most_popular).first()
+            worst_week = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).params(week_id=crime_type.worst_week).first()
             worst_zip = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).params(zip_id=crime_type.worst_zip).first()
             # crime_type_json = {'crime_type_id':crime_type.crime_type_id,
             #                    'name':crime_type.name,
