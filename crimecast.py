@@ -286,12 +286,11 @@ class ZipById(Resource):
 
 # Unit Tests
 # Returns the results of running tests.py -- for use on the 'About' page
-class UnitTests(Resource):
+class Tests(Resource):
     def get(self):
-        #p = subprocess.Popen('python tests.py', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        #output, errors = p.communicate()
-        #return { 'results': str(errors) }
-        return []
+        p = subprocess.Popen('python tests.py', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        output, errors = p.communicate()
+        return { 'results': str(errors) }
 
 ##
 ## Actually setup the Api resource routing here
@@ -304,10 +303,8 @@ api.add_resource(WeekList, '/api/v1/weeks')
 api.add_resource(WeekById, '/api/v1/weeks/<week_id>')
 api.add_resource(ZipList, '/api/v1/zips')
 api.add_resource(ZipById, '/api/v1/zips/<zip_id>')
-
-# api.add_resource(Tests, '/api/v1/tests')
+api.add_resource(Tests, '/api/v1/tests')
 api.init_app(app)
-api.add_resource(UnitTests, '/api/v1/tests')
 
 
 if __name__ == "__main__":
