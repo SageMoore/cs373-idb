@@ -203,6 +203,7 @@ class CrimeList(Resource):
         print('session is')
         print(session)
         all_crimes = session.query(Crime).all()
+        print('all_crimes is')
         print(all_crimes)
         return all_crimes
         # return CRIMES
