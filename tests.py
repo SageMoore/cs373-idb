@@ -107,7 +107,7 @@ class CrimecastDBTestCase(unittest.TestCase):
         query = self.session.query(Zip).all()
         start_size = len(query)
 
-        self.session.add(zip_code=78704, lat=32.123, lng=32.123, pop=20000, family_income=50000)
+        self.session.add(Zip(zip_code=78704, lat=32.123, lng=32.123, pop=20000, family_income=50000))
         self.session.commit()
         query = self.session.query(Zip).all()
 
@@ -116,7 +116,7 @@ class CrimecastDBTestCase(unittest.TestCase):
         assert (start_size + 1) == end_size
 
     def test_find_zipcode(self):
-        self.session.add(zip_code=78704, lat=32.123, lng=32.123, pop=20000, family_income=50000)
+        self.session.add(Zip(zip_code=78704, lat=32.123, lng=32.123, pop=20000, family_income=50000))
         self.session.commit()
         query = self.session.query(Zip).filter(Zip.pop == 20000).all()
         q_size = len(query)
@@ -124,8 +124,8 @@ class CrimecastDBTestCase(unittest.TestCase):
         assert q_size == 1
 
     def test_find_zipcode_multiple(self):
-        self.session.add(zip_code=78704, lat=32.123, lng=32.123, pop=20000, family_income=50000)
-        self.session.add(zip_code=78705, lat=32.123, lng=32.123, pop=20000, family_income=40000)
+        self.session.add(Zip(zip_code=78704, lat=32.123, lng=32.123, pop=20000, family_income=50000))
+        self.session.add(Zip(zip_code=78705, lat=32.123, lng=32.123, pop=20000, family_income=40000))
         self.session.commit()
         query = self.session.query(Zip).filter(Zip.pop == 20000).all()
         q_size = len(query)
