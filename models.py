@@ -69,8 +69,13 @@ class Crime(Base):
     week = Column(Integer, ForeignKey('week.week_id'))
 # Create an engine that stores data in the local directory's
 # stuff.db file.
+#//username:password@host:port/database
+
 def db_connect():
+    print('calling engine')
     engine = create_engine('postgresql://crimedata:poop@localhost/crimedata')
+    # engine = create_engine('postgresql://crimedata:poop@104.239.145.116:5000/crimedata')
+    print('engine called')
     return engine
 
  
@@ -80,6 +85,8 @@ def create_tables(engine):
     Base.metadata.create_all(engine)
 
 create_tables(db_connect())
+
+print('tables created')
  
 
 # to run database:

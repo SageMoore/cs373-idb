@@ -5,17 +5,17 @@ import subprocess
 # import CrimeList
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-# from models import db_connect, Crime, Week, Zip, CrimeType
+from models import db_connect, Crime, Week, Zip, CrimeType
 
 app = Flask(__name__, static_url_path="")
 api = Api(app)
 
 #//username:password@host:port/database
 
-# engine = create_engine('postgres://crimedata:poop@crimecast.xyz:5432/crimedata')
-# engine = db_connect()
-# DBSession = sessionmaker(bind=engine)
-# session = DBSession()
+# engine = create_engine('postgres://crimedata:poop@crimecast.xyz:5000/crimedata')
+engine = db_connect()
+DBSession = sessionmaker(bind=engine)
+session = DBSession()
 
 #Query a specific table in database example
 #result = engine.execute("select latitude from zipcode")
@@ -200,9 +200,12 @@ WEEKS = [
 # shows a list of all crimes, and lets you POST to add new tasks
 class CrimeList(Resource):
     def get(self):
-        # all_crimes = session.query(Crime).all()
-        # return all_crimes
-        return CRIMES
+        print('session is')
+        print(session)
+        all_crimes = session.query(Crime).all()
+        print(all_crimes)
+        return all_crimes
+        # return CRIMES
 
     def post(self):
         args = parser.parse_args()
@@ -285,12 +288,13 @@ class ZipById(Resource):
 
 # Unit Tests
 # Returns the results of running tests.py -- for use on the 'About' page
-class UnitTests(Resource):
+class Tests(Resource):
     def get(self):
-        #p = subprocess.Popen('python tests.py', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        #output, errors = p.communicate()
-        #return { 'results': str(errors) }
-        return []
+        #p = subprocess.Popen('python cs373-idb/tests.py', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen('echo "Test process HERP DERP FLERP"', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        output, errors = p.communicate()
+        return { 'results': str(output) }
+        #return { 'results': 'HERP DERP FLERP' }
 
 ##
 ## Actually setup the Api resource routing here
@@ -303,7 +307,8 @@ api.add_resource(WeekList, '/api/v1/weeks')
 api.add_resource(WeekById, '/api/v1/weeks/<week_id>')
 api.add_resource(ZipList, '/api/v1/zips')
 api.add_resource(ZipById, '/api/v1/zips/<zip_id>')
-api.add_resource(UnitTests, '/api/v1/tests')
+api.add_resource(Tests, '/api/v1/tests')
+api.init_app(app)
 
 
 if __name__ == "__main__":
