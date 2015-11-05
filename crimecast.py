@@ -161,7 +161,8 @@ class CrimeList(Resource):
         all_crimes = session.query(Crime).all()
         crimes_json = []
         for c in all_crimes:
-            crime_json = {'crime_id' : c.crime_id, 'lat' : c.lat, 'lng' : c.lng, 'address' : c.address, 'crime_type' : c.crime_type, 'time' : c.time, 'description' : c.description, 'zip_code' : c.zip_code, 'week' : c.week}
+            # crime_json = {'crime_id' : c.crime_id, 'lat' : c.lat, 'lng' : c.lng, 'address' : c.address, 'crime_type' : c.crime_type, 'time' : c.time, 'description' : c.description, 'zip_code' : c.zip_code, 'week' : c.week}
+            crime_json = row_to_dict(c)
             crimes_json += [crime_json]
         return json.dumps(crimes_json)
 
@@ -179,16 +180,16 @@ class CrimeById(Resource):
         # assert len(CRIMES) > crime_id
         crime = session.query(Crime).from_statement(text("select * from crime where crime_id=:crime_id")).params(crime_id=crime_id).all()
         
-        crime_json = {'crime_id': crime.crime_id, 
-                      'lat': crime.lat, 
-                      'lng': crime.lng,
-                      'address': crime.address,
-                      'crime_type': crime.crime_type,
-                      'time': str(crime.time),
-                      'description': crime.description,
-                      'zip_code': crime.zip_code,
-                      'week': crime.week}
-
+        # crime_json = {'crime_id': crime.crime_id,
+        #               'lat': crime.lat,
+        #               'lng': crime.lng,
+        #               'address': crime.address,
+        #               'crime_type': crime.crime_type,
+        #               'time': str(crime.time),
+        #               'description': crime.description,
+        #               'zip_code': crime.zip_code,
+        #               'week': crime.week}
+        crime_json = row_to_dict(crime)
         return json.dumps(crime_json)
 
     def post(self):
@@ -220,11 +221,12 @@ class CrimeTypeById(Resource):
     def get(self, crime_type_id):
         # select * from CRIMETYPES as c where crime_id = c.id
         crime_type = session.query(CrimeType).from_statement(text("select * from crime_type where crime_type_id=:crime_type_id")).params(crime_type_id=crime_type_id).all()
-        crime_type_json = {'crime_type_id':crime_type.crime_type_id,
-                           'name':crime_type.name,
-                           'desc':crime_type.desc,
-                           'worst_zip':crime_type.worst_zip,
-                           'worst_week':crime_type.worst_week}
+        # crime_type_json = {'crime_type_id':crime_type.crime_type_id,
+        #                    'name':crime_type.name,
+        #                    'desc':crime_type.desc,
+        #                    'worst_zip':crime_type.worst_zip,
+        #                    'worst_week':crime_type.worst_week}
+        crime_type_json = row_to_dict(crime_type)
         return json.dumps(crime_type_json)
 
     def post(self):
@@ -239,14 +241,16 @@ class WeekList(Resource):
         weeks_json = []
         for week in all_weeks:
             most_popular = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).params(week_id=week.most_popular).first()
-            week_json= {'week_id':week.week_id,
-                        'start': str(week.start),
-                        'end': str(week.end),
-                        'most_popular': {
-                            'week_id': most_popular.week_id,
-                            'start': most_popular.start
-                        },
-                        'worst_zip':week.worst_zip}
+            # week_json= {'week_id':week.week_id,
+            #             'start': str(week.start),
+            #             'end': str(week.end),
+            #             'most_popular': {
+            #                 'week_id': most_popular.week_id,
+            #                 'start': most_popular.start
+            #             },
+            #             'worst_zip':week.worst_zip}
+            week_json = row_to_dict(week)
+            week['most_popular'] = row_to_dict(most_popular)
             weeks_json += [week_json]
         # return all weeks
         return json.dumps(weeks_json)
@@ -261,11 +265,12 @@ class WeekById(Resource):
 
         week = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).params(week_id=week_id).all()
         
-        week_json= {'week_id':week.week_id,
-                    'start':str(week.start),
-                    'end':str(week.end),
-                    'most_popular':week.most_popular,
-                    'worst_zip':week.worst_zip}
+        # week_json= {'week_id':week.week_id,
+        #             'start':str(week.start),
+        #             'end':str(week.end),
+        #             'most_popular':week.most_popular,
+        #             'worst_zip':week.worst_zip}
+        week_json = row_to_dict(week)
         return json.dumps(week_json)
     def post(self):
         pass
@@ -280,12 +285,13 @@ class ZipList(Resource):
         # return all_weeks
         zips_json = []
         for z in all_zips:
-            z_json= {'zip_id':z.zip_id,
-                     'zip_code':z.zip_code,
-                     'lat':z.lat,
-                     'lng':z.lng,
-                     'pop':z.pop,
-                     'family_income':z.family_income}
+            # z_json= {'zip_id':z.zip_id,
+            #          'zip_code':z.zip_code,
+            #          'lat':z.lat,
+            #          'lng':z.lng,
+            #          'pop':z.pop,
+            #          'family_income':z.family_income}
+            z_json = row_to_dict(z)
             zips_json += [z_json]
         # return all weeks
         return json.dumps(zips_json)
@@ -298,12 +304,13 @@ class ZipList(Resource):
 class ZipById(Resource):
     def get(self, zip_id):
         z = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).params(zip_id=zip_id).all()
-        z_json= {'zip_id':z.zip_id,
-                 'zip_code':z.zip_code,
-                 'lat':z.lat,
-                 'lng':z.lng,
-                 'pop':z.pop,
-                 'family_income':z.family_income}
+        # z_json= {'zip_id':z.zip_id,
+        #          'zip_code':z.zip_code,
+        #          'lat':z.lat,
+        #          'lng':z.lng,
+        #          'pop':z.pop,
+        #          'family_income':z.family_income}
+        z_json = row_to_dict(z)
 
         return json.dumps(z_json)
 
