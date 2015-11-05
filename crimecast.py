@@ -236,7 +236,7 @@ class CrimeById(Resource):
                       'zip_code': crime.zip_code,
                       'week': crime.week}
 
-        return crime_json
+        return json.dumps(crime_json)
 
     def post(self):
         pass
@@ -255,7 +255,7 @@ class CrimeTypeList(Resource):
                                'worst_week':crime_type.worst_week}
             crime_types_json += [crime_type_json]
         # return all_crime_types
-        return crime_types_json
+        return json.dumps(crime_types_json)
 
     def post(self):
         pass
@@ -271,7 +271,7 @@ class CrimeTypeById(Resource, crime_type_id):
                            'desc':crime_type.desc,
                            'worst_zip':crime_type.worst_zip,
                            'worst_week':crime_type.worst_week}
-        return crime_type_json
+        return json.dumps(crime_type_json)
 
     def post(self):
         pass
@@ -291,7 +291,7 @@ class WeekList(Resource):
                         'worst_zip':week.worst_zip}
             weeks_json += [week_json]
         # return all weeks
-        return weeks_json
+        return json.dumps(weeks_json)
 
     def post(self):
         pass
@@ -308,7 +308,7 @@ class WeekById(Resource):
                     'end':crime_type.desc,
                     'most_popular':week.most_popular,
                     'worst_zip':week.worst_zip}
-        return week_json
+        return json.dumps(week_json)
     def post(self):
         pass
 
@@ -330,7 +330,7 @@ class ZipList(Resource):
                      'family_income':z.family_income}
             zips_json += [z_json]
         # return all weeks
-        return zips_json
+        return json.dumps(zips_json)
 
     def post(self):
         pass
@@ -347,7 +347,7 @@ class ZipById(Resource, zip_id):
                  'pop':z.pop,
                  'family_income':z.family_income}
 
-        return z_json
+        return json.dumps(z_json)
 
     def post(self):
         pass
