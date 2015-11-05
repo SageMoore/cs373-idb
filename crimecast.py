@@ -200,6 +200,7 @@ WEEKS = [
 # shows a list of all crimes, and lets you POST to add new tasks
 class CrimeList(Resource):
     def get(self):
+        print('this workss!!!')
         all_crimes = session.query(Crime).all()
         return all_crimes
         # return CRIMES
