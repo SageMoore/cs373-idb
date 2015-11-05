@@ -208,7 +208,9 @@ class CrimeList(Resource):
         crimes_json = []
         print(all_crimes)
         for c in all_crimes:
-            print(json.dumps(c.__dict__))
+
+            print(c.__dict__)
+            print(dir(c))
             crimes_json.append(json.dumps(c.__dict__))
         return crimes_json
         # return CRIMES
