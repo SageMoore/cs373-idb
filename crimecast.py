@@ -216,8 +216,8 @@ class CrimeList(Resource):
         print('iterating')
         for c in all_crimes:
             print('iter....')
-            print(str(dict(c)))
             print(dir(c))
+            print(str(c))
             crimes_json.append(json.dumps(str(dict(c))))
         return crimes_json
         # return CRIMES
