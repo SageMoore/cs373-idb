@@ -207,6 +207,7 @@ class CrimeList(Resource):
         print('picking up code changes ')
         print('session is')
         print(session)
+        print('printed session')
         try:
             print('in try')
             all_crimes = session.query(Crime).all()
