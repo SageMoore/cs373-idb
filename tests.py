@@ -8,18 +8,18 @@ from flask import json, jsonify
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from models import (Base, Crime, Week, Zip, CrimeType)
-
+from models import CrimeType, Crime, Week, Zip
 
 class CrimecastDBTestCase(unittest.TestCase):
 
     def setUp(self):
-        self.engine = create_engine('postgresql+psycopg2://localhost:3000/postgres')
-        self.session = sessionmaker(bind=self.engine)()
-        Base.metadata.create_all(self.engine)
+        self.engine = create_engine('postgresql://crimedata:poop@localhost/test')
+        self.DBSession = sessionmaker(bind=self.engine)
+        self.session = self.DBSession()
 
     def tearDown(self):
-        Base.metadata.drop_all(self.engine)
+        pass
+        #Base.metadata.drop_all(self.engine)
 
     # -----------------
     # Crimes unit tests
@@ -29,8 +29,7 @@ class CrimecastDBTestCase(unittest.TestCase):
         query = self.session.query(Crime).all()
         start_size = len(query)
 
-        self.session.add(Crime(name="crime", lat=43.21, lng=12.34, addres="123 place",
-                               crimeType=1, time="11/11/11", description="asdf", zip=1, week=1))
+        self.session.add(Crime(lat=30.28500, lng=-97.7320000, time=datetime.date(year=2015, month=10, day=28), address="gdc", description="Graffiti of pig on building"))
         self.session.commit()
         query = self.session.query(Crime).all()
 
@@ -40,7 +39,7 @@ class CrimecastDBTestCase(unittest.TestCase):
 
     def test_find_crime(self):
         self.session.add(Crime(name="crime", lat=43.21, lng=12.34, addres="123 place",
-                               crimeType=1, time="11/11/11", description="asdf", zip=1, week=1))
+                               time="11/11/11", description="asdf", zip=1, week=1))
         self.session.commit()
         query = self.session.query(Crime).filter(Crime.name == "crime")
         q_size = len(query)
@@ -49,9 +48,9 @@ class CrimecastDBTestCase(unittest.TestCase):
 
     def test_find_crime_multiple(self):
         self.session.add(Crime(name="crime", lat=43.21, lng=12.34, addres="123 place",
-                               crimeType=1, time="11/11/11", description="asdf", zip=1, week=1))
+                               time="11/11/11", description="asdf", zip=1, week=1))
         self.session.add(Crime(name="crime", lat=43.21, lng=12.34, addres="123 place",
-                               crimeType=1, time="11/11/11", description="fdsa", zip=1, week=1))
+                               time="11/11/11", description="fdsa", zip=1, week=1))
         self.session.commit()
         query = self.session.query(Crime).filter(Crime.name == "crime")
         q_size = len(query)
@@ -60,9 +59,9 @@ class CrimecastDBTestCase(unittest.TestCase):
 
     def test_crime_attributes(self):
         self.session.add(Crime(name="crime", lat=43.21, lng=12.34, addres="123 place",
-                               crimeType=1, time="11/11/11", description="asdf", zip=1, week=1))
+                               time="11/11/11", description="asdf", zip=1, week=1))
         self.session.add(Crime(name="crime2", lat=43.21, lng=12.34, addres="123 place",
-                               crimeType=1, time="11/11/11", description="fdsa", zip=1, week=1))
+                               time="11/11/11", description="fdsa", zip=1, week=1))
         self.session.commit()
         query = self.session.query(Crime).filter(Crime.name == "crime").first()
 
@@ -217,117 +216,125 @@ class CrimecastAPITestCase(unittest.TestCase):
     # -----------------
 
     def test_crimes_non_empty_response(self):
-        rv = self.app.get('/crimes')
-        assert len(rv.data) > 0
+        rv = self.app.get('/api/v1/crimes')
+        data = json.loads(rv.data)
+        assert len(data) > 0
 
     def test_crimes_has_id(self):
-        rv = self.app.get('/crimes/12345')
+        rv = self.app.get('/api/v1/crimes/1')
         data = json.loads(rv.data)
-        self.assert_equal(data["id"], "12345")
+        assert data["crime_id"] == "1"
 
     def test_crimes_has_address(self):
-        rv = self.app.get('/crimes/12345')
+        rv = self.app.get('/api/v1/crimes/1')
         data = json.loads(rv.data)
-        self.assert_equal(data["address"], "123 Street Name Dr")
+        assert data["address"] == "GDC"
 
     def test_crimes_has_type(self):
-        rv = self.app.get('/crimes/12345')
+        rv = self.app.get('/api/v1/crimes/1')
         data = json.loads(rv.data)
-        self.assert_equal(data["crime_type"], "22222")
+        assert data["crime_type"] == {
+                'crime_type_id': '1',
+                'name': 'Vandalism'
+             }
 
     def test_crimes_has_zip(self):
-        rv = self.app.get('/crimes/12345')
+        rv = self.app.get('/api/v1/crimes/1')
         data = json.loads(rv.data)
-        self.assert_equal(data["zipcode"], "33333")
+        assert data["zip_code"] == {
+                'zip_id': '1',
+                'zip_code': '78704'
+            }
 
-    def test_crimes_has_date(self):
-        rv = self.app.get('/crimes/12345')
+    def test_crimes_has_week(self):
+        rv = self.app.get('/api/v1/crimes/1')
         data = json.loads(rv.data)
-        self.assert_equal(data["date"], "1-1-2016")
+        assert data["week"], {
+                'week_id': '1',
+                'start_date': '10/11/15'
+            }
 
     # ----------------------
     # Crime_Types unit tests
     # ----------------------
 
     def test_crime_types_non_empty_response(self):
-        rv = self.app.get('/crimetype')
-        assert len(rv.data) > 0
-
-    def test_crime_types_has_crimes(self):
-        rv = self.app.get('/crimetype/22222')
+        rv = self.app.get('/api/v1/crime_types')
         data = json.loads(rv.data)
-        self.assert_equal(data["crimes"], [12345, 12346, 12347])
+        assert len(data) > 0
 
-    def test_crime_types_has_title(self):
-        rv = self.app.get('/crimetype/22222')
+    def test_crime_types_has_name(self):
+        rv = self.app.get('/api/v1/crime_types/1')
         data = json.loads(rv.data)
-        self.assert_equal(data["title"], "Assault")
+        assert data["name"] == "Vandalism"
 
-    def test_crime_types_has_description(self):
-        rv = self.app.get('/crimetype/22222')
+    def test_crime_types_has_desc(self):
+        rv = self.app.get('/api/v1/crime_types/1')
         data = json.loads(rv.data)
-        self.assert_equal(data["description"], "Assaults are bad")
+        assert data["desc"] == "Vandalism is bad"
 
     # ---------------
     # Zips unit tests
     # ---------------
 
     def test_zips_non_empty_response(self):
-        rv = self.app.get('/zips')
-        assert len(rv.data) > 0
+        rv = self.app.get('/api/v1/zips')
+        data = json.loads(rv.data)
+        assert len(data) > 0
 
     def test_zips_has_id(self):
-        rv = self.app.get('/zips/33333')
+        rv = self.app.get('/api/v1/zips/1')
         data = json.loads(rv.data)
-        self.assert_equal(data["id"], "33333")
+        assert data["zip_id"] == "1"
 
-    def test_zips_has_crimes(self):
-        rv = self.app.get('/zips/33333')
+    def test_zips_has_zip(self):
+        rv = self.app.get('/api/v1/zips/1')
         data = json.loads(rv.data)
-        self.assert_equal(data["crimes"], [12345, 12346, 12347])
-
-    def test_zips_has_zipcode(self):
-        rv = self.app.get('/zips/33333')
-        data = json.loads(rv.data)
-        self.assert_equal(data["zipcode"], "78705")
+        assert data["zip_code"] == "78704"
 
     def test_zips_has_lat(self):
-        rv = self.app.get('/zips/33333')
+        rv = self.app.get('/api/v1/zips/1')
         data = json.loads(rv.data)
-        self.assert_equal(data["lat"], "32.123")
+        assert data["lat"] == "32.123"
 
-    def test_zips_has_long(self):
-        rv = self.app.get('/zips/33333')
+    def test_zips_has_lng(self):
+        rv = self.app.get('/api/v1/zips/1')
         data = json.loads(rv.data)
-        self.assert_equal(data["long"], "32.123")
+        assert data["lng"] == "32.123"
+
+    def test_zips_has_pop(self):
+        rv = self.app.get('/api/v1/zips/1')
+        data = json.loads(rv.data)
+        assert data["pop"] == "12345"
+
+    def test_zips_has_family_income(self):
+        rv = self.app.get('/api/v1/zips/1')
+        data = json.loads(rv.data)
+        assert data["family_income"] == "12345"
 
     # ----------------
     # Weeks unit tests
     # ----------------
 
     def test_weeks_non_empty_response(self):
-        rv = self.app.get('/weeks')
-        assert len(rv.data) > 0
+        rv = self.app.get('/api/v1/weeks')
+        data = json.loads(rv.data)
+        assert len(data) > 0
 
     def test_weeks_has_id(self):
-        rv = self.app.get('/weeks/33333')
+        rv = self.app.get('/api/v1/weeks/1')
         data = json.loads(rv.data)
-        self.assert_equal(data["id"], "11111")
-
-    def test_weeks_has_crimes(self):
-        rv = self.app.get('/weeks/33333')
-        data = json.loads(rv.data)
-        self.assert_equal(data["crimes"], [12345, 12346, 12347])
+        assert data["week_id"] == "1"
 
     def test_weeks_has_start_date(self):
-        rv = self.app.get('/weeks/33333')
+        rv = self.app.get('/api/v1/weeks/1')
         data = json.loads(rv.data)
-        self.assert_equal(data["start_date"], "1-1-2015")
+        assert data["start_date"] == "10/11/15"
 
     def test_weeks_has_end_date(self):
-        rv = self.app.get('/weeks/33333')
+        rv = self.app.get('/api/v1/weeks/1')
         data = json.loads(rv.data)
-        self.assert_equal(data["end_date"], "1-7-2015")
+        assert data["end_date"] == "10/17/15"
 
 if __name__ == '__main__':
     unittest.main() 

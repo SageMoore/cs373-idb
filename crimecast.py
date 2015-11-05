@@ -14,8 +14,13 @@ api = Api(app)
 #//username:password@host:port/database
 
 # engine = create_engine('postgres://crimedata:poop@crimecast.xyz:5000/crimedata')
+# engine = create_engine('postgresql://crimedata:poop@localhost/crimedata')
 engine = db_connect()
+print('engine is: ')
+print(engine)
 DBSession = sessionmaker(bind=engine)
+print('debsession is: ')
+print(DBSession)
 session = DBSession()
 
 #Query a specific table in database example
@@ -95,7 +100,7 @@ def zip_home():
 
 @app.route('/zips/<zip_id>')
 def zip(zip_id):
-	return app.send_static_file('zips1.html', zip_id=zip_id)
+	return app.send_static_file('index.html')
 
 @app.route('/about')
 def about():
@@ -201,14 +206,20 @@ WEEKS = [
 # shows a list of all crimes, and lets you POST to add new tasks
 class CrimeList(Resource):
     def get(self):
+        print('picking up code changes ')
         print('session is')
         print(session)
         all_crimes = session.query(Crime).all()
         print('all_crimes is')
+        crimes_json = []
         print(all_crimes)
+        print('iterating')
         for c in all_crimes:
-            print(json.dumps(c.__dict__))
-        return all_crimes
+            print('iter....')
+            print(dir(c))
+            print(str(c))
+            crimes_json.append(json.dumps(str(dict(c))))
+        return crimes_json
         # return CRIMES
 
     def post(self):
@@ -286,12 +297,11 @@ class ZipList(Resource):
 # Zipcode
 # returns a zipcode by id
 class ZipById(Resource):
-    def get(self, week_id):
-        return ZIPS[int(week_id) - 1]
+    def get(self, zip_id):
+        return ZIPS[int(zip_id) - 1]
 
     def post(self):
         pass
-
 
 # Unit Tests
 # Returns the results of running tests.py -- for use on the 'About' page
