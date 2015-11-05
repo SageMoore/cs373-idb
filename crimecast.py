@@ -292,17 +292,15 @@ class ZipById(Resource):
 class Tests(Resource):
     def get(self):
         #p = subprocess.Popen('python cs373-idb/tests.py', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        #p = subprocess.Popen('echo "Test process HERP DERP FLERP"', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         #output, errors = p.communicate()
         #return { 'results': str(output) }
         #return { 'results': 'HERP DERP FLERP' }
 
         res = ''
-        path = os.path.dirname(os.path.realpath(__file__))
-        for i in run_command(('python3 ' + path + '/tests.py').split()):
+        for i in run_command(('python3 cs373-idb/tests.py').split()):
             res += i.decode("utf-8")
 
-        return Response(res, mimetype='text/plain')
+        return { 'results': res }
 
 def run_command(exe):
     p = subprocess.Popen(exe, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
