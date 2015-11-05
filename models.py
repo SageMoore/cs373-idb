@@ -73,7 +73,7 @@ class Crime(Base):
 
 def db_connect():
     print('calling engine')
-    engine = create_engine('postgresql://crimedata:poop@localhost/crimedata')
+    engine = create_engine('postgresql://crimedata:poop@localhost/test')
     # engine = create_engine('postgresql://crimedata:poop@104.239.145.116:5000/crimedata')
     print('engine called')
     return engine
