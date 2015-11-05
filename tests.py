@@ -8,15 +8,14 @@ from flask import json, jsonify
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from models import (Base, Crime, Week, Zip, CrimeType)
-
+from models import db_connect, CrimeType, Crime, Week, Zip
 
 class CrimecastDBTestCase(unittest.TestCase):
 
     def setUp(self):
-        self.engine = create_engine('postgresql+psycopg2://localhost:3000/postgres')
-        self.session = sessionmaker(bind=self.engine)()
-        Base.metadata.create_all(self.engine)
+        self.engine = create_engine('postgresql://crimedata:poop@localhost/test')
+        self.DBSession = sessionmaker(bind=engine)
+        self.session = self.DBSession()
 
     def tearDown(self):
         Base.metadata.drop_all(self.engine)
