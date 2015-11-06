@@ -82,6 +82,12 @@ def db_connect():
 def create_tables(engine):
     Base.metadata.create_all(engine)
 
+# Drops all tables in the engine. This is equivalent to "Drop Table"
+# statements in raw SQL.
+def drop_tables(engine):
+    Base.metadata.drop_all(engine)
+
+
 # create_tables(db_connect())
 
  
