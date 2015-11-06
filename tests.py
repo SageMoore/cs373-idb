@@ -138,7 +138,7 @@ class CrimecastDBTestCase(unittest.TestCase):
         self.session.commit()
         query = self.session.query(Zip).filter(Zip.pop == 20000).first()
 
-        assert query.family_income == "40000"
+        self.assertEqual(query.family_income, 40000)
 
     # -----------------
     # Weeks unit tests
