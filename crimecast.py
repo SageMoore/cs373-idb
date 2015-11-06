@@ -208,7 +208,8 @@ class CrimeById(Resource):
         if crime_type is not None:
             print("and here")
             crime_json['crime_type'] = crime_type
-        print("why")
+        print("why", crime_json)
+        print(json.dumps(crime_json))
         return json.dumps(crime_json)
 
     def post(self):
