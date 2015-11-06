@@ -317,13 +317,13 @@ class CrimecastAPITestCase(unittest.TestCase):
         rv = self.app.get('/api/v1/zips/1')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["pop"], "12345")
+        self.assertEqual(data["pop"], "20000")
 
     def test_zips_has_family_income(self):
         rv = self.app.get('/api/v1/zips/1')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["family_income"], "12345")
+        self.assertEqual(data["family_income"], "50000")
 
     # ----------------
     # Weeks unit tests
