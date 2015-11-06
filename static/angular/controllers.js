@@ -42,6 +42,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
     var crimeId = $stateParams.crimeId;
 
     var map = services.getMap();
+    console.log('got map')
 
     var getCrime = function(crimeId) {
         http_service.getCrime(crimeId).then(function(data) {
