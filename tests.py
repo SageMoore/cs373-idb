@@ -25,6 +25,7 @@ class CrimecastDBTestCase(unittest.TestCase):
 
     def tearDown(self):
         #pass
+        self.session.close()
         Base.metadata.drop_all(self.engine)
 
     # -----------------
@@ -133,12 +134,12 @@ class CrimecastDBTestCase(unittest.TestCase):
         self.assertEqual(q_size, 2)
 
     def test_zipcode_attributes(self):
-        self.session.add(Zip(zip_code=78704, lat=32.123, lng=32.123, pop=20000, family_income=40000))
-        self.session.add(Zip(zip_code=78705, lat=32.123, lng=32.123, pop=20000, family_income=40000))
+        self.session.add(Zip(zip_code=78704, lat=32.123, lng=32.123, pop=20000, family_income=50000))
+        self.session.add(Zip(zip_code=78705, lat=32.123, lng=32.123, pop=20000, family_income=50000))
         self.session.commit()
         query = self.session.query(Zip).filter(Zip.pop == 20000).first()
 
-        self.assertEqual(query.family_income, 40000)
+        self.assertEqual(query.family_income, 50000)
 
     # -----------------
     # Weeks unit tests
