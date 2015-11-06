@@ -32,7 +32,8 @@ class CrimecastDBTestCase(unittest.TestCase):
         engine.execute(text('drop table crime_type cascade;'))
         engine.execute(text('drop table week cascade;'))
         engine.execute(text('drop table zip cascade;'))
-        Base.metadata.drop_all(self.engine)
+        #Base.metadata.reflect(bind=self.engine)
+        Base.metadata.drop_all(bind=self.engine)
 
     # -----------------
     # Crimes unit tests
