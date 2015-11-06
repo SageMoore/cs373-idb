@@ -196,6 +196,7 @@ class CrimeById(Resource):
         print("got zip")
         crime_type = session.query(CrimeType).from_statement(text("select * from crime_type where crime_type_id=:crime_type_id")).params(crime_type_id=crime.crime_type).first()
         print("got type")
+        print(crime.crime_id)
         crime_json = row_to_dict(crime)
         if week is not None:
             crime_json['week'] = week
