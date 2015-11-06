@@ -44,7 +44,6 @@ parser = reqparse.RequestParser()
 @app.route('/')
 @app.route('/splash')
 def splash():
-    print('in splash')
     return app.send_static_file('index.html')
 
 @app.errorhandler(404)
