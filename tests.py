@@ -25,8 +25,13 @@ class CrimecastDBTestCase(unittest.TestCase):
 
     def tearDown(self):
         #pass
+
         self.session.commit()
         self.session.close()
+        engine.execute(text('drop table crime cascade;'))
+        engine.execute(text('drop table crime_type cascade;'))
+        engine.execute(text('drop table week cascade;'))
+        engine.execute(text('drop table zip cascade;'))
         Base.metadata.drop_all(self.engine)
 
     # -----------------
