@@ -11,7 +11,7 @@ engine = db_connect()
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
   
-# Insert a Person in the person table
+# Insert everything into the crimedata database
 def add():
     crime_1 = Crime(lat=30.28500, lng=-97.7320000, time=datetime.date(year=2015, month=10, day=28), address="gdc", description="Graffiti of pig on building")
     crime_2 = Crime(lat=30.30000, lng=-97.730000, time=datetime.date(year=2015, month=10, day=20), address="Duval Rd", description="Burglary at Quacks Bakery")
@@ -172,12 +172,23 @@ def add_crime_type_to_week():
         session.rollback()
         print("Everything broke")
 
-add()
-add_weeks_to_crimes()
-add_zips_to_crimes()
-add_crime_type_to_crimes()
-add_zip_to_week()
-add_zip_to_crime_type()
-add_week_to_crime_type()
-add_crime_type_to_week()
+def print_everything():
+    crimes = session.query(Crime).all()
+    print("crimes len: " + str(len(crimes)))
+    weeks = session.query(Week).all()
+    print("weeks len: " + str(len(weeks)))
+    crime_types = session.query(CrimeType).all()
+    print("crime_types len: " + str(len(crime_types)))
+    zips = session.query(Zip).all()
+    print("zips len: " + str(len(zips)))
+
+#add()
+#add_weeks_to_crimes()
+#add_zips_to_crimes()
+#add_crime_type_to_crimes()
+#add_zip_to_week()
+#add_zip_to_crime_type()
+#add_week_to_crime_type()
+#add_crime_type_to_week()
+print_everything()
 session.close()
