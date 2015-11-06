@@ -79,6 +79,9 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
         http_service.getCrimeType(crime_type_id).then(function(data) {
             $scope.crime_type = data;
             console.log('data for crime type is ', data)
+            angular.forEach($scope.crime_type.crimes, function(value, key) {
+                services.addMarker(value.lat, value.lng, value.address, map, value.crime_type.crime_type_name);
+            })
         })
     };
 
@@ -110,6 +113,9 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
     var getWeek = function(week_id) {
         http_service.getWeek(week_id).then(function(data) {
             $scope.week = data;
+            angular.forEach($scope.week.crimes, function(value, key) {
+                services.addMarker(value.lat, value.lng, value.address, map, value.crime_type.crime_type_name);
+            })
         })
     };
 
@@ -140,8 +146,10 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
 
     var getZip = function(zip_id) {
         http_service.getZip(zip_id).then(function(data) {
-            services.addMarker(data.lat, data.lng, data.zip_code, map, data.pop);
             $scope.zip = data;
+            angular.forEach($scope.zip.crimes, function(value, key) {
+                services.addMarker(value.lat, value.lng, value.address, map, value.crime_type.crime_type_name);
+            })
         })
     };
 
