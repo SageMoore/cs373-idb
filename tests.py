@@ -224,18 +224,18 @@ class CrimecastAPITestCase(unittest.TestCase):
     def test_crimes_has_type(self):
         rv = self.app.get('/api/v1/crimes/1')
         data = json.loads(rv.data)
-        self.assertEqual(data["crime_type"] == {
+        self.assertEqual(data["crime_type"], {
                 'crime_type_id': '1',
                 'name': 'Vandalism'
-             }
+             })
 
     def test_crimes_has_zip(self):
         rv = self.app.get('/api/v1/crimes/1')
         data = json.loads(rv.data)
-        self.assertEqual(data["zip_code"] == {
+        self.assertEqual(data["zip_code"], {
                 'zip_id': '1',
                 'zip_code': '78704'
-            }
+            })
 
     def test_crimes_has_week(self):
         rv = self.app.get('/api/v1/crimes/1')
