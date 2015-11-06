@@ -25,6 +25,7 @@ class CrimecastDBTestCase(unittest.TestCase):
 
     def tearDown(self):
         #pass
+        self.session.commit()
         self.session.close()
         Base.metadata.drop_all(self.engine)
 
@@ -197,9 +198,7 @@ class CrimecastAPITestCase(unittest.TestCase):
 
     def test_splash_non_empty_response(self):
         rv = self.app.get('/')
-        data = json.loads(rv.data)
-        data = json.loads(data)
-        assert len(data) > 0
+        assert len(rv.data) > 0
 
     # -----------------
     # Crimes unit tests
