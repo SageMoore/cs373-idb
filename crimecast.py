@@ -284,7 +284,7 @@ class WeekList(Resource):
 # returns a week by id
 class WeekById(Resource):
     def get(self, week_id):
-        week = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).params(week_id=week_id).all()
+        week = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).params(week_id=week_id).first()
         most_popular = session.query(CrimeType).from_statement(text("select * from crime_type where crime_type_id=:crime_type_id")).params(crime_type_id=week.most_popular).first()
         worst_zip = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).params(zip_id=week.worst_zip).first()
         # week_json= {'week_id':week.week_id,
@@ -330,7 +330,7 @@ class ZipList(Resource):
 # returns a zipcode by id
 class ZipById(Resource):
     def get(self, zip_id):
-        z = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).params(zip_id=zip_id).all()
+        z = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).params(zip_id=zip_id).first()
         # z_json= {'zip_id':z.zip_id,
         #          'zip_code':z.zip_code,
         #          'lat':z.lat,
