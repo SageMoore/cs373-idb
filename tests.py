@@ -11,15 +11,13 @@ from sqlalchemy.orm import sessionmaker
 
 from sqlalchemy.ext.declarative import declarative_base
 
-Base = declarative_base()
-
-from models import CrimeType, Crime, Week, Zip
+from models import CrimeType, Crime, Week, Zip, drop_tables, create_tables
 
 class CrimecastDBTestCase(unittest.TestCase):
 
     def setUp(self):
         self.engine = create_engine('postgresql://crimedata:poop@localhost/test')
-        Base.metadata.create_all(bind=self.engine)
+        create_tables(self.engine)
         self.DBSession = sessionmaker(bind=self.engine)
         self.session = self.DBSession()
 
@@ -28,12 +26,11 @@ class CrimecastDBTestCase(unittest.TestCase):
 
         self.session.commit()
         self.session.close()
-        self.engine.execute(text('drop table crime cascade;'))
-        self.engine.execute(text('drop table crime_type cascade;'))
-        self.engine.execute(text('drop table week cascade;'))
-        self.engine.execute(text('drop table zip cascade;'))
-        #Base.metadata.reflect(bind=self.engine)
-        Base.metadata.drop_all(bind=self.engine)
+        # self.engine.execute(text('drop table crime cascade;'))
+        # self.engine.execute(text('drop table crime_type cascade;'))
+        # self.engine.execute(text('drop table week cascade;'))
+        # self.engine.execute(text('drop table zip cascade;'))
+        drop_tables(self.engine)
 
     # -----------------
     # Crimes unit tests
