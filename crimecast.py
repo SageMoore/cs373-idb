@@ -241,10 +241,8 @@ class CrimeTypeById(Resource):
             crime_type_json['worst_zip'] = row_to_dict(worst_zip)
         if crimes is not None:
             crimes_list = []
-            print(crimes)
             for crime in crimes:
-                print(crime)
-                crimes_list += row_to_dict(crime)
+                crimes_list.append(row_to_dict(crime))
             crime_type_json['crimes'] = crimes_list
         return json.dumps(crime_type_json)
 
@@ -290,7 +288,7 @@ class WeekById(Resource):
         if crimes is not None:
             crimes_list = []
             for crime in crimes:
-                crimes_list += row_to_dict(crime)
+                crimes_list.append(row_to_dict(crime))
             week_json['crimes'] = crimes_list
         return json.dumps(week_json)
 
@@ -326,7 +324,7 @@ class ZipById(Resource):
         if crimes is not None:
             crimes_list = []
             for crime in crimes:
-                crimes_list += row_to_dict(crime)
+                crimes_list.append(row_to_dict(crime))
             z_json['crimes'] = crimes_list
         return json.dumps(z_json)
 
