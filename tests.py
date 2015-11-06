@@ -19,9 +19,9 @@ class CrimecastDBTestCase(unittest.TestCase):
 
     def setUp(self):
         self.engine = create_engine('postgresql://crimedata:poop@localhost/test')
+        Base.metadata.create_all(self.engine)
         self.DBSession = sessionmaker(bind=self.engine)
         self.session = self.DBSession()
-        Base.metadata.create_all(self.engine)
 
     def tearDown(self):
         #pass
@@ -185,14 +185,11 @@ class CrimecastDBTestCase(unittest.TestCase):
 class CrimecastAPITestCase(unittest.TestCase):
 
     def setUp(self):
-        self.db_fd, crimecast.app.config['DATABASE'] = tempfile.mkstemp()
         crimecast.app.config['TESTING'] = True
         self.app = crimecast.app.test_client()
-        # crimecast.init_db()
 
     def tearDown(self):
-        os.close(self.db_fd)
-        os.unlink(crimecast.app.config['DATABASE'])
+        pass
 
     # -----------------
     # Splash unit tests
@@ -200,7 +197,9 @@ class CrimecastAPITestCase(unittest.TestCase):
 
     def test_splash_non_empty_response(self):
         rv = self.app.get('/')
-        assert len(rv.data) > 0
+        data = json.loads(rv.data)
+        data = json.loads(data)
+        assert len(data) > 0
 
     # -----------------
     # Crimes unit tests
@@ -222,7 +221,7 @@ class CrimecastAPITestCase(unittest.TestCase):
         rv = self.app.get('/api/v1/crimes/1')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["address"], "GDC")
+        self.assertEqual(data["address"], "gdc")
 
     def test_crimes_has_type(self):
         rv = self.app.get('/api/v1/crimes/1')
@@ -339,13 +338,13 @@ class CrimecastAPITestCase(unittest.TestCase):
         rv = self.app.get('/api/v1/weeks/1')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["start_date"], "10/11/15")
+        self.assertEqual(data["start"], "10/11/15")
 
     def test_weeks_has_end_date(self):
         rv = self.app.get('/api/v1/weeks/1')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["end_date"], "10/17/15")
+        self.assertEqual(data["end"], "10/17/15")
 
 if __name__ == '__main__':
     unittest.main() 
