@@ -63,7 +63,7 @@
                                 <td><a href="zips/{{crime.zip_code.zip_id}}">
                                     {{ crime.zip_code.zip_code }}</a></td>
                                 <td><a href="weeks/{{crime.week.week_id}}">
-                                    {{ crime.week.start_date }}</a></td>
+                                    {{ crime.week.start }}</a></td>
                             </tr>
                             </tbody>
                         </table>
@@ -77,9 +77,6 @@
                 </div>
 
                 <div class=" col-md-8 ">
-                    <div class="well" style="margin-left: 50px">
-                        <div recent-comments params="{limit: 5, related:'thread'}"></div>
-                    </div>
                 </div>
                 <div class=" col-md-4 " style="margin-left: auto">
                     <div class="well" class="center">

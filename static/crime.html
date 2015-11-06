@@ -10,9 +10,9 @@
                 <div class="col-md-2 " id="crime-type-key">Crime type</div>
                 <div class="col-md-2 col-md-offset-1">Crime description</div>
                 <div class="col-md-2">Location</div>
-                <div class="col-md-1">Time</div>
+                <div class="col-md-2">Time</div>
                 <div class="col-md-1">Zipcode</div>
-                <div class="col-md-2">Week</div>
+                <div class="col-md-1">Week</div>
                 <div class="col-md-1">Id</div>
             </div>
             <div ng-model="crime" class="row show-grid" id="menu-vals" style="margin-left: auto">
@@ -20,26 +20,13 @@
                 <div class="col-md-2 col-md-offset-1 field alert-info"><a href="/crimes/{{crime.id}}">{{crime.description}}</a></div>
                 <div class="col-md-2 field alert-info"><a >{{crime.address}}</a></div>
                 <div class="col-md-2 field alert-info"><a >{{crime.time}}</a></div>
-                <div class="col-md-2 field alert-info"><a href="/zips/{{crime.zip_code.zip_id}}">{{crime.zip_code.zip_code}}</a></div>
-                <div class="col-md-2 field alert-info"><a href="/weeks/{{crime.week.week_id}}">{{crime.week.start}}</a></div>
+                <div class="col-md-1 field alert-info"><a href="/zips/{{crime.zip_code.zip_id}}">{{crime.zip_code.zip_code}}</a></div>
+                <div class="col-md-1 field alert-info"><a href="/weeks/{{crime.week.week_id}}">{{crime.week.start}}</a></div>
                 <div class="col-md-1 field alert-info"><a >{{crime.crime_id}}</a></div>
             </div>
         </div>
     </div>
-
-    <div class="well" style="margin-left: 50px">
-        <div recent-comments params="{limit: 5, related:'thread'}"></div>
-        <!-- directive can be used as an attribute -->
-        <div disqus="id"></div>
-
-        <!-- directive can be used as a class attribute -->
-        <div class="disqus : id"></div>
-        <a href="#!/test/1">test page 1</a> |
-        <a href="#!/test/1" data-disqus-identifier="1"></a>
-        <dir-disqus disqus-shortname="YOUR_DISQUS_SHORTNAME"
-                    disqus-identifier="{{ article.id }}"
-                    disqus-url="{{ article.url }}"
-                    ready-to-bind="{{ contentLoaded }}">
-        </dir-disqus>
+    <div class="well" style="height: 350px">
+        <div class="gmap" id="map"></div>
     </div>
 </div>
