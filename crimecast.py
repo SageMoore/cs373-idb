@@ -243,7 +243,10 @@ class CrimeTypeById(Resource):
         if worst_zip is not None:
             crime_type_json['worst_zip'] = row_to_dict(worst_zip)
         if crimes is not None:
-            crime_type_json['crimes'] = crimes
+            crimes_list = []
+            for crime in crimes:
+                crimes_list += row_to_dict(crime)
+            crime_type_json['crimes'] = crimes_list
         print("individual crime asdffdsa", crime_type_json)
         return json.dumps(crime_type_json)
 
@@ -290,9 +293,13 @@ class WeekById(Resource):
         if worst_zip is not None:
             week_json['worst_zip'] = row_to_dict(worst_zip)
         if crimes is not None:
-            week_json['crimes'] = crimes
+            crimes_list = []
+            for crime in crimes:
+                crimes_list += row_to_dict(crime)
+            week_json['crimes'] = crimes_list
         print("individual week asdfasdf",week_json)
         return json.dumps(week_json)
+
     def post(self):
         pass
 
@@ -322,7 +329,10 @@ class ZipById(Resource):
         crimes = session.query(Crime).from_statement(text("select * from crime where zip_code=:zip_id")).params(zip_id=zip_id).all()
         z_json = row_to_dict(z)
         if crimes is not None:
-            z_json['crimes'] = crimes
+            crimes_list = []
+            for crime in crimes:
+                crimes_list += row_to_dict(crime)
+            z_json['crimes'] = crimes_list
         return json.dumps(z_json)
 
     def post(self):
