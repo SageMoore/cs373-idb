@@ -209,21 +209,25 @@ class CrimecastAPITestCase(unittest.TestCase):
     def test_crimes_non_empty_response(self):
         rv = self.app.get('/api/v1/crimes')
         data = json.loads(rv.data)
+        data = json.loads(data)
         assert len(data) > 0
 
     def test_crimes_has_id(self):
         rv = self.app.get('/api/v1/crimes/1')
         data = json.loads(rv.data)
+        data = json.loads(data)
         self.assertEqual(data["crime_id"], "1")
 
     def test_crimes_has_address(self):
         rv = self.app.get('/api/v1/crimes/1')
         data = json.loads(rv.data)
+        data = json.loads(data)
         self.assertEqual(data["address"], "GDC")
 
     def test_crimes_has_type(self):
         rv = self.app.get('/api/v1/crimes/1')
         data = json.loads(rv.data)
+        data = json.loads(data)
         self.assertEqual(data["crime_type"], {
                 'crime_type_id': '1',
                 'name': 'Vandalism'
@@ -232,6 +236,7 @@ class CrimecastAPITestCase(unittest.TestCase):
     def test_crimes_has_zip(self):
         rv = self.app.get('/api/v1/crimes/1')
         data = json.loads(rv.data)
+        data = json.loads(data)
         self.assertEqual(data["zip_code"], {
                 'zip_id': '1',
                 'zip_code': '78704'
@@ -240,6 +245,7 @@ class CrimecastAPITestCase(unittest.TestCase):
     def test_crimes_has_week(self):
         rv = self.app.get('/api/v1/crimes/1')
         data = json.loads(rv.data)
+        data = json.loads(data)
         self.assertEqual(data["week"], {
                 'week_id': '1',
                 'start_date': '10/11/15'
@@ -252,11 +258,13 @@ class CrimecastAPITestCase(unittest.TestCase):
     def test_crime_types_non_empty_response(self):
         rv = self.app.get('/api/v1/crime_types')
         data = json.loads(rv.data)
+        data = json.loads(data)
         assert len(data) > 0
 
     def test_crime_types_has_name(self):
         rv = self.app.get('/api/v1/crime_types/1')
         data = json.loads(rv.data)
+        data = json.loads(data)
         self.assertEqual(data["name"], "Vandalism")
 
     def test_crime_types_has_desc(self):
@@ -272,36 +280,43 @@ class CrimecastAPITestCase(unittest.TestCase):
     def test_zips_non_empty_response(self):
         rv = self.app.get('/api/v1/zips')
         data = json.loads(rv.data)
+        data = json.loads(data)
         assert len(data) > 0
 
     def test_zips_has_id(self):
         rv = self.app.get('/api/v1/zips/1')
         data = json.loads(rv.data)
+        data = json.loads(data)
         self.assertEqual(data["zip_id"], "1")
 
     def test_zips_has_zip(self):
         rv = self.app.get('/api/v1/zips/1')
         data = json.loads(rv.data)
+        data = json.loads(data)
         self.assertEqual(data["zip_code"], "78704")
 
     def test_zips_has_lat(self):
         rv = self.app.get('/api/v1/zips/1')
         data = json.loads(rv.data)
+        data = json.loads(data)
         self.assertEqual(data["lat"], "32.123")
 
     def test_zips_has_lng(self):
         rv = self.app.get('/api/v1/zips/1')
         data = json.loads(rv.data)
+        data = json.loads(data)
         self.assertEqual(data["lng"], "32.123")
 
     def test_zips_has_pop(self):
         rv = self.app.get('/api/v1/zips/1')
         data = json.loads(rv.data)
+        data = json.loads(data)
         self.assertEqual(data["pop"], "12345")
 
     def test_zips_has_family_income(self):
         rv = self.app.get('/api/v1/zips/1')
         data = json.loads(rv.data)
+        data = json.loads(data)
         self.assertEqual(data["family_income"], "12345")
 
     # ----------------
@@ -311,21 +326,25 @@ class CrimecastAPITestCase(unittest.TestCase):
     def test_weeks_non_empty_response(self):
         rv = self.app.get('/api/v1/weeks')
         data = json.loads(rv.data)
+        data = json.loads(data)
         assert len(data) > 0
 
     def test_weeks_has_id(self):
         rv = self.app.get('/api/v1/weeks/1')
         data = json.loads(rv.data)
+        data = json.loads(data)
         self.assertEqual(data["week_id"],  "1")
 
     def test_weeks_has_start_date(self):
         rv = self.app.get('/api/v1/weeks/1')
         data = json.loads(rv.data)
+        data = json.loads(data)
         self.assertEqual(data["start_date"], "10/11/15")
 
     def test_weeks_has_end_date(self):
         rv = self.app.get('/api/v1/weeks/1')
         data = json.loads(rv.data)
+        data = json.loads(data)
         self.assertEqual(data["end_date"], "10/17/15")
 
 if __name__ == '__main__':
