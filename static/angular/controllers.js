@@ -37,13 +37,16 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
 
     $scope.crimes = getCrimes();
 
-}).controller('crimeCtrl', function ($scope, http_service, $location, $stateParams) {
+}).controller('crimeCtrl', function ($scope, http_service, $location, $stateParams, services) {
 
     var crimeId = $stateParams.crimeId;
+
+    var map = services.getMap();
 
     var getCrime = function(crimeId) {
         http_service.getCrime(crimeId).then(function(data) {
             $scope.crime = data;
+            services.addMarker(data.lat, data.lng, data.address, map, data.crime_type.crime_type_name);
         })
     }
 
