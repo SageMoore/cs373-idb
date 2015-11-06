@@ -232,17 +232,14 @@ class CrimeTypeById(Resource):
         crime_type = session.query(CrimeType).from_statement(text("select * from crime_type where crime_type_id=:crime_type_id")).params(crime_type_id=crime_type_id).first()
         worst_week = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).params(week_id=crime_type.worst_week).first()
         worst_zip = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).params(zip_id=crime_type.worst_zip).first()
-        crimes = []
-        crimes += session.query(Crime).from_statement(text("select * from crime where crime_type=:crime_type")).params(crime_type=crime_type_id).all()
+        crimes = session.query(Crime).from_statement(text("select * from crime where crime_type=:crime_type")).params(crime_type=crime_type_id).all()
         crime_type_json = row_to_dict(crime_type)
         if worst_week is not None:
             crime_type_json['worst_week'] = row_to_dict(worst_week)
         if worst_zip is not None:
             crime_type_json['worst_zip'] = row_to_dict(worst_zip)
         if crimes is not None:
-            crimes_list = []
-            for crime in crimes:
-                crimes_list += row_to_dict(crime)
+            crimes_list = row_to_dict(crimes)
             crime_type_json['crimes'] = crimes_list
         return json.dumps(crime_type_json)
 
@@ -278,17 +275,14 @@ class WeekById(Resource):
         week = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).params(week_id=week_id).first()
         most_popular = session.query(CrimeType).from_statement(text("select * from crime_type where crime_type_id=:crime_type_id")).params(crime_type_id=week.most_popular).first()
         worst_zip = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).params(zip_id=week.worst_zip).first()
-        crimes = []
-        crimes += session.query(Crime).from_statement(text("select * from crime where week=:week_id")).params(week_id=week_id).all()
+        crimes = session.query(Crime).from_statement(text("select * from crime where week=:week_id")).params(week_id=week_id).all()
         week_json = row_to_dict(week)
         if most_popular is not None:
             week_json['most_popular'] = row_to_dict(most_popular)
         if worst_zip is not None:
             week_json['worst_zip'] = row_to_dict(worst_zip)
         if crimes is not None:
-            crimes_list = []
-            for crime in crimes:
-                crimes_list += row_to_dict(crime)
+            crimes_list = row_to_dict(crimes)
             week_json['crimes'] = crimes_list
         return json.dumps(week_json)
 
@@ -318,13 +312,10 @@ class ZipList(Resource):
 class ZipById(Resource):
     def get(self, zip_id):
         z = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).params(zip_id=zip_id).first()
-        crimes = []
-        crimes += session.query(Crime).from_statement(text("select * from crime where zip_code=:zip_id")).params(zip_id=zip_id).all()
+        crimes = session.query(Crime).from_statement(text("select * from crime where zip_code=:zip_id")).params(zip_id=zip_id).all()
         z_json = row_to_dict(z)
         if crimes is not None:
-            crimes_list = []
-            for crime in crimes:
-                crimes_list += row_to_dict(crime)
+            crimes_list = row_to_dict(crimes)
             z_json['crimes'] = crimes_list
         return json.dumps(z_json)
 
