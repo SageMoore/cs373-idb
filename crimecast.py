@@ -198,12 +198,17 @@ class CrimeById(Resource):
         print("got type")
         print(crime.crime_id)
         crime_json = row_to_dict(crime)
+        print("made it here")
         if week is not None:
+            print("here too")
             crime_json['week'] = week
         if zip_code is not None:
+            print("also here")
             crime_json['zip_code'] = zip_code
         if crime_type is not None:
+            print("and here")
             crime_json['crime_type'] = crime_type
+        print("why")
         return json.dumps(crime_json)
 
     def post(self):
