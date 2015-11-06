@@ -42,7 +42,7 @@ class CrimecastDBTestCase(unittest.TestCase):
 
         end_size = len(query)
 
-        assert (start_size + 1) == end_size
+        self.assertEqual((start_size + 1), end_size)
 
     def test_find_crime(self):
         self.session.add(Crime(lat=30.28500, lng=-97.7320000, time=datetime.date(year=2015, month=10, day=28), address="gdc", description="Graffiti of pig on building"))
@@ -50,7 +50,7 @@ class CrimecastDBTestCase(unittest.TestCase):
         query = self.session.query(Crime).filter(Crime.address == "gdc").all()
         q_size = len(query)
 
-        assert q_size == 1
+        self.assertEqual(q_size, 1)
 
     def test_find_crime_multiple(self):
         self.session.add(Crime(lat=30.28500, lng=-97.7320000, time=datetime.date(year=2015, month=10, day=28), address="gdc", description="Graffiti of pig on building"))
@@ -59,7 +59,7 @@ class CrimecastDBTestCase(unittest.TestCase):
         query = self.session.query(Crime).filter(Crime.address == "gdc").all()
         q_size = len(query)
 
-        assert q_size == 2
+        self.assertEqual(q_size, 2)
 
     def test_crime_attributes(self):
         self.session.add(Crime(lat=30.28500, lng=-97.7320000, time=datetime.date(year=2015, month=10, day=28), address="gdc", description="Graffiti of pig on building"))
@@ -67,7 +67,7 @@ class CrimecastDBTestCase(unittest.TestCase):
         self.session.commit()
         query = self.session.query(Crime).filter(Crime.address == "gdc").first()
 
-        assert query.description == "Graffiti of pig on building"
+        self.assertEqual(query.description, "Graffiti of pig on building")
 
     # -----------------
     # Crime Types unit tests
@@ -83,7 +83,7 @@ class CrimecastDBTestCase(unittest.TestCase):
 
         end_size = len(query)
 
-        assert (start_size + 1) == end_size
+        self.assertEqual((start_size + 1), end_size)
 
     def test_find_crime_type(self):
         self.session.add(CrimeType(name='Vandalism', desc = "Vandalism is bad"))
@@ -91,14 +91,14 @@ class CrimecastDBTestCase(unittest.TestCase):
         query = self.session.query(CrimeType).filter(CrimeType.name == "Vandalism").all()
         q_size = len(query)
 
-        assert q_size == 1
+        self.assertEqual(q_size, 1)
 
     def test_crime_type_attributes(self):
         self.session.add(CrimeType(name='Vandalism', desc = "Vandalism is bad"))
         self.session.commit()
         query = self.session.query(CrimeType).filter(CrimeType.name == "Vandalism").first()
 
-        assert query.desc == "Vandalism is bad"
+        self.assertEqual(query.desc, "Vandalism is bad")
 
     # -----------------
     # Zipcodes unit tests
@@ -114,7 +114,7 @@ class CrimecastDBTestCase(unittest.TestCase):
 
         end_size = len(query)
 
-        assert (start_size + 1) == end_size
+        self.assertEqual((start_size + 1), end_size)
 
     def test_find_zipcode(self):
         self.session.add(Zip(zip_code=78704, lat=32.123, lng=32.123, pop=20000, family_income=50000))
@@ -122,7 +122,7 @@ class CrimecastDBTestCase(unittest.TestCase):
         query = self.session.query(Zip).filter(Zip.pop == 20000).all()
         q_size = len(query)
 
-        assert q_size == 1
+        self.assertEqual(q_size, 1)
 
     def test_find_zipcode_multiple(self):
         self.session.add(Zip(zip_code=78704, lat=32.123, lng=32.123, pop=20000, family_income=50000))
@@ -155,7 +155,7 @@ class CrimecastDBTestCase(unittest.TestCase):
 
         end_size = len(query)
 
-        assert (start_size + 1) == end_size
+        self.assertEqual((start_size + 1), end_size)
 
     def test_find_week(self):
         self.session.add(Week(start=datetime.date(year=2015, month=10, day=11), end=datetime.date(year=2015, month=10, day=17)))
@@ -163,7 +163,7 @@ class CrimecastDBTestCase(unittest.TestCase):
         query = self.session.query(Week).filter(Week.start == datetime.date(year=2015, month=10, day=11)).all()
         q_size = len(query)
 
-        assert q_size == 1
+        self.assertEqual(q_size, 1)
 
     def test_find_week_multiple(self):
         self.session.add(Week(start=datetime.date(year=2015, month=10, day=11), end=datetime.date(year=2015, month=10, day=17)))
@@ -172,7 +172,7 @@ class CrimecastDBTestCase(unittest.TestCase):
         query = self.session.query(Week).filter(Week.start == datetime.date(year=2015, month=10, day=11)).all()
         q_size = len(query)
 
-        assert q_size == 2
+        self.assertEqual(q_size, 2)
 
     def test_week_attributes(self):
         self.session.add(Week(start=datetime.date(year=2015, month=10, day=11), end=datetime.date(year=2015, month=10, day=17)))
@@ -180,7 +180,7 @@ class CrimecastDBTestCase(unittest.TestCase):
         self.session.commit()
         query = self.session.query(Week).filter(Week.start == datetime.date(year=2015, month=10, day=11)).first()
 
-        assert query.end == datetime.date(year=2015, month=10, day=17)
+        self.assertEqual(query.end, datetime.date(year=2015, month=10, day=17))
 
 class CrimecastAPITestCase(unittest.TestCase):
 
@@ -214,17 +214,17 @@ class CrimecastAPITestCase(unittest.TestCase):
     def test_crimes_has_id(self):
         rv = self.app.get('/api/v1/crimes/1')
         data = json.loads(rv.data)
-        assert data["crime_id"] == "1"
+        self.assertEqual(data["crime_id"], "1")
 
     def test_crimes_has_address(self):
         rv = self.app.get('/api/v1/crimes/1')
         data = json.loads(rv.data)
-        assert data["address"] == "GDC"
+        self.assertEqual(data["address"], "GDC")
 
     def test_crimes_has_type(self):
         rv = self.app.get('/api/v1/crimes/1')
         data = json.loads(rv.data)
-        assert data["crime_type"] == {
+        self.assertEqual(data["crime_type"] == {
                 'crime_type_id': '1',
                 'name': 'Vandalism'
              }
@@ -232,7 +232,7 @@ class CrimecastAPITestCase(unittest.TestCase):
     def test_crimes_has_zip(self):
         rv = self.app.get('/api/v1/crimes/1')
         data = json.loads(rv.data)
-        assert data["zip_code"] == {
+        self.assertEqual(data["zip_code"] == {
                 'zip_id': '1',
                 'zip_code': '78704'
             }
@@ -240,7 +240,7 @@ class CrimecastAPITestCase(unittest.TestCase):
     def test_crimes_has_week(self):
         rv = self.app.get('/api/v1/crimes/1')
         data = json.loads(rv.data)
-        assert data["week"], {
+        self.assertEqual(data["week"], {
                 'week_id': '1',
                 'start_date': '10/11/15'
             }
@@ -257,12 +257,12 @@ class CrimecastAPITestCase(unittest.TestCase):
     def test_crime_types_has_name(self):
         rv = self.app.get('/api/v1/crime_types/1')
         data = json.loads(rv.data)
-        assert data["name"] == "Vandalism"
+        self.assertEqual(data["name"], "Vandalism")
 
     def test_crime_types_has_desc(self):
         rv = self.app.get('/api/v1/crime_types/1')
         data = json.loads(rv.data)
-        assert data["desc"] == "Vandalism is bad"
+        self.assertEqual(data["desc"], "Vandalism is bad")
 
     # ---------------
     # Zips unit tests
@@ -276,32 +276,32 @@ class CrimecastAPITestCase(unittest.TestCase):
     def test_zips_has_id(self):
         rv = self.app.get('/api/v1/zips/1')
         data = json.loads(rv.data)
-        assert data["zip_id"] == "1"
+        self.assertEqual(data["zip_id"], "1")
 
     def test_zips_has_zip(self):
         rv = self.app.get('/api/v1/zips/1')
         data = json.loads(rv.data)
-        assert data["zip_code"] == "78704"
+        self.assertEqual(data["zip_code"], "78704")
 
     def test_zips_has_lat(self):
         rv = self.app.get('/api/v1/zips/1')
         data = json.loads(rv.data)
-        assert data["lat"] == "32.123"
+        self.assertEqual(data["lat"], "32.123")
 
     def test_zips_has_lng(self):
         rv = self.app.get('/api/v1/zips/1')
         data = json.loads(rv.data)
-        assert data["lng"] == "32.123"
+        self.assertEqual(data["lng"], "32.123")
 
     def test_zips_has_pop(self):
         rv = self.app.get('/api/v1/zips/1')
         data = json.loads(rv.data)
-        assert data["pop"] == "12345"
+        self.assertEqual(data["pop"], "12345")
 
     def test_zips_has_family_income(self):
         rv = self.app.get('/api/v1/zips/1')
         data = json.loads(rv.data)
-        assert data["family_income"] == "12345"
+        self.assertEqual(data["family_income"], "12345")
 
     # ----------------
     # Weeks unit tests
@@ -315,17 +315,17 @@ class CrimecastAPITestCase(unittest.TestCase):
     def test_weeks_has_id(self):
         rv = self.app.get('/api/v1/weeks/1')
         data = json.loads(rv.data)
-        assert data["week_id"] == "1"
+        self.assertEqual(data["week_id"],  "1")
 
     def test_weeks_has_start_date(self):
         rv = self.app.get('/api/v1/weeks/1')
         data = json.loads(rv.data)
-        assert data["start_date"] == "10/11/15"
+        self.assertEqual(data["start_date"], "10/11/15")
 
     def test_weeks_has_end_date(self):
         rv = self.app.get('/api/v1/weeks/1')
         data = json.loads(rv.data)
-        assert data["end_date"] == "10/17/15"
+        self.assertEqual(data["end_date"], "10/17/15")
 
 if __name__ == '__main__':
     unittest.main() 
