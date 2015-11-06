@@ -1,6 +1,6 @@
 <div class="jumbotron overlay-blue" style="padding-bottom: 30%">
     <div class="overlay" >
-        <h1 class="left" style="font-family: 'Passion One';"  ng-model="week" class="add-margins">Week: {{week.start_date}}-{{week.end_date}}</h1>
+        <h1 class="left" style="font-family: 'Passion One';"  ng-model="week" class="add-margins">Week: {{week.start}}-{{week.end}}</h1>
     </div>
     <br>
 
@@ -11,7 +11,7 @@
                 <div class="col-md-2 col-md-offset-1">Worst Zipcode</div>
                 <div class="col-md-2">Crimes</div>
                 <div class="col-md-2">Start Date</div>
-                <div class="col-md-1">End Date</div>
+                <div class="col-md-2">End Date</div>
                 <div class="col-md-1">Id</div>
             </div>
             <div ng-model="week" class="row show-grid" id="menu-vals" style="margin-left: auto">
@@ -29,7 +29,7 @@
                     </a>
                 </div>
                 <div class="col-md-2 field alert-info"><a >{{week.start}}</a></div>
-                <div class="col-md-1 field alert-info"><a >{{week.end}}</a></div>
+                <div class="col-md-2 field alert-info"><a >{{week.end}}</a></div>
                 <div class="col-md-1 field alert-info"><a >{{week.week_id}}</a></div>
             </div>
         </div>
