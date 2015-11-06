@@ -180,7 +180,7 @@ class CrimecastDBTestCase(unittest.TestCase):
         self.session.commit()
         query = self.session.query(Week).filter(Week.start == datetime.date(year=2015, month=10, day=11)).first()
 
-        self.assertEqual(query.end, datetime.date(year=2015, month=10, day=17))
+        self.assertEqual(query.end, datetime.datetime(year=2015, month=10, day=17, hour=0, minute=0))
 
 class CrimecastAPITestCase(unittest.TestCase):
 
@@ -243,7 +243,7 @@ class CrimecastAPITestCase(unittest.TestCase):
         self.assertEqual(data["week"], {
                 'week_id': '1',
                 'start_date': '10/11/15'
-            }
+            })
 
     # ----------------------
     # Crime_Types unit tests
@@ -262,7 +262,7 @@ class CrimecastAPITestCase(unittest.TestCase):
     def test_crime_types_has_desc(self):
         rv = self.app.get('/api/v1/crime_types/1')
         data = json.loads(rv.data)
-        self.assertEqual(data["desc"], "Vandalism is bad")
+        self.assertEqual(data[name], "Vandalism is bad") # Testing here
 
     # ---------------
     # Zips unit tests
