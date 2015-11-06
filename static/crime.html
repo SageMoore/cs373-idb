@@ -18,11 +18,11 @@
             <div ng-model="crime" class="row show-grid" id="menu-vals" style="margin-left: auto">
                 <div class="col-md-2 field alert-danger" id="crime-type-val"><a class="alert-danger" href="/crime_types/{{crime.crime_type.crime_type_id}}">{{crime.crime_type.name}}</a></div>
                 <div class="col-md-2 col-md-offset-1 field alert-info">{{crime.description}}</div>
-                <div class="col-md-2 field alert-info"><a >{{crime.address}}</a></div>
-                <div class="col-md-2 field alert-info"><a >{{crime.time}}</a></div>
+                <div class="col-md-2 field alert-info">{{crime.address}}</div>
+                <div class="col-md-2 field alert-info">{{crime.time}}</div>
                 <div class="col-md-1 field alert-info"><a href="/zips/{{crime.zip_code.zip_id}}">{{crime.zip_code.zip_code}}</a></div>
                 <div class="col-md-1 field alert-info"><a href="/weeks/{{crime.week.week_id}}">{{crime.week.start}}</a></div>
-                <div class="col-md-1 field alert-info"><a >{{crime.crime_id}}</a></div>
+                <div class="col-md-1 field alert-info">{{crime.crime_id}}</div>
             </div>
         </div>
     </div>
