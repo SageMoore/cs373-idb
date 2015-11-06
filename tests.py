@@ -130,11 +130,11 @@ class CrimecastDBTestCase(unittest.TestCase):
         query = self.session.query(Zip).filter(Zip.pop == 20000).all()
         q_size = len(query)
 
-        assert q_size == 2
+        self.assertEqual(q_size, 2)
 
     def test_zipcode_attributes(self):
         self.session.add(Zip(zip_code=78704, lat=32.123, lng=32.123, pop=20000, family_income=40000))
-        self.session.add(Zip(zip_code=78705, lat=32.123, lng=32.123, pop=20000, family_income=50000))
+        self.session.add(Zip(zip_code=78705, lat=32.123, lng=32.123, pop=20000, family_income=40000))
         self.session.commit()
         query = self.session.query(Zip).filter(Zip.pop == 20000).first()
 
