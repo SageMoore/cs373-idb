@@ -19,7 +19,7 @@ class CrimecastDBTestCase(unittest.TestCase):
 
     def setUp(self):
         self.engine = create_engine('postgresql://crimedata:poop@localhost/test')
-        Base.metadata.create_all(self.engine)
+        Base.metadata.create_all(bind=self.engine)
         self.DBSession = sessionmaker(bind=self.engine)
         self.session = self.DBSession()
 
@@ -27,8 +27,8 @@ class CrimecastDBTestCase(unittest.TestCase):
         #pass
         self.session.commit()
         self.session.close()
-        Base.metadata.reflect()
-        Base.metadata.drop_all(self.engine)
+        Base.metadata.reflect(bind=self.engine)
+        Base.metadata.drop_all(bind=self.engine)
 
     # -----------------
     # Crimes unit tests
