@@ -262,7 +262,8 @@ class CrimecastAPITestCase(unittest.TestCase):
     def test_crime_types_has_desc(self):
         rv = self.app.get('/api/v1/crime_types/1')
         data = json.loads(rv.data)
-        self.assertEqual(data['name'], "Vandalism is bad") # Testing here
+        data = json.loads(data)
+        self.assertEqual(data["desc"], "Vandalism is bad") # Testing here
 
     # ---------------
     # Zips unit tests
