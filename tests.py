@@ -28,10 +28,10 @@ class CrimecastDBTestCase(unittest.TestCase):
 
         self.session.commit()
         self.session.close()
-        engine.execute(text('drop table crime cascade;'))
-        engine.execute(text('drop table crime_type cascade;'))
-        engine.execute(text('drop table week cascade;'))
-        engine.execute(text('drop table zip cascade;'))
+        self.engine.execute(text('drop table crime cascade;'))
+        self.engine.execute(text('drop table crime_type cascade;'))
+        self.engine.execute(text('drop table week cascade;'))
+        self.engine.execute(text('drop table zip cascade;'))
         #Base.metadata.reflect(bind=self.engine)
         Base.metadata.drop_all(bind=self.engine)
 
