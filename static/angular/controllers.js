@@ -95,6 +95,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
     var getCrimeType = function(crime_type_id) {
         http_service.getCrimeType(crime_type_id).then(function(data) {
             $scope.crime_type = data;
+            console.log('data for crime type is ', data)
         })
     };
 
