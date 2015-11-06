@@ -27,6 +27,7 @@ class CrimecastDBTestCase(unittest.TestCase):
         #pass
         self.session.commit()
         self.session.close()
+        Base.metadata.reflect()
         Base.metadata.drop_all(self.engine)
 
     # -----------------
