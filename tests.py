@@ -19,7 +19,7 @@ class CrimecastDBTestCase(unittest.TestCase):
 
     def setUp(self):
         self.engine = create_engine('postgresql://crimedata:poop@localhost/test')
-        Base.metadata.create_all(self.engine)
+        Base.metadata.create_all(bind=self.engine)
         self.DBSession = sessionmaker(bind=self.engine)
         self.session = self.DBSession()
 
@@ -321,13 +321,13 @@ class CrimecastAPITestCase(unittest.TestCase):
         rv = self.app.get('/api/v1/zips/1')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["pop"], "12345")
+        self.assertEqual(data["pop"], "20000")
 
     def test_zips_has_family_income(self):
         rv = self.app.get('/api/v1/zips/1')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["family_income"], "12345")
+        self.assertEqual(data["family_income"], "50000")
 
     # ----------------
     # Weeks unit tests

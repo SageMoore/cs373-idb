@@ -257,7 +257,7 @@ class Tests(Resource):
         for i in run_command(('python3 ' + path + '/tests.py').split()):
             res += i.decode("utf-8")
 
-        return { 'results': res }
+        return json.dumps({ 'results': res })
 
 def run_command(exe):
     p = subprocess.Popen(exe, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
