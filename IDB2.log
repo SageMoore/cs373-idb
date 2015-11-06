@@ -1,0 +1,2965 @@
+commit 5e8a1872485923b81a8149e624f50a9c845b28bf
+Merge: 28eaf73 b0bd262
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Nov 5 21:06:37 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 28eaf7375931e3276dd9cf5ee25c5089522527ea
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Nov 5 21:06:29 2015 -0600
+
+    deleting prints
+
+commit b0bd2629439bca0b01d62530bf49889dc371f867
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 21:02:59 2015 -0600
+
+    Editing tests
+
+commit 6afd1e9d61090c69ef54cbafd882c92d1eaf6bea
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 21:02:17 2015 -0600
+
+    Editing tests
+
+commit 0b284ad3578783d9b3afe52e4a534bb0deffc2db
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 20:55:25 2015 -0600
+
+    Editing tests
+
+commit 03e4b17e9584bc824cf67cb456386d94d3f48fab
+Merge: 6db40ba dd4408b
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Thu Nov 5 20:44:05 2015 -0600
+
+    fdsfaf
+
+commit 6db40ba97d710384c604fb8ca361af499e5ae0e2
+Merge: 792cc83 7aa37f2
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Thu Nov 5 20:43:29 2015 -0600
+
+    fixed confilicts
+
+commit dd4408b184183b63ea809f23462fc9287d7b3356
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 20:39:47 2015 -0600
+
+    Editing tests
+
+commit 792cc837b1b48ae6e4ee3f9e29ce35d6757cb904
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Thu Nov 5 20:39:02 2015 -0600
+
+    trying stuff
+
+commit 7aa37f29f6b875e0e847cdc316a9ef6c1690d75c
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 20:38:36 2015 -0600
+
+    Editing tests
+
+commit 0b6c8d2132a10c23b872c01faec04f802807fe2d
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 20:34:24 2015 -0600
+
+    Editing tests
+
+commit 7605e549dd0c1a392adf3a16c3ff3c007c7b835f
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 20:33:15 2015 -0600
+
+    Editing tests
+
+commit b417685f4f6a09084845c6da0f395c7dedc12072
+Author: thengo <jasonngo3333@yahoo.com>
+Date:   Thu Nov 5 20:30:37 2015 -0600
+
+    fix sort
+
+commit 4a8bf5663c937d2ca29ec315d0217f5b6af2efc5
+Merge: 3ae73b8 5edf61f
+Author: thengo <jasonngo3333@yahoo.com>
+Date:   Thu Nov 5 20:26:12 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 3ae73b80a95d8e5ce8f3528b021f658fe9f39f75
+Author: thengo <jasonngo3333@yahoo.com>
+Date:   Thu Nov 5 20:26:04 2015 -0600
+
+    sort crimes stuff
+
+commit 5edf61f9752c2d223277a30721ae66014da4fe68
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 20:25:17 2015 -0600
+
+    Editing tests
+
+commit bfbd3609f4ae4a13b02c80648e5666e7f89437ae
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 20:18:54 2015 -0600
+
+    Editing tests
+
+commit b2f021e0acd1189f3b69fc022effab0cdc837d42
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 20:14:49 2015 -0600
+
+    Editing tests
+
+commit 445c790375d4c7190d09c67cf66dda47eca30ec2
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 20:09:55 2015 -0600
+
+    Editing tests
+
+commit d9775755295e0623079abdb99b44d33d5f37304c
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 20:04:17 2015 -0600
+
+    Editing tests
+
+commit 2afc53598c16dfda83e2aba5cc3682f67f030441
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 20:01:47 2015 -0600
+
+    Editing tests
+
+commit 0952cd8cbae4ce43774fd2b21bb1b21ffe06b92f
+Merge: ac0feab 7ee4850
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 19:57:59 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit ac0feab5545154b3d6e3b2df189a3f19e2eee839
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 19:57:50 2015 -0600
+
+    adjusted height of timeline
+
+commit 7ee48500ef19af41f370524f1c3ff7f361bdaf95
+Merge: ead55bf ec2d882
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 19:56:59 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit ead55bf59cd100fd479d35411ce96e6a0f358401
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 19:56:44 2015 -0600
+
+    Editing tests
+
+commit ec2d882393647953647c10ce804fb7feeeced1ed
+Merge: f235b72 0935537
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 19:56:40 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit f235b720a146c88b364c9b7be7febc1035b8d580
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 19:56:24 2015 -0600
+
+    added timeline
+
+commit 0935537bddddd62a2b00995d7b2e2f0193828cb1
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 19:55:44 2015 -0600
+
+    Editing tests
+
+commit 07cb8f933ad1c2b0458e1160f64fd37f2910f346
+Merge: c683642 ecb5fa0
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Nov 5 19:54:02 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit c683642542710bbd03697ee28df4b9db3696b294
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Nov 5 19:53:52 2015 -0600
+
+    changing map
+
+commit ecb5fa042c1137d55f7f62a67f94d52e366bb61b
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 19:50:13 2015 -0600
+
+    Editing tests
+
+commit 509c72f88aa9c179fd1882190ec3455f558244e5
+Merge: 0e2aa73 e9f9f65
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Nov 5 19:48:15 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 0e2aa734ba2c3a5ce0eef68ae348a53892a90741
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Nov 5 19:48:06 2015 -0600
+
+    removing unecessary files
+
+commit e9f9f65df114155f76d17d57f4252441eb91f0fc
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 19:47:45 2015 -0600
+
+    Editing tests
+
+commit 4518797d6d4e183b1e3de86d6c42945000f2d3a5
+Author: Chance Raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 19:47:13 2015 -0600
+
+    Transferring blueprint from apiary.io
+
+commit e02f9f5240fd5f3f94c3ac0b21c5f4917944e08b
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 19:45:33 2015 -0600
+
+    Editing tests
+
+commit 187c5a7197269540d50bbbecf7bc864717cce264
+Merge: 0a4b172 5838f81
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 19:45:08 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 5838f81f8b9177bcfa40b2eece45a2ce7a0aed07
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 19:45:01 2015 -0600
+
+    Editing tests
+
+commit 0a4b172e23d902ccdfe662eea61d2c07e11c3167
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 19:44:59 2015 -0600
+
+    about page updated
+
+commit 26044e677d986e38aa63e22f50cc5e2556f3af3d
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 19:43:55 2015 -0600
+
+    Editing tests
+
+commit 62a486d95bce967846a9a4af8329bfce6bc22e4a
+Merge: 7c05734 d33e650
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Nov 5 19:43:08 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 7c057341360fdbb5d5945341ce25e7581c824513
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Nov 5 19:42:58 2015 -0600
+
+    changing image
+
+commit d33e6509e600de9f404a855ae54b52b8630bac63
+Merge: 0d9a273 15b90be
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 19:38:04 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 0d9a273e40787282d51fbda5aa2f58b828d159ab
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 19:37:36 2015 -0600
+
+    removed a tags
+
+commit 15b90be6f12c9059ac954c0082cae868f5b67064
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 19:37:02 2015 -0600
+
+    Editing tests
+
+commit 6e4966748eea3bf4f6967fb14ec3ba00f7a66f95
+Merge: 0df8d47 5e8f735
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 19:35:33 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 0df8d474b7b28908e0bf9e4426d83f5b51a552dc
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 19:35:27 2015 -0600
+
+    minor ui fix
+
+commit 5e8f73537062df0f7f49b418ccba071c36249bda
+Merge: 50a263d c9f60ed
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Thu Nov 5 19:32:05 2015 -0600
+
+    Merge branch 'master' of github.com:SageMoore/cs373-idb
+
+commit 50a263de120e650fc0f71999c1a0b35052322af5
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Thu Nov 5 19:32:00 2015 -0600
+
+    removed hardcoded json objects
+
+commit c9f60ede393356ccb2e0e682300bb866ba4f622d
+Merge: 6b8f921 9bcf34a
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Nov 5 19:31:13 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 6b8f9211b230360e29ca6715b11cb9af89be796c
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Nov 5 19:31:06 2015 -0600
+
+    updating maps
+
+commit 9bcf34acb2d697ac3a42893fcaeb30475103ced8
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 19:28:47 2015 -0600
+
+    Editing tests
+
+commit ff9c18ba60fd084a170591c38d5ac542e1cf04fe
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 19:26:22 2015 -0600
+
+    Editing tests
+
+commit ed2d6df790c0563bffbadc18ebe1f87cfea8d7cc
+Merge: e89dff1 6693ac0
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 19:24:55 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit e89dff1524fcc7e1ea2672bd22105da57b2d91b5
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 19:24:42 2015 -0600
+
+    Editing tests
+
+commit 6693ac06d358ea5c5584fbb46b9e84d9ef2c9e28
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 19:24:34 2015 -0600
+
+    hopefully this adds markers
+
+commit 539e253738754839de6c75926b4d1dc3b593d0c1
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 19:22:22 2015 -0600
+
+    work yay
+
+commit 40f9f75e073694bfbc0e5c8bc935503fc46c371c
+Merge: c644c09 b919b91
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 19:12:12 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit c644c09ab8ca89d5d46fbb8ec3630fbb7bba1f26
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 19:12:06 2015 -0600
+
+    back to this thing
+
+commit b919b917bd9d5e958914fc7ed9564d60c62a14cc
+Merge: 91f31fc 2d47008
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Nov 5 19:09:55 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 91f31fc8e48094a126853fc2826602556be56ebf
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Nov 5 19:09:46 2015 -0600
+
+    removing disqus
+
+commit 2d47008b05c26e1c510f6e377270d5a2f117b15f
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 19:07:43 2015 -0600
+
+    cleaning up and testing ugh
+
+commit d09e133feb617662af5003533409b4fbc0f3e667
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 19:05:49 2015 -0600
+
+    cleaning up and testing
+
+commit 83e8d5730792531caae1444b30c5e6be6abaea75
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 19:03:08 2015 -0600
+
+    cleaning up and testing
+
+commit 3d66953ff7b075c6926ec2f77c6793026e1804bd
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 19:00:07 2015 -0600
+
+    hopefully crimes works
+
+commit db335277d4b7f3f5e742cf3e12f2baa198f1ceb8
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 18:57:05 2015 -0600
+
+    added crimes
+
+commit 2bc19ec437dd38cc266ab6072b1135ca0c47d9dc
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 18:52:33 2015 -0600
+
+    found problem
+
+commit 4b6e63f049b2fb686071edb8daa2590aaded5739
+Merge: 0da42cf 9385987
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 18:50:30 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 0da42cfce93a660941d491dfa6cc4ea3e027b9ee
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 18:50:19 2015 -0600
+
+    wtf
+
+commit 938598702b8026469bc934a0a496571c1325e261
+Merge: 854ff30 e0abe92
+Author: thengo <jasonngo3333@yahoo.com>
+Date:   Thu Nov 5 18:49:05 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit e0abe92474724168ac3437012b52bbbd17122d2c
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 18:48:35 2015 -0600
+
+    asdfasdfa
+
+commit 854ff30f8c052952e9f93729dfb62f9bb04acc56
+Merge: 72f4650 8459480
+Author: thengo <jasonngo3333@yahoo.com>
+Date:   Thu Nov 5 18:48:25 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 72f4650feb4a0f599cd33341e85b6edf64284a58
+Author: thengo <jasonngo3333@yahoo.com>
+Date:   Thu Nov 5 18:48:09 2015 -0600
+
+    fixed html stuff
+
+commit 84594800140caabfa9f214dfb0e801038fd99553
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 18:46:17 2015 -0600
+
+    stupid commit
+
+commit ae8b207bb58c32f8bfa1ba630bafc7600fce4238
+Merge: 5e41935 2746863
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 18:43:01 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 5e41935c045c11665955e75c287fdce17a81781a
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 18:42:56 2015 -0600
+
+    more debugging
+
+commit 274686373e053535c4925f9257c79a0a5e858d13
+Merge: dbb164d ef4d5b2
+Author: thengo <jasonngo3333@yahoo.com>
+Date:   Thu Nov 5 18:41:33 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit dbb164d77fae183988511f8b720c8247ac6791c6
+Author: thengo <jasonngo3333@yahoo.com>
+Date:   Thu Nov 5 18:41:07 2015 -0600
+
+    fixed weeks title less clunky
+
+commit ef4d5b2dc30e4065973eb966a954018b1e34f2a6
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 18:37:37 2015 -0600
+
+    fixing my errors
+
+commit da9222c81c8af0706170f663d4890471bc8ac108
+Merge: 4d9962f b46ad76
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 18:35:31 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 4d9962f699664a410a7112ccb55d72f0c1c6228f
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 18:35:27 2015 -0600
+
+    fixed stuff
+
+commit b46ad7640a710f36b5bf19886c638fbaae94cadb
+Merge: 7cf9b5c d179a69
+Author: thengo <jasonngo3333@yahoo.com>
+Date:   Thu Nov 5 18:22:04 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 7cf9b5cadfb50e6eae55301a984e543a25ef547f
+Author: thengo <jasonngo3333@yahoo.com>
+Date:   Thu Nov 5 18:21:52 2015 -0600
+
+    attr renamed in html
+
+commit d179a692c971bd672e5c592d6b8f61c212e0284e
+Merge: b773087 7f68951
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 18:10:06 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit b773087f5c93b4073f54734a6a5782297e1e955a
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 18:10:01 2015 -0600
+
+    fixed more maybe
+
+commit 7f68951415cfbef9e88bf7c8e06f8cb989d42437
+Merge: 75f9399 dfeca55
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Thu Nov 5 18:05:27 2015 -0600
+
+    Merge branch 'master' of github.com:SageMoore/cs373-idb
+
+commit 75f93998f51721d07b2104d6088aa6eb966af0a7
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Thu Nov 5 18:05:20 2015 -0600
+
+    modified stuff and models
+
+commit dfeca55415d9fd78e31a1f4b0121776ead3eb480
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 18:04:46 2015 -0600
+
+    fixing more things hopefully
+
+commit ad225f3d4a0f503fed1f58e23ad37cb52765fb1f
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 17:50:25 2015 -0600
+
+    fixed more broken
+
+commit 75499ad0f81109114d6e33e4dd95b16a25e42d92
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 17:48:28 2015 -0600
+
+    testing something
+
+commit 5998b727434fe67cd079c46726bd7b0bc7f379de
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 17:46:23 2015 -0600
+
+    debugging more
+
+commit 6290f47a44ed553777e27f0eee5c1523c83a01f2
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 17:39:03 2015 -0600
+
+    fixing more bugs
+
+commit d873716166d53ea82ac2e429d831e3c9149d64ed
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 17:32:32 2015 -0600
+
+    should maybe fix things some
+
+commit 2c042961b9e804094e8382a562dc63c652b7f22e
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 17:10:33 2015 -0600
+
+    deugging
+
+commit b861ce4923b59332465cd5e023ef71db727e60dc
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 17:05:21 2015 -0600
+
+    dammit i broke stuff
+
+commit da98c77730788c557028e615fe8f66da74c53a60
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 16:35:41 2015 -0600
+
+    added some more fields to api request results
+
+commit 7d77f4b6075d967a5315fa2a23e80f6864ce94d8
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 16:15:05 2015 -0600
+
+    i broke weeks
+
+commit cc3e757befdba9e79572367af653018563fd6650
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 13:53:33 2015 -0600
+
+    converted all api methods over to using new method, kept all old ones there just in case too
+
+commit 59b082f2a9f3accecb2dc1583613c800717d46ba
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 11:50:36 2015 -0600
+
+    testing functionality
+
+commit c1d3e91cb69736e89f933ef49e3f40118d6d69c6
+Merge: 16e1a26 761ccd5
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 02:21:26 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 16e1a26ff2c01780bc3a5ce6e4937e40f0c4794f
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 02:21:20 2015 -0600
+
+    more pages should be filled correctly
+
+commit 761ccd5441b99ae806072a51079d6b8ad4616830
+Merge: 0a00127 80724c4
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Nov 5 00:08:47 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 0a00127cc71b1706037ca613959d688feadbb2bb
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Nov 5 00:08:41 2015 -0600
+
+    server check 9
+
+commit 80724c43946e14a2d9967d898ea2bf8d55072fc8
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 00:06:04 2015 -0600
+
+    Changing filter
+
+commit bfa137262f858f9bd3ee9c84e43bd8716ffdd3e2
+Merge: ec27a01 d41c4f9
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 00:02:24 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit ec27a017ad2f5a37da749f9596cae792652575c0
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Nov 5 00:02:17 2015 -0600
+
+    parsed javascript json
+
+commit d41c4f90a7fc8f9f2751afe76add944b87610e07
+Merge: 04e4594 3cd336a
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 00:01:03 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 04e4594ab35e6e47e185a8f1f06bd201b2bace7d
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Nov 5 00:00:47 2015 -0600
+
+    Changing param to params
+
+commit 3cd336ae88034e596d42b381f2662172a2d065f9
+Merge: af4525a 4f4a593
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 23:58:23 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit af4525aa75c21c8edab120ce6ec6997b903621f3
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 23:58:16 2015 -0600
+
+    server check 8
+
+commit 4f4a593fec892ce691b79d81380637e807bcea9e
+Merge: 2403836 0e97f84
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 23:57:20 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 2403836387f9e734000fc8404c0fb8af8e76f441
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 23:57:06 2015 -0600
+
+    Importing text
+
+commit 0e97f84ba7247e9ef5f1041be865e0087ed3c110
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Wed Nov 4 23:54:06 2015 -0600
+
+    adfdfad
+
+commit 1f667da045dff51aee49b6e386a8651baf914e85
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Wed Nov 4 23:53:08 2015 -0600
+
+    adfdfad
+
+commit ad59467b3e9ca8f6331b65a4112710f861ec1d81
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Wed Nov 4 23:45:22 2015 -0600
+
+    adfdfad
+
+commit bbbfc5caa7aed5cb375f4e3491ea8e98669d8562
+Merge: 1a994fb e9a9068
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Wed Nov 4 23:43:29 2015 -0600
+
+    Merge branch 'master' of github.com:SageMoore/cs373-idb
+
+commit 1a994fb41d3ea00a204ad35dcee09f83b340fb9b
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Wed Nov 4 23:43:16 2015 -0600
+
+    dfsafa
+
+commit e9a9068c4688b4c87519b5c8d7dc005d073b0315
+Merge: c636358 fc6cd4a
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 23:41:41 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit c636358d6041931d36834c30174ad28a4fc371c7
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 23:41:32 2015 -0600
+
+    server check 7
+
+commit fc6cd4aefc3e8b4d6bd221c3daa4171cf8ccceba
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 23:39:41 2015 -0600
+
+    Editing tests
+
+commit c85fa30bcb0098378aacf1bbc276f6738002c9b6
+Merge: a612a87 61c6f5c
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 23:36:48 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit a612a878fbc319611c6fb4685cb8f04dffe82bd4
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 23:36:40 2015 -0600
+
+    server check 6
+
+commit 61c6f5cdc567073adb5a9d22773ac58d6b6b1788
+Merge: e675d1b ba3ef56
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Wed Nov 4 23:35:14 2015 -0600
+
+    Merge branch 'master' of github.com:SageMoore/cs373-idb
+
+commit e675d1ba2d4201108fe61aad92e5a4d287ada1fa
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Wed Nov 4 23:35:04 2015 -0600
+
+    added stuff
+
+commit ba3ef565c9d2355c0a1a5ea59820a688d9efc8e7
+Merge: 2b20f9f 60e47c8
+Author: chance raine <chanceraine@gmail.com>
+Date:   Wed Nov 4 23:33:46 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 2b20f9fd3b50349d9aca20babda0934bc9e2cfe8
+Author: chance raine <chanceraine@gmail.com>
+Date:   Wed Nov 4 23:32:01 2015 -0600
+
+    deleted deprecated stuff
+
+commit 60e47c81f72d6f8fca317729001091370249427d
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 23:25:47 2015 -0600
+
+    Editing tests
+
+commit 464c2669b7ca4e64ec2b4ff41493ea84750bc13d
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 23:23:25 2015 -0600
+
+    server check 5
+
+commit fe1723780ba408303ec5289d0ff71054b9f866cf
+Merge: b524488 f68b003
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 23:21:27 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit b52448828b25613ee01ca2637e0e9f463f6bd4ec
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 23:21:19 2015 -0600
+
+    server check 4
+
+commit f68b0034c69ab06620a2efd67d91f51d849e77d5
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 23:19:52 2015 -0600
+
+    Editing tests.py
+
+commit e2863bd84ae45d2e4c13db905fe22c7eec210654
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 23:18:01 2015 -0600
+
+    Fixing syntax
+
+commit 9ed981114a47c2563ffb05e76a1f7e5eb222734f
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 23:14:55 2015 -0600
+
+    Editing tests.py
+
+commit c79f3f8f9cdad5a7e92249f16cf5545925bda775
+Merge: 7828811 e81a759
+Author: chance raine <chanceraine@gmail.com>
+Date:   Wed Nov 4 23:09:00 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 782881124f063a2220e25b30d8913514eb7f01e4
+Author: chance raine <chanceraine@gmail.com>
+Date:   Wed Nov 4 23:08:32 2015 -0600
+
+    added map marker on thing
+
+commit e81a759bc8bc6703b405bc0b4119c692b4e42651
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 23:05:49 2015 -0600
+
+    server check 3
+
+commit b1d61f5c1643af9646b3fa334977b6b475d3b3d7
+Merge: 6d0b21d 976b8aa
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 23:01:52 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 976b8aa0318b78940917f5042dec1d46daa512fb
+Merge: 954e5fd b5fc350
+Author: chance raine <chanceraine@gmail.com>
+Date:   Wed Nov 4 23:01:40 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 954e5fd45e012f337af0681d39b2b43d13721fea
+Author: chance raine <chanceraine@gmail.com>
+Date:   Wed Nov 4 23:01:35 2015 -0600
+
+    removed crimes, fixed sort
+
+commit 6d0b21d46c9f86346caaa4e551d2da8e5ece49d7
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 23:01:31 2015 -0600
+
+    server check 2
+
+commit b5fc350c50c9c5c64b78a9181e7e900152696985
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 22:56:09 2015 -0600
+
+    Editing crime types tests
+
+commit 672e0591b30c5dfcf70475e872f55f424c22a1da
+Merge: 1b0930d 4ff35ef
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 22:51:20 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 1b0930dd265168a0174a24044d20460605546050
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 22:51:07 2015 -0600
+
+    Editing tests
+
+commit 4ff35ef7a19db5427c3e68a4d5974e1f1704598f
+Merge: f625126 554b852
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 22:50:50 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit f6251265702071ed3c21018455939c16d2954900
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 22:50:44 2015 -0600
+
+    server check 1
+
+commit 554b8526f2208c644f1079d14e4b2283ef021bcb
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 22:49:46 2015 -0600
+
+    Editing tests
+
+commit cad6d91b4133afbb0bd241e63d9354fa04420a20
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 22:48:55 2015 -0600
+
+    server check
+
+commit bdf2b942eb140143ae039e8c049ca21d7b698631
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 22:38:14 2015 -0600
+
+    server check
+
+commit 92b64d6bdd543848b5eee1a654f0abb73f5a5a99
+Merge: 81564e7 4c65028
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 22:30:03 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 81564e75723a5c50395ab6a4079dbef9ffffa287
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 22:29:56 2015 -0600
+
+    server check
+
+commit 4c65028a838e422d9b4f7b237b6b2b18cb761077
+Merge: 4c039cd 71412d3
+Author: chance raine <chanceraine@gmail.com>
+Date:   Wed Nov 4 22:28:44 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 4c039cd5b17553bcb0788d0abdb5a5421104ed88
+Author: chance raine <chanceraine@gmail.com>
+Date:   Wed Nov 4 22:28:40 2015 -0600
+
+    clickable stuff more
+
+commit 71412d32234a2952d0d54fa24f1c83315259e40e
+Merge: 1ba73f4 136d177
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 22:27:38 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 1ba73f4a98c2aa6df922f32e6f8b60641a2bbed8
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 22:27:25 2015 -0600
+
+    Importing base
+
+commit 136d17764f5977fa5d9b7a27856a161601d96c83
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 22:27:03 2015 -0600
+
+    server check
+
+commit 22071a095b68f730273f95f870c3e201fd34df42
+Merge: 18090f0 587b2e7
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 22:24:41 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 18090f0134954664f555e6f31c40797bb2b455b8
+Merge: fa5fe88 107a305
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 22:24:32 2015 -0600
+
+    server check
+
+commit 587b2e717ab5eb01b4271ea225408240bd1ff6ed
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 22:24:14 2015 -0600
+
+    Building tables
+
+commit f6912600cdf2617aff65e5bb79aa88549633a8a7
+Author: chance raine <chanceraine@gmail.com>
+Date:   Wed Nov 4 22:23:55 2015 -0600
+
+    frontend should work
+
+commit fa5fe88e1830888d0df64790e80b7ddc3835dacb
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 22:23:12 2015 -0600
+
+    server check
+
+commit 107a3052bc5c1ebb358024b5e07ae778f73169cd
+Merge: 32ecb22 cd58504
+Author: chance raine <chanceraine@gmail.com>
+Date:   Wed Nov 4 22:20:31 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 32ecb229f8809670b464970f1415e0143cc5baf5
+Author: chance raine <chanceraine@gmail.com>
+Date:   Wed Nov 4 22:19:54 2015 -0600
+
+    things are working mostly
+
+commit cd5850495112b7283e1b390b75ef3bb4ca94eb9b
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 22:16:30 2015 -0600
+
+    Building test model
+
+commit ed6310f7e86b11e0f0e73763753f3ecbc378a15f
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 22:14:52 2015 -0600
+
+    server check
+
+commit ade0f1b029b902e5fa6fac6ac1d862bad115962e
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 22:12:51 2015 -0600
+
+    server check
+
+commit d76c595250f56fc3bdb9c38147ff776e58921718
+Merge: a9dcfa0 48713ed
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 22:09:15 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit a9dcfa0778be078f6a2fb4131139936ab8f5a95d
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 22:09:10 2015 -0600
+
+    server check
+
+commit 48713edadbc6a412f5fd03752197c2a7bcb59dc2
+Merge: d4b727f 999b780
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Wed Nov 4 22:07:59 2015 -0600
+
+    Merge branch 'master' of github.com:SageMoore/cs373-idb
+
+commit d4b727f816bf9d082f2598f1947c80c5ea5a357f
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Wed Nov 4 22:07:56 2015 -0600
+
+    modified some stuff
+
+commit 999b780851e043058e65bd98c3fb9dc78ae07840
+Merge: dfce07d 7a680d0
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 22:07:27 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit dfce07de8428d0b9e55360ad3fc496a5ebbe1da5
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 22:07:13 2015 -0600
+
+    Editing tests
+
+commit 7a680d08d87f365d8887a435e6dbc3d9efa93714
+Merge: d954cfa 0a9c495
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 22:05:31 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit d954cfaf83670cbedd78057d4dbb8550f0f3a9a0
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 22:05:24 2015 -0600
+
+    server check
+
+commit 0a9c4959f0210a336ba3e1595ac367fe1f1ebb88
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 22:03:05 2015 -0600
+
+    Editing tests.py
+
+commit af215026c603d55fc0b2659dc45e998a83a05472
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 22:02:13 2015 -0600
+
+    Editing tests.py
+
+commit 308fd17ce3cdabc969370352e6a801b03ab4a814
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 22:00:14 2015 -0600
+
+    Editing tests.py
+
+commit e78672e27d2bcc3058c527ddfb5f8e2a12e656b9
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 21:59:02 2015 -0600
+
+    Editing tests.py
+
+commit c6b225d04d1db19132a89738d830ca727a3f47d5
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 21:52:58 2015 -0600
+
+    server check
+
+commit df7e3b86dc1d317766a8d26cdb177fc962d9e1de
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 21:51:21 2015 -0600
+
+    server check
+
+commit e927f47ddeebb748a39a22fd50d47ade80e01031
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 21:47:24 2015 -0600
+
+    server check
+
+commit 5a264caa0eefdf2d927923bce7e791ec5de7f8dc
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 21:42:30 2015 -0600
+
+    server check
+
+commit 4a1517a581f2bec4a3d8653b5d394f1461b6cdd6
+Merge: f62668e 80bd57f
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 21:41:05 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit f62668ea46a208c9a130552181530b70910b5bab
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 21:40:58 2015 -0600
+
+    server check
+
+commit 80bd57f6173400dacc83f6ff1546300c613f8f37
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 21:40:48 2015 -0600
+
+    Editing tests
+
+commit 056c9ca4fc9ec6f0cb462407149ed72330ed06c0
+Merge: 6dda681 cca52df
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 21:39:18 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 6dda6819cedfa81768779125c47632cbf1a53de5
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 21:39:08 2015 -0600
+
+    server check
+
+commit cca52dfdcb2b816561d12aec2c54ad168079313e
+Merge: 90830ee 05bb6a1
+Author: thengo <jasonngo3333@yahoo.com>
+Date:   Wed Nov 4 21:34:36 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 90830ee9e8d2780d5f1e30abc9fbf616b895850d
+Author: thengo <jasonngo3333@yahoo.com>
+Date:   Wed Nov 4 21:34:20 2015 -0600
+
+    week with crimes table works
+
+commit 05bb6a121af7997c8b770cdcdd3c2d007115c0a5
+Merge: 64f1681 6036f0f
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 21:32:23 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 64f1681e9479ca9c2d5ec66b3ced11c9b866b6a2
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 21:32:15 2015 -0600
+
+    server check
+
+commit 6036f0fda83c3a3625715c2473953027b8738a5c
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 21:27:13 2015 -0600
+
+    Editing tests
+
+commit d6032bab172a594b7e62d2cf9b50862287e6e8b3
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 21:23:17 2015 -0600
+
+    Editing tests
+
+commit f4fb1f5853bece119a6d162a454e8eb1a72e8b42
+Merge: 4b15b54 71cc31e
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 21:17:51 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 71cc31ebcb723be1c77cc0bc327b700f0005d3a2
+Merge: fc98d0f e633088
+Author: chance raine <chanceraine@gmail.com>
+Date:   Wed Nov 4 21:17:26 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit fc98d0f64bba280154526e8011840f00e957b372
+Author: chance raine <chanceraine@gmail.com>
+Date:   Wed Nov 4 21:17:22 2015 -0600
+
+    zip works now
+
+commit 4b15b5410dc42b67d0cf792101c4a10a1bdf391d
+Merge: 0173cf3 e633088
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 21:17:17 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 0173cf3f04fcf9d5dabdd1dc50442c99bceca299
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 21:17:02 2015 -0600
+
+    Editing tests api
+
+commit e63308862e90ea4b3c2c616f622c6407bbe26f95
+Merge: b7b6fb7 757dac3
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 21:16:55 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit b7b6fb75fe2fe75ae5779fd8d30cc4d48397a980
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 21:16:49 2015 -0600
+
+    server check
+
+commit 757dac3bd888413e5439bad99a69e641d4333de1
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 21:11:32 2015 -0600
+
+    Editing tests api
+
+commit ca1947082ed3a7cfb7f91591696e863d09b3b9ee
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Wed Nov 4 21:10:08 2015 -0600
+
+    uncommented stuff
+
+commit 9a3ac7a553af0ee556a1e81896d49604288bd429
+Merge: 2f7e7a4 1a421d8
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Wed Nov 4 21:07:38 2015 -0600
+
+    Merge branch 'master' of github.com:SageMoore/cs373-idb
+
+commit 2f7e7a490e05d5ea9297e85cae653362f006beb6
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Wed Nov 4 21:07:35 2015 -0600
+
+    database is done
+
+commit 1a421d815ed33a3198d9aa8d700e0f1464356ba1
+Merge: 666efdc 9132d0b
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 21:00:07 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 666efdc28372aaa930ad0a52acbdc46b2a0750f7
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 20:58:12 2015 -0600
+
+    Editing tests api
+
+commit 9132d0be3a0c8b91d5727ccf34b9202213bb9f3b
+Merge: fc0faf2 003af24
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 20:56:32 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit fc0faf2b94d14204a08da7055d40ffbc1d263e8d
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 20:56:23 2015 -0600
+
+    server check
+
+commit 003af247838a2a9b368622fcc5d024631a4724d4
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 20:55:44 2015 -0600
+
+    Editin tests api
+
+commit 54de91936061c5d70cec4580bf9b54d2df99a71a
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 20:51:33 2015 -0600
+
+    Trying other test harness
+
+commit 2b515cd297584de64d64d48f6e93f58ff6bc3a2f
+Merge: 0c44226 bfee604
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 20:50:45 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 0c442261efb354720c6b7028e0467db7f0d9af40
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 20:50:35 2015 -0600
+
+    server check
+
+commit bfee6048b0b63e8489f7698c2997d015dea9f7c1
+Merge: 476b474 598bc39
+Author: chance raine <chanceraine@gmail.com>
+Date:   Wed Nov 4 20:40:07 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 476b4742cb670c5d96a36b3bd0e5de80be39ccc5
+Author: chance raine <chanceraine@gmail.com>
+Date:   Wed Nov 4 20:40:01 2015 -0600
+
+    added things
+
+commit 598bc3971021bb27f23f1156c8e233186c4d74f6
+Merge: 869a9d6 438fa58
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 20:38:16 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 869a9d680bef94cb91d92df7bc54e7479a43969e
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 20:38:08 2015 -0600
+
+    adding another test for crimes
+
+commit 438fa58e603872c917778bab1141cc149d20d07f
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 20:29:11 2015 -0600
+
+    Running tests with python
+
+commit 813f69f0755a1f0089fdd0a4da00f072846fd606
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 20:25:36 2015 -0600
+
+    Changing path of tests.py
+
+commit 4211276ec4c4ecb1c8fb933d8d2fbde76509cced
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 20:23:46 2015 -0600
+
+    Running tests with python3
+
+commit 58b48db8764cc6ccddb48fee7eec5bc65c83d726
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 20:20:52 2015 -0600
+
+    Changing tests api
+
+commit 34780bf96e31b85363ab51775b68e039cb237806
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 20:18:11 2015 -0600
+
+    Uncommenting tests api endpoint
+
+commit 975483b44852085d609dc5074579e6c4bee69d04
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 20:01:43 2015 -0600
+
+    tweaked disqus a bit
+
+commit b89bfce9a012f8d27c9bd22b3320fd78532ca8e4
+Merge: c971dd0 0482ce3
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 20:00:00 2015 -0600
+
+    tweaked disqus a bit
+
+commit c971dd003d09d307ea136a09f10635e1103e8dfa
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 19:58:57 2015 -0600
+
+    tweaked disqus a bit
+
+commit 0482ce32f2e56f25897a47a222243d6d0002bb14
+Merge: 18751a9 a42ad16
+Author: chance raine <chanceraine@gmail.com>
+Date:   Wed Nov 4 19:50:20 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 18751a9cd1e027aef5c170062d9b329873a92de7
+Merge: 0a57072 01eac1a
+Author: chance raine <chanceraine@gmail.com>
+Date:   Wed Nov 4 19:50:12 2015 -0600
+
+    probably broke stuff
+
+commit a42ad161700aec9fb375157c5d97e8e303539a4e
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 19:49:37 2015 -0600
+
+    Return array from tests
+
+commit 0a570724c3b0f512a3038cc59b4abf71948ba4e8
+Author: chance raine <chanceraine@gmail.com>
+Date:   Wed Nov 4 19:48:49 2015 -0600
+
+    preparing for merge conflicts
+
+commit 01eac1af9fff5f05ef93d1b2948246fc93d97f9f
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 19:46:09 2015 -0600
+
+    Changed name of tests resource
+
+commit 47267603231db44bfce6b7789934c6dbcd508cc3
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 19:32:28 2015 -0600
+
+    Testing tests api endpoint
+
+commit 7d9c20deb4980f885142adfedcedc980eb5f74fa
+Merge: afc04c5 bf4738d
+Author: thengo <jasonngo3333@yahoo.com>
+Date:   Wed Nov 4 19:29:55 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit afc04c50d478960e6d22a9287ddda6dae14e095d
+Author: thengo <jasonngo3333@yahoo.com>
+Date:   Wed Nov 4 19:29:35 2015 -0600
+
+    fixed crime_id link on zip page
+
+commit bf4738dae7ff2561a0abfd4dc41979df8d224b00
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Nov 4 19:29:23 2015 -0600
+
+    Dummy response in Tests api
+
+commit 66966aa9764d644a894ff39851498d351c11b559
+Author: thengo <jasonngo3333@yahoo.com>
+Date:   Wed Nov 4 17:59:27 2015 -0600
+
+    updated UML
+
+commit 5b5c40f07347f85af2d3ed6e20c9d72669d113c6
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 17:24:17 2015 -0600
+
+    fixed 404 redirection and updated homepage colors closes #19
+
+commit acdac6d6acc61e3ee5beef5a935141a30bef775a
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 17:22:23 2015 -0600
+
+    fixed 404 redirection
+
+commit e8004f051fc2e4e1479071fb59795c9f3d4a9f40
+Merge: f8f9de8 232b474
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 16:03:36 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit f8f9de800d6dbcb267b7453a92770fcd5d5e7ced
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 16:03:28 2015 -0600
+
+    adding more images
+
+commit 232b4747aca58d41c2aa9c6fdd7a03b31907e38b
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Wed Nov 4 15:37:38 2015 -0600
+
+    fixed typo
+
+commit f63db5f7b49333bbb68ba80797ff4653713f0781
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Wed Nov 4 15:36:04 2015 -0600
+
+    fixed models
+
+commit 73b5ca11d212879f8ce8461a704c398a4fdde570
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Wed Nov 4 15:34:24 2015 -0600
+
+    lowered case
+
+commit 2e6527a2ffedc598b83a81457d9d83e3849faa02
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Wed Nov 4 15:30:28 2015 -0600
+
+    fixed the database stuff
+
+commit 69e027219ed07e490b0d95bb564fa3be4fc03565
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Wed Nov 4 14:48:59 2015 -0600
+
+    error messenging
+
+commit 35edcafff4e7571304b1f3db886a57dbe67a5fc0
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Wed Nov 4 14:44:59 2015 -0600
+
+    printing name of exception
+
+commit 2a58e0233365bffd0fae6e1f38bb73491e93c37d
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Wed Nov 4 14:42:09 2015 -0600
+
+    only adding crimes
+
+commit 7e01f1980fb9d9cbbd9dbf0600ab4229e52839fd
+Merge: ac9ac4e 48c14af
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Wed Nov 4 14:39:43 2015 -0600
+
+    Merge branch 'master' of github.com:SageMoore/cs373-idb
+
+commit ac9ac4e4ee1b0bfbf40da73f9b3c726a32096f1a
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Wed Nov 4 14:39:34 2015 -0600
+
+    only adding crimes
+
+commit 48c14af7345c7694f27209b3008d909fd1b46b05
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 01:23:16 2015 -0600
+
+    adding images
+
+commit b6e84457b0f3bf8dcd2c407ba4801f82bff665bf
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Nov 4 00:44:14 2015 -0600
+
+    updating about page
+
+commit 90795142a8768579290c3b035bdbbc96ad5d6d40
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Tue Nov 3 22:27:53 2015 -0600
+
+    changing crimes format
+
+commit cda8e0d914a1148d84ee5806767e42be47d09605
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Tue Nov 3 22:22:30 2015 -0600
+
+    Fixed links on splash page
+
+commit 183f12435e53fe1caf964056594373b73cb8463e
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Tue Nov 3 22:16:07 2015 -0600
+
+    added zip_code attribute to zip
+
+commit 1cc1a23ae27b8ebed5b7777b2dc9cebebcaaa8a8
+Merge: a6ad999 dacc960
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Tue Nov 3 22:14:19 2015 -0600
+
+    Merge branch 'master' of github.com:SageMoore/cs373-idb
+
+commit a6ad99915da48e568182cd2d46e3b7dc369f9af9
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Tue Nov 3 22:14:09 2015 -0600
+
+    fixed some imports
+
+commit dacc9602256a39264dce45e935370d063e16198f
+Merge: 04c669e 9ab2691
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Tue Nov 3 22:12:51 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 04c669e4062799f37075c7db11625f405c5398fe
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Tue Nov 3 22:12:44 2015 -0600
+
+    modifying import
+
+commit 9ab2691a9bddaaafa4cea81e2d6bb7fa9fca1469
+Merge: 5d3007a 673c789
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Tue Nov 3 22:12:26 2015 -0600
+
+    Merge branch 'master' of github.com:SageMoore/cs373-idb
+
+commit 5d3007ab496e863e729beb9fbd1546d09966397a
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Tue Nov 3 22:12:18 2015 -0600
+
+    ready to add all of the data
+
+commit 673c7891d49ca0029c723b043cc134b409cfa154
+Merge: 19889f1 1b8764d
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Tue Nov 3 22:10:57 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 19889f117c912f11ed152ae4de11b0a191fb2058
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Tue Nov 3 22:10:49 2015 -0600
+
+    adding query methods for database connection
+
+commit 1b8764dc0fd53b065e2ec90b9ae72138bea4d709
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Tue Nov 3 22:04:03 2015 -0600
+
+    Fixed about route in flask
+
+commit 71448db5dbbe6464df212da4a038674c1645b829
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Tue Nov 3 21:58:44 2015 -0600
+
+    Navbar links have more fancy highlighting
+
+commit 4eab5a5b0cc35541549e76fa84a9ff95573d1219
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Tue Nov 3 21:53:36 2015 -0600
+
+    added crimes crimetypes and zips to stuff.py
+
+commit 7245479b8ba09b5761b7fccf6629fcf5588e6674
+Merge: f8fc3eb ab709c7
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Tue Nov 3 21:20:41 2015 -0600
+
+    Merge branch 'angular_flask_services' of https://github.com/SageMoore/cs373-idb
+
+commit f8fc3ebc6ecf1afbf8276c9d1a45a9743fd95e4d
+Merge: bcf4fb5 8f0b08e
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Tue Nov 3 21:16:46 2015 -0600
+
+    Merge branch 'master' of github.com:SageMoore/cs373-idb
+
+commit bcf4fb5ab3b4feca95b8a33f05291d7f9b557c07
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Tue Nov 3 21:03:46 2015 -0600
+
+    Fixed big head problem
+
+commit e9bbd291049b906372b820a3fda1777fdc27e2ae
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Tue Nov 3 20:29:37 2015 -0600
+
+    Added unit tests button, and fixed visited navigation color
+
+commit c0d253a4618b96f1d5af4024853571272da74467
+Author: chance raine <chanceraine@gmail.com>
+Date:   Tue Nov 3 09:51:17 2015 -0600
+
+    models pages work with api, but individual pages broken
+
+commit 732571b4bb796b223c8af37de832122769b3e961
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Mon Nov 2 20:39:07 2015 -0600
+
+    Removing about controller
+
+commit 0a3946cbb85339d3a50d4c850f39aeb55a52d594
+Author: thengo <jasonngo3333@yahoo.com>
+Date:   Mon Nov 2 20:27:37 2015 -0600
+
+    directions to query database and make it into json
+
+commit 5d2c90d1640fc64716737b876d4105db93f5a0f3
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Mon Nov 2 20:21:28 2015 -0600
+
+    Created tests endpoint
+
+commit 3f7c49f495c69e2d85521407fdef3d85c92f103c
+Author: chance raine <chanceraine@gmail.com>
+Date:   Mon Nov 2 20:19:57 2015 -0600
+
+    moved over to marks new magic system
+
+commit b818c2644b4b838d54f8de7ab1fd07dfc4021ade
+Merge: 57c6043 f7237bb
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Tue Nov 3 21:15:11 2015 -0600
+
+    Merge branch 'model' of github.com:SageMoore/cs373-idb into model
+
+commit 57c604334addd12e052bf1ad2392fc16d8125ef6
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Tue Nov 3 21:10:31 2015 -0600
+
+    added stuff
+
+commit 7a9b444fc88969a5b851d550a97d0d53c9879d3d
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Tue Nov 3 21:09:23 2015 -0600
+
+    added stuff
+
+commit b39ba729160d791f3f33800ede1650dc6b3293ed
+Author: chance raine <chanceraine@gmail.com>
+Date:   Tue Nov 3 21:07:07 2015 -0600
+
+    changed a name
+
+commit e4b5a0a6f01564a0c300c365ed8d960e8130e8df
+Author: chance raine <chanceraine@gmail.com>
+Date:   Tue Nov 3 20:52:32 2015 -0600
+
+    merged models
+
+commit 3272cc1c61fe3328f930fb8e588bc496d1bb5bcf
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Tue Nov 3 13:56:06 2015 -0600
+
+    sfdsafda
+
+commit 2c65edf4bf10f5ff0faf2bccea6b2189c1796e7e
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Oct 29 22:57:36 2015 -0500
+
+    mostly just added a relationship
+
+commit f7237bb07dba0dddc3d1a3d04d139e93300aee13
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Tue Nov 3 21:10:31 2015 -0600
+
+    added stuff
+
+commit a2a594e41ce996b8b63ce512cb255e2baf213dc2
+Merge: e3ba5d6 de93e62
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Tue Nov 3 21:09:41 2015 -0600
+
+    Merge branch 'model' of github.com:SageMoore/cs373-idb into model
+
+commit ab709c79ca57d8243f27516f239bd65ea32f21b1
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Tue Nov 3 21:09:27 2015 -0600
+
+    adding disqus and changing color schemes
+
+commit e3ba5d68a263fe0004af6fbe2c18f15d2d1e9d1c
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Tue Nov 3 21:09:23 2015 -0600
+
+    added stuff
+
+commit de93e62970b6c9f85a49c2925bf789f03011bc1b
+Author: chance raine <chanceraine@gmail.com>
+Date:   Tue Nov 3 21:07:07 2015 -0600
+
+    changed a name
+
+commit 8f0b08e0d10eb75731cb01bb9b085d0d5247c8d1
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Tue Nov 3 21:03:46 2015 -0600
+
+    Fixed big head problem
+
+commit 2676df49b1d2ad152e3dbacbfecd3ff047b6e3a4
+Author: chance raine <chanceraine@gmail.com>
+Date:   Tue Nov 3 20:52:32 2015 -0600
+
+    merged models
+
+commit f13376f3881495f29258ac6b7262d723570c2d54
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Tue Nov 3 20:29:37 2015 -0600
+
+    Added unit tests button, and fixed visited navigation color
+
+commit 593b554205d12ddbd0f876e0b8da9284ca33ca8b
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Tue Nov 3 19:53:44 2015 -0600
+
+    regularized object name plurality and changed link to re-route directly
+
+commit d58bd133c76ee9dc6afda126701ce07a0e638abc
+Merge: 2b87389 6c92b98
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Tue Nov 3 19:31:30 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb into angular_flask_services
+
+commit 2b873894812246e6da928100657cbbbc64d03fce
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Tue Nov 3 19:31:03 2015 -0600
+
+    modifying goToPath
+
+commit b4ff0399bbc6e0a508d99f74c493c8f949d8501b
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Tue Nov 3 13:56:06 2015 -0600
+
+    sfdsafda
+
+commit 6c92b9819d6a9e84f2194e121137aecc575cec08
+Merge: f23b53b 8336df9
+Author: chance raine <chanceraine@gmail.com>
+Date:   Tue Nov 3 09:51:22 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit f23b53b54db8706ffc01a67a11094c7b5b088db7
+Author: chance raine <chanceraine@gmail.com>
+Date:   Tue Nov 3 09:51:17 2015 -0600
+
+    models pages work with api, but individual pages broken
+
+commit 2cb99c336e03dc4e403705a6f4ed3d63950646f7
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Mon Nov 2 22:23:09 2015 -0600
+
+    updating angular calls
+
+commit 0337f3e19286f848aa055e8ae12524f22a425833
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Mon Nov 2 22:17:00 2015 -0600
+
+    updating fake data for joins
+
+commit 3caf592034f6822a6442c4323e68e34916bff33b
+Merge: 03262cd d280d5d
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Mon Nov 2 22:16:02 2015 -0600
+
+    Merge branch 'angular_flask_services' of https://github.com/SageMoore/cs373-idb into angular_flask_services
+
+commit 8336df929627f7b0c3175e90f1ad85b731fc3774
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Mon Nov 2 20:39:07 2015 -0600
+
+    Removing about controller
+
+commit 20f72ccdd6978d5e8482b5c741f0a3372d7f7ab8
+Merge: a6e5bf7 ad759a6
+Author: thengo <jasonngo3333@yahoo.com>
+Date:   Mon Nov 2 20:28:01 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit a6e5bf70e3aaa014cc8e5246304449f656da2c00
+Author: thengo <jasonngo3333@yahoo.com>
+Date:   Mon Nov 2 20:27:37 2015 -0600
+
+    directions to query database and make it into json
+
+commit ad759a6a2ec0a0a88a46631c0d0ee7ce9de41130
+Merge: b1d2926 24d9770
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Mon Nov 2 20:21:56 2015 -0600
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit b1d2926ae66bfa387d12b36ee7406dfd59fb6028
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Mon Nov 2 20:21:28 2015 -0600
+
+    Created tests endpoint
+
+commit 24d9770bd276eba6385f364a551d4b86b159b432
+Author: chance raine <chanceraine@gmail.com>
+Date:   Mon Nov 2 20:19:57 2015 -0600
+
+    moved over to marks new magic system
+
+commit 03262cd715003cb1560beafbb1e34112cfca9d52
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Mon Nov 2 16:33:16 2015 -0600
+
+    adding color scheme
+
+commit efd2c14d7ccae51cee15348bc56a03d8293d9a60
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Mon Nov 2 16:21:42 2015 -0600
+
+    updating style
+
+commit 9b2a1e229a192afac973d64a24f40ac0ad1de932
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Mon Nov 2 14:20:22 2015 -0600
+
+    got refresh for paths with ids working closes #20
+
+commit 7da543c0187afa4d47b4955743c1a62a31353be4
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Fri Oct 30 00:24:27 2015 -0500
+
+    moved map to service and got it to populate dynamically
+
+commit 1aa786747e76a529d02c2b6e64bfb6bab58390f1
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Thu Oct 29 21:35:20 2015 -0500
+
+    models.py
+
+commit 2056259e19360ac076838d8af1a3b3f84b006bf8
+Author: chance raine <chanceraine@gmail.com>
+Date:   Sun Nov 1 19:29:14 2015 -0600
+
+    added scraped census data
+
+commit 916ea326dae959bad79fe112b01971e92db56e94
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Oct 28 20:18:47 2015 -0500
+
+    got data to populate and stateparams working
+
+commit 2c88bebf03bbfae538a0ea3fd48c5439e74c987b
+Author: Dustin Stone <dstone94@cs.utexas.edu>
+Date:   Wed Oct 28 19:08:44 2015 -0500
+
+    Created unit tests api endpoint
+
+commit 73e6f7f555ff240e7c6e45edcb5edde76c4835f9
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Oct 28 19:09:05 2015 -0500
+
+    got crimes to populate with semi-real data
+
+commit c04f7dcb50ffeb54ab77a3ce226dbb032c674889
+Author: chance raine <chanceraine@gmail.com>
+Date:   Wed Oct 28 20:32:57 2015 -0500
+
+    added db instructions
+
+commit f1f8bfd8d9bc7486f4533a37e18ff95cd2f77eef
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Oct 28 17:02:27 2015 -0500
+
+    got GET request working on Flask and Angular for crimes
+
+commit 92aba7a4beee7c188c3927ce73c3ab6b96bc0701
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Oct 28 16:48:59 2015 -0500
+
+    adding generic post and get requests in angular
+
+commit d75b6d3f973994891a7f9e5b6abb8e1c4d7e8a0f
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Oct 28 16:39:32 2015 -0500
+
+    switching to camel case for js
+
+commit 184edd1c673dd5c53671b7e002358a8888ef46b9
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Oct 28 16:18:23 2015 -0500
+
+    fixed word
+
+commit ca554990270b375079d61f30e1271a55d8cf88a5
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Oct 28 16:16:31 2015 -0500
+
+    adding flask get/post for crimes
+
+commit d280d5d9bec0ce6390630676de05369c0181687a
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Mon Nov 2 16:33:16 2015 -0600
+
+    adding color scheme
+
+commit 8ec30bff30c4ce332e0da4b261a4c8e23f426382
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Mon Nov 2 16:21:42 2015 -0600
+
+    updating style
+
+commit 7e6e6489396dcbd62ca9890ab1b644d874f56111
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Mon Nov 2 14:20:22 2015 -0600
+
+    got refresh for paths with ids working closes #20
+
+commit 9517b8317555cd411c52b63868b3899c1199dd73
+Merge: b58c90b 0061b8a
+Author: chance raine <chanceraine@gmail.com>
+Date:   Sun Nov 1 19:29:23 2015 -0600
+
+    Merge branch 'angular_flask_services' of https://github.com/SageMoore/cs373-idb into angular_flask_services
+
+commit b58c90b316122bd9ec93c35cc30b42aebb1793d7
+Author: chance raine <chanceraine@gmail.com>
+Date:   Sun Nov 1 19:29:14 2015 -0600
+
+    added scraped census data
+
+commit 0061b8ac20fb01c17222d204a5d623a7e5610086
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Fri Oct 30 00:24:27 2015 -0500
+
+    moved map to service and got it to populate dynamically
+
+commit 8ea6ab6ff5e40a5b35e7fdcf0d47c0cbc555465a
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Oct 29 22:57:36 2015 -0500
+
+    mostly just added a relationship
+
+commit 059bb0fc54de0ed04383ae6c57d25222f0740003
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Thu Oct 29 21:35:20 2015 -0500
+
+    models.py
+
+commit 2ca22a3f151a7b3c614f0370662d0356ab41893f
+Merge: 500622a ff91f21
+Author: chance raine <chanceraine@gmail.com>
+Date:   Wed Oct 28 20:33:02 2015 -0500
+
+    Merge branch 'angular_flask_services' of https://github.com/SageMoore/cs373-idb into angular_flask_services
+
+commit 500622a696c591a6b1b2ea8bee5d2aa794c4dda3
+Author: chance raine <chanceraine@gmail.com>
+Date:   Wed Oct 28 20:32:57 2015 -0500
+
+    added db instructions
+
+commit ff91f2179a8804d36f589582f1a7dc15f03be439
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Oct 28 20:18:47 2015 -0500
+
+    got data to populate and stateparams working
+
+commit 61b73ae44d2fb52f6c45c4724552abca409d048f
+Merge: 4ad3f3d 75d59ee
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Oct 28 19:09:55 2015 -0500
+
+    Merge branch 'angular_flask_services' of https://github.com/SageMoore/cs373-idb into angular_flask_services
+
+commit 4ad3f3dd1199e51e3831857a01831c1815791578
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Oct 28 19:09:05 2015 -0500
+
+    got crimes to populate with semi-real data
+
+commit 75d59eeba7bf1a9ae46d6a37422ce022460205e4
+Author: Dustin Stone <dstone94@cs.utexas.edu>
+Date:   Wed Oct 28 19:08:44 2015 -0500
+
+    Created unit tests api endpoint
+
+commit 58066f92a2f0a5c53ede2beb354192b464e06a8c
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Oct 28 17:02:27 2015 -0500
+
+    got GET request working on Flask and Angular for crimes
+
+commit 4cb20e65c2f120acc3c83781a2928756336eec6a
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Oct 28 16:48:59 2015 -0500
+
+    adding generic post and get requests in angular
+
+commit f684f73ef415bc0ea651266be491b9a86f576c23
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Oct 28 16:39:32 2015 -0500
+
+    switching to camel case for js
+
+commit d10a1659d18c3fd99edbd5ec8fd27bf83fa2f659
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Oct 28 16:18:23 2015 -0500
+
+    fixed word
+
+commit 06bd53c3e3a9376569d5ad3530578cb9b73d52e5
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Oct 28 16:16:31 2015 -0500
+
+    adding flask get/post for crimes
+
+commit 89f53056a01d24d27f9baa9e607931e2aa1b3c4e
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Oct 28 15:53:37 2015 -0500
+
+    updated routing for html5mode
+
+commit 65cd276334b7c85df7e24462d34f0f2caf082568
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Oct 28 15:48:33 2015 -0500
+
+    updated routing for html5mode (removing #)
+
+commit 0ebd163fbfc47625f9e0085626ab0033945d1791
+Merge: 7002122 b3f7286
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Oct 22 21:24:09 2015 -0500
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 7002122470e211c3d6e7da5a9913a4eeefa539b4
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Oct 22 21:23:58 2015 -0500
+
+    changed some links
+
+commit b3f7286a949b52f8a2b85d6d4e220dd42fd59eb4
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Oct 22 21:14:23 2015 -0500
+
+    Update README.md
+
+commit 3b99a1f6eb548819ee92074a98069cbb5c4ec435
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Oct 22 21:14:04 2015 -0500
+
+    Update README.md
+
+commit ff0a4afa5c67853f272e9975be4082e8cb61f623
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Oct 22 21:13:27 2015 -0500
+
+    Update README.md
+
+commit 22e5e286b89bdef215c9987618b1c173a944a38d
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Oct 22 21:07:05 2015 -0500
+
+    updating stats
+
+commit b4b692c341cde71cba982b6459c1c33d6f745021
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Oct 22 21:03:59 2015 -0500
+
+    got twitter feed actually working properly
+
+commit d16a15c58e5ec0566736e31557b3ddb41f63c0d1
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Oct 22 20:39:11 2015 -0500
+
+    cleaning code. fixing mobile navigation
+
+commit 9d7da88bc5cdce5592dedf1460444b975e6d0316
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Oct 22 20:36:30 2015 -0500
+
+    Create README.md
+
+commit 501e98c642a9ac589ada8794564b5ee7bcd71957
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Oct 22 20:34:27 2015 -0500
+
+    Updating descriptions on splash page
+
+commit 0c2099315052f3fa38e835e01eda7b6f593151e2
+Merge: 924d046 298a1b8
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Oct 22 20:30:21 2015 -0500
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 924d046b87c262b7d2d1f3bcb0e53965b00dd3b4
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Oct 22 20:29:57 2015 -0500
+
+    Fixing histogram file
+
+commit 298a1b835ccded370cb6792bcbabfc93abb568cb
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Oct 22 20:28:32 2015 -0500
+
+    added commit log
+
+commit e3eaa7fc1f2862172c6049fbb89dd2b4b1434feb
+Merge: 499cbbc 6b0aab8
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Oct 22 20:27:59 2015 -0500
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 499cbbc8eeff3288dcd7df064f8f425fe841f258
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Oct 22 20:27:30 2015 -0500
+
+    added commit log
+
+commit 6b0aab80ca570d0bce85253d095f1b59bb25a329
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Oct 22 20:24:50 2015 -0500
+
+    Adding histogram to weeks
+
+commit da95485403ba4c832730586c44d5bbe6b7035e68
+Merge: c793d20 5e19a04
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Oct 22 20:17:48 2015 -0500
+
+    modifying twitter
+
+commit c793d20f45c2885acd0643338720ae3350182e21
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Thu Oct 22 20:16:51 2015 -0500
+
+    modifying twitter
+
+commit 5e19a041d0eea0ccda4b8614c7a34010687767b5
+Merge: 1f24113 fe5ce86
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Oct 22 20:11:25 2015 -0500
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 1f241136759d0e8b76a88b3a4f030e601fc8a73a
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Oct 22 19:57:19 2015 -0500
+
+    about page is just about done
+
+commit fe5ce8614a40d6b1c402ec0c52f8703bd2b77f3d
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Oct 22 19:41:48 2015 -0500
+
+    Updated number of commits
+
+commit da6d683a293d403fd4f80164f095037e97383f33
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Thu Oct 22 19:37:34 2015 -0500
+
+    Updated group information on About page and Splash page to close #13 and close #8
+
+commit 35558fc0d6690dc549a8fb0140000cb02bd42cd7
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Oct 22 19:17:56 2015 -0500
+
+    added the twitter thing for mark
+
+commit 1ab68b39e43077b97dba20e40a971005ee476e07
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Oct 22 19:11:25 2015 -0500
+
+    made html (fixes #5, fixes #3)
+
+commit f350f3ba0e8fb581608a445b9cdbf278357fd726
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Oct 22 17:56:39 2015 -0500
+
+    made everything sortable by sacrificing beauty (fixes #10)
+
+commit 71b08e3754dc6fb91f8a853a0cb8f54b3fea7c63
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Oct 22 17:00:05 2015 -0500
+
+    cleaned up and added multimedia (fixes #11)
+
+commit 6cdc8544bc0f3296d0b44e95b2e4151ccafd708f
+Author: Chance Raine <chanceraine@gmail.com>
+Date:   Thu Oct 22 15:22:26 2015 -0500
+
+    Transferring blueprint from apiary.io
+
+commit 342e788b0f85f61c04dcfc44c95ba6594b21a510
+Author: Chance Raine <chanceraine@gmail.com>
+Date:   Thu Oct 22 15:22:00 2015 -0500
+
+    Transferring blueprint from apiary.io
+
+commit 9a32eb72da7b7ca978df6ebb5b21923d88c96232
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Oct 22 14:31:19 2015 -0500
+
+    accidentally changed port
+
+commit 341794dd2c0dc4da99fe2da933a14a57ba437177
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Oct 22 14:29:29 2015 -0500
+
+    updated some more stuff
+
+commit 3fd2353ab5b67f4c9510fc8d87d4ca2189bf4f44
+Merge: e14ddc4 80e70e8
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Oct 22 13:15:28 2015 -0500
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit e14ddc4720e1c0899cf8f0b27b948cbc2b2019fa
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Oct 22 13:15:23 2015 -0500
+
+    made most of the things sortable
+
+commit 80e70e8cd57c151f458ee02fafa0efd382e190fe
+Merge: f8c5cb0 d07743e
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Thu Oct 22 10:53:01 2015 -0700
+
+    Merge branch 'master' of github.com:SageMoore/cs373-idb
+
+commit f8c5cb06898ea955fcacd1d32d9ca25e82237b0f
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Thu Oct 22 10:52:51 2015 -0700
+
+    updated database.py to match the uml diagram
+
+commit d07743e3d26bb33e4130574c030d8cda179d3457
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Oct 22 12:43:03 2015 -0500
+
+    updated about page
+
+commit 8e1743dbee46e68c413f186918a8926cf110138a
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Oct 22 12:26:35 2015 -0500
+
+    added sorting for crimetypes, more to come
+
+commit 2975a5d9287d4fd2313a361d359898dd373af58e
+Merge: a69e57f 0df3c4e
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Oct 22 00:55:25 2015 -0500
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit a69e57f0568e94c53a91390391c47e8e8dcbf339
+Author: chance raine <chanceraine@gmail.com>
+Date:   Thu Oct 22 00:55:22 2015 -0500
+
+    added census scraper and updated crimetypes
+
+commit 0df3c4e6c62956a1c9a4a5044d054326e0b45b0f
+Merge: 6d3a937 8ad4680
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Wed Oct 21 23:25:54 2015 -0500
+
+    Merge branch 'master' of github.com:SageMoore/cs373-idb
+
+commit 6d3a9378ea21a06b8712703c0a122cf2fb4de51d
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Wed Oct 21 23:25:49 2015 -0500
+
+    adding sql alchemy stuff
+
+commit 8ad46800657088553dccdf388b13a566855b53ac
+Merge: 23b77f1 22982e1
+Author: thengo <jasonngo3333@yahoo.com>
+Date:   Wed Oct 21 22:44:14 2015 -0500
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 23b77f192fb1881636b4ba30a773eefc00444c59
+Author: thengo <jasonngo3333@yahoo.com>
+Date:   Wed Oct 21 22:44:10 2015 -0500
+
+    adding UML diagram
+
+commit 22982e111e2924a732057fdc54a6e57cc1bd80bd
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Oct 21 20:02:09 2015 -0500
+
+    adding extraction of crime data
+
+commit 90318bf7563c07df179eb5ea5d93d1deeb4b68fd
+Author: thengo <jasonngo3333@yahoo.com>
+Date:   Wed Oct 21 19:58:19 2015 -0500
+
+    flask uses domain port
+
+commit d49b55ed0f3ed66d006d5e4dd53136228538428a
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Oct 21 19:23:22 2015 -0500
+
+    Adding unit tests and makefile
+
+commit 0819c2d1ec60e72ef4b68b25d21b1dee3f6a64b2
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Oct 21 16:26:41 2015 -0500
+
+    improved responsiveness of crime pages
+
+commit 59ab6f69f9a3b971ba82db2fa445dff9de74073a
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Oct 21 15:20:30 2015 -0500
+
+    improving formatting of maps and cleaning stuff up
+
+commit 8ae8b8b8a61365897f03b242cbb348857d96f31a
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Wed Oct 21 14:32:46 2015 -0500
+
+    adding gmaps and map of austin using npm
+
+commit 2a7a0b038a992e9c90a39f64499ef3a10c77668f
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Wed Oct 21 00:26:07 2015 -0500
+
+    Adding data sources to about page
+
+commit 78a91925609bd432a3fd111f10b3371702e5f7fd
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Tue Oct 20 23:41:35 2015 -0500
+
+    Making small changes to about page
+
+commit 0aa0a099f0d7bc1742aa11199a5019c397f9a43c
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Tue Oct 20 23:27:39 2015 -0500
+
+    Updating about page
+
+commit 186c2dbcfb611c736e6fcda7b2f55ed9f70f3072
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Mon Oct 19 19:42:41 2015 -0500
+
+    Removed footer
+
+commit 214665ce2a005492e27e97ca36cad63477d2a8bc
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Mon Oct 19 19:35:58 2015 -0500
+
+    Added footer
+
+commit 3f31531a9999f6502a67c6fe9087ee2b4a32cb4a
+Author: Jason Ngo <jasonngo@cs.utexas.edu>
+Date:   Mon Oct 19 19:31:51 2015 -0500
+
+    zip links to all data
+
+commit 04d9acf3a793273c40dd1f320700037275f7ef6a
+Author: Jason Ngo <jasonngo@cs.utexas.edu>
+Date:   Mon Oct 19 19:24:52 2015 -0500
+
+    links to crimes for zip
+
+commit 2bde5c371b0c09db7de02cd2e4e7cc7c6c0bcb4b
+Merge: 77bd807 f632ddf
+Author: Jason Ngo <jasonngo@cs.utexas.edu>
+Date:   Mon Oct 19 19:20:08 2015 -0500
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 77bd8077fa3a2d86b1bed5c36ce24aae7697e010
+Author: Jason Ngo <jasonngo@cs.utexas.edu>
+Date:   Mon Oct 19 19:19:58 2015 -0500
+
+    rest of zip htmls
+
+commit f632ddfd647925acdc0a184183ac2a1dc7ae61f3
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Mon Oct 19 19:01:00 2015 -0500
+
+    Changed splash icons and made them linkable
+
+commit 26c58d806c46bd8c14b21dcdc48f8b59a65d6b56
+Merge: cdf9e5d b2875b0
+Author: Jason Ngo <jasonngo@cs.utexas.edu>
+Date:   Mon Oct 19 18:55:23 2015 -0500
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit cdf9e5d5d4ab2d3ed7689281413cae4d674e7974
+Author: Jason Ngo <jasonngo@cs.utexas.edu>
+Date:   Mon Oct 19 18:55:10 2015 -0500
+
+    checkingangular zip
+
+commit b2875b01903325f5470a2f9f4bb3910624078723
+Merge: 5ddaa30 72c71ed
+Author: chance raine <chanceraine@gmail.com>
+Date:   Mon Oct 19 18:53:13 2015 -0500
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 5ddaa30a6b672ed6ab85730f5931019e9551c220
+Author: chance raine <chanceraine@gmail.com>
+Date:   Mon Oct 19 18:53:09 2015 -0500
+
+    fixed typo
+
+commit 72c71ed497148210c9209aa46e9675702bacf773
+Merge: f3aab57 c2f5b04
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Mon Oct 19 18:49:48 2015 -0500
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit f3aab57bc101eca0bec0a4e21358d407725074b9
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Mon Oct 19 18:49:39 2015 -0500
+
+    moved style to crime2, etc.
+
+commit 684d767cc27dc635d14c95eaac4e2d794e70def6
+Author: chance raine <chanceraine@gmail.com>
+Date:   Mon Oct 19 18:49:38 2015 -0500
+
+    added crimetypes
+
+commit c2f5b0478e81be81c32b0e97a0297892b7f4e9a2
+Author: Jason Ngo <jasonngo@cs.utexas.edu>
+Date:   Mon Oct 19 18:49:26 2015 -0500
+
+    angular stuff for zip
+
+commit 3e729bdc2f5dd14e70c60fd6bc5d358e1b2f5926
+Merge: da2d552 05823e6
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Mon Oct 19 18:49:18 2015 -0500
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 05823e6770d450ba3b84b83c7b72b95c424d5e22
+Author: Jason Ngo <jasonngo@cs.utexas.edu>
+Date:   Mon Oct 19 18:42:30 2015 -0500
+
+    angular for zip
+
+commit a77514b009f19bdfa82ea7973e3c1038208f7cd9
+Merge: b7f6b1b 0b86708
+Author: Jason Ngo <jasonngo@cs.utexas.edu>
+Date:   Mon Oct 19 18:37:16 2015 -0500
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit b7f6b1b69ff069f59309ab07d69b837b3e3a41f4
+Author: Jason Ngo <jasonngo@cs.utexas.edu>
+Date:   Mon Oct 19 18:37:12 2015 -0500
+
+    zip pages
+
+commit 0b86708255fb37a5ca4a450b0480c6d6af411ec8
+Merge: 9b82aa6 e4de980
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Mon Oct 19 18:27:30 2015 -0500
+
+    Merge branch 'master' of github.com:SageMoore/cs373-idb
+
+commit 9b82aa6e29d556e05fbc5c066f21a6cfb4606eaf
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Mon Oct 19 18:27:24 2015 -0500
+
+    updated stuff
+
+commit da2d552542e1090ae8a5a8a2d21ac7fedcac7af7
+Merge: bc48dc4 e4de980
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Mon Oct 19 18:23:26 2015 -0500
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit bc48dc41943e729f7f173af760d86f5a6ba65907
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Mon Oct 19 18:23:14 2015 -0500
+
+    stylistic stuff
+
+commit e4de980e29a75f959b5e39b5233c8b5a0ce501ad
+Merge: 80b2f44 4896766
+Author: chance raine <chanceraine@gmail.com>
+Date:   Mon Oct 19 18:18:07 2015 -0500
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 80b2f44fcc64c2e18fd795c12a74eb4d925f16cd
+Author: chance raine <chanceraine@gmail.com>
+Date:   Mon Oct 19 18:18:04 2015 -0500
+
+    updated crimetypes
+
+commit 4896766c4510e0a9976b4395e041c44222f99adf
+Merge: dec80f1 f50b15c
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Mon Oct 19 18:12:22 2015 -0500
+
+    Updating splash page
+
+commit dec80f1d3b8b44b48d4a18cd428eaa8a695730bf
+Author: dustinstone <stone.dustin94@gmail.com>
+Date:   Mon Oct 19 18:11:12 2015 -0500
+
+    Updating splash page
+
+commit f50b15cf93e314bb3831e82ab449d3c0be1d87e1
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Mon Oct 19 18:05:33 2015 -0500
+
+    stuff
+
+commit b822e7310c7e1baadaf42c53fb6a0d2ed3736f87
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Mon Oct 19 18:04:55 2015 -0500
+
+    adding full list
+
+commit 5d13189a839eb98fcae1cce2e8a484dfb8312b55
+Merge: 15fb14b e88eceb
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Mon Oct 19 17:52:51 2015 -0500
+
+    fixed confilcts
+
+commit 15fb14b9b469d9656ea923f29db07a9288a62bab
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Mon Oct 19 17:51:26 2015 -0500
+
+    added week files
+
+commit e88ecebf0174badb8465e6e65dd244bd3a41ab39
+Merge: 57b396a 1c302d4
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Mon Oct 19 17:23:10 2015 -0500
+
+    added list of crimes
+
+commit 57b396a9d299181562f213961d1d0447259f3d28
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Mon Oct 19 17:22:03 2015 -0500
+
+    added list of crimes
+
+commit 1c302d48e69ecd1af9810c0de4de3bc1bed0b35c
+Merge: 1fafaf8 86cc0d0
+Author: chance raine <chanceraine@gmail.com>
+Date:   Mon Oct 19 17:15:37 2015 -0500
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 1fafaf85fa93f48bbb1bd8789a3534d5239993b6
+Author: chance raine <chanceraine@gmail.com>
+Date:   Mon Oct 19 17:15:34 2015 -0500
+
+    added some crimetype stuff
+
+commit 86cc0d0c9ffd9e530847c0d1481f201598c86104
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Mon Oct 19 17:04:25 2015 -0500
+
+    tables should actually work now
+
+commit fb272df0c4c8e2656a3378df171e24ef0373e024
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Mon Oct 19 16:45:21 2015 -0500
+
+    added tables to weeks.html
+
+commit 766dc7b10856fc394f98c3dd8453bba5222dab13
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Mon Oct 19 16:19:11 2015 -0500
+
+    got routing working from flask
+
+commit 6d4646335211d35a34e0aef85f7855f0260d37f8
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Mon Oct 19 15:50:35 2015 -0500
+
+    moving everything to static & adding more css
+
+commit 590d886cd0b51def23f3c3dd55bcd602cf32da6f
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Mon Oct 19 15:44:06 2015 -0500
+
+    modified weeks.html
+
+commit 316fe803d5dbaeb1abe6adb15224bacd53c26bad
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Mon Oct 19 14:31:24 2015 -0500
+
+    removed crimecast.py~
+
+commit fad77fb10ee315c6ef104d4f9acebdc7a6b1f1c5
+Author: Jason Ngo <jasonngo@cs.utexas.edu>
+Date:   Mon Oct 19 13:49:32 2015 -0500
+
+    abritrary zip
+
+commit 8d13be09ce86a189ea9a8fa20f278abee5285396
+Author: Jason Ngo <jasonngo@cs.utexas.edu>
+Date:   Mon Oct 19 13:28:12 2015 -0500
+
+    fixed zip function
+
+commit daa792aa05f3c4a5cc8aed7c1997be8b6ae9af04
+Author: Jason Ngo <jasonngo@cs.utexas.edu>
+Date:   Mon Oct 19 13:26:35 2015 -0500
+
+    testing zip_id on rackspace
+
+commit ce7a570286f012e0d1982a09096e54794d24a7cc
+Merge: 711da9d a412f8c
+Author: Jason Ngo <jasonngo@cs.utexas.edu>
+Date:   Mon Oct 19 12:47:01 2015 -0500
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 711da9d1389cc3e7b5482032c554e0fba075f9bd
+Author: Jason Ngo <jasonngo@cs.utexas.edu>
+Date:   Mon Oct 19 12:45:53 2015 -0500
+
+    added zip to crimecast.py
+
+commit a412f8c5eafdb703dbd9afd18258752cba8995b9
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Sat Oct 17 18:39:22 2015 -0500
+
+    moved navbar from splash to index.html. wrote paths in app.js
+
+commit 60274b7d1173629377b17fce60270cab950c0515
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Sat Oct 17 18:23:22 2015 -0500
+
+    got angular single page config working
+
+commit c64a2f130579ac15d3608b0a7f06f21e2827a891
+Author: Jason Ngo <jasonngo@cs.utexas.edu>
+Date:   Sat Oct 17 16:56:03 2015 -0500
+
+    updated python file to include zip
+
+commit ba000e5b42701a5468701b33633d95c42df482b6
+Author: Jason Ngo <jasonngo@cs.utexas.edu>
+Date:   Sat Oct 17 16:49:09 2015 -0500
+
+    added zip html
+
+commit e7d95d8b04d61bfda6d49b1a5f5b1ea1dc2b66c2
+Author: Dustin Stone <dstone94@cs.utexas.edu>
+Date:   Sat Oct 17 16:47:35 2015 -0500
+
+    Added navbar to splash
+
+commit cdedc4aad5630bf97221125d7dd53f3326b53afd
+Merge: ec1a080 ac4faf8
+Author: chance raine <chanceraine@gmail.com>
+Date:   Sat Oct 17 16:40:20 2015 -0500
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit ec1a08035e969a0822e4ab29b6bb8334a2b542fb
+Author: chance raine <chanceraine@gmail.com>
+Date:   Sat Oct 17 16:40:17 2015 -0500
+
+    crimecast updated
+
+commit ac4faf83efa04505925a49ef3c5b783209ae3f35
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Sat Oct 17 16:34:53 2015 -0500
+
+    removing crimes from static
+
+commit 26b686605a1662706e1d25a6ab56bc2dbd18e979
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Sat Oct 17 16:32:42 2015 -0500
+
+    fixing unresolved merge
+
+commit 63b2454e432c7005300c1510841d6e4cab063604
+Merge: 81afc5a 3141fcc
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Sat Oct 17 16:31:38 2015 -0500
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 81afc5a4e722187a5e41b2fdede7d7798f891cfd
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Sat Oct 17 16:31:30 2015 -0500
+
+    pushing broken code
+
+commit 3141fcc5db67ce9ebcb47ebf645ef2c6679d1e8a
+Author: Dustin Stone <dstone94@cs.utexas.edu>
+Date:   Sat Oct 17 16:22:56 2015 -0500
+
+    Add call to splash page
+
+commit 4832a8be404a26b912f003f8257d6314a61efa3e
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Sat Oct 17 16:13:06 2015 -0500
+
+    fixed route spelling in crimecast.py
+
+commit 049db7b4464271cb8b8817aa030caaa4490bb9c1
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Sat Oct 17 16:12:21 2015 -0500
+
+    added weeks.html to crimcast.py
+
+commit 316ce473c08b5224f131cb057ac1c2df06b5f269
+Merge: 1ce2142 a974905
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Sat Oct 17 16:10:27 2015 -0500
+
+    Merge branch 'master' of github.com:SageMoore/cs373-idb
+
+commit 1ce214269a14534e55edfbca791fa4e1d466aa5e
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Sat Oct 17 16:10:19 2015 -0500
+
+    added barebones week data to week.html
+
+commit a974905ec6916571747d414b327a3b7240b1d916
+Author: Jason Ngo <jasonngo@cs.utexas.edu>
+Date:   Sat Oct 17 16:08:02 2015 -0500
+
+    using crimes.html as splash for bootstrap
+
+commit c856bf6f953ddbc92dbafba0c518149cc93b69a8
+Merge: a5bcc95 42e832c
+Author: Jason Ngo <jasonngo@cs.utexas.edu>
+Date:   Sat Oct 17 16:07:04 2015 -0500
+
+    default
+
+commit a5bcc95e850e31476a20188d71909bf4ac6841cf
+Author: Jason Ngo <jasonngo@cs.utexas.edu>
+Date:   Sat Oct 17 16:04:36 2015 -0500
+
+    fixed  bootstrap for crimes to use as splash
+
+commit 42e832ccdcf2d53b68e3090024dee25b760af007
+Merge: 21bf98a bcd03d7
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Sat Oct 17 16:03:31 2015 -0500
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb
+
+commit 21bf98a5e9196a1f6fa4202d28f91641f3c96b4d
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Sat Oct 17 16:03:21 2015 -0500
+
+    setting up angular
+
+commit bcd03d720d52182f53f4e9b0a00ae7018dd70e93
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Sat Oct 17 16:01:17 2015 -0500
+
+    added weeks.html
+
+commit ef54e26b716d1768dc98d09e83dcfcb186dab9a6
+Author: Jason Ngo <jasonngo@cs.utexas.edu>
+Date:   Sat Oct 17 15:53:36 2015 -0500
+
+    run on all machines
+
+commit f26de819a3da36d1a87632463ad475b39bcb1182
+Merge: 4f27339 ba3167d
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Sat Oct 17 15:42:52 2015 -0500
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb1
+
+commit 4f27339f05c1b961e6b280721a6ce1b260a0c3ad
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Sat Oct 17 15:42:39 2015 -0500
+
+    adding changes and setting up angular
+
+commit c36f1e9d2915ce01d58afed1864870c6a353be79
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Sat Oct 17 15:41:06 2015 -0500
+
+    adding changes and setting up angular
+
+commit ba3167db4241956532d66293d29dc559624e1069
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Sat Oct 17 15:39:20 2015 -0500
+
+    removed .idea
+
+commit d8c161d4732b03075b48281d61bf312a915948da
+Author: Jason Ngo <jasonngo@cs.utexas.edu>
+Date:   Sat Oct 17 15:34:14 2015 -0500
+
+    goes to static folder
+
+commit 6246fbe17f2565690da3f00907d31d19725364fa
+Author: Jason Ngo <jasonngo@cs.utexas.edu>
+Date:   Sat Oct 17 15:29:55 2015 -0500
+
+    moved crimes to static for test
+
+commit 6324c176d5d195241bcad280ff659c7eda4afa94
+Author: Jason Ngo <jasonngo@cs.utexas.edu>
+Date:   Sat Oct 17 15:24:43 2015 -0500
+
+    flask directories
+
+commit 93cf133e9420ca721cd78409610b7d8eea66f5fd
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Sat Oct 17 15:18:13 2015 -0500
+
+    changed file structure
+
+commit 9717bb7b9d1e6c2faf1c9cec6b8815fa96b88583
+Merge: fcdd800 bc5a67f
+Author: Jason Ngo <jasonngo@cs.utexas.edu>
+Date:   Sat Oct 17 15:16:48 2015 -0500
+
+    Merge branch 'master' of https://github.com/SageMoore/cs373-idb1
+
+commit fcdd800162c24363f5a0bcb9f00b69c8e3fa47da
+Author: Jason Ngo <jasonngo@cs.utexas.edu>
+Date:   Sat Oct 17 15:16:32 2015 -0500
+
+    flask python
+
+commit bc5a67f6e4e268c9ea5c9c0a0ed68a7f0e420008
+Merge: 6c538b0 247321e
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Sat Oct 17 15:01:33 2015 -0500
+
+    adding crimes.html
+
+commit 6c538b016816a4703063c75d1b0ef0502762e0e4
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Sat Oct 17 14:59:46 2015 -0500
+
+    adding crimes.html
+
+commit cd2f8fd3b33b711872d4f2cc5320de878a4e5106
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Sat Oct 17 14:58:56 2015 -0500
+
+    adding crimes.html
+
+commit 247321e91ce05c5c70fc4e94e0f84312a38e7ca9
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Sat Oct 17 14:53:34 2015 -0500
+
+    updated .gitignore
+
+commit 389422060725e50ee3cccac898e30b1a50a6d23c
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Sat Oct 17 14:51:55 2015 -0500
+
+    removed .idea
+
+commit bb58204465999cc9c3dd657e8f6d80d12f284e77
+Author: SageMoore <sagemoore@utexas.edu>
+Date:   Sat Oct 17 14:51:03 2015 -0500
+
+    removed .idea
+
+commit c62d835ba1373eaeb531ea730b5804a8cb3f7d6e
+Author: Mark Daniel <mark.r.daniel@gmail.com>
+Date:   Sat Oct 17 14:23:14 2015 -0500
+
+    adding bootstrap stuff
