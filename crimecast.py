@@ -168,11 +168,11 @@ class CrimeList(Resource):
             crime_type = session.query(CrimeType).from_statement(text("select * from crime_type where crime_type_id=:crime_type_id")).params(crime_type_id=c.crime_type).first()
             crime_json = row_to_dict(c)
             if week is not None:
-                crime_json['week'] = week
+                crime_json['week'] = row_to_dict(week)
             if zip_code is not None:
-                crime_json['zip_code'] = zip_code
+                crime_json['zip_code'] = row_to_dict(zip_code)
             if crime_type is not None:
-                crime_json['crime_type'] = crime_type
+                crime_json['crime_type'] = row_to_dict(crime_type)
             crimes_json += [crime_json]
         return json.dumps(crimes_json)
 
@@ -189,27 +189,17 @@ class CrimeById(Resource):
     def get(self, crime_id):
         # assert len(CRIMES) > crime_id
         crime = session.query(Crime).from_statement(text("select * from crime where crime_id=:crime_id")).params(crime_id=crime_id).first()
-        print("got crime")
         week = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).params(week_id=crime.week).first()
-        print("got week")
         zip_code = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).params(zip_id=crime.zip_code).first()
-        print("got zip")
         crime_type = session.query(CrimeType).from_statement(text("select * from crime_type where crime_type_id=:crime_type_id")).params(crime_type_id=crime.crime_type).first()
-        print("got type")
         print(crime.crime_id)
         crime_json = row_to_dict(crime)
-        print("made it here")
         if week is not None:
-            print("here too")
-            crime_json['week'] = week
+            crime_json['week'] = row_to_dict(week)
         if zip_code is not None:
-            print("also here")
-            crime_json['zip_code'] = zip_code
+            crime_json['zip_code'] = row_to_dict(zip_code)
         if crime_type is not None:
-            print("and here")
-            crime_json['crime_type'] = crime_type
-        print("why", crime_json)
-        print(json.dumps(crime_json))
+            crime_json['crime_type'] = row_to_dict(crime_type)
         return json.dumps(crime_json)
 
     def post(self):
