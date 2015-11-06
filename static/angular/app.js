@@ -1,15 +1,12 @@
 /**
  * Created by markdaniel on 10/17/15.
  */
-var crimeCastApp = angular.module('crimeCastApp', ['ui.router', 'ngRoute', 'crimeCastApp.httpServices', 'crimeCastApp.services', 'ngDisqusApi']);
+var crimeCastApp = angular.module('crimeCastApp', ['ui.router', 'ngRoute', 'crimeCastApp.httpServices', 'crimeCastApp.services']);
 
-crimeCastApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$disqusApiProvider',
-    function($stateProvider, $urlRouterProvider, $locationProvider, $disqusApiProvider) {
+crimeCastApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
+    function($stateProvider, $urlRouterProvider, $locationProvider) {
 
         $locationProvider.html5Mode(true);
-
-        $disqusApiProvider.setApiKey('0vVcXDQUpHhgnnoBFWAZnuHIgvss1lIXvWDdkurI05IHzaBlyAFebjaZ4EoPynIT');
-        $disqusApiProvider.setForumName('mycoolforum');
 
         $stateProvider.state('splash', {
             url: '/splash',
