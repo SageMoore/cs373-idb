@@ -180,7 +180,7 @@ class CrimecastDBTestCase(unittest.TestCase):
         self.session.commit()
         query = self.session.query(Week).filter(Week.start == datetime.date(year=2015, month=10, day=11)).first()
 
-        self.assertEqual(query.end, datetime.date(year=2015, month=10, day=17))
+        self.assertEqual(query.end, datetime.datetime(year=2015, month=10, day=17, 0, 0))
 
 class CrimecastAPITestCase(unittest.TestCase):
 
