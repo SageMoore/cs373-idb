@@ -243,7 +243,7 @@ class CrimecastAPITestCase(unittest.TestCase):
         self.assertEqual(data["week"], {
                 'week_id': '1',
                 'start_date': '10/11/15'
-            }
+            })
 
     # ----------------------
     # Crime_Types unit tests
