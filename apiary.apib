@@ -1,5 +1,5 @@
 FORMAT: 1A
-HOST: http://crimecast.xyz/api
+HOST: http://crimecast.xyz/api/v1
 
 # CrimeCast
 
@@ -13,34 +13,34 @@ CrimeCast is an API that allows users to access crime data for Austin neighborho
         
         [
             {
-                'crime_id': '1',
-                'lat': '30.28500',
-                'lng': '-97.7320000',
-                'address': 'GDC',
-                'crime_type':
+                "crime_id": "1",
+                "lat": "30.28500",
+                "lng": "-97.7320000",
+                "address": "GDC",
+                "crime_type":
                     {
-                        'crime_type_id': '1',
-                        'name': 'Vandalism'
+                        "crime_type_id": "1",
+                        "name": "Vandalism"
                      },
-                'time': '10-12-2015 19:12:00',
-                'description': 'Graffiti of pig on building',
-                'zip_code':
+                "time": "10-12-2015 19:12:00",
+                "description": "Graffiti of pig on building",
+                "zip_code":
                     {
-                        'zip_id': '1',
-                        'zip_code': '78704'
+                        "zip_id": "1",
+                        "zip_code": "78704"
                     },
-                'week':
+                "week":
                     {
-                        'week_id': '1',
-                        'start_date': '10/11/15'
+                        "week_id": "1",
+                        "start_date": "10/11/15"
                     }
             },
-            {'crime_id': '2', 'lat': '30.30000', 'lng': '-97.730000', 'address': 'Duval Rd', 'crime_type': {'crime_type_id': '2', 'name': 'Burglary'}, 'time': '10-20-2015 19:20:00', 'description': 'Burglary at Quacks Bakery', 'zip_code': {'zip_id': '2', 'zip_code': '78705'}, 'week': {'week_id': '2', 'start_date': '10/18/15'}},
-            {'crime_id': '3', 'lat': '30.27000', 'lng': '-97.7190000', 'address': '12th and Chicon', 'crime_type': {'crime_type_id': '3', 'name': 'Assault'}, 'time': '10-30-2015 22:20:00', 'description': 'Murder on 12th and Chicon', 'zip_code': {'zip_id': '3', 'zip_code': '78706'}, 'week': {'week_id': '3', 'start_date': '10/25/15'}}
+            {"crime_id": "2", "lat": "30.30000", "lng": "-97.730000", "address": "Duval Rd", "crime_type": {"crime_type_id": "2", "name": "Burglary"}, "time": "10-20-2015 19:20:00", "description": "Burglary at Quacks Bakery", "zip_code": {"zip_id": "2", "zip_code": "78705"}, "week": {"week_id": "2", "start_date": "10/18/15"}},
+            {"crime_id": "3", "lat": "30.27000", "lng": "-97.7190000", "address": "12th and Chicon", "crime_type": {"crime_type_id": "3", "name": "Assault"}, "time": "10-30-2015 22:20:00", "description": "Murder on 12th and Chicon", "zip_code": {"zip_id": "3", "zip_code": "78706"}, "week": {"week_id": "3", "start_date": "10/25/15"}}
         
         ]
 
-## Single Crime [/crime?crime_id={crime_id}]
+## Single Crime [/crimes/{crime_id}]
 
 + Parameters 
     + crime_id (number) - Unique id of the crime requested
@@ -50,26 +50,26 @@ CrimeCast is an API that allows users to access crime data for Austin neighborho
 + Response 200 (application/json)
         
         {
-            'crime_id': '1',
-            'lat': '30.28500',
-            'lng': '-97.7320000',
-            'address': 'GDC',
-            'crime_type':
+            "crime_id": "1",
+            "lat": "30.28500",
+            "lng": "-97.7320000",
+            "address": "GDC",
+            "crime_type":
                 {
-                    'crime_type_id': '1',
-                    'name': 'Vandalism'
+                    "crime_type_id": "1",
+                    "name": "Vandalism"
                  },
-            'time': '10-12-2015 19:12:00',
-            'description': 'Graffiti of pig on building',
-            'zip_code':
+            "time": "10-12-2015 19:12:00",
+            "description": "Graffiti of pig on building",
+            "zip_code":
                 {
-                    'zip_id': '1',
-                    'zip_code': '78704'
+                    "zip_id": "1",
+                    "zip_code": "78704"
                 },
-            'week':
+            "week":
                 {
-                    'week_id': '1',
-                    'start_date': '10/11/15'
+                    "week_id": "1",
+                    "start_date": "10/11/15"
                 }
         }
 
@@ -82,29 +82,29 @@ CrimeCast is an API that allows users to access crime data for Austin neighborho
         
         [
                 {
-                    'week_id': '1',
-                    'start_date': "10/11/15",
-                    'end_date': "10/17/15",
-                    'mostPopular': {
-                        'crime_type_id': '1',
-                        'name': 'Vandalism'
+                    "week_id": "1",
+                    "start_date": "10/11/15",
+                    "end_date": "10/17/15",
+                    "mostPopular": {
+                        "crime_type_id": "1",
+                        "name": "Vandalism"
                     },
-                    'worstZip': {
-                        'zip_id': '1',
-                        'zip_code': '78704'
+                    "worstZip": {
+                        "zip_id": "1",
+                        "zip_code": "78704"
                     },
-                    'crimes':
+                    "crimes":
                         [
-                            {'crime_id': '1',
-                             'description': 'Graffiti of pig on building'}
+                            {"crime_id": "1",
+                             "description": "Graffiti of pig on building"}
                         ]
                 },
-                {'week_id': '2', 'start_date': "10/18/15", 'end_date': "10/24/15", 'mostPopular': {'crime_type_id': '2', 'name': 'Burglary'}, 'worstZip': {'zip_id': '2', 'zip_code': '78705'}, 'crimes': [{'crime_id': '2', 'description': 'Burglary at Quacks Bakery'}]},
-                {'week_id': '3', 'start_date': "10/25/15", 'end_date': "10/31/15", 'mostPopular': {'crime_type_id': '3', 'name': 'Assault'}, 'worstZip': {'zip_id': '3', 'zip_code': '78706'}, 'crimes': [{'crime_id': '3', 'description': 'Murder on 12th and Chicon'}]},
+                {"week_id": "2", "start_date": "10/18/15", "end_date": "10/24/15", "mostPopular": {"crime_type_id": "2", "name": "Burglary"}, "worstZip": {"zip_id": "2", "zip_code": "78705"}, "crimes": [{"crime_id": "2", "description": "Burglary at Quacks Bakery"}]},
+                {"week_id": "3", "start_date": "10/25/15", "end_date": "10/31/15", "mostPopular": {"crime_type_id": "3", "name": "Assault"}, "worstZip": {"zip_id": "3", "zip_code": "78706"}, "crimes": [{"crime_id": "3", "description": "Murder on 12th and Chicon"}]},
         ]
 
 
-## Week [/week?week_id={week_id}]
+## Week [/weeks/{week_id}]
 
 + Parameters 
     + week_id (number) - Unique id of the week requested
@@ -114,132 +114,132 @@ CrimeCast is an API that allows users to access crime data for Austin neighborho
 + Response 200 (application/json)
         
         {
-            'week_id': '1',
-            'start_date': "10/11/15",
-            'end_date': "10/17/15",
-            'mostPopular': {
-                'crime_type_id': '1',
-                'name': 'Vandalism'
+            "week_id": "1",
+            "start_date": "10/11/15",
+            "end_date": "10/17/15",
+            "mostPopular": {
+                "crime_type_id": "1",
+                "name": "Vandalism"
             },
-            'worstZip': {
-                'zip_id': '1',
-                'zip_code': '78704'
+            "worstZip": {
+                "zip_id": "1",
+                "zip_code": "78704"
             },
-            'crimes':
+            "crimes":
                 [
-                    {'crime_id': '1',
-                     'description': 'Graffiti of pig on building'}
+                    {"crime_id": "1",
+                     "description": "Graffiti of pig on building"}
                 ]
         }
 
 # Group Crime Types
 
-## Crime Types [/crimetypes]
+## Crime Types [/crime_types]
 ### Get a list of all the crime types [GET]
 
 + Response 200 (application/json)
         
         [
             {
-                'crime_type_id': '1',
-                'name': 'Vandalism',
-                'desc': 'Vandalism is bad',
-                'worstZip':
+                "crime_type_id": "1",
+                "name": "Vandalism",
+                "desc": "Vandalism is bad",
+                "worstZip":
                     {
-                        'zip_id': '1',
-                        'zip_code': '78704'
+                        "zip_id": "1",
+                        "zip_code": "78704"
                     },
-                'worstWeek':
+                "worstWeek":
                     {
-                        'week_id': '1',
-                        'start_date': '10/11/15'
+                        "week_id": "1",
+                        "start_date": "10/11/15"
                     }
-                , 'crimes':
+                , "crimes":
                 [
-                    {'crime_id': '1',
-                     'description': 'Graffiti of pig on building'}
+                    {"crime_id": "1",
+                     "description": "Graffiti of pig on building"}
                 ]
             },
-            {'crime_type_id': '2', 'name': 'Burglary', 'desc': 'Burglary is bad', 'worstZip': {'zip_id': '2', 'zip_code': '78705'}, 'worstWeek': {'week_id': '2', 'start_date': '10/18/15'}, 'crimes': [{'crime_id': '2', 'description': 'Burglary at Quacks Bakery'}, {'crime_id': '2', 'description': 'Burglary at Quacks Bakery'}, {'crime_id': '2', 'description': 'Burglary at Quacks Bakery'}]},
-            {'crime_type_id': '3', 'name': 'Assault', 'desc': 'Assault is bad', 'worstZip': {'zip_id': '3', 'zip_code': '78706'}, 'worstWeek': {'week_id': '3', 'start_date': '10/25/15'}, 'crimes': [{'crime_id': '3', 'description': 'Murder on 12th and Chicon'}]},
+            {"crime_type_id": "2", "name": "Burglary", "desc": "Burglary is bad", "worstZip": {"zip_id": "2", "zip_code": "78705"}, "worstWeek": {"week_id": "2", "start_date": "10/18/15"}, "crimes": [{"crime_id": "2", "description": "Burglary at Quacks Bakery"}, {"crime_id": "2", "description": "Burglary at Quacks Bakery"}, {"crime_id": "2", "description": "Burglary at Quacks Bakery"}]},
+            {"crime_type_id": "3", "name": "Assault", "desc": "Assault is bad", "worstZip": {"zip_id": "3", "zip_code": "78706"}, "worstWeek": {"week_id": "3", "start_date": "10/25/15"}, "crimes": [{"crime_id": "3", "description": "Murder on 12th and Chicon"}]},
         ]
 
 
-## Crime Type [/crimeType?crimeType_id={crimeType_id}]
+## Crime Type [/crime_types/{crime_type_id}]
 
 + Parameters 
-    + crimeType_id (number) - Unique id of the crime type requested
+    + crime_type_id (number) - Unique id of the crime type requested
 
 ### Get information about certain crime type [GET]
 
 + Response 200 (application/json)
         
         {
-            'crime_type_id': '1',
-            'name': 'Vandalism',
-            'desc': 'Vandalism is bad',
-            'worstZip':
+            "crime_type_id": "1",
+            "name": "Vandalism",
+            "desc": "Vandalism is bad",
+            "worstZip":
                 {
-                    'zip_id': '1',
-                    'zip_code': '78704'
+                    "zip_id": "1",
+                    "zip_code": "78704"
                 },
-            'worstWeek':
+            "worstWeek":
                 {
-                    'week_id': '1',
-                    'start_date': '10/11/15'
+                    "week_id": "1",
+                    "start_date": "10/11/15"
                 }
-            , 'crimes':
+            , "crimes":
             [
-                {'crime_id': '1',
-                 'description': 'Graffiti of pig on building'}
+                {"crime_id": "1",
+                 "description": "Graffiti of pig on building"}
             ]
         }
 
 # Group Zipcodes
 
-## Zipcodes [/zipcodes]
+## Zipcodes [/zips]
 ### Get a list of all the zipcodes [GET]
 
 + Response 200 (application/json)
         
         [
                 {
-                    'zip_id': '1',
-                    'zip_code': '78704',
-                    'lat': '30.28500',
-                    'lng': '-97.7320000',
-                    'pop': '12345',
-                    'family_income': '12345',
-                    'crimes':
+                    "zip_id": "1",
+                    "zip_code": "78704",
+                    "lat": "30.28500",
+                    "lng": "-97.7320000",
+                    "pop": "12345",
+                    "family_income": "12345",
+                    "crimes":
                         [
-                            {'crime_id': '1',
-                             'description': 'Graffiti of pig on building'}
+                            {"crime_id": "1",
+                             "description": "Graffiti of pig on building"}
                         ]
                 },
-                {'zip_id': '2', 'zip_code': '78705', 'lat': '30.123', 'lng': '30.123', 'pop': '12345', 'family_income':'12345', 'crimes': [{'crime_id': '2', 'description': 'Burglary at Quacks Bakery'}]},
-                {'zip_id': '3', 'zip_code': '78706', 'lat': '35.123', 'lng': '35.123', 'pop': '12345', 'family_income':'12345', 'crimes': [{'crime_id': '3', 'description': 'Murder on 12th and Chicon'}]}
+                {"zip_id": "2", "zip_code": "78705", "lat": "30.123", "lng": "30.123", "pop": "12345", "family_income":"12345", "crimes": [{"crime_id": "2", "description": "Burglary at Quacks Bakery"}]},
+                {"zip_id": "3", "zip_code": "78706", "lat": "35.123", "lng": "35.123", "pop": "12345", "family_income":"12345", "crimes": [{"crime_id": "3", "description": "Murder on 12th and Chicon"}]}
         ]
 
 
-## Zipcode [/zipcode?zipcode_id={zipcode_id}]
+## Zipcode [/zips/{zip_id}]
 
 + Parameters 
-    + zipcode_id (number) - Unique id of the zipcode requested
+    + zip_id (number) - Unique id of the zipcode requested
 
 ### Get crime information for a zip code [GET]
 
 + Response 200 (application/json)
         
         {
-            'zip_id': '1',
-            'zip_code': '78704',
-            'lat': '30.28500',
-            'lng': '-97.7320000',
-            'pop': '12345',
-            'family_income': '12345',
-            'crimes':
+            "zip_id": "1",
+            "zip_code": "78704",
+            "lat": "30.28500",
+            "lng": "-97.7320000",
+            "pop": "12345",
+            "family_income": "12345",
+            "crimes":
                 [
-                    {'crime_id': '1',
-                     'description': 'Graffiti of pig on building'}
+                    {"crime_id": "1",
+                     "description": "Graffiti of pig on building"}
                 ]
         }
