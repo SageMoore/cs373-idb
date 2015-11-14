@@ -34,10 +34,10 @@ def transform_crime(next_crime_raw, date):
     converted_year = convert_year(date)
     converted_month = convert_month(date)
     converted_day = convert_day(date)
-    try:
-        date(year=converted_year, month=converted_month, day=converted_day)
-    except Exception:
-        print('date(..) didnt work. using datetime.date')
+    # try:
+    #     date(year=converted_year, month=converted_month, day=converted_day)
+    # except Exception:
+    #     print('date(..) didnt work. using datetime.date')
     return Crime(lat=next_crime_raw['lat'], lng=next_crime_raw['lon'], time=datetime(year=converted_year, month=converted_month, day=converted_day), address=next_crime_raw['address'], description=next_crime_raw['link'])
 
 def transform_crime_type(next_crime_raw):
@@ -48,7 +48,7 @@ def transform_zip(next_crime_raw):
     location = geolocator.reverse(str(str(next_crime_raw['lat']) + ", " + str(next_crime_raw['lon'])))
     zip = location.raw['address']['postcode']
     location = geolocator.geocode(str(zip))
-    print(location.raw)
+    # print(location.raw)
     boundingbox = location.raw['boundingbox']
     maxlat = float(boundingbox[1])
     minlat = float(boundingbox[0])
@@ -78,13 +78,13 @@ def add():
         date = next_crime_raw['date']
 
         next_crime = transform_crime(next_crime_raw, date)
-        print(next_crime)
+        # print(next_crime)
         next_crime_type = transform_crime_type(next_crime_raw)
-        print(next_crime_type)
+        # print(next_crime_type)
         next_zip = transform_zip(next_crime_raw)
-        print(next_zip)
+        # print(next_zip)
         next_week = transform_week(date)
-        print(next_week)
+        # print(next_week)
 
 
         crimes.append(next_crime)
@@ -107,13 +107,13 @@ def add():
 
     #set up all of the foreign key relationships
     # print("Crime one week: " + str(week_1.start))
-    print('crime_len: ' + str(len(crimes)))
-    print('crime_type_len: ' + str(len(crime_types)))
-    print('zip len: '  + str(len(zips)))
+    # print('crime_len: ' + str(len(crimes)))
+    # print('crime_type_len: ' + str(len(crime_types)))
+    # print('zip len: '  + str(len(zips)))
 
     try:
         for crime in crimes:
-            print(crime)
+            # print(crime)
             session.add(crime)
         for crime_type in crime_types:
             session.add(crime_type)
