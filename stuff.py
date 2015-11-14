@@ -58,7 +58,11 @@ def transform_zip(next_crime_raw):
     meanlat = (maxlat + minlat) / 2
     meanlng = (maxlng + minlng) / 2
 
-    zip = re.search('^787d{2}$', zip).group(1)
+    try:
+        zip = re.search('^787d{2}$', zip).group(1)
+        print('zip: ' + str(zip))
+    except Exception:
+        pass
 
     return Zip(zip_code=zip, lat=meanlat, lng=meanlng, pop=20000, family_income=50000)
 
