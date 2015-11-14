@@ -38,7 +38,7 @@ def transform_crime(next_crime_raw, date):
         date(year=converted_year, month=converted_month, day=converted_day)
     except Exception:
         print('date(..) didnt work. using datetime.date')
-    return Crime(lat=next_crime_raw['lat'], lng=next_crime_raw['lon'], time=datetime.date(year=converted_year, month=converted_month, day=converted_day), address=next_crime_raw['address'], description=next_crime_raw['link'])
+    return Crime(lat=next_crime_raw['lat'], lng=next_crime_raw['lon'], time=datetime(year=converted_year, month=converted_month, day=converted_day), address=next_crime_raw['address'], description=next_crime_raw['link'])
 
 def transform_crime_type(next_crime_raw):
     return CrimeType(name=next_crime_raw['type'], desc='crimes are bad')
