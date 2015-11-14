@@ -72,9 +72,14 @@ def add():
         date = next_crime_raw['date']
 
         next_crime = transform_crime(next_crime_raw, date)
+        print(next_crime)
         next_crime_type = transform_crime_type(next_crime_raw)
+        print(next_crime_type)
         next_zip = transform_zip(next_crime_raw)
+        print(next_zip)
         next_week = transform_week(date)
+        print(next_week)
+
         crimes.append(next_crime)
         crime_types.append(next_crime_type)
         zips.append(next_zip)
@@ -257,7 +262,7 @@ def print_everything():
     zips = session.query(Zip).all()
     print("zips len: " + str(len(zips)))
 
-#add()
+add()
 #add_weeks_to_crimes()
 #add_zips_to_crimes()
 #add_crime_type_to_crimes()
