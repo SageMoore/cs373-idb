@@ -73,7 +73,7 @@ def add():
     with open("extraction/daily_spot_crime_data.json") as data_file:
         data = json.load(data_file)
     crime_data = iter(data['crimes'])
-    for line in range(1):
+    for line in range(75):
         next_crime_raw = next(crime_data)
         date = next_crime_raw['date']
 
