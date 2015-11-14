@@ -1,7 +1,7 @@
 import json
 import os
 import sys
-import datetime
+from datetime import datetime
 from geopy import Nominatim
 from sqlalchemy import Column, ForeignKey, Integer, String, DateTime, Float, text
 from sqlalchemy.ext.declarative import declarative_base
