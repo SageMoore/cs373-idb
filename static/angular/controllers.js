@@ -10,6 +10,8 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
 
     var map = services.getMap();
 
+    var self = this;
+
     var loadAllWidgets = function() {
         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
     };
@@ -29,6 +31,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
         http_service.getRequestGeneric('crimes').then(function(data) {
             console.log('data for crimes is...: ', data);
             $scope.crimes = data;
+            self.tableParams = new NgTableParams({}, { dataset: data });
             angular.forEach($scope.crimes, function(value, key) {
                 services.addMarker(value.lat, value.lng, value.address, map, value.crime_type.crime_type_name);
             })
