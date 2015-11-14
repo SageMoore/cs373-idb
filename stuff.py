@@ -31,7 +31,7 @@ def convert_month(date):
 def convert_day(date):
     return format_date(date).day
 
-def transform_crime(next_crime_raw, date):
+def transform_crime(next_crime_raw, date, zip):
     converted_year = convert_year(date)
     converted_month = convert_month(date)
     converted_day = convert_day(date)
@@ -39,7 +39,7 @@ def transform_crime(next_crime_raw, date):
     #     date(year=converted_year, month=converted_month, day=converted_day)
     # except Exception:
     #     print('date(..) didnt work. using datetime.date')
-    return Crime(lat=next_crime_raw['lat'], lng=next_crime_raw['lon'], time=datetime(year=converted_year, month=converted_month, day=converted_day), address=next_crime_raw['address'], description=next_crime_raw['link'])
+    return Crime(lat=next_crime_raw['lat'], lng=next_crime_raw['lon'], time=datetime(year=converted_year, month=converted_month, day=converted_day), address=str(next_crime_raw['address'] + ', ' + zip), description=next_crime_raw['link'])
 
 def transform_crime_type(next_crime_raw):
     return CrimeType(name=next_crime_raw['type'], desc='crimes are bad')
@@ -85,20 +85,27 @@ def add():
         next_crime_raw = next(crime_data)
         date = next_crime_raw['date']
 
-        next_crime = transform_crime(next_crime_raw, date)
-        # print(next_crime)
-        next_crime_type = transform_crime_type(next_crime_raw)
-        # print(next_crime_type)
-        next_zip = transform_zip(next_crime_raw)
-        # print(next_zip)
-        next_week = transform_week(date)
-        # print(next_week)
+        geolocator = Nominatim()
+        location = geolocator.reverse(str(str(next_crime_raw['lat']) + ", " + str(next_crime_raw['lon'])))
+        zip = location.raw['address']['postcode']
+
+        if (len(str(zip)) == 5):
+            next_crime = transform_crime(next_crime_raw, date, zip)
+            # print(next_crime)
+            next_crime_type = transform_crime_type(next_crime_raw)
+            # print(next_crime_type)
+            next_zip = transform_zip(next_crime_raw)
+            # print(next_zip)
+            next_week = transform_week(date)
+            # print(next_week)
 
 
-        crimes.append(next_crime)
-        crime_types.append(next_crime_type)
-        zips.append(next_zip)
-        weeks.append(next_week)
+            crimes.append(next_crime)
+            crime_types.append(next_crime_type)
+            zips.append(next_zip)
+            weeks.append(next_week)
+
+
 
     # crime_1 = Crime(lat=30.28500, lng=-97.7320000, time=datetime.date(year=2015, month=10, day=28), address="gdc", description="Graffiti of pig on building")
     # crime_2 = Crime(lat=30.30000, lng=-97.730000, time=datetime.date(year=2015, month=10, day=20), address="Duval Rd", description="Burglary at Quacks Bakery")
