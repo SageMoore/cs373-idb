@@ -54,7 +54,6 @@ def page_not_found(e):
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def index(path):
-    print('in default')
     return app.send_static_file('index.html')
 
 
