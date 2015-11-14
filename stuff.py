@@ -106,8 +106,13 @@ def add():
 
     #set up all of the foreign key relationships
     # print("Crime one week: " + str(week_1.start))
+    print('crime_len: ' + str(len(crimes)))
+    print('crime_type_len: ' + str(len(crime_types)))
+    print('zip len: '  + str(len(zips)))
+
     try:
         for crime in crimes:
+            print(crime)
             session.add(crime)
         for crime_type in crime_types:
             session.add(crime_type)
