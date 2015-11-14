@@ -56,7 +56,7 @@ def transform_zip(next_crime_raw):
     minlng = float(boundingbox[2])
     meanlat = (maxlat + minlat) / 2
     meanlng = (maxlng + minlng) / 2
-    return Zip(zip_code=zip, lat=meanlat, lng=meanlng)
+    return Zip(zip_code=zip, lat=meanlat, lng=meanlng, pop=20000, family_income=50000)
 
 def transform_week(date):
     formatted_date = format_date(date)
@@ -85,6 +85,7 @@ def add():
         print(next_zip)
         next_week = transform_week(date)
         print(next_week)
+
 
         crimes.append(next_crime)
         crime_types.append(next_crime_type)
