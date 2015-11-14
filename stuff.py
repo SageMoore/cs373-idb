@@ -45,7 +45,7 @@ def transform_crime_type(next_crime_raw):
 
 def transform_zip(next_crime_raw):
     geolocator = Nominatim()
-    location = geolocator.reverse(str(next_crime_raw['lat'] + ", " + next_crime_raw['lon']))
+    location = geolocator.reverse(str(str(next_crime_raw['lat']) + ", " + str(next_crime_raw['lon'])))
     zip = location.raw['address']['postcode']
     boundingbox = location.raw['boundingbox']
     maxlat = float(boundingbox[1])
