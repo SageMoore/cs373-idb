@@ -6,14 +6,17 @@ import re
 
 __author__ = 'markdaniel'
 
+def formatted_date(date):
+    return datetime.strptime(date, "%m/%d/%y %H:%M %p")
+
 def convert_year(date):
-    return datetime.strptime(date, "%m/%d/%y %H:%M %p").year
+    return formatted_date(date).year
 
 def convert_month(date):
-    return datetime.strptime(date, "%m/%d/%y %H:%M %p").month
+    return formatted_date(date).month
 
 def convert_day(date):
-    return datetime.strptime(date, "%m/%d/%y %H:%M %p").day
+    return formatted_date(date).day
 
 crimes = []
 weeks = []
@@ -25,9 +28,10 @@ with open("extraction/daily_spot_crime_data.json") as data_file:
     crime_data = iter(data['crimes'])
     for line in range(1):
         next_crime = next(crime_data)
-        converted_year = convert_year(next_crime['date'])
-        converted_month = convert_month(next_crime['date'])
-        converted_day = convert_day(next_crime['date'])
+        date = next_crime['date']
+        converted_year = convert_year(date)
+        converted_month = convert_month(date)
+        converted_day = convert_day(date)
         #
         # next_crime_formatted = Crime(lat=next_crime['lat'], lng=next_crime['lon'], time=datetime.date(year=converted_year, month=converted_month, day=converted_day, address=next_crime['address'], description=next_crime['link'])
         # next_crime_type = CrimeType(name=next_crime['type'], desc='crimes are bad')
@@ -46,8 +50,13 @@ with open("extraction/daily_spot_crime_data.json") as data_file:
         meanlng = (maxlng + minlng) / 2
 
         #next_zip = Zip(zip_code=zip, lat=meanlat, lng=meanlng)
-        #next_week = Week(
-        print(next_crime)
+
+        formatted_date = formatted_date(date)
+        weekday = formatted_date.date().weekday()
+        sunday = datetime(converted_year, converted_month, converted_day - weekday - 1)
+        saturday = datetime(converted_year, converted_month, converted_day + (6 - weekday) - 1)
+        #next_week = Week(start=sunday, end=saturday)
+
         # crimes.append(next_crime_formatted)
 
     # for crime in crimes:
