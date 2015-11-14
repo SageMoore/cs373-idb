@@ -3,6 +3,7 @@ import os
 import sys
 from datetime import datetime
 from geopy import Nominatim
+import re
 from sqlalchemy import Column, ForeignKey, Integer, String, DateTime, Float, text
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, backref
@@ -56,6 +57,9 @@ def transform_zip(next_crime_raw):
     minlng = float(boundingbox[2])
     meanlat = (maxlat + minlat) / 2
     meanlng = (maxlng + minlng) / 2
+
+    zip = re.search('^787d{2}$', zip).group(1)
+
     return Zip(zip_code=zip, lat=meanlat, lng=meanlng, pop=20000, family_income=50000)
 
 def transform_week(date):
