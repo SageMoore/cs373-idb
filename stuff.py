@@ -215,7 +215,7 @@ def add_crime_type_to_crimes():
             next_crime_raw = next(crime_data)
             zip = get_zip(next_crime_raw)
             if (len(str(zip)) == 5):
-                crime_type_id = session.query(CrimeType).filter_by(name=str(next_crime_raw['type'])).crime_type_id
+                crime_type_id = session.query(CrimeType.crime_type_id).filter_by(name=str(next_crime_raw['type']))
                 print('crime_type_id: ' + str(crime_type_id))
                 db_crime = session.query(Crime).filter_by(description=next_crime_raw['link'])
                 print('db_crime: ' + str(db_crime))
