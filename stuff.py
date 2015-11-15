@@ -215,11 +215,11 @@ def add_crime_type_to_crimes():
             next_crime_raw = next(crime_data)
             zip = get_zip(next_crime_raw)
             if (len(str(zip)) == 5):
-                crime_type = session.query(CrimeType).filter_by(name=str(next_crime_raw['type']))
-                print(crime_type)
+                crime_type_id = session.query(CrimeType).filter_by(name=str(next_crime_raw['type'])).crime_type_id
+                print('crime_type_id: ' + str(crime_type_id))
                 db_crime = session.query(Crime).filter_by(description=next_crime_raw['link'])
                 print('db_crime: ' + str(db_crime))
-                db_crime.crime_type = crime_type
+                db_crime.crime_type = crime_type_id
                 # print("adding zipcode " + str(crime_types[i].crime_type_id) + " to " + str(crime.description))
                 i += 1
 
