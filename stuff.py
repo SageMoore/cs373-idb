@@ -143,9 +143,15 @@ def add():
             else:
                 print('already added: ' + str(crime_type.name))
         for zip in zips:
-            session.add(zip)
+            if session.query(Zip).filter_by(zip_code=zip.zip_code).count() == 0:
+                session.add(zip)
+            else:
+                print('already added: ' + str(zip.zip_code))
         for week in weeks:
-            session.add(week)
+            if session.query(Week).filter_by(start=week.start).count() == 0:
+                session.add(week)
+            else:
+                print('already added: ' + str(week.start))
         # session.add(crime_1)
         # session.add(crime_2)
         # session.add(crime_3)
