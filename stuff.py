@@ -87,11 +87,12 @@ def add():
         data = json.load(data_file)
     crime_data = iter(data['crimes'])
     for line in range(5):
-        print('in range')
         next_crime_raw = next(crime_data)
         date = next_crime_raw['date']
 
         zip = get_zip(next_crime_raw)
+        print(str(zip))
+
 
         if (len(str(zip)) == 5):
             next_crime = transform_crime(next_crime_raw, date, zip)
