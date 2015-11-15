@@ -131,8 +131,9 @@ def add():
 
     try:
         for crime in crimes:
-            # print(crime)
+            print(crime)
             if session.query(Crime).filter_by(description=crime.description).count() == 0:
+                print('adding crime')
                 session.add(crime)
             else:
                 print('already added: ' + str(crime.description))
