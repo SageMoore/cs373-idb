@@ -8,7 +8,7 @@ def fetch_data(lat, lng):
 def write_data(min_lat, max_lat, min_lng, max_lng):
 	crime_list = []
 	number_keys = ['cdid', 'lon', 'lat']
-	target = open('daily_spot_crime_data.json', 'w')
+	target = open('daily_spot_crime_data2.json', 'w')
 	# necessary to write manually due to formatting issue
 	target.write("{\"crimes\": [")
 	first_crime = True

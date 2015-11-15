@@ -76,18 +76,21 @@ def transform_week(date):
     saturday = datetime(converted_year, converted_month, converted_day + (6 - weekday) - 1)
     return Week(start=sunday, end=saturday)
 
+def get_zip(next_crime_raw):
+    geolocator = Nominatim()
+    location = geolocator.reverse(str(str(next_crime_raw['lat']) + ", " + str(next_crime_raw['lon'])))
+    zip = location.raw['address']['postcode']
+
 # Insert everything into the crimedata database
 def add():
     with open("extraction/daily_spot_crime_data.json") as data_file:
         data = json.load(data_file)
     crime_data = iter(data['crimes'])
-    for line in range(75):
+    for line in range(5):
         next_crime_raw = next(crime_data)
         date = next_crime_raw['date']
 
-        geolocator = Nominatim()
-        location = geolocator.reverse(str(str(next_crime_raw['lat']) + ", " + str(next_crime_raw['lon'])))
-        zip = location.raw['address']['postcode']
+        zip = get_zip(next_crime_raw)
 
         if (len(str(zip)) == 5):
             next_crime = transform_crime(next_crime_raw, date, zip)
@@ -129,9 +132,15 @@ def add():
     try:
         for crime in crimes:
             # print(crime)
-            session.add(crime)
+            if session.query(Crime).filter_by(description=crime.description).count() == 0:
+                session.add(crime)
+            else:
+                print('already added: ' + str(crime.description))
         for crime_type in crime_types:
-            session.add(crime_type)
+            if session.query(CrimeType).filter(name=crime_type.name).count() == 0:
+                session.add(crime_type)
+            else:
+                print('already added: ' + str(crime_type.name))
         for zip in zips:
             session.add(zip)
         for week in weeks:
@@ -188,14 +197,21 @@ def add_zips_to_crimes():
         print("Everything broke")
 
 def add_crime_type_to_crimes():
-    crimes = session.query(Crime).all()
+    with open("extraction/daily_spot_crime_data.json") as data_file:
+        data = json.load(data_file)
+    crime_data = iter(data['crimes'])
+    # crimes = session.query(Crime).all()
     crime_types = session.query(CrimeType).all()
     i = 0
     try:
-        for crime in crimes:
-            crime.crime_type = crime_types[i].crime_type_id
-            print("adding zipcode " + str(crime_types[i].crime_type_id) + " to " + str(crime.description))
-            i += 1
+        for crime in range(75):
+            next_crime_raw = next(crime_data)
+            zip = get_zip(next_crime_raw)
+            if (len(str(zip)) == 5):
+                crime.crime_type = session.query(CrimeType).filter_by(name=str(next_crime_raw['type']))
+                # print("adding zipcode " + str(crime_types[i].crime_type_id) + " to " + str(crime.description))
+                i += 1
+
         session.commit()
     except Exception as e:
         print(e)
