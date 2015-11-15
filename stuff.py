@@ -76,10 +76,10 @@ def get_zip(next_crime_raw):
 
 # Insert everything into the crimedata database
 def add():
-    with open("extraction/daily_spot_crime_data.json") as data_file:
+    with open("extraction/daily_spot_crime_data2.json") as data_file:
         data = json.load(data_file)
     crime_data = iter(data['crimes'])
-    for line in range(1500):
+    for line in range(1000):
         next_crime_raw = next(crime_data)
         if line % 7 == 0:
             date = next_crime_raw['date']
@@ -198,14 +198,14 @@ def add_zips_to_crimes():
         print("Everything broke")
 
 def add_crime_type_to_crimes():
-    with open("extraction/daily_spot_crime_data.json") as data_file:
+    with open("extraction/daily_spot_crime_data2.json") as data_file:
         data = json.load(data_file)
     crime_data = iter(data['crimes'])
     # crimes = session.query(Crime).all()
     crime_types = session.query(CrimeType).all()
     i = 0
     try:
-        for crime in range(1500):
+        for crime in range(1000):
             next_crime_raw = next(crime_data)
             if crime % 7 == 0:
                 zip = get_zip(next_crime_raw)
