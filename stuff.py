@@ -79,7 +79,7 @@ def transform_week(date):
 def get_zip(next_crime_raw):
     geolocator = Nominatim()
     location = geolocator.reverse(str(str(next_crime_raw['lat']) + ", " + str(next_crime_raw['lon'])))
-    zip = location.raw['address']['postcode']
+    return location.raw['address']['postcode']
 
 # Insert everything into the crimedata database
 def add():
@@ -92,7 +92,6 @@ def add():
 
         zip = get_zip(next_crime_raw)
         print(str(zip))
-
 
         if (len(str(zip)) == 5):
             next_crime = transform_crime(next_crime_raw, date, zip)
