@@ -66,9 +66,11 @@ def transform_week(date):
     weekday = formatted_date.date().weekday()
     # Need to adjust to use Sunday based indexing rather than Monday
     sunday = formatted_date - timedelta(days=((weekday + 1) % 7))
-    sunday.replace(hour=00, minute=00)
+    sunday.replace(hour=00, minute=00, millisecond=00)
     saturday = sunday + timedelta(days=6)
     saturday.replace(hour=00, minute=00)
+    print(sunday)
+    print(saturday)
     return Week(start=sunday, end=saturday)
 
 def get_zip(next_crime_raw):
@@ -103,12 +105,14 @@ def transform_data(data, count, sampling_index):
 
 # Insert everything into the crimedata database
 def add():
+    count = 10
+    sampling_index = 7
     with open("extraction/daily_spot_crime_data.json") as data_file:
         data = json.load(data_file)
-    transform_data(data, 700, 7)
+    transform_data(data, count, sampling_index)
     with open("extraction/daily_spot_crime_data2.json") as data_file:
         data = json.load(data_file)
-    transform_data(data, 700, 7)
+    transform_data(data, count, sampling_index)
 
     # crime_1 = Crime(lat=30.28500, lng=-97.7320000, time=datetime.date(year=2015, month=10, day=28), address="gdc", description="Graffiti of pig on building")
     # crime_2 = Crime(lat=30.30000, lng=-97.730000, time=datetime.date(year=2015, month=10, day=20), address="Duval Rd", description="Burglary at Quacks Bakery")
@@ -200,7 +204,7 @@ def add_crime_type_to_crimes():
     crime_types = session.query(CrimeType).all()
     i = 0
     try:
-        for crime in range(2000):
+        for crime in range(20):
             next_crime_raw = next(crime_data)
             if crime % 7 == 0:
                 zip = get_zip(next_crime_raw)
