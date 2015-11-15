@@ -86,7 +86,7 @@ def add():
     with open("extraction/daily_spot_crime_data.json") as data_file:
         data = json.load(data_file)
     crime_data = iter(data['crimes'])
-    for line in range(5):
+    for line in range(75):
         next_crime_raw = next(crime_data)
         date = next_crime_raw['date']
 
@@ -124,14 +124,14 @@ def add():
     # week_3 = Week(start=datetime.date(year=2015, month=10, day=25), end=datetime.date(year=2015, month=10, day=31))
 
     #set up all of the foreign key relationships
-    # print("Crime one week: " + str(week_1.start))
-    print('crime_len: ' + str(len(crimes)))
-    print('crime_type_len: ' + str(len(crime_types)))
-    print('zip len: '  + str(len(zips)))
+    # # print("Crime one week: " + str(week_1.start))
+    # print('crime_len: ' + str(len(crimes)))
+    # print('crime_type_len: ' + str(len(crime_types)))
+    # print('zip len: '  + str(len(zips)))
 
     try:
         for crime in crimes:
-            print(crime)
+            # print(crime)
             if session.query(Crime).filter_by(description=crime.description).count() == 0:
                 print('adding crime')
                 session.add(crime)
