@@ -66,7 +66,9 @@ def transform_week(date):
     weekday = formatted_date.date().weekday()
     # Need to adjust to use Sunday based indexing rather than Monday
     sunday = formatted_date - timedelta(days=((weekday + 1) % 7))
+    sunday.replace(hour=00, minute=00)
     saturday = sunday + timedelta(days=6)
+    saturday.replace(hour=00, minute=00)
     return Week(start=sunday, end=saturday)
 
 def get_zip(next_crime_raw):
@@ -74,14 +76,11 @@ def get_zip(next_crime_raw):
     location = geolocator.reverse(str(str(next_crime_raw['lat']) + ", " + str(next_crime_raw['lon'])))
     return location.raw['address']['postcode']
 
-# Insert everything into the crimedata database
-def add():
-    with open("extraction/daily_spot_crime_data2.json") as data_file:
-        data = json.load(data_file)
+def transform_data(data, count, sampling_index):
     crime_data = iter(data['crimes'])
-    for line in range(1000):
+    for line in range(count):
         next_crime_raw = next(crime_data)
-        if line % 7 == 0:
+        if line % sampling_index == 0:
             date = next_crime_raw['date']
 
             zip = get_zip(next_crime_raw)
@@ -102,7 +101,14 @@ def add():
                 zips.append(next_zip)
                 weeks.append(next_week)
 
-
+# Insert everything into the crimedata database
+def add():
+    with open("extraction/daily_spot_crime_data.json") as data_file:
+        data = json.load(data_file)
+    transform_data(data, 700, 7)
+    with open("extraction/daily_spot_crime_data2.json") as data_file:
+        data = json.load(data_file)
+    transform_data(data, 700, 7)
 
     # crime_1 = Crime(lat=30.28500, lng=-97.7320000, time=datetime.date(year=2015, month=10, day=28), address="gdc", description="Graffiti of pig on building")
     # crime_2 = Crime(lat=30.30000, lng=-97.730000, time=datetime.date(year=2015, month=10, day=20), address="Duval Rd", description="Burglary at Quacks Bakery")
@@ -146,18 +152,7 @@ def add():
                 session.add(week)
             else:
                 print('already added: ' + str(week.start))
-        # session.add(crime_1)
-        # session.add(crime_2)
-        # session.add(crime_3)
-        # session.add(crime_type_1)
-        # session.add(crime_type_2)
-        # session.add(crime_type_3)
-        # session.add(zip_1)
-        # session.add(zip_2)
-        # session.add(zip_3)
-        # session.add(week_1)
-        # session.add(week_2)
-        # session.add(week_3)
+
         print("commiting to database")
         session.commit()
     except Exception as e:
@@ -205,7 +200,7 @@ def add_crime_type_to_crimes():
     crime_types = session.query(CrimeType).all()
     i = 0
     try:
-        for crime in range(1000):
+        for crime in range(2000):
             next_crime_raw = next(crime_data)
             if crime % 7 == 0:
                 zip = get_zip(next_crime_raw)
