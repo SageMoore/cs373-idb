@@ -66,7 +66,7 @@ def transform_week(date):
     weekday = formatted_date.date().weekday()
     # Need to adjust to use Sunday based indexing rather than Monday
     sunday = formatted_date - timedelta(days=((weekday + 1) % 7))
-    sunday.replace(hour=00, minute=00, millisecond=00)
+    sunday.replace(hour=00, minute=00, second=00)
     saturday = sunday + timedelta(days=6)
     saturday.replace(hour=00, minute=00)
     print(sunday)
