@@ -87,6 +87,7 @@ def add():
         data = json.load(data_file)
     crime_data = iter(data['crimes'])
     for line in range(5):
+        print('in range')
         next_crime_raw = next(crime_data)
         date = next_crime_raw['date']
 
