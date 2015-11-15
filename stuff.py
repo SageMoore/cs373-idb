@@ -1,7 +1,7 @@
 import json
 import os
 import sys
-from datetime import datetime
+from datetime import datetime, timedelta
 from geopy import Nominatim
 import re
 from sqlalchemy import Column, ForeignKey, Integer, String, DateTime, Float, text
@@ -64,11 +64,9 @@ def transform_zip(next_crime_raw):
 def transform_week(date):
     formatted_date = format_date(date)
     weekday = formatted_date.date().weekday()
-    converted_year = convert_year(date)
-    converted_month = convert_month(date)
-    converted_day = convert_day(date)
-    sunday = datetime(converted_year, converted_month, converted_day - weekday - 1)
-    saturday = datetime(converted_year, converted_month, converted_day + (6 - weekday) - 1)
+    # Need to adjust to use Sunday based indexing rather than Monday
+    sunday = formatted_date - timedelta(days=((weekday + 1) % 7))
+    saturday = sunday + timedelta(days=6)
     return Week(start=sunday, end=saturday)
 
 def get_zip(next_crime_raw):

@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 # import geolocator as geolocator
 from geopy.geocoders import Nominatim
 import json
@@ -50,11 +50,16 @@ with open("extraction/daily_spot_crime_data.json") as data_file:
         meanlng = (maxlng + minlng) / 2
 
         #next_zip = Zip(zip_code=zip, lat=meanlat, lng=meanlng)
-
-        formatted_date = formatted_date(date)
-        weekday = formatted_date.date().weekday()
+        someday = datetime(2015, 10, 1)
+        print(someday)
+        newday = someday - timedelta(5)
+        print(newday)
+        # formatted_date = formatted_date(someday)
+        weekday = someday.date().weekday()
         sunday = datetime(converted_year, converted_month, converted_day - weekday - 1)
+        print(sunday)
         saturday = datetime(converted_year, converted_month, converted_day + (6 - weekday) - 1)
+        print(saturday)
         #next_week = Week(start=sunday, end=saturday)
 
         # crimes.append(next_crime_formatted)
