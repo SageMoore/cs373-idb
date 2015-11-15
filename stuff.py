@@ -78,30 +78,31 @@ def get_zip(next_crime_raw):
 
 # Insert everything into the crimedata database
 def add():
-    with open("extraction/daily_spot_crime_data2.json") as data_file:
+    with open("extraction/daily_spot_crime_data.json") as data_file:
         data = json.load(data_file)
     crime_data = iter(data['crimes'])
-    for line in range(75):
+    for line in range(1500):
         next_crime_raw = next(crime_data)
-        date = next_crime_raw['date']
+        if line % 7 == 0:
+            date = next_crime_raw['date']
 
-        zip = get_zip(next_crime_raw)
-        # print(str(zip))
+            zip = get_zip(next_crime_raw)
+            # print(str(zip))
 
-        if (len(str(zip)) == 5):
-            next_crime = transform_crime(next_crime_raw, date, zip)
-            # print(next_crime)
-            next_crime_type = transform_crime_type(next_crime_raw)
-            # print(next_crime_type)
-            next_zip = transform_zip(next_crime_raw)
-            # print(next_zip)
-            next_week = transform_week(date)
-            # print(next_week)
+            if (len(str(zip)) == 5):
+                next_crime = transform_crime(next_crime_raw, date, zip)
+                # print(next_crime)
+                next_crime_type = transform_crime_type(next_crime_raw)
+                # print(next_crime_type)
+                next_zip = transform_zip(next_crime_raw)
+                # print(next_zip)
+                next_week = transform_week(date)
+                # print(next_week)
 
-            crimes.append(next_crime)
-            crime_types.append(next_crime_type)
-            zips.append(next_zip)
-            weeks.append(next_week)
+                crimes.append(next_crime)
+                crime_types.append(next_crime_type)
+                zips.append(next_zip)
+                weeks.append(next_week)
 
 
 
@@ -199,24 +200,25 @@ def add_zips_to_crimes():
         print("Everything broke")
 
 def add_crime_type_to_crimes():
-    with open("extraction/daily_spot_crime_data2.json") as data_file:
+    with open("extraction/daily_spot_crime_data.json") as data_file:
         data = json.load(data_file)
     crime_data = iter(data['crimes'])
     # crimes = session.query(Crime).all()
     crime_types = session.query(CrimeType).all()
     i = 0
     try:
-        for crime in range(75):
+        for crime in range(1500):
             next_crime_raw = next(crime_data)
-            zip = get_zip(next_crime_raw)
-            if (len(str(zip)) == 5):
-                crime_type_id = session.query(CrimeType.crime_type_id).filter_by(name=str(next_crime_raw['type'])).all()[0][0]
-                # print('crime_type_id: ' + str(crime_type_id[0][0]))
-                db_crime = session.query(Crime).filter_by(description=next_crime_raw['link']).all()[0]
-                # print('db_crime: ' + str(db_crime[0]))
-                db_crime.crime_type = crime_type_id
-                # print("adding zipcode " + str(crime_types[i].crime_type_id) + " to " + str(crime.description))
-                i += 1
+            if crime % 7 == 0:
+                zip = get_zip(next_crime_raw)
+                if (len(str(zip)) == 5):
+                    crime_type_id = session.query(CrimeType.crime_type_id).filter_by(name=str(next_crime_raw['type'])).all()[0][0]
+                    # print('crime_type_id: ' + str(crime_type_id[0][0]))
+                    db_crime = session.query(Crime).filter_by(description=next_crime_raw['link']).all()[0]
+                    # print('db_crime: ' + str(db_crime[0]))
+                    db_crime.crime_type = crime_type_id
+                    # print("adding zipcode " + str(crime_types[i].crime_type_id) + " to " + str(crime.description))
+                    i += 1
 
         session.commit()
     except Exception as e:
