@@ -211,11 +211,15 @@ def add_crime_type_to_crimes():
     crime_types = session.query(CrimeType).all()
     i = 0
     try:
-        for crime in range(75):
+        for crime in range(5):
             next_crime_raw = next(crime_data)
             zip = get_zip(next_crime_raw)
             if (len(str(zip)) == 5):
-                crime.crime_type = session.query(CrimeType).filter_by(name=str(next_crime_raw['type']))
+                crime_type = session.query(CrimeType).filter_by(name=str(next_crime_raw['type']))
+                print(crime_type)
+                db_crime = session.query(Crime).filter_by(description=crime.description)
+                print(db_crime)
+                db_crime.crime_type = crime_type
                 # print("adding zipcode " + str(crime_types[i].crime_type_id) + " to " + str(crime.description))
                 i += 1
 
@@ -312,10 +316,10 @@ def print_everything():
     zips = session.query(Zip).all()
     print("zips len: " + str(len(zips)))
 
-add()
+# add()
 #add_weeks_to_crimes()
 #add_zips_to_crimes()
-#add_crime_type_to_crimes()
+add_crime_type_to_crimes()
 #add_zip_to_week()
 #add_zip_to_crime_type()
 #add_week_to_crime_type()
