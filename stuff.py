@@ -91,7 +91,7 @@ def add():
         date = next_crime_raw['date']
 
         zip = get_zip(next_crime_raw)
-        print(str(zip))
+        # print(str(zip))
 
         if (len(str(zip)) == 5):
             next_crime = transform_crime(next_crime_raw, date, zip)
