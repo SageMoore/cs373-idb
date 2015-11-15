@@ -102,7 +102,6 @@ def add():
             next_week = transform_week(date)
             # print(next_week)
 
-
             crimes.append(next_crime)
             crime_types.append(next_crime_type)
             zips.append(next_zip)
@@ -124,10 +123,10 @@ def add():
     # week_3 = Week(start=datetime.date(year=2015, month=10, day=25), end=datetime.date(year=2015, month=10, day=31))
 
     #set up all of the foreign key relationships
-    # print("Crime one week: " + str(week_1.start))
-    # print('crime_len: ' + str(len(crimes)))
-    # print('crime_type_len: ' + str(len(crime_types)))
-    # print('zip len: '  + str(len(zips)))
+    print("Crime one week: " + str(week_1.start))
+    print('crime_len: ' + str(len(crimes)))
+    print('crime_type_len: ' + str(len(crime_types)))
+    print('zip len: '  + str(len(zips)))
 
     try:
         for crime in crimes:
