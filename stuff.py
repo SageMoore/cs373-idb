@@ -194,15 +194,13 @@ def add_zips_to_crimes():
         session.rollback()
         print("Everything broke")
 
-def add_crime_type_to_crimes():
-    with open("extraction/daily_spot_crime_data2.json") as data_file:
-        data = json.load(data_file)
+def add_all_crime_types_to_crimes(data, count):
     crime_data = iter(data['crimes'])
     # crimes = session.query(Crime).all()
     crime_types = session.query(CrimeType).all()
     i = 0
     try:
-        for crime in range(1400):
+        for crime in range(count):
             next_crime_raw = next(crime_data)
             if crime % 7 == 0:
                 zip = get_zip(next_crime_raw)
@@ -220,6 +218,16 @@ def add_crime_type_to_crimes():
         print(e)
         session.rollback()
         print("Everything broke")
+
+def add_crime_type_to_crimes():
+    count = 700
+    with open("extraction/daily_spot_crime_data.json") as data_file:
+        data = json.load(data_file)
+    add_all_crime_types_to_crimes(data, count)
+    with open("extraction/daily_spot_crime_data2.json") as data_file:
+        data = json.load(data_file)
+    add_all_crime_types_to_crimes(data, count)
+
 
 #must be run after all of the crime data has been set up
 def add_zip_to_week():
@@ -308,7 +316,7 @@ def print_everything():
     zips = session.query(Zip).all()
     print("zips len: " + str(len(zips)))
 
-add()
+# add()
 #add_weeks_to_crimes()
 #add_zips_to_crimes()
 add_crime_type_to_crimes()
