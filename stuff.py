@@ -35,10 +35,6 @@ def transform_crime(next_crime_raw, date, zip):
     converted_year = convert_year(date)
     converted_month = convert_month(date)
     converted_day = convert_day(date)
-    # try:
-    #     date(year=converted_year, month=converted_month, day=converted_day)
-    # except Exception:
-    #     print('date(..) didnt work. using datetime.date')
     return Crime(lat=next_crime_raw['lat'], lng=next_crime_raw['lon'], time=datetime(year=converted_year, month=converted_month, day=converted_day), address=str(next_crime_raw['address'] + ', ' + zip), description=next_crime_raw['link'])
 
 def transform_crime_type(next_crime_raw):
@@ -49,7 +45,6 @@ def transform_zip(next_crime_raw):
     location = geolocator.reverse(str(str(next_crime_raw['lat']) + ", " + str(next_crime_raw['lon'])))
     zip = location.raw['address']['postcode']
     location = geolocator.geocode(str(zip))
-    # print(location.raw)
     boundingbox = location.raw['boundingbox']
     maxlat = float(boundingbox[1])
     minlat = float(boundingbox[0])
@@ -83,7 +78,7 @@ def get_zip(next_crime_raw):
 
 # Insert everything into the crimedata database
 def add():
-    with open("extraction/daily_spot_crime_data.json") as data_file:
+    with open("extraction/daily_spot_crime_data2.json") as data_file:
         data = json.load(data_file)
     crime_data = iter(data['crimes'])
     for line in range(75):
@@ -204,7 +199,7 @@ def add_zips_to_crimes():
         print("Everything broke")
 
 def add_crime_type_to_crimes():
-    with open("extraction/daily_spot_crime_data.json") as data_file:
+    with open("extraction/daily_spot_crime_data2.json") as data_file:
         data = json.load(data_file)
     crime_data = iter(data['crimes'])
     # crimes = session.query(Crime).all()
@@ -316,7 +311,7 @@ def print_everything():
     zips = session.query(Zip).all()
     print("zips len: " + str(len(zips)))
 
-# add()
+add()
 #add_weeks_to_crimes()
 #add_zips_to_crimes()
 add_crime_type_to_crimes()
