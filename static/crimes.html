@@ -19,40 +19,7 @@
                 <div class="col-md-8">
                     <div class="well" style="min-height: 350px; margin-left: 50px">
                         <table ng-table="tableParams" show-filter="true" class="table table-hover table-striped">
-                            <thead>
-                            <tr>
-                                <td><a ng-click="sortType = 'crime_id'; sortReverse = !sortReverse">
-                                    Crime Id
-                                    <span ng-show="sortType == 'crime_id'" class="caret"></span>
-                                </a></td>
-                                <td><a href="" ng-click="sortType = 'description'; sortReverse = !sortReverse">
-                                    Crime Description
-                                    <span ng-show="sortType == 'description'" class="caret"></span>
-                                </a></td>
-                                <td><a ng-click="sortType = 'time'; sortReverse = !sortReverse">
-                                    Time
-                                    <span ng-show="sortType == 'time'" class="caret"></span>
-                                </a></td>
-                                <td><a ng-click="sortType = 'address'; sortReverse = !sortReverse">
-                                    Address
-                                    <span ng-show="sortType == 'address'" class="caret"></span>
-                                </a></td>
-                                <td><a ng-click="sortType = 'crime_type.name'; sortReverse = !sortReverse">
-                                    Crime Type
-                                    <span ng-show="sortType == 'crime_type.name'" class="caret"></span>
-                                </a></td>
-                                <td><a ng-click="sortType = 'zip_code.zip_code'; sortReverse = !sortReverse">
-                                    Zipcode
-                                    <span ng-show="sortType == 'zip_code.zip_code'" class="caret"></span>
-                                </a></td>
-                                <td><a ng-click="sortType = 'week.start'; sortReverse = !sortReverse">
-                                    Week
-                                    <span ng-show="sortType == 'week.start'" class="caret"></span>
-                                </a></td>
-                            </tr>
-                            </thead>
-
-                            <tbody>
+                        
                             <tr ng-repeat="crime in data">
                                 <td title="'Id'" filter="{ crime_id: 'number'}" sortable="'crime_id'"><a href="crimes/{{crime.crime_id}}">{{ crime.crime_id }}</a></td>
                                 <td title="'Description'" filter="{ description: 'text'}" sortable="'description'"><a href="crimes/{{crime.crime_id}}">{{ crime.description }}</a></td>
@@ -65,7 +32,7 @@
                                 <td title="'Week'" filter="{ week.start: 'text'}" sortable="'week.start'"><a href="weeks/{{crime.week.week_id}}">
                                     {{ crime.week.start }}</a></td>
                             </tr>
-                            </tbody>
+                            
                         </table>
                     </div>
                 </div>

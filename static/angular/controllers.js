@@ -35,7 +35,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
             }, {
                 total: data.length, // length of data
                 getData: function($defer, params) {
-                    $scope.data = params.sorting() ? $filter('orderBy')($scope.crimes, params.orderBy()) : $scope.users;
+                    $scope.data = params.sorting() ? $filter('orderBy')($scope.crimes, params.orderBy()) : $scope.data;
                     $scope.data = params.filter() ? $filter('filter')($scope.data, params.filter()) : $scope.data;
                     $scope.data = $scope.data.slice((params.page() - 1) * params.count(), params.page() * params.count());
                     $defer.resolve($scope.data);
