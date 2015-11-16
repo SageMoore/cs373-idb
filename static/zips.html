@@ -47,6 +47,17 @@
                                         <span ng-show="sortType == 'family_income'" class="caret"></span>
                                     </a></td>
                                 </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr ng-repeat="zip in zips | orderBy:sortType:sortReverse">
+                                    <td><a href="/zips/{{zip.zip_id}}">{{ zip.zip_id }}</a></td>
+                                    <td><a href="/zips/{{zip.zip_id}}">{{ zip.zip_code }}</a></td>
+                                    <td>{{ zip.lat }}</td>
+                                    <td>{{ zip.lng }}</td>
+                                    <td>{{ zip.pop }}</td>
+                                    <td>{{ zip.family_income }}</td>
+                                </tr>
                                 <script src="http://code.jquery.com/jquery-2.1.0.js"></script>
                                     <script type="text/javascript">
                                         var $rows = $('#zip tr');
@@ -59,17 +70,6 @@
                                             }).hide();
                                         });
                                     </script>
-                                </thead>
-
-                                <tbody>
-                                <tr ng-repeat="zip in zips | orderBy:sortType:sortReverse">
-                                    <td><a href="/zips/{{zip.zip_id}}">{{ zip.zip_id }}</a></td>
-                                    <td><a href="/zips/{{zip.zip_id}}">{{ zip.zip_code }}</a></td>
-                                    <td>{{ zip.lat }}</td>
-                                    <td>{{ zip.lng }}</td>
-                                    <td>{{ zip.pop }}</td>
-                                    <td>{{ zip.family_income }}</td>
-                                </tr>
                                 </tbody>
                             </table>
                         </div>
