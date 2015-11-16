@@ -6,7 +6,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
     $scope.sortType     = 'id'; // set the default sort type
     $scope.sortReverse  = false;  // set the default sort order
 
-}).controller('crimesCtrl', function ($scope, http_service, services, $location) {
+}).controller('crimesCtrl', function ($scope, http_service, services, $location, NgTableParams) {
 
     var map = services.getMap();
 
@@ -29,7 +29,15 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
         http_service.getRequestGeneric('crimes').then(function(data) {
             console.log('data for crimes is...: ', data);
             $scope.crimes = data;
-            $scope.tableParams = new NgTableParams({}, { dataset: data });
+            $scope.tableParams = new ngTableParams({
+                page: 1,            // show first page
+                count: 10           // count per page
+            }, {
+                total: data.length, // length of data
+                getData: function($defer, params) {
+                    $defer.resolve(data.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+                }
+            });
             angular.forEach($scope.crimes, function(value, key) {
                 services.addMarker(value.lat, value.lng, value.address, map, value.crime_type.crime_type_name);
             })
