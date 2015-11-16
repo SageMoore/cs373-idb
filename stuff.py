@@ -224,10 +224,10 @@ def add_all_crime_types_to_crimes(data, count):
 def add_crime_type_to_crimes():
     with open("extraction/daily_spot_crime_data.json") as data_file:
         data = json.load(data_file)
-    add_all_crime_types_to_crimes(data, count)
+    add_all_crime_types_to_crimes(data, count - 10)
     with open("extraction/daily_spot_crime_data2.json") as data_file:
         data = json.load(data_file)
-    add_all_crime_types_to_crimes(data, count)
+    add_all_crime_types_to_crimes(data, count - 10)
 
 
 #must be run after all of the crime data has been set up
