@@ -29,18 +29,6 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
         http_service.getRequestGeneric('crimes').then(function(data) {
             console.log('data for crimes is...: ', data);
             $scope.crimes = data;
-            $scope.tableParams = new NgTableParams({
-                page: 1,            // show first page
-                count: 10           // count per page
-            }, {
-                total: data.length, // length of data
-                getData: function($defer, params) {
-                    $scope.data = params.sorting() ? $filter('orderBy')($scope.crimes, params.orderBy()) : $scope.data;
-                    $scope.data = params.filter() ? $filter('filter')($scope.data, params.filter()) : $scope.data;
-                    $scope.data = $scope.data.slice((params.page() - 1) * params.count(), params.page() * params.count());
-                    $defer.resolve($scope.data);
-                }
-            });
             angular.forEach($scope.crimes, function(value, key) {
                 services.addMarker(value.lat, value.lng, value.address, map, value.crime_type.crime_type_name);
             })
@@ -48,6 +36,19 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
     }
 
     $scope.crimes = getCrimes();
+
+    $scope.tableParams = new NgTableParams({
+            page: 1,            // show first page
+            count: 10           // count per page
+        }, {
+            total: $scope.crimes.length, // length of data
+            getData: function($defer, params) {
+                $scope.data = params.sorting() ? $filter('orderBy')($scope.crimes, params.orderBy()) : $scope.crimes;
+                $scope.data = params.filter() ? $filter('filter')($scope.data, params.filter()) : $scope.data;
+                $scope.data = $scope.data.slice((params.page() - 1) * params.count(), params.page() * params.count());
+                $defer.resolve($scope.data);
+            }
+        });
 
 }).controller('crimeCtrl', function ($scope, http_service, $location, $stateParams, services) {
 
