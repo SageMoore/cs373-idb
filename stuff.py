@@ -18,6 +18,9 @@ crimes = []
 weeks = []
 zips = []
 crime_types = []
+count = 1200
+sampling_index = 14
+
 
 def format_date(date):
     return datetime.strptime(date, "%m/%d/%y %H:%M %p")
@@ -103,8 +106,7 @@ def transform_data(data, count, sampling_index):
 
 # Insert everything into the crimedata database
 def add():
-    count = 1500
-    sampling_index = 14
+
     with open("extraction/daily_spot_crime_data.json") as data_file:
         data = json.load(data_file)
     transform_data(data, count, sampling_index)
@@ -220,7 +222,6 @@ def add_all_crime_types_to_crimes(data, count):
         print("Everything broke")
 
 def add_crime_type_to_crimes():
-    count = 1400
     with open("extraction/daily_spot_crime_data.json") as data_file:
         data = json.load(data_file)
     add_all_crime_types_to_crimes(data, count)
