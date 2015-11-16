@@ -65,13 +65,25 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
 
     $scope.crime = getCrime(crimeId);
 
-}).controller('crimeTypesCtrl', function ($scope, http_service, services, $location) {
+}).controller('crimeTypesCtrl', function ($scope, http_service, services, $location, $filter, NgTableParams) {
 
     var map = services.getMap();
 
     var getCrimeTypes = function() {
         http_service.getRequestGeneric('crime_types').then(function(data) {
             $scope.crimeTypes = data;
+            $scope.tableParams = new NgTableParams({
+                page: 1,            // show first page
+                count: 10           // count per page
+            }, {
+                total: data.length, // length of data
+                getData: function($defer, params) {
+                    $scope.data = params.sorting() ? $filter('orderBy')($scope.crimeTypes, params.orderBy()) : $scope.data;
+                    $scope.data = params.filter() ? $filter('filter')($scope.data, params.filter()) : $scope.data;
+                    $scope.data = $scope.data.slice((params.page() - 1) * params.count(), params.page() * params.count());
+                    $defer.resolve($scope.data);
+                }
+            });
             console.log('data for crimetypes is...: ', data);
         })
     };
@@ -100,13 +112,25 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
 
     $scope.crime_type = getCrimeType(crime_type_id);
 
-}).controller('weeksCtrl', function ($scope, http_service, services, $location) {
+}).controller('weeksCtrl', function ($scope, http_service, services, $location, $filter, NgTableParams) {
 
     var map = services.getMap();
 
     var getWeeks = function() {
         http_service.getRequestGeneric('weeks').then(function(data) {
             $scope.weeks = data;
+            $scope.tableParams = new NgTableParams({
+                page: 1,            // show first page
+                count: 10           // count per page
+            }, {
+                total: data.length, // length of data
+                getData: function($defer, params) {
+                    $scope.data = params.sorting() ? $filter('orderBy')($scope.weeks, params.orderBy()) : $scope.data;
+                    $scope.data = params.filter() ? $filter('filter')($scope.data, params.filter()) : $scope.data;
+                    $scope.data = $scope.data.slice((params.page() - 1) * params.count(), params.page() * params.count());
+                    $defer.resolve($scope.data);
+                }
+            });
             console.log('data for weeks is...: ', data);
         })
     };
