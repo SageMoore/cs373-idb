@@ -6,7 +6,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
     $scope.sortType     = 'id'; // set the default sort type
     $scope.sortReverse  = false;  // set the default sort order
 
-}).controller('crimesCtrl', function ($scope, http_service, services, $location, NgTableParams) {
+}).controller('crimesCtrl', function ($scope, http_service, services, $location, $filter, NgTableParams) {
 
     var map = services.getMap();
 
