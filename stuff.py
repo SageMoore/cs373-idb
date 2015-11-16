@@ -317,7 +317,7 @@ def print_everything():
     zips = session.query(Zip).all()
     print("zips len: " + str(len(zips)))
 
-add()
+# add()
 #add_weeks_to_crimes()
 #add_zips_to_crimes()
 add_crime_type_to_crimes()
