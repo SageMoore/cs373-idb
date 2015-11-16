@@ -29,7 +29,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
         http_service.getRequestGeneric('crimes').then(function(data) {
             console.log('data for crimes is...: ', data);
             $scope.crimes = data;
-            $scope.tableParams = new ngTableParams({
+            $scope.tableParams = new NgTableParams({
                 page: 1,            // show first page
                 count: 10           // count per page
             }, {
