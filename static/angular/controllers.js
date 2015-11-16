@@ -35,7 +35,9 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
             }, {
                 total: data.length, // length of data
                 getData: function($defer, params) {
-                    $defer.resolve(data.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+
+                    $scope.data = $scope.crimes.slice((params.page() - 1) * params.count(), params.page() * params.count());
+                    $defer.resolve($scope.data);
                 }
             });
             angular.forEach($scope.crimes, function(value, key) {
