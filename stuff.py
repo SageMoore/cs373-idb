@@ -319,8 +319,8 @@ def print_everything():
 
 # add()
 #add_weeks_to_crimes()
-#add_zips_to_crimes()
-add_crime_type_to_crimes()
+add_zips_to_crimes()
+# add_crime_type_to_crimes()
 #add_zip_to_week()
 #add_zip_to_crime_type()
 #add_week_to_crime_type()
