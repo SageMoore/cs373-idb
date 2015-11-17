@@ -18,24 +18,11 @@
                 <div class="row show-grid" style="margin-left: auto">
                     <div class="col-md-8">
                         <div class="well" style="min-height: 350px; margin-left: 50px">
-                            <table class="table table-hover table-striped">
+                            <table show-filter='true' class="table table-hover table-striped">
                                 <thead>
-                                    <input type="text" id="search" placeholder="Search">
-                                    <script>
-                                        var $rows = $('#zip tr');
-                                        $('#search').keyup(function() {
-                                            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
-    
-                                            $rows.show().filter(function() {
-                                            var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
-                                            return !~text.indexOf(val);
-                                            }).hide();
-                                        });
-                                    </script>
-
-
+                                <input type="text" id="search" placeholder="Search">
                                 <tr>
-                                    <td><a ng-click="sortType = 'zip_id'; sortReverse = !sortReverse">
+                                    <td filter="{zip_id: 'number'}"><a ng-click="sortType = 'zip_id'; sortReverse = !sortReverse">
                                         Zipcode Id
                                         <span ng-show="sortType == 'zip_id'"  class="caret"></span>
                                     </a></td>
@@ -71,6 +58,18 @@
                                     <td>{{ zip.pop }}</td>
                                     <td>{{ zip.family_income }}</td>
                                 </tr>
+                                <script src="http://code.jquery.com/jquery-2.1.0.js"></script>
+                                    <script type="text/javascript">
+                                        var $rows = $('#zip tr');
+                                        $('#search').keyup(function() {
+                                            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+    
+                                            $rows.show().filter(function() {
+                                            var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+                                            return !~text.indexOf(val);
+                                            }).hide();
+                                        });
+                                    </script>
                                 </tbody>
                             </table>
                         </div>
