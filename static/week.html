@@ -17,7 +17,7 @@
             <div ng-model="week" class="row show-grid" id="menu-vals" style="margin-left: auto">
                 <div class="col-md-2 field alert-danger" id="crime-type-val"><a class="alert-danger" href="/crime_types/{{week.most_popular.crime_type_id}}">{{week.most_popular.name}}</a></div>
                 <div class="col-md-2 col-md-offset-1 field alert-info"><a href="/zips/{{week.worst_zip.zip_id}}">{{week.worst_zip.zip_code}}</a></div>
-                <div class="col-md-2 field alert-info"><a >
+                <div class="col-md-2 field alert-info">
                     <table class="table table-hover">
                         <tbody>
                         <tr ng-repeat="crime in week.crimes">
@@ -26,7 +26,6 @@
                         </tr>
                         </tbody>
                     </table>
-                    </a>
                 </div>
                 <div class="col-md-2 field alert-info"><a >{{week.start}}</a></div>
                 <div class="col-md-2 field alert-info"><a >{{week.end}}</a></div>
