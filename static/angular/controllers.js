@@ -158,13 +158,25 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
 
     $scope.week = getWeek(week_id);
 
-}).controller('zipsCtrl', function ($scope, http_service, services, $location) {
+}).controller('zipsCtrl', function ($scope, http_service, services, $location, $filter, NgTableParams) {
 
     var map = services.getMap();
 
     var getZips = function() {
         http_service.getRequestGeneric('zips').then(function(data) {
             $scope.zips = data;
+            $scope.tableParams = new NgTableParams({
+                page: 1,            // show first page
+                count: 10           // count per page
+            }, {
+                total: data.length, // length of data
+                getData: function($defer, params) {
+                    $scope.data = params.sorting() ? $filter('orderBy')($scope.zips, params.orderBy()) : $scope.data;
+                    $scope.data = params.filter() ? $filter('filter')($scope.data, params.filter()) : $scope.data;
+                    $scope.data = $scope.data.slice((params.page() - 1) * params.count(), params.page() * params.count());
+                    $defer.resolve($scope.data);
+                }
+            });
             console.log('data for zips is...: ', data);
         })
     };
@@ -191,6 +203,60 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
     };
 
     $scope.zip = getZip(zip_id);
+    
+}).controller('resultsCtrl', function ($scope, http_service, services, $location) {
+
+    var map = services.getMap();
+
+    var loadAllWidgets = function() {
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+    };
+
+    var destroyAllWidgets = function() {
+        var $ = function (id) { return document.getElementById(id); };
+        var twitter = $('twitter-wjs');
+        if (twitter != null)
+            twitter.remove();
+    };
+
+    destroyAllWidgets();
+    loadAllWidgets();
+
+    var getCrimes = function() {
+        http_service.getRequestGeneric('crimes').then(function(data) {
+            console.log('data for crimes is...: ', data);
+            $scope.crimes = data;
+            angular.forEach($scope.crimes, function(value, key) {
+                services.addMarker(value.lat, value.lng, value.address, map, value.crime_type.crime_type_name);
+            })
+        })
+    }
+
+    var getCrimesTypes = function() {
+        http_service.getRequestGeneric('crime_types').then(function(data) {
+            console.log('data for crime types is...: ', data);
+            $scope.crime_types = data;
+        })
+    }
+
+    var getWeeks = function() {
+        http_service.getRequestGeneric('weeks').then(function(data) {
+            console.log('data for weeks is...: ', data);
+            $scope.weeks = data;
+        })
+    }
+
+    var getZips = function() {
+        http_service.getRequestGeneric('zips').then(function(data) {
+            console.log('data for zips is...: ', data);
+            $scope.zips = data;
+        })
+    }
+
+    $scope.crimes = getCrimes();
+    $scope.crime_types = getCrimesTypes();
+    $scope.weeks = getWeeks();
+    $scope.zips = getZips();
 
 }).controller('aboutCtrl', function ($scope, http_service, $location, $stateParams) {
     $scope.results = "No test results yet..."

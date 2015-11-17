@@ -184,8 +184,9 @@ def add_zips_to_crimes():
         for crime in crimes:
             postal_code = re.search(r'.*(\d{5}(\-\d{4})?)$', crime.address)
             print(postal_code.groups())
-            crime.zip_code = postal_code.groups(0)
-            print("adding zipcode " + str(postal_code.groups(0)) + " to " + str(crime.description))
+            zip_id = session.query(Zip.zip_id).filter_by(zip_code=str(postal_code.groups(0)[0])).all()[0][0];
+            crime.zip_code = zip_id
+            print("adding zipcode " + str(zip_id) + " to " + str(crime.description))
             i += 1
         session.commit()
     except Exception as e:
@@ -290,14 +291,36 @@ def add_week_to_crime_type():
         session.rollback()
         print("Everything broke")
 
-def add_crime_type_to_week(): 
+# This doesn't work right now
+#def add_crime_type_to_week(): 
+#    weeks = session.query(Week).all()
+#    crime_types = session.query(CrimeType).all()
+#    try:
+#        for crime_type in crime_types:
+#            for week in weeks:
+#                if crime_type.worst_week == week.week_id:
+#                    week.most_popular = crime_type.crime_type_id
+#        session.commit()
+#    except Exception as e:
+#        print(e)
+#        session.rollback()
+#        print("Everything broke")
+
+def add_crime_type_to_week():
     weeks = session.query(Week).all()
     crime_types = session.query(CrimeType).all()
     try:
-        for crime_type in crime_types:
-            for week in weeks:
-                if crime_type.worst_week == week.week_id:
-                    week.most_popular = crime_type.crime_type_id
+        for week in weeks:
+            most_pop = 0
+            temp_crime_type = -1
+            for crime_type in crime_types:
+                crimes = session.query(Crime).from_statement(text("SELECT * FROM crime WHERE week=:week and crime_type=:crime_type")).params(week=week.week_id, crime_type=crime_type.crime_type_id).all()
+                print(len(crimes))
+                if len(crimes) > most_pop:
+                    most_pop = len(crimes)
+                    temp_crime_type = crimes[0].crime_type
+            week.most_popular = temp_crime_type
+            print("adding crime_type: " + str(week.most_popular))
         session.commit()
     except Exception as e:
         print(e)
@@ -318,9 +341,9 @@ def print_everything():
 # add_weeks_to_crimes()
 # add_zips_to_crimes()
 # add_crime_type_to_crimes()
-#add_zip_to_week()
-add_zip_to_crime_type()
+# add_zip_to_week()
+# add_zip_to_crime_type()
 # add_week_to_crime_type()
-# add_crime_type_to_week()
+add_crime_type_to_week()
 print_everything()
 session.close()
