@@ -309,3 +309,9 @@ div#menu-vals a:hover {
     width:100%;
     height:150px;
 }
+
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
