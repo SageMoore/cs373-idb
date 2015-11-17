@@ -12,6 +12,10 @@ crimeCastApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider'
             url: '/splash',
             templateUrl: 'splash.html',
             controller: 'crimeCastCtrl'
+        }).state('results', {
+            url: '/results',
+            templateUrl: 'results.html',
+            controller: 'resultsCtrl'
         }).state('about', {
             url: '/about',
             templateUrl: 'about.html',
