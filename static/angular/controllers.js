@@ -158,13 +158,25 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
 
     $scope.week = getWeek(week_id);
 
-}).controller('zipsCtrl', function ($scope, http_service, services, $location) {
+}).controller('zipsCtrl', function ($scope, http_service, services, $location, $filter, NgTableParams) {
 
     var map = services.getMap();
 
     var getZips = function() {
         http_service.getRequestGeneric('zips').then(function(data) {
             $scope.zips = data;
+            $scope.tableParams = new NgTableParams({
+                page: 1,            // show first page
+                count: 10           // count per page
+            }, {
+                total: data.length, // length of data
+                getData: function($defer, params) {
+                    $scope.data = params.sorting() ? $filter('orderBy')($scope.zips, params.orderBy()) : $scope.data;
+                    $scope.data = params.filter() ? $filter('filter')($scope.data, params.filter()) : $scope.data;
+                    $scope.data = $scope.data.slice((params.page() - 1) * params.count(), params.page() * params.count());
+                    $defer.resolve($scope.data);
+                }
+            });
             console.log('data for zips is...: ', data);
         })
     };
