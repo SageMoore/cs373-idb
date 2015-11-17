@@ -184,8 +184,9 @@ def add_zips_to_crimes():
         for crime in crimes:
             postal_code = re.search(r'.*(\d{5}(\-\d{4})?)$', crime.address)
             print(postal_code.groups())
-            crime.zip_code = postal_code.groups(0)
-            print("adding zipcode " + str(postal_code.groups(0)) + " to " + str(crime.description))
+            zip_id = session.query(Zip.zip_id).filter_by(zip_code=str(postal_code.groups(0)[0])).all()[0][0];
+            crime.zip_code = zip_id
+            print("adding zipcode " + str(zip_id) + " to " + str(crime.description))
             i += 1
         session.commit()
     except Exception as e:
@@ -316,10 +317,10 @@ def print_everything():
 
 # add()
 # add_weeks_to_crimes()
-# add_zips_to_crimes()
+add_zips_to_crimes()
 # add_crime_type_to_crimes()
 #add_zip_to_week()
-add_zip_to_crime_type()
+# add_zip_to_crime_type()
 # add_week_to_crime_type()
 # add_crime_type_to_week()
 print_everything()
