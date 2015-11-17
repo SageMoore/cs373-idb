@@ -21,12 +21,12 @@
                             <table ng-table="tableParams" show-filter="true" class="table table-hover table-striped">
 
                                 <tr ng-repeat="zip in data">
-                                    <td title="'Zipcode Id'" filter="{ zip_id: 'number'}" sortable="'zip_id'"><a href="zips/{{ zip.zip_id }}">{{ zip.zip_id }}</a></td>
-                                    <td title="'Zipcode'" filter="{ zip_code: 'number'}" sortable="'zip_code'"><a href="zips/{{ zip.zip_id }}">{{ zip.zip_code }}</a></td>
-                                    <td title="'Latitude'" filter="{ lat: 'number'}" sortable="'lat'">{{ zip.lat }}</td>
-                                    <td title="'Longitude'" filter="{ lng: 'number'}" sortable="'lng'">{{ zip.lng }}</td>
-                                    <td title="'Population'" filter="{ pop: 'number'}" sortable="'pop'">{{ zip.pop }}</td>
-                                    <td title="'Average Income'" filter="{ family_income: 'number'}" sortable="'family_income'">{{ zip.family_income }}</td>
+                                    <td title="'Zipcode Id'" filter="{ zip_id: 'text'}" sortable="'zip_id'"><a href="zips/{{ zip.zip_id }}">{{ zip.zip_id }}</a></td>
+                                    <td title="'Zipcode'" filter="{ zip_code: 'text'}" sortable="'zip_code'"><a href="zips/{{ zip.zip_id }}">{{ zip.zip_code }}</a></td>
+                                    <td title="'Latitude'" filter="{ lat: 'text'}" sortable="'lat'">{{ zip.lat }}</td>
+                                    <td title="'Longitude'" filter="{ lng: 'text'}" sortable="'lng'">{{ zip.lng }}</td>
+                                    <td title="'Population'" filter="{ pop: 'text'}" sortable="'pop'">{{ zip.pop }}</td>
+                                    <td title="'Average Income'" filter="{ family_income: 'text'}" sortable="'family_income'">{{ zip.family_income }}</td>
                                 </tr>
                             </table>
                         </div>
