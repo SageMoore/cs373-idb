@@ -254,6 +254,10 @@ class Tests(Resource):
         path = os.path.dirname(os.path.realpath(__file__))
         for i in run_command(('python3 ' + path + '/tests.py').split()):
             res += i.decode("utf-8")
+        for i in run_command(('coverage3 run --branch tests.py 2>&1').split()):
+            res += i.decode("utf-8")
+        for i in run_command(('coverage3 report -m').split()):
+            res += i.decode("utf-8")
 
         return json.dumps({ 'results': res })
 
