@@ -59,7 +59,8 @@ if __name__ == "__main__":
     data = json.load(data_file)
     for zip_code in zip_codes:
         zip_data = data[str(zip_code)]
-        zipcode = session.query(Crime).from_statement(text('SELECT * FROM zip_code WHERE zip_code = :zip_code')).params(zip=zip_code).first()
+        zipcode = session.query(Crime).from_statement(text('SELECT * FROM zip_code WHERE zip_code = :zip_code')).params(zip_code
+                                                                                                                        =zip_code).first()
 
 
         if zipcode is None:
@@ -82,7 +83,7 @@ if __name__ == "__main__":
             except Exception as e:
                 print(e)
                 session.rollback()
-            zipcode = session.query(Crime).from_statement(text('SELECT * FROM zip_code WHERE zip_code = :zip_code')).params(zip=zip_code).first()
+            zipcode = session.query(Crime).from_statement(text('SELECT * FROM zip_code WHERE zip_code = :zip_code')).params(zip_code=zip_code).first()
 
         # Population
         pop = zip_data['B02001_001E'][0]['B02001_001E']
