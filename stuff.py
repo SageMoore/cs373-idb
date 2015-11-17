@@ -79,7 +79,7 @@ def get_zip(next_crime_raw):
     location = geolocator.reverse(str(str(next_crime_raw['lat']) + ", " + str(next_crime_raw['lon'])))
     return location.raw['address']['postcode']
 
-def transform_data(data, count, sampling_index):
+def transform_data(data):
     crime_data = iter(data['crimes'])
     for line in range(count):
         next_crime_raw = next(crime_data)
@@ -87,17 +87,12 @@ def transform_data(data, count, sampling_index):
             date = next_crime_raw['date']
 
             zip = get_zip(next_crime_raw)
-            # print(str(zip))
 
             if (len(str(zip)) == 5):
                 next_crime = transform_crime(next_crime_raw, date, zip)
-                # print(next_crime)
                 next_crime_type = transform_crime_type(next_crime_raw)
-                # print(next_crime_type)
                 next_zip = transform_zip(next_crime_raw)
-                # print(next_zip)
                 next_week = transform_week(date)
-                # print(next_week)
 
                 crimes.append(next_crime)
                 crime_types.append(next_crime_type)
@@ -109,10 +104,10 @@ def add():
 
     with open("extraction/daily_spot_crime_data.json") as data_file:
         data = json.load(data_file)
-    transform_data(data, count, sampling_index)
+    transform_data(data)
     with open("extraction/daily_spot_crime_data2.json") as data_file:
         data = json.load(data_file)
-    transform_data(data, count, sampling_index)
+    transform_data(data)
 
     # crime_1 = Crime(lat=30.28500, lng=-97.7320000, time=datetime.date(year=2015, month=10, day=28), address="gdc", description="Graffiti of pig on building")
     # crime_2 = Crime(lat=30.30000, lng=-97.730000, time=datetime.date(year=2015, month=10, day=20), address="Duval Rd", description="Burglary at Quacks Bakery")
@@ -187,8 +182,10 @@ def add_zips_to_crimes():
     i = 0
     try:
         for crime in crimes:
-            crime.zip_code = zips[i].zip_id
-            print("adding zipcode " + str(zips[i].zip_id) + " to " + str(crime.description))
+            postal_code = re.search(r'.*(\d{5}(\-\d{4})?)$', crime.address)
+            print(postal_code.groups())
+            crime.zip_code = postal_code.groups(0)
+            print("adding zipcode " + str(postal_code.groups(0)) + " to " + str(crime.description))
             i += 1
         session.commit()
     except Exception as e:
@@ -323,7 +320,7 @@ def print_everything():
 # add_crime_type_to_crimes()
 #add_zip_to_week()
 add_zip_to_crime_type()
-add_week_to_crime_type()
-add_crime_type_to_week()
+# add_week_to_crime_type()
+# add_crime_type_to_week()
 print_everything()
 session.close()

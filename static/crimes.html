@@ -21,13 +21,13 @@
                         <table ng-table="tableParams" show-filter="true" class="table table-hover table-striped">
                         
                             <tr ng-repeat="crime in data">
-                                <td title="'Id'" filter="{ crime_id: 'number'}" sortable="'crime_id'"><a href="crimes/{{crime.crime_id}}">{{ crime.crime_id }}</a></td>
+                                <td title="'Id'" filter="{ crime_id: 'text'}" sortable="'crime_id'"><a href="crimes/{{crime.crime_id}}">{{ crime.crime_id }}</a></td>
                                 <td title="'Description'" filter="{ description: 'text'}" sortable="'description'"><a href="crimes/{{crime.crime_id}}">{{ crime.description }}</a></td>
                                 <td title="'Time'" filter="{ time: 'text'}" sortable="'time'">{{ crime.time }}</td>
                                 <td title="'Address'" filter="{ address: 'text'}" sortable="'address'"> {{ crime.address }}</td>
                                 <td title="'Crime Type'" filter="{ crime_type.name: 'text'}" sortable="'crime_type.name'"><a href="crime_types/{{crime.crime_type.crime_type_id}}">
                                     {{ crime.crime_type.name }}</a></td>
-                                <td title="'Zip Code'" filter="{ zip_code.zip_code: 'number'}" sortable="'zip_code.zip_code'"><a href="zips/{{crime.zip_code.zip_id}}">
+                                <td title="'Zip Code'" filter="{ zip_code.zip_code: 'text'}" sortable="'zip_code.zip_code'"><a href="zips/{{crime.zip_code.zip_id}}">
                                     {{ crime.zip_code.zip_code }}</a></td>
                                 <td title="'Week'" filter="{ week.start: 'text'}" sortable="'week.start'"><a href="weeks/{{crime.week.week_id}}">
                                     {{ crime.week.start }}</a></td>
