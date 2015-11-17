@@ -57,10 +57,32 @@ incomes = {
 if __name__ == "__main__":
     data_file = open("extraction/zip_data.out")
     data = json.load(data_file)
-    for zip in zip_codes:
-        zip = str(zip)
-        zip_data = data[zip]
-        zipcode = session.query(Crime).from_statement(text('SELECT * FROM zip WHERE zip_code = :zip')).params(zip_code=zip).first()
+    for zip_code in zip_codes:
+        zip_data = data[str(zip_code)]
+        zipcode = session.query(Crime).from_statement(text('SELECT * FROM zip_code WHERE zip_code = :zip_code')).params(zip=zip_code).first()
+
+
+        if zipcode is None:
+            # Add a new zipcode
+            print("zipcode not in table already: ", zip_code)
+            geolocator = Nominatim()
+            location = geolocator.geocode(str(zip_code))
+            # print(location.raw)
+            boundingbox = location.raw['boundingbox']
+            maxlat = float(boundingbox[1])
+            minlat = float(boundingbox[0])
+            maxlng = float(boundingbox[3])
+            minlng = float(boundingbox[2])
+            meanlat = (maxlat + minlat) / 2
+            meanlng = (maxlng + minlng) / 2
+            new_zip = Zip(zip_code=zip_code, lat=meanlat, long=meanlng, pop=20000, family_income=50000)
+            try:
+                session.add(new_zip)
+                session.commit()
+            except Exception as e:
+                print(e)
+                session.rollback()
+            zipcode = session.query(Crime).from_statement(text('SELECT * FROM zip_code WHERE zip_code = :zip_code')).params(zip=zip_code).first()
 
         # Population
         pop = zip_data['B02001_001E'][0]['B02001_001E']
@@ -80,5 +102,10 @@ if __name__ == "__main__":
         if num_asked != 0:
             avg = total//num_asked
         zipcode.family_income = avg
+        try:
+            session.commit()
+        except Exception as e:
+            print(e)
+            session.rollback()
 
 
