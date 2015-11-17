@@ -76,7 +76,7 @@ if __name__ == "__main__":
             minlng = float(boundingbox[2])
             meanlat = (maxlat + minlat) / 2
             meanlng = (maxlng + minlng) / 2
-            new_zip = Zip(zip_code=zip_code, lat=meanlat, long=meanlng, pop=20000, family_income=50000)
+            new_zip = Zip(zip_code=zip_code, lat=meanlat, lng=meanlng, pop=20000, family_income=50000)
             try:
                 session.add(new_zip)
                 session.commit()
