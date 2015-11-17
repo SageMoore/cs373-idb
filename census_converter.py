@@ -99,7 +99,7 @@ if __name__ == "__main__":
             val = int(zip_data[param][0][param]) * incomes[param_end]
             total += val
 
-        avg = 'Unknown'
+        avg = 0
         if num_asked != 0:
             avg = total//num_asked
         zipcode.family_income = avg
