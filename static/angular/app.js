@@ -13,7 +13,7 @@ crimeCastApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider'
             templateUrl: 'splash.html',
             controller: 'crimeCastCtrl'
         }).state('results', {
-            url: '/results',
+            url: '/results/:query',
             templateUrl: 'results.html',
             controller: 'resultsCtrl'
         }).state('about', {
