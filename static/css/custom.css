@@ -185,6 +185,19 @@ div#menu-keys #crime-type-key {
     text-align: center;
 }
 
+div#other-keys div {
+    background-color: darkgrey;
+    border: 1px solid;
+    padding: 10px 20px;
+    color: white;
+    text-align: center;
+}
+
+div#other-keys #crime-type-key {
+    background-color: dimgrey;
+    text-align: center;
+}
+
 #crime-type-key {
     background-color: darkslategrey;
     border-radius: 10px 10px 5px 5px;
