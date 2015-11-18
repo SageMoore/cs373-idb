@@ -22,7 +22,7 @@
                         <tbody>
                         <tr ng-repeat="crime in week.crimes">
                             <td><a href="/crimes/{{crime.crime_id}}">{{ crime.crime_id }}</a></td>
-                            <td><a class="truncate" href="/crimes/{{crime.crime_id}}">{{ crime.description }}</a></td>
+                            <td><div class="truncate"><a class="truncate" href="/crimes/{{crime.crime_id}}">{{ crime.description }}</a></div></td>
                         </tr>
                         </tbody>
                     </table>
