@@ -8,6 +8,7 @@ import subprocess, os
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
 from models import db_connect, Crime, Week, Zip, CrimeType
+import urllib.request
 
 app = Flask(__name__, static_url_path="")
 api = Api(app)
@@ -234,6 +235,25 @@ class ZipById(Resource):
     def post(self):
         pass
 
+# Cars
+# returns a list of cars
+class CarList(Resource):
+    def get(self):
+        print('in carslist....')
+        request = 'http://162.242.248.195/model_api'
+        response = urllib.request.urlopen(request)
+        print(str(response.data))
+        try:
+            obj = json.load(response)
+            str_response = response.readall().decode('utf-8')
+            data = json.loads(str_response)
+        except Exception as e:
+            print('something went wrong')
+            print(e)
+
+        print(str(data))
+        return data
+
 # Helper method, converts SQLAlchemy row to a dictionary
 def row_to_dict(row):
     d = {}
@@ -282,6 +302,7 @@ api.add_resource(WeekById, '/api/v1/weeks/<week_id>')
 api.add_resource(ZipList, '/api/v1/zips')
 api.add_resource(ZipById, '/api/v1/zips/<zip_id>')
 api.add_resource(Tests, '/api/v1/tests')
+api.add_resource(CarList, '/api/v1/carlist')
 api.init_app(app)
 
 
