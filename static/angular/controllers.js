@@ -327,7 +327,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
             $scope.partial_crimes = [];
             angular.forEach(data, function(value, key) {
                 var matching_keywords = 0;
-                for (i = 0; i < $scope.query_items; i++) {
+                for (var i = 0; i < $scope.query_items; i++) {
                     var word = $scope.query_items[i];
                     if (value.description.toLowerCase().indexOf(word) > -1
                         || value.crime_type.name.toLowerCase().indexOf(word) > -1)
@@ -362,7 +362,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
             $scope.partial_crime_types = [];
             angular.forEach(data, function(value, key) {
                 var matching_keywords = 0;
-                for (i = 0; i < $scope.query_items; i++) {
+                for (var i = 0; i < $scope.query_items; i++) {
                     var word = $scope.query_items[i];
                     if (value.desc.toLowerCase().indexOf(word) > -1
                         || value.name.toLowerCase().indexOf(word) > -1)
