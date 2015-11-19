@@ -236,10 +236,16 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
     var getCrimes = function() {
         http_service.getRequestGeneric('crimes').then(function(data) {
             console.log('data for crimes is...: ', data);
-            $scope.crimes = data;
-            angular.forEach($scope.crimes, function(value, key) {
-                services.addMarker(value.lat, value.lng, value.address, map, value.crime_type.crime_type_name);
+            //$scope.crimes = data;
+            angular.forEach(data, function(value, key) {
+                if (value.description.indexOf($scope.query) > -1
+                    || value.crime_type.name.indexOf($scope.query) > -1)
+                    $scope.best_matches.push(value);
             })
+            /*angular.forEach($scope.crimes, function(value, key) {
+                services.addMarker(value.lat, value.lng, value.address, map, value.crime_type.crime_type_name);
+            })*/
+
         })
     }
 
@@ -262,26 +268,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
             console.log('data for zips is...: ', data);
             $scope.zips = data;
         })
-    }
-
-    getCrimes();
-
-    $scope.crimes = [];
-    getCrimes();
-    $scope.crime_types = [];
-    getCrimesTypes();
-    $scope.weeks = [];
-    getWeeks();
-    $scope.zips = [];
-    getZips();
-
-    $scope.best_matches = [];
-
-    angular.forEach($scope.crimes, function(value, key) {
-                if (value.description.indexOf($scope.query) > -1
-                    || value.crime_type.name.indexOf($scope.query) > -1)
-                    $scope.best_matches.push(value);
-            })
+    }    
 
 }).controller('aboutCtrl', function ($scope, http_service, $location, $stateParams) {
     $scope.results = "No test results yet..."
