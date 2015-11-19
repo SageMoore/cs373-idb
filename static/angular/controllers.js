@@ -393,6 +393,11 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
     loadAllWidgets();
 
     $scope.cars = [];
+    //$.getJSON('/../cars.json', function(json) {
+    //    console.log(json);
+    //    $scope.cars = json;
+    //});
+
 
     var getCars = function() {
         http_service.getCars().then(function(data) {
