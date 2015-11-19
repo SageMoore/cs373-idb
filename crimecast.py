@@ -237,7 +237,7 @@ class ZipById(Resource):
 
 # Cars
 # returns a list of cars
-class CarsList(Resource):
+class CarList(Resource):
     def get(self):
         print('in carslist....')
         request = 'http://162.242.248.195/model_api'
@@ -246,9 +246,6 @@ class CarsList(Resource):
         data = json.load(response)
         print(str(data))
         return data
-
-    def post(self):
-        pass
 
 # Helper method, converts SQLAlchemy row to a dictionary
 def row_to_dict(row):
@@ -298,7 +295,7 @@ api.add_resource(WeekById, '/api/v1/weeks/<week_id>')
 api.add_resource(ZipList, '/api/v1/zips')
 api.add_resource(ZipById, '/api/v1/zips/<zip_id>')
 api.add_resource(Tests, '/api/v1/tests')
-api.add_resource(CarsList, '/api/v1/cars')
+api.add_resource(CarList, '/api/v1/carlist')
 api.init_app(app)
 
 
