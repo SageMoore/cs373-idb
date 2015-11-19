@@ -414,6 +414,9 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
                 sortedCarPrices.push(value['price']);
             })
             sortedCarPrices.sort();
+
+            console.log('cars: ', $scope.cars);
+            console.log('sorted cars: ', sortedCarPrices);
         })
     };
 
@@ -429,6 +432,8 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
                 sortedZipIncome.push(value['family_income']);
             })
             sortedZipIncome.sort();
+            console.log('zips: ', $scope.zips);
+            console.log('sorted zips: ', sortedZipIncome);
         })
     }
 
@@ -437,11 +442,6 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
 
 
 
-    console.log('cars: ', $scope.cars)
-    console.log('zips: ', $scope.zips);
 
 
-
-    console.log('sorted cars: ', sortedCarPrices);
-    console.log('sorted zips: ', sortedZipIncome);
 });
