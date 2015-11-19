@@ -56,5 +56,5 @@ IDB1.log:
 
 crimecast-test.tmp: tests.py
 	coverage3 run    --branch tests.py >  crimecast-test.tmp 2>&1
-	coverage3 report -m                      >> crimecast-test.tmp
+	coverage3 report -m --include="./*"                     >> crimecast-test.tmp
 	cat crimecast-test.tmp

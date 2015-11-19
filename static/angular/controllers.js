@@ -381,9 +381,18 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
         http_service.getRequestGeneric('zips').then(function(data) {
             console.log('data for zips is...: ', data);
             $scope.zips = [];
+            $scope.partial_zips = [];
             angular.forEach(data, function(value, key) {
-                if (value.zip_code.toString().indexOf($scope.query) > -1)
+                var matching_keywords = 0;
+                for (var i = 0; i < $scope.query_items.length; i++) {
+                    var word = $scope.query_items[i];
+                    if (value.zip_code.toString().indexOf(word) > -1)
+                        matching_keywords += 1;
+                }
+                if (matching_keywords == $scope.query_items.length)
                     $scope.zips.push(value);
+                else if (matching_keywords > 0)
+                    $scope.partial_zips.push(value);
             })
         })
     }   
@@ -482,7 +491,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
             }, {
                 total: data.length, // length of data
                 getData: function($defer, params) {
-                    $scope.data = params.sorting() ? $filter('orderBy')($scope.zips, params.orderBy()) : $scope.data;
+                    $scope.data = params.sorting() ? $filter('orderBy')($scope.cars, params.orderBy()) : $scope.data;
                     $scope.data = params.filter() ? $filter('filter')($scope.data, params.filter()) : $scope.data;
                     $scope.data = $scope.data.slice((params.page() - 1) * params.count(), params.page() * params.count());
                     $defer.resolve($scope.data);
