@@ -327,11 +327,17 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
             $scope.partial_crimes = [];
             angular.forEach(data, function(value, key) {
                 var matching_keywords = 0;
-                angular.forEach($scope.query_items, function(value, key) {
+                for (i = 0; i < $scope.query_items; i++) {
+                    var word = $scope.query_items[i];
+                    if value.description.toLowerCase().indexOf(word) > -1
+                        || value.crime_type.name.toLowerCase().indexOf(word) > -1)
+                        matching_keywords += 1;
+                }
+                /*angular.forEach($scope.query_items, function(value, key) {
                     if (value.description.toLowerCase().indexOf(value) > -1
                         || value.crime_type.name.toLowerCase().indexOf(value) > -1)
                         matching_keywords += 1;
-                })
+                })*/
                 if (matching_keywords == $scope.query_items.length())
                     $scope.crimes.push(value);
                 else if (matching_keywords > 0)
@@ -356,11 +362,17 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
             $scope.partial_crime_types = [];
             angular.forEach(data, function(value, key) {
                 var matching_keywords = 0;
-                angular.forEach($scope.query_items, function(value, key) {
+                for (i = 0; i < $scope.query_items; i++) {
+                    var word = $scope.query_items[i];
+                    if value.desc.toLowerCase().indexOf(word) > -1
+                        || value.name.toLowerCase().indexOf(word) > -1)
+                        matching_keywords += 1;
+                }
+                /*angular.forEach($scope.query_items, function(value, key) {
                     if (value.desc.toLowerCase().indexOf(value) > -1
                         || value.name.toLowerCase().indexOf(value) > -1)
                         matching_keywords += 1;
-                })
+                })*/
                 if (matching_keywords == $scope.query_items.length())
                     $scope.crime_types.push(value);
                 else if (matching_keywords > 0)
