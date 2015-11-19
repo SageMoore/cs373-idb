@@ -34,14 +34,48 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
         http_service.getRequestGeneric('crimes').then(function(data) {
             console.log('data for crimes is...: ', data);
             $scope.crimes = data;
+
             $scope.tableParams = new NgTableParams({
                 page: 1,            // show first page
                 count: 10           // count per page
             }, {
                 total: data.length, // length of data
                 getData: function($defer, params) {
+
+                    // Allows us to do nested parameters
+                    var filters = params.filter();
+                    var newFilters = {};
+                    for (var key in filters) {
+                        if (filters.hasOwnProperty(key)) {
+                            switch(key) {
+                                case 'crime_type.name':
+                                    angular.extend(newFilters, {
+                                        crime_type: {
+                                            name: filters[key]
+                                        }
+                                    });
+                                    break;
+                                case 'zip_code.zip_code':
+                                    angular.extend(newFilters, {
+                                        zip_code: {
+                                            zip_code: filters[key]
+                                        }
+                                    });
+                                    break;
+                                case 'week.start':
+                                    angular.extend(newFilters, {
+                                        week: {
+                                            start: filters[key]
+                                        }
+                                    });
+                                    break;
+                                default:
+                                    newFilters[key] = filters[key];
+                            }
+                        }
+                    }
                     $scope.data = params.sorting() ? $filter('orderBy')($scope.crimes, params.orderBy()) : $scope.data;
-                    $scope.data = params.filter() ? $filter('filter')($scope.crimes, params.filter()) : $scope.data;
+                    $scope.data = params.filter() ? $filter('filter')($scope.crimes, newFilters) : $scope.data;
                     $scope.data = $scope.data.slice((params.page() - 1) * params.count(), params.page() * params.count());
                     $defer.resolve($scope.data);
                 }
@@ -237,7 +271,6 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
         http_service.getRequestGeneric('crimes').then(function(data) {
             console.log('data for crimes is...: ', data);
             //$scope.crimes = data;
-            $scope.crimes = [];
             angular.forEach(data, function(value, key) {
                 if (value.description.indexOf($scope.query) > -1
                     || value.crime_type.name.indexOf($scope.query) > -1)
@@ -253,25 +286,36 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
     var getCrimesTypes = function() {
         http_service.getRequestGeneric('crime_types').then(function(data) {
             console.log('data for crime types is...: ', data);
-            $scope.crime_types = data;
+            //$scope.crime_types = data;
+            angular.forEach(data, function(value, key) {
+                if (value.description.indexOf($scope.query) > -1
+                    || value.name.indexOf($scope.query) > -1)
+                    $scope.crime_types.push(value);
+            })
         })
     }
 
-    var getWeeks = function() {
+    /*var getWeeks = function() {
         http_service.getRequestGeneric('weeks').then(function(data) {
             console.log('data for weeks is...: ', data);
             $scope.weeks = data;
         })
-    }
+    }*/
 
     var getZips = function() {
         http_service.getRequestGeneric('zips').then(function(data) {
             console.log('data for zips is...: ', data);
             $scope.zips = data;
+            angular.forEach(data, function(value, key) {
+                if (value.zip_code.toString().indexOf($scope.query) > -1)
+                    $scope.zips.push(value);
+            })
         })
     }   
 
     $scope.crimes = getCrimes(); 
+    $scope.zips = getZips();
+    $scope.crime_types = getCrimesTypes();
 
 }).controller('aboutCtrl', function ($scope, http_service, $location, $stateParams) {
     $scope.results = "No test results yet..."
