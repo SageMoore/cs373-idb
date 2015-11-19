@@ -28,7 +28,7 @@
                             <li ng-repeat="result in zips">Zip: <a href="/zips/{{zip.zip_id}}">
                                 {{ result.zip_code }} </a></li>
                             <li ng-repeat="result in crimes">Crime: <a href="crimes/{{crime.crime_id}}">
-                                {{ result.description }} : {{ result.crime_type.name }} </a></li>
+                                {{ result.crime_type.name }} @ {{ result.address }} </a></li>
                         </ul>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                             <li ng-repeat="result in partial_crime_types">Crime Type: <a href="crime_types/{{ result.crime_type_id }}">
                                 {{ result.name }} : {{ result.desc }}</a></li>
                             <li ng-repeat="result in partial_crimes">Crime: <a href="crimes/{{crime.crime_id}}">
-                                {{ result.description }} : {{ result.crime_type.name }} </a></li>
+                                {{ result.crime_type.name }} @ {{ result.address }} </a></li>
                         </ul>
                     </div>
                 </div>
