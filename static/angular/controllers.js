@@ -189,8 +189,32 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
             }, {
                 total: data.length, // length of data
                 getData: function($defer, params) {
+                    var filters = params.filter();
+                    var newFilters = {};
+                    for (var key in filters) {
+                        if (filters.hasOwnProperty(key)) {
+                            switch(key) {
+                                case 'most_popular.name':
+                                    angular.extend(newFilters, {
+                                        crime_type: {
+                                            name: filters[key]
+                                        }
+                                    });
+                                    break;
+                                case 'worst_zip.zip_code':
+                                    angular.extend(newFilters, {
+                                        zip_code: {
+                                            zip_code: filters[key]
+                                        }
+                                    });
+                                    break;
+                                default:
+                                    newFilters[key] = filters[key];
+                            }
+                        }
+                    }
                     $scope.data = params.sorting() ? $filter('orderBy')($scope.weeks, params.orderBy()) : $scope.data;
-                    $scope.data = params.filter() ? $filter('filter')($scope.data, params.filter()) : $scope.data;
+                    $scope.data = params.filter() ? $filter('filter')($scope.data, newFilters) : $scope.data;
                     $scope.data = $scope.data.slice((params.page() - 1) * params.count(), params.page() * params.count());
                     $defer.resolve($scope.data);
                 }
@@ -332,14 +356,14 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
             console.log('data for zips is...: ', data);
             $scope.zips = data;
             angular.forEach(data, function(value, key) {
-                if (value.zip_code.indexOf($scope.query) > -1)
+                if (value.zip_code.toString().indexOf($scope.query) > -1)
                     $scope.zips.push(value);
             })
         })
     }   
 
-    $scope.crimes = getCrimes(); 
     $scope.zips = getZips();
+    $scope.crimes = getCrimes(); 
     $scope.crime_types = getCrimesTypes();
 
 }).controller('aboutCtrl', function ($scope, http_service, $location, $stateParams) {
@@ -367,4 +391,15 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
 
     destroyAllWidgets();
     loadAllWidgets();
+
+    $scope.cars = [];
+
+    var getCars = function() {
+        http_service.getCars().then(function(data) {
+            console.log('data for cars is: ', data);
+            $scope.cars = data;
+        })
+    };
+
+    getCars();
 });

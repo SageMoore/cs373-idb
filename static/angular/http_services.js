@@ -8,7 +8,8 @@ angular.module('crimeCastApp.httpServices', [])
             getCrime : getCrime,
             getCrimeType : getCrimeType,
             getWeek : getWeek,
-            getZip : getZip
+            getZip : getZip,
+            getCars: getCars
         }
 
         function getRequestGeneric(pathParam){
@@ -20,6 +21,16 @@ angular.module('crimeCastApp.httpServices', [])
                     console.log('rejecting promise');
                     return $q.reject(response.data);
                 });
+        }
+
+        function getCars() {
+            return $http.get('http://162.242.248.195/model_api').then(function(response) {
+                console.log('data is: ', response.data);
+                return JSON.parse(response.data);
+            }, function(response) {
+                console.log('rejection promise');
+                return $q.reject(response.data);
+            });
         }
 
         function postRequestGeneric(pathParam, data) {
