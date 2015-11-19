@@ -25,7 +25,7 @@
                                     <td title="'Start'" filter="{ start: 'text'}" sortable="'start'"><a href="weeks/{{ week.week_id }}">{{ week.start }}</a></td>
                                     <td title="'End'" filter="{ end: 'text'}" sortable="'end'"><a href="weeks/{{ week.week_id }}">{{ week.end }}</a></td>
                                     <td title="'Most Frequent Crime'" filter="{ most_popular.name: 'text'}" sortable="'most_popular.name'"><a href="crime_types/{{week.most_popular.crime_type_id}}">{{ week.most_popular.name }}</a></td>
-                                    <td title="'Worst Zip'" filter="{ worst_zip.zip_code: 'text'}" sortable="'worst_zip.zip_code'"><a href="zips/{{week.worst_zip.zip_id}}">{{ week.worst_zip.zip_code }}</a></td>
+                                    <td title="'Worst Zip'" filter="{ worst_zip.zip_code: 'text'}" sortable="'worst_zip.zip_code'"><a href="zips/{{week.worst_zip.zip_id}}">{{ week.worst_zip.zip_id }}</a></td>
                                 </tr>
                             </table>
                         </div>
