@@ -41,7 +41,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
                 total: data.length, // length of data
                 getData: function($defer, params) {
                     $scope.data = params.sorting() ? $filter('orderBy')($scope.crimes, params.orderBy()) : $scope.data;
-                    $scope.data = params.filter() ? $filter('filter')($scope.data, params.filter()) : $scope.data;
+                    $scope.data = params.filter() ? $filter('filter')($scope.crimes, params.filter()) : $scope.data;
                     $scope.data = $scope.data.slice((params.page() - 1) * params.count(), params.page() * params.count());
                     $defer.resolve($scope.data);
                 }
@@ -212,7 +212,8 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
 }).controller('resultsCtrl', function ($scope, http_service, services, $location, $stateParams) {
 
     // Search term(s)
-    $scope.query = $stateParams.query.trim().split(" ");
+    $scope.query = $stateParams.query.trim();
+    $scope.query_items = $scope.query.split(" ");
 
     // console.log('search term is...: ', $scope.query);
 
@@ -263,16 +264,24 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
         })
     }
 
-    $scope.crimes = getCrimes();
-    $scope.crime_types = getCrimesTypes();
-    $scope.weeks = getWeeks();
-    $scope.zips = getZips();
+    getCrimes();
 
-    $scope.best_matches = [{ name: "Herp derp flerp" }, { name: "Meep boop bop"},
-                            { name: "Herp derp flerp" }, { name: "Meep boop bop"},
-                            { name: "Herp derp flerp" }, { name: "Meep boop bop"},
-                            { name: "Herp derp flerp" }, { name: "Meep boop bop"},
-                            { name: "Herp derp flerp" }, { name: "Meep boop bop"}]
+    $scope.crimes = [];
+    getCrimes();
+    $scope.crime_types = [];
+    getCrimesTypes();
+    $scope.weeks = [];
+    getWeeks();
+    $scope.zips = [];
+    getZips();
+
+    $scope.best_matches = [];
+
+    angular.forEach($scope.crimes, function(value, key) {
+                if (value.description.indexOf($scope.query) > -1
+                    || value.crime_type.name.indexOf($scope.query) > -1)
+                    $scope.best_matches.push(value);
+            })
 
 }).controller('aboutCtrl', function ($scope, http_service, $location, $stateParams) {
     $scope.results = "No test results yet..."
