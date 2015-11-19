@@ -470,7 +470,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
     }
 
     var getCars = function() {
-        http_service.getRequestGeneric('cars').then(function(data) {
+        http_service.getCars().then(function(data) {
             console.log('data for cars is: ', data);
             $scope.cars = data;
 
