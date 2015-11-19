@@ -241,10 +241,10 @@ class CrimecastAPITestCase(unittest.TestCase):
         data = json.loads(rv.data)
         data = json.loads(data)
         self.assertEqual(data["zip_code"], {'family_income': '41025',
-                'lat': '30.27',
-                'lng': '-97.68',
+                'lat': '30.274502199806',
+                'lng': '-97.683778095778',
                 'pop': '11482',
-                'zip_code': '78712',
+                'zip_code': '78721',
                 'zip_id': '255'
             })
 
@@ -307,13 +307,13 @@ class CrimecastAPITestCase(unittest.TestCase):
         rv = self.app.get('/api/v1/zips/268')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["lat"], "30.24")
+        self.assertEqual(data["lat"], "30.244502199806")
 
     def test_zips_has_lng(self):
         rv = self.app.get('/api/v1/zips/268')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["lng"], "-97.83")
+        self.assertEqual(data["lng"], "-97.835307667753")
 
     def test_zips_has_pop(self):
         rv = self.app.get('/api/v1/zips/268')
