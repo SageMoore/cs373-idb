@@ -271,7 +271,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
 
     $scope.best_matches = [];
 
-    angular.forEach($scope.crimes, function(value, key) {
+    angular.forEach($scope.crimes(), function(value, key) {
                 if (value.description.indexOf($scope.query) > -1
                     || value.crime_type.name.indexOf($scope.query) > -1)
                     $scope.best_matches.push(value);
