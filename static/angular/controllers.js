@@ -273,7 +273,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
             console.log('data for zips is...: ', data);
             $scope.zips = data;
             angular.forEach(data, function(value, key) {
-                if (value.zip_code.indexOf($scope.query) > -1)
+                if (value.zip_code.toString().indexOf($scope.query) > -1)
                     $scope.zips.push(value);
             })
         })
