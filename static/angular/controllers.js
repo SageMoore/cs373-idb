@@ -338,7 +338,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
                         || value.crime_type.name.toLowerCase().indexOf(value) > -1)
                         matching_keywords += 1;
                 })*/
-                if (matching_keywords == $scope.query_items.length
+                if (matching_keywords == $scope.query_items.length)
                     $scope.crimes.push(value);
                 else if (matching_keywords > 0)
                     $scope.partial_crimes.push(value);
@@ -373,7 +373,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
                         || value.name.toLowerCase().indexOf(value) > -1)
                         matching_keywords += 1;
                 })*/
-                if (matching_keywords == $scope.query_items.length
+                if (matching_keywords == $scope.query_items.length)
                     $scope.crime_types.push(value);
                 else if (matching_keywords > 0)
                     $scope.partial_crime_types.push(value);
