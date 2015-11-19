@@ -27,7 +27,7 @@ angular.module('crimeCastApp.httpServices', [])
             //return $http.get('http://162.242.248.195/model_api').then(function(response) {
             return $http.get('/../cars.json').then(function(response) {
                     console.log('data is: ', response.data);
-                    return JSON.parse(response.data);
+                    return response.data;
                 }, function(response) {
                     console.log('rejection promise');
                     return $q.reject(response.data);
