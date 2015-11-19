@@ -81,7 +81,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
                 }
             });
             angular.forEach($scope.crimes, function(value, key) {
-                services.addMarker(value.lat, value.lng, value.address, map, value.crime_type.crime_type_name);
+                services.addMarker(value.lat, value.lng, value.address, map, value.crime_type.name);
             })
         })
     }
@@ -98,7 +98,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
     var getCrime = function(crimeId) {
         http_service.getCrime(crimeId).then(function(data) {
             $scope.crime = data;
-            services.addMarker(data.lat, data.lng, data.address, map, data.crime_type.crime_type_name);
+            services.addMarker(data.lat, data.lng, data.address, map, data.crime_type.name);
         })
     }
 
@@ -169,7 +169,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
             $scope.crime_type = data;
             console.log('data for crime type is ', data)
             angular.forEach($scope.crime_type.crimes, function(value, key) {
-                services.addMarker(value.lat, value.lng, value.address, map, value.crime_type.crime_type_name);
+                services.addMarker(value.lat, value.lng, value.address, map, value.crime_type.name);
             })
         })
     };
@@ -239,7 +239,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
         http_service.getWeek(week_id).then(function(data) {
             $scope.week = data;
             angular.forEach($scope.week.crimes, function(value, key) {
-                services.addMarker(value.lat, value.lng, value.address, map, value.crime_type.crime_type_name);
+                services.addMarker(value.lat, value.lng, value.address, map, value.crime_type.name);
             })
         })
     };
@@ -266,6 +266,9 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
                 }
             });
             console.log('data for zips is...: ', data);
+            angular.forEach($scope.zips, function(value, key) {
+                services.addMarker(value.lat, value.lng, value.pop, map, value.family_income);
+            })
         })
     };
 
@@ -285,7 +288,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
         http_service.getZip(zip_id).then(function(data) {
             $scope.zip = data;
             angular.forEach($scope.zip.crimes, function(value, key) {
-                services.addMarker(value.lat, value.lng, value.address, map, value.crime_type.crime_type_name);
+                services.addMarker(value.lat, value.lng, value.address, map, value.crime_type.name);
             })
         })
     };
@@ -295,7 +298,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
 }).controller('resultsCtrl', function ($scope, http_service, services, $location, $stateParams) {
 
     // Search term(s)
-    $scope.query = $stateParams.query.trim();
+    $scope.query = $stateParams.query.trim().toLowerCase();
     $scope.query_items = $scope.query.split(" ");
 
     // console.log('search term is...: ', $scope.query);
@@ -321,14 +324,26 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
             console.log('data for crimes is...: ', data);
             //$scope.crimes = data;
             $scope.crimes = [];
+            $scope.partial_crimes = [];
             angular.forEach(data, function(value, key) {
-                if (value.description.indexOf($scope.query) > -1
-                    || value.crime_type.name.indexOf($scope.query) > -1)
+                var matching_keywords = 0;
+                angular.forEach($scope.query_items, function(value, key) {
+                    if (value.description.toLowerCase().indexOf(value) > -1
+                        || value.crime_type.name.toLowerCase().indexOf(value) > -1)
+                        matching_keywords += 1;
+                })
+                if (matching_keywords == $scope.query_items.length())
                     $scope.crimes.push(value);
+                else if (matching_keywords > 0)
+                    $scope.partial_crimes.push(value);
+
+                /*if (value.description.indexOf($scope.query) > -1
+                    || value.crime_type.name.indexOf($scope.query) > -1)
+                    $scope.crimes.push(value);*/
             })
-            /*angular.forEach($scope.crimes, function(value, key) {
-                services.addMarker(value.lat, value.lng, value.address, map, value.crime_type.crime_type_name);
-            })*/
+            angular.forEach($scope.crimes, function(value, key) {
+                services.addMarker(value.lat, value.lng, value.address, map, value.crime_type.name);
+            })
 
         })
     }
@@ -338,11 +353,23 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
             console.log('data for crime types is...: ', data);
             //$scope.crime_types = data;
             $scope.crime_types = [];
+            $scope.partial_crime_types = [];
             angular.forEach(data, function(value, key) {
-                if (value.desc.indexOf($scope.query) > -1
-                    || value.zip_code.zip_code.toString().indexOf($scope.query) > -1
-                    || value.name.indexOf($scope.query) > -1)
+                var matching_keywords = 0;
+                angular.forEach($scope.query_items, function(value, key) {
+                    if (value.desc.toLowerCase().indexOf(value) > -1
+                        || value.name.toLowerCase().indexOf(value) > -1)
+                        matching_keywords += 1;
+                })
+                if (matching_keywords == $scope.query_items.length())
                     $scope.crime_types.push(value);
+                else if (matching_keywords > 0)
+                    $scope.partial_crime_types.push(value);
+
+                /*if (value.desc.indexOf($scope.query) > -1
+                    || value.address.toString().indexOf($scope.query) > -1
+                    || value.name.indexOf($scope.query) > -1)
+                    $scope.crime_types.push(value);*/
             })
         })
     }
