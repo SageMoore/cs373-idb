@@ -326,7 +326,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
             $scope.crimes = [];
             $scope.partial_crimes = [];
             angular.forEach(data, function(value, key) {
-                matching_keywords = 0;
+                var matching_keywords = 0;
                 angular.forEach($scope.query_items, function(value, key) {
                     if (value.description.toLowerCase().indexOf(value) > -1
                         || value.crime_type.name.toLowerCase().indexOf(value) > -1)
@@ -355,7 +355,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
             $scope.crime_types = [];
             $scope.partial_crime_types = [];
             angular.forEach(data, function(value, key) {
-                matching_keywords = 0;
+                var matching_keywords = 0;
                 angular.forEach($scope.query_items, function(value, key) {
                     if (value.desc.toLowerCase().indexOf(value) > -1
                         || value.name.toLowerCase().indexOf(value) > -1)
