@@ -293,7 +293,7 @@ api.add_resource(WeekList, '/api/v1/weeks')
 api.add_resource(WeekById, '/api/v1/weeks/<week_id>')
 api.add_resource(ZipList, '/api/v1/zips')
 api.add_resource(ZipById, '/api/v1/zips/<zip_id>')
-# api.add_resource(Tests, '/api/v1/tests')
+api.add_resource(Tests, '/api/v1/tests')
 api.add_resource(CarsList, '/api/v1/tests')
 api.init_app(app)
 
