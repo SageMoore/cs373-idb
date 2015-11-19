@@ -28,6 +28,16 @@
                     </div>
                 </div>
 
+                <!-- Partial matches -->
+
+                <div class="col-md-8">
+                    <div class="well" style="min-height: 350px; margin-left: 50px">
+                        <h2>Best matches:</h2>
+                        <p ng-repeat="result in partial_crime_types">Crime Type: {{ result.name }} </p>
+                        <p ng-repeat="result in partial_crimes">Crime: {{ result.description }} </p>
+                    </div>
+                </div>
+
                 <!-- Crime Types -->
 
                 <!--div class="col-md-8">
