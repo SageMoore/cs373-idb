@@ -286,4 +286,6 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
             $scope.results = data.results;
         })
     };
+}).controller('carCtrl', function ($scope, http_service) {
+    
 });
