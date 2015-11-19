@@ -8,7 +8,7 @@ import subprocess, os
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
 from models import db_connect, Crime, Week, Zip, CrimeType
-import urllib
+import urllib.request
 
 app = Flask(__name__, static_url_path="")
 api = Api(app)
@@ -239,8 +239,11 @@ class ZipById(Resource):
 # returns a list of cars
 class CarsList(Resource):
     def get(self):
-        print('in carslist')
-        data = json.load(urllib.urlopen('http://162.242.248.195/model_api'))
+        print('in carslist....')
+        request = 'http://162.242.248.195/model_api'
+        response = urllib.request.urlopen(request)
+        print(str(response))
+        data = json.load(response)
         print(str(data))
         return data
 
@@ -294,8 +297,8 @@ api.add_resource(WeekList, '/api/v1/weeks')
 api.add_resource(WeekById, '/api/v1/weeks/<week_id>')
 api.add_resource(ZipList, '/api/v1/zips')
 api.add_resource(ZipById, '/api/v1/zips/<zip_id>')
-api.add_resource(CarsList, '/api/v1/tests')
-# api.add_resource(CarsList, '/api/v1/cars')
+api.add_resource(Tests, '/api/v1/tests')
+api.add_resource(CarsList, '/api/v1/cars')
 api.init_app(app)
 
 
