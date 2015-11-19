@@ -4,7 +4,7 @@
         <div class="row show-grid" >
             <div class="bs-docs-grid " >
                 <div class="col-sm-8">
-                    <h1 class="left page-header" >Crimes</h1>
+                    <h1 class="left page-header" >Search Results</h1>
                 </div>
                 <div class="col-sm-4">
                     <img class="page-image" src="http://redbricktown.com/wp-content/uploads/2015/08/Crime_Scene.jpg">
@@ -20,21 +20,30 @@
                 <!-- Best matches -->
 
                 <div class="col-md-8">
-                    <div class="well" style="min-height: 350px; margin-left: 50px">
-                        <h2>Best matches:</h2>
-                        <p ng-repeat="result in crime_types">Crime Type: {{ result.name }} </p>
-                        <p ng-repeat="result in zips">Zip: {{ result.zip_code }} </p>
-                        <p ng-repeat="result in crimes">Crime: {{ result.description }} </p>
+                    <div class="well" style="margin-left: 50px">
+                        <h2>'AND' matches:</h2>
+                        <ul>
+                            <li ng-repeat="result in crime_types">Crime Type: <a href="crime_types/{{ result.crime_type_id }}">
+                                {{ result.name }} : {{ result.desc }}</a></li>
+                            <li ng-repeat="result in zips">Zip: <a href="/zips/{{zip.zip_id}}">
+                                {{ result.zip_code }} </a></li>
+                            <li ng-repeat="result in crimes">Crime: <a href="crimes/{{crime.crime_id}}">
+                                {{ result.description }} : {{ result.crime_type.name }} </a></li>
+                        </ul>
                     </div>
                 </div>
 
                 <!-- Partial matches -->
 
                 <div class="col-md-8">
-                    <div class="well" style="min-height: 350px; margin-left: 50px">
-                        <h2>Partial matches:</h2>
-                        <p ng-repeat="result in partial_crime_types">Crime Type: {{ result.name }} </p>
-                        <p ng-repeat="result in partial_crimes">Crime: {{ result.description }} </p>
+                    <div class="well" style="margin-left: 50px">
+                        <h2>'OR' matches:</h2>
+                        <ul>
+                            <li ng-repeat="result in partial_crime_types">Crime Type: <a href="crime_types/{{ result.crime_type_id }}">
+                                {{ result.name }} : {{ result.desc }}</a></li>
+                            <li ng-repeat="result in partial_crimes">Crime: <a href="crimes/{{crime.crime_id}}">
+                                {{ result.description }} : {{ result.crime_type.name }} </a></li>
+                        </ul>
                     </div>
                 </div>
 
