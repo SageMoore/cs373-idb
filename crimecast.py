@@ -239,8 +239,9 @@ class ZipById(Resource):
 # returns a list of cars
 class CarsList(Resource):
     def get(self):
+        print('in carslist')
         data = json.load(urllib.urlopen('http://162.242.248.195/model_api'))
-        print(data)
+        print(str(data))
         return data
 
     def post(self):
