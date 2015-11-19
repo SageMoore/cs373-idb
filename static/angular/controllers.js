@@ -266,9 +266,9 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
                 }
             });
             console.log('data for zips is...: ', data);
-        })
-        angular.forEach($scope.zips, function(value, key) {
+            angular.forEach($scope.zips, function(value, key) {
                 services.addMarker(value.lat, value.lng, value.pop, map, value.family_income);
+            })
         })
     };
 
