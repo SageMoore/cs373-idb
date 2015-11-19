@@ -35,6 +35,7 @@
                             <tr ng-repeat="crime in crimes">
                                 <td><a href="crimes/{{crime.crime_id}}">{{ crime.crime_id }}</a></td>
                                 <td><a href="crimes/{{crime.crime_id}}">{{ crime.description }}</a></td>
+                                <td>{{ crime.crime_type.name }}</td>
                                 <td>{{ crime.time }}</td>
                                 <td> {{ crime.address }}</td>
                             </tr>
