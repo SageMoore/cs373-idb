@@ -39,7 +39,11 @@
                     <div class="well" style="height: 350px">
                         <div class="gmap" id="map"></div>
                     </div>
-
+                    <div class="well" class="center">
+                        <a class="twitter-timeline" data-dnt="true" ng-init="get_twitter()"
+                           href="https://twitter.com/Austin_Police"
+                           data-widget-id="657287406689763329">Tweets by @Austin_Police</a>
+                    </div>
                 </div>
 
                 <!-- Partial matches -->
@@ -55,16 +59,6 @@
                             <li ng-repeat="result in partial_crimes">Crime: <a href="crimes/{{ result.crime_id }}">
                                 {{ result.crime_type.name }} @ {{ result.address }} </a></li>
                         </ul>
-                    </div>
-                </div>
-
-                <div class=" col-md-8 ">
-                </div>
-                <div class=" col-md-4 " style="margin-left: auto">
-                    <div class="well" class="center">
-                        <a class="twitter-timeline" data-dnt="true" ng-init="get_twitter()"
-                           href="https://twitter.com/Austin_Police"
-                           data-widget-id="657287406689763329">Tweets by @Austin_Police</a>
                     </div>
                 </div>
             </div>
