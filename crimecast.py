@@ -242,8 +242,15 @@ class CarList(Resource):
         print('in carslist....')
         request = 'http://162.242.248.195/model_api'
         response = urllib.request.urlopen(request)
-        print(str(response))
-        data = json.load(response)
+        print(str(response.data))
+        try:
+            obj = json.load(response)
+            str_response = response.readall().decode('utf-8')
+            data = json.loads(str_response)
+        except Exception as e:
+            print('something went wrong')
+            print(e)
+
         print(str(data))
         return data
 
