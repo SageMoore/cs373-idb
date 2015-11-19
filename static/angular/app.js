@@ -52,6 +52,10 @@ crimeCastApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider'
             url: '/zips/:zip_id',
             templateUrl: 'zip.html',
             controller: 'zipCtrl'
+        }).state('cars', {
+            url: '/cars',
+            templateUrl: 'cars.html',
+            controller: 'carCtrl'
         });
         $urlRouterProvider.otherwise('splash');
 
