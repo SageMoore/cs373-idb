@@ -266,6 +266,9 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
                 }
             });
             console.log('data for zips is...: ', data);
+            angular.forEach($scope.zips, function(value, key) {
+                services.addMarker(value.lat, value.lng, value.pop, map, value.family_income);
+            })
         })
     };
 
@@ -420,6 +423,9 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
     loadAllWidgets();
 
     $scope.cars = [];
+    $scope.zips = [];
+    var sortedCarPrices = [];
+    var sortedZipIncome = [];
     //$.getJSON('/../cars.json', function(json) {
     //    console.log(json);
     //    $scope.cars = json;
@@ -430,8 +436,39 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
         http_service.getCars().then(function(data) {
             console.log('data for cars is: ', data);
             $scope.cars = data;
+
+            angular.forEach($scope.cars, function(value, key) {
+                sortedCarPrices.push(value['price']);
+            })
+            sortedCarPrices.sort();
+
+            console.log('cars: ', $scope.cars);
+            console.log('sorted cars: ', sortedCarPrices);
         })
     };
 
+    var getZips = function() {
+        http_service.getRequestGeneric('zips').then(function(data) {
+            console.log('data for zips is...: ', data);
+            $scope.zips = data;
+            //angular.forEach(data, function(value, key) {
+            //    if (value.zip_code.toString().indexOf($scope.query) > -1)
+            //        $scope.zips.push(value);
+            //})
+            angular.forEach($scope.zips, function(value, key) {
+                sortedZipIncome.push(value['family_income']);
+            })
+            sortedZipIncome.sort();
+            console.log('zips: ', $scope.zips);
+            console.log('sorted zips: ', sortedZipIncome);
+        })
+    }
+
     getCars();
+    getZips();
+
+
+
+
+
 });

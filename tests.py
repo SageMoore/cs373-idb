@@ -223,16 +223,16 @@ class CrimecastAPITestCase(unittest.TestCase):
         rv = self.app.get('/api/v1/crimes/1040')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["address"], "gdc")
+        self.assertEqual(data["address"], "5800 BLOCK OF TECHNI CENTER DR, 78721")
 
     def test_crimes_has_type(self):
         rv = self.app.get('/api/v1/crimes/1040')
         data = json.loads(rv.data)
         data = json.loads(data)
         self.assertEqual(data["crime_type"],  {'crime_type_id': '262',
-                'desc': 'crimes are bad',
+                'desc': 'Vandalism is an action involving deliberate destruction of or damage to public or private property',
                 'name': 'Vandalism',
-                'worst_week': '773',
+                'worst_week': '770',
                 'worst_zip': '246'
             })
 
@@ -241,10 +241,10 @@ class CrimecastAPITestCase(unittest.TestCase):
         data = json.loads(rv.data)
         data = json.loads(data)
         self.assertEqual(data["zip_code"], {'family_income': '41025',
-                'lat': '30.27',
-                'lng': '-97.68',
+                'lat': '30.274502199806',
+                'lng': '-97.683778095778',
                 'pop': '11482',
-                'zip_code': '78712',
+                'zip_code': '78721',
                 'zip_id': '255'
             })
 
@@ -252,7 +252,7 @@ class CrimecastAPITestCase(unittest.TestCase):
         rv = self.app.get('/api/v1/crimes/1040')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["week"], {'end': '2015-10-31 00:00:00',
+        self.assertEqual(data["week"], {'end': '2015-10-24 00:00:00',
                 'most_popular': '259',
                 'start': '2015-10-18 00:00:00',
                 'week_id': '769',
@@ -270,16 +270,16 @@ class CrimecastAPITestCase(unittest.TestCase):
         assert len(data) > 0
 
     def test_crime_types_has_name(self):
-        rv = self.app.get('/api/v1/crime_types/1')
+        rv = self.app.get('/api/v1/crime_types/262')
         data = json.loads(rv.data)
         data = json.loads(data)
         self.assertEqual(data["name"], "Vandalism")
 
     def test_crime_types_has_desc(self):
-        rv = self.app.get('/api/v1/crime_types/1')
+        rv = self.app.get('/api/v1/crime_types/262')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["desc"], "Vandalism is bad") # Testing here
+        self.assertEqual(data["desc"], "Vandalism is an action involving deliberate destruction of or damage to public or private property") # Testing here
 
     # ---------------
     # Zips unit tests
@@ -307,13 +307,13 @@ class CrimecastAPITestCase(unittest.TestCase):
         rv = self.app.get('/api/v1/zips/268')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["lat"], "30.24")
+        self.assertEqual(data["lat"], "30.240702922532")
 
     def test_zips_has_lng(self):
         rv = self.app.get('/api/v1/zips/268')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["lng"], "-97.83")
+        self.assertEqual(data["lng"], "-97.835307667753")
 
     def test_zips_has_pop(self):
         rv = self.app.get('/api/v1/zips/268')
