@@ -381,6 +381,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
         http_service.getRequestGeneric('zips').then(function(data) {
             console.log('data for zips is...: ', data);
             $scope.zips = [];
+            $scope.partial_zips = [];
             angular.forEach(data, function(value, key) {
                 var matching_keywords = 0;
                 for (var i = 0; i < $scope.query_items.length; i++) {
