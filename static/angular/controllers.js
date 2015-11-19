@@ -237,7 +237,6 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
         http_service.getRequestGeneric('crimes').then(function(data) {
             console.log('data for crimes is...: ', data);
             //$scope.crimes = data;
-            $scope.crimes = [];
             angular.forEach(data, function(value, key) {
                 if (value.description.indexOf($scope.query) > -1
                     || value.crime_type.name.indexOf($scope.query) > -1)
@@ -253,21 +252,30 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
     var getCrimesTypes = function() {
         http_service.getRequestGeneric('crime_types').then(function(data) {
             console.log('data for crime types is...: ', data);
-            $scope.crime_types = data;
+            //$scope.crime_types = data;
+            angular.forEach(data, function(value, key) {
+                if (value.description.indexOf($scope.query) > -1
+                    || value.name.indexOf($scope.query) > -1)
+                    $scope.crime_types.push(value);
+            })
         })
     }
 
-    var getWeeks = function() {
+    /*var getWeeks = function() {
         http_service.getRequestGeneric('weeks').then(function(data) {
             console.log('data for weeks is...: ', data);
             $scope.weeks = data;
         })
-    }
+    }*/
 
     var getZips = function() {
         http_service.getRequestGeneric('zips').then(function(data) {
             console.log('data for zips is...: ', data);
             $scope.zips = data;
+            angular.forEach(data, function(value, key) {
+                if (value.zip_code.indexOf($scope.query) > -1)
+                    $scope.zips.push(value);
+            })
         })
     }   
 
