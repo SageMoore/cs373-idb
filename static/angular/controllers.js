@@ -334,19 +334,11 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
                         || value.crime_type.name.toLowerCase().indexOf(word) > -1)
                         matching_keywords += 1;
                 }
-                /*angular.forEach($scope.query_items, function(value, key) {
-                    if (value.description.toLowerCase().indexOf(value) > -1
-                        || value.crime_type.name.toLowerCase().indexOf(value) > -1)
-                        matching_keywords += 1;
-                })*/
                 if (matching_keywords == $scope.query_items.length)
                     $scope.crimes.push(value);
                 else if (matching_keywords > 0)
                     $scope.partial_crimes.push(value);
 
-                /*if (value.description.indexOf($scope.query) > -1
-                    || value.crime_type.name.indexOf($scope.query) > -1)
-                    $scope.crimes.push(value);*/
             })
             angular.forEach($scope.crimes, function(value, key) {
                 services.addMarker(value.lat, value.lng, value.address, map, value.crime_type.name);
@@ -369,20 +361,11 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
                         || value.name.toLowerCase().indexOf(word) > -1)
                         matching_keywords += 1;
                 }
-                /*angular.forEach($scope.query_items, function(value, key) {
-                    if (value.desc.toLowerCase().indexOf(value) > -1
-                        || value.name.toLowerCase().indexOf(value) > -1)
-                        matching_keywords += 1;
-                })*/
                 if (matching_keywords == $scope.query_items.length)
                     $scope.crime_types.push(value);
                 else if (matching_keywords > 0)
                     $scope.partial_crime_types.push(value);
 
-                /*if (value.desc.indexOf($scope.query) > -1
-                    || value.address.toString().indexOf($scope.query) > -1
-                    || value.name.indexOf($scope.query) > -1)
-                    $scope.crime_types.push(value);*/
             })
         })
     }
