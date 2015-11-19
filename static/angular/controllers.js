@@ -469,8 +469,8 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
                 console.log('zip: ', zip);
                 var car = carvar.filter(function(data) { return data['price'] == sortedCarPrices[i]})
                 //console.log('zip: ', zip);
-                //console.log('car: ', car);
-                $scope.zipcar.push({zip_code: zip['zip_code'], make: car['make'], model: car['id']})
+                console.log('car: ', car);
+                $scope.zipcar.push({zip_code: zip.family_income, make: car.make, model: car.id});
             }
             console.log('zipcars: ', $scope.zipcar);
         })
