@@ -427,6 +427,9 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
     var sortedCarPrices = [];
     var sortedZipIncome = [];
 
+    console.log('cars: ', $scope.cars)
+    console.log('zips: ', $scope.zips);
+
     angular.forEach($scope.cars, function(value, key) {
         sortedCarPrices.push(value['price']);
     })
@@ -437,4 +440,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
 
     $scope.cars.sort();
     $scope.zips.sort();
+
+    console.log('sorted cars: ', sortedCarPrices);
+    console.log('sorted zips: ', sortedZipIncome);
 });
