@@ -331,7 +331,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
             console.log('data for zips is...: ', data);
             $scope.zips = data;
             angular.forEach(data, function(value, key) {
-                if (value.zip_code.indexOf($scope.query) > -1)
+                if (value.zip_code.toString().indexOf($scope.query) > -1)
                     $scope.zips.push(value);
             })
         })
@@ -366,4 +366,15 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
 
     destroyAllWidgets();
     loadAllWidgets();
+
+    $scope.cars = [];
+
+    var getCars = function() {
+        http_service.getCars().then(function(data) {
+            console.log('data for cars is: ', data);
+            $scope.cars = data;
+        })
+    };
+
+    getCars();
 });
