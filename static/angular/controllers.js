@@ -362,7 +362,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
         })
     }   
 
-    $scope.crime_types = getCrimeTypes();
+    $scope.crime_types = getCrimesTypes();
     $scope.zips = getZips();
     $scope.crimes = getCrimes(); 
 
