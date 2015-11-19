@@ -25,10 +25,10 @@
                         <ul>
                             <li ng-repeat="result in crime_types">Crime Type: <a href="crime_types/{{ result.crime_type_id }}">
                                 {{ result.name }} : {{ result.desc }}</a></li>
-                            <li ng-repeat="result in zips">Zip: <a href="/zips/{{zip.zip_id}}">
+                            <li ng-repeat="result in zips">Zip: <a href="zips/{{result.zip_code.zip_id}}">
                                 {{ result.zip_code }} </a></li>
-                            <li ng-repeat="result in crimes">Crime: <a href="crimes/{{crime.crime_id}}">
-                                {{ result.description }} : {{ result.crime_type.name }} </a></li>
+                            <li ng-repeat="result in crimes">Crime: <a href="crimes/{{result.crime_id}}">
+                                {{ result.crime_type.name }} @ {{ result.address }} </a></li>
                         </ul>
                     </div>
                 </div>
@@ -41,64 +41,11 @@
                         <ul>
                             <li ng-repeat="result in partial_crime_types">Crime Type: <a href="crime_types/{{ result.crime_type_id }}">
                                 {{ result.name }} : {{ result.desc }}</a></li>
-                            <li ng-repeat="result in partial_crimes">Crime: <a href="crimes/{{crime.crime_id}}">
-                                {{ result.description }} : {{ result.crime_type.name }} </a></li>
+                            <li ng-repeat="result in partial_crimes">Crime: <a href="crimes/{{ result.crime_id }}">
+                                {{ result.crime_type.name }} @ {{ result.address }} </a></li>
                         </ul>
                     </div>
                 </div>
-
-                <!-- Crime Types -->
-
-                <!--div class="col-md-8">
-                    <div class="well" style="min-height: 350px; margin-left: 50px">
-                        <table ng-table="tableParams" show-filter="true" class="table table-hover table-striped">
-                        
-                            <tr ng-repeat="type in crime_types">
-                                <td><a href="crime_types/{{ type.crime_type_id }}">{{ type.crime_type_id }}</a></td>
-                                <td><a href="crime_types/{{ type.crime_type_id }}">{{ type.name }}</a></td>
-                                <td>{{ type.desc }}</td>
-                            </tr>
-                            
-                        </table>
-                    </div>
-                </div-->
-
-                <!-- Zips -->
-
-                <!--div class="col-md-8">
-                    <div class="well" style="min-height: 350px; margin-left: 50px">
-                        <table ng-table="tableParams" show-filter="true" class="table table-hover table-striped">
-                        
-                            <tr ng-repeat="zip in zips">
-                                <td><a href="/zips/{{zip.zip_id}}">{{ zip.zip_id }}</a></td>
-                                <td><a href="/zips/{{zip.zip_id}}">{{ zip.zip_code }}</a></td>
-                                <td>{{ zip.lat }}</td>
-                                <td>{{ zip.lng }}</td>
-                                <td>{{ zip.pop }}</td>
-                                <td>{{ zip.family_income }}</td>
-                            </tr>
-                            
-                        </table>
-                    </div>
-                </div-->
-
-                <!-- Crimes -->
-
-                <!--div class="col-md-8">
-                    <div class="well" style="min-height: 350px; margin-left: 50px">
-                        <table ng-table="tableParams" show-filter="true" class="table table-hover table-striped">
-                        
-                            <tr ng-repeat="crime in crimes">
-                                <td><a href="crimes/{{crime.crime_id}}">{{ crime.crime_id }}</a></td>
-                                <td><a href="crimes/{{crime.crime_id}}">{{ crime.description }}</a></td>
-                                <td>{{ crime.crime_type.name }}</td>
-                                <td>{{ crime.time }}</td>
-                                <td> {{ crime.address }}</td>
-                            </tr>
-                            
-                        </table>
-                    </div>
-                </div-->
 
                 <!-- Map -->
 
