@@ -196,14 +196,14 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
                             switch(key) {
                                 case 'most_popular.name':
                                     angular.extend(newFilters, {
-                                        crime_type: {
+                                        most_popular: {
                                             name: filters[key]
                                         }
                                     });
                                     break;
                                 case 'worst_zip.zip_code':
                                     angular.extend(newFilters, {
-                                        zip_code: {
+                                        worst_zip: {
                                             zip_code: filters[key]
                                         }
                                     });
