@@ -329,7 +329,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
                 var matching_keywords = 0;
                 for (i = 0; i < $scope.query_items; i++) {
                     var word = $scope.query_items[i];
-                    if value.description.toLowerCase().indexOf(word) > -1
+                    if (value.description.toLowerCase().indexOf(word) > -1
                         || value.crime_type.name.toLowerCase().indexOf(word) > -1)
                         matching_keywords += 1;
                 }
@@ -364,7 +364,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
                 var matching_keywords = 0;
                 for (i = 0; i < $scope.query_items; i++) {
                     var word = $scope.query_items[i];
-                    if value.desc.toLowerCase().indexOf(word) > -1
+                    if (value.desc.toLowerCase().indexOf(word) > -1
                         || value.name.toLowerCase().indexOf(word) > -1)
                         matching_keywords += 1;
                 }
