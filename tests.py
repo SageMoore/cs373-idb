@@ -223,7 +223,7 @@ class CrimecastAPITestCase(unittest.TestCase):
         rv = self.app.get('/api/v1/crimes/1040')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["address"], "gdc")
+        self.assertEqual(data["address"], "5800 BLOCK OF TECHNI CENTER DR, 78721")
 
     def test_crimes_has_type(self):
         rv = self.app.get('/api/v1/crimes/1040')
