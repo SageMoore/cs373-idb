@@ -34,15 +34,48 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
         http_service.getRequestGeneric('crimes').then(function(data) {
             console.log('data for crimes is...: ', data);
             $scope.crimes = data;
+
             $scope.tableParams = new NgTableParams({
                 page: 1,            // show first page
                 count: 10           // count per page
-                filter: {'crime_type' : 'name'}
             }, {
                 total: data.length, // length of data
                 getData: function($defer, params) {
+
+                    // Allows us to do nested parameters
+                    var filters = params.filter();
+                    var newFilters = {};
+                    for (var key in filters) {
+                        if (filters.hasOwnProperty(key)) {
+                            switch(key) {
+                                case 'crime_type.name':
+                                    angular.extend(newFilters, {
+                                        crime_type: {
+                                            name: filters[key]
+                                        }
+                                    });
+                                    break;
+                                case 'zip_code.zip_code':
+                                    angular.extend(newFilters, {
+                                        zip_code: {
+                                            zip_code: filters[key]
+                                        }
+                                    });
+                                    break;
+                                case 'week.start':
+                                    angular.extend(newFilters, {
+                                        week: {
+                                            start: filters[key]
+                                        }
+                                    });
+                                    break;
+                                default:
+                                    newFilters[key] = filters[key];
+                            }
+                        }
+                    }
                     $scope.data = params.sorting() ? $filter('orderBy')($scope.crimes, params.orderBy()) : $scope.data;
-                    $scope.data = params.filter() ? $filter('filter')($scope.crimes, params.filter()) : $scope.data;
+                    $scope.data = params.filter() ? $filter('filter')($scope.crimes, newFilters) : $scope.data;
                     $scope.data = $scope.data.slice((params.page() - 1) * params.count(), params.page() * params.count());
                     $defer.resolve($scope.data);
                 }
@@ -84,8 +117,33 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
             }, {
                 total: data.length, // length of data
                 getData: function($defer, params) {
+
+                    var filters = params.filter();
+                    var newFilters = {};
+                    for (var key in filters) {
+                        if (filters.hasOwnProperty(key)) {
+                            switch(key) {
+                                case 'worst_week.start':
+                                    angular.extend(newFilters, {
+                                        worst_week: {
+                                            start: filters[key]
+                                        }
+                                    });
+                                    break;
+                                case 'worst_zip.zip_code':
+                                    angular.extend(newFilters, {
+                                        worst_zip: {
+                                            zip_code: filters[key]
+                                        }
+                                    });
+                                    break;
+                                default:
+                                    newFilters[key] = filters[key];
+                            }
+                        }
+                    }
                     $scope.data = params.sorting() ? $filter('orderBy')($scope.crimeTypes, params.orderBy()) : $scope.data;
-                    $scope.data = params.filter() ? $filter('filter')($scope.data, params.filter()) : $scope.data;
+                    $scope.data = params.filter() ? $filter('filter')($scope.data, newFilters) : $scope.data;
                     $scope.data = $scope.data.slice((params.page() - 1) * params.count(), params.page() * params.count());
                     $defer.resolve($scope.data);
                 }
@@ -131,8 +189,32 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
             }, {
                 total: data.length, // length of data
                 getData: function($defer, params) {
+                    var filters = params.filter();
+                    var newFilters = {};
+                    for (var key in filters) {
+                        if (filters.hasOwnProperty(key)) {
+                            switch(key) {
+                                case 'most_popular.name':
+                                    angular.extend(newFilters, {
+                                        most_popular: {
+                                            name: filters[key]
+                                        }
+                                    });
+                                    break;
+                                case 'worst_zip.zip_code':
+                                    angular.extend(newFilters, {
+                                        worst_zip: {
+                                            zip_code: filters[key]
+                                        }
+                                    });
+                                    break;
+                                default:
+                                    newFilters[key] = filters[key];
+                            }
+                        }
+                    }
                     $scope.data = params.sorting() ? $filter('orderBy')($scope.weeks, params.orderBy()) : $scope.data;
-                    $scope.data = params.filter() ? $filter('filter')($scope.data, params.filter()) : $scope.data;
+                    $scope.data = params.filter() ? $filter('filter')($scope.data, newFilters) : $scope.data;
                     $scope.data = $scope.data.slice((params.page() - 1) * params.count(), params.page() * params.count());
                     $defer.resolve($scope.data);
                 }
@@ -254,24 +336,36 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
     var getCrimesTypes = function() {
         http_service.getRequestGeneric('crime_types').then(function(data) {
             console.log('data for crime types is...: ', data);
-            $scope.crime_types = data;
+            //$scope.crime_types = data;
+            $scope.crime_types = [];
+            angular.forEach(data, function(value, key) {
+                if (value.desc.indexOf($scope.query) > -1
+                    || value.name.indexOf($scope.query) > -1)
+                    $scope.crime_types.push(value);
+            })
         })
     }
 
-    var getWeeks = function() {
+    /*var getWeeks = function() {
         http_service.getRequestGeneric('weeks').then(function(data) {
             console.log('data for weeks is...: ', data);
             $scope.weeks = data;
         })
-    }
+    }*/
 
     var getZips = function() {
         http_service.getRequestGeneric('zips').then(function(data) {
             console.log('data for zips is...: ', data);
-            $scope.zips = data;
+            $scope.zips = [];
+            angular.forEach(data, function(value, key) {
+                if (value.zip_code.toString().indexOf($scope.query) > -1)
+                    $scope.zips.push(value);
+            })
         })
     }   
 
+    $scope.crime_types = getCrimesTypes();
+    $scope.zips = getZips();
     $scope.crimes = getCrimes(); 
 
 }).controller('aboutCtrl', function ($scope, http_service, $location, $stateParams) {
@@ -283,7 +377,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
             $scope.results = data.results;
         })
     };
-}).controller('carCtrl', function ($scope, http_service) {
+}).controller('carCtrl', function ($scope, http_service, services) {
     var map = services.getMap();
 
     var loadAllWidgets = function() {
@@ -299,4 +393,20 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
 
     destroyAllWidgets();
     loadAllWidgets();
+
+    $scope.cars = [];
+    //$.getJSON('/../cars.json', function(json) {
+    //    console.log(json);
+    //    $scope.cars = json;
+    //});
+
+
+    var getCars = function() {
+        http_service.getCars().then(function(data) {
+            console.log('data for cars is: ', data);
+            $scope.cars = data;
+        })
+    };
+
+    getCars();
 });

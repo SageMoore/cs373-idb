@@ -1,0 +1,1220 @@
+{
+  "Buick_Enclave": {
+    "engines": {
+      "200700844": "Engine"
+    },
+    "id": "Buick_Enclave",
+    "make": "buick",
+    "name": "enclave",
+    "price": 39050,
+    "transmission": "200700845",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "Buick_Encore": {
+    "engines": {
+      "200694038": "ECOTEC Turbo 1.4L"
+    },
+    "id": "Buick_Encore",
+    "make": "buick",
+    "name": "encore",
+    "price": 27950,
+    "transmission": "200720059",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "Buick_LaCrosse": {
+    "engines": {
+      "200705492": "EAssist"
+    },
+    "id": "Buick_LaCrosse",
+    "make": "buick",
+    "name": "lacrosse",
+    "price": 33635,
+    "transmission": "200705493",
+    "types": {
+      "4199": "sedan"
+    },
+    "year": 2015
+  },
+  "Buick_Regal": {
+    "engines": {
+      "200705502": "2.0L I4 Turbo"
+    },
+    "id": "Buick_Regal",
+    "make": "buick",
+    "name": "regal",
+    "price": 34100,
+    "transmission": "200705494",
+    "types": {
+      "4199": "sedan"
+    },
+    "year": 2015
+  },
+  "Buick_Verano": {
+    "engines": {
+      "200712025": "2.4L Inline4 16 Valve   Flex-fuel (FFV) Flex-fuel (unleaded/E85)"
+    },
+    "id": "Buick_Verano",
+    "make": "buick",
+    "name": "verano",
+    "price": 23380,
+    "transmission": "200712026",
+    "types": {
+      "4199": "sedan"
+    },
+    "year": 2015
+  },
+  "Cadillac_ATS": {
+    "engines": {
+      "200700010": "2.0L Inline4 16 Valve Turbocharger Gas Premium Unleaded (recommended) LTG"
+    },
+    "id": "Cadillac_ATS",
+    "make": "cadillac",
+    "name": "ats",
+    "price": 39340,
+    "transmission": "200676123",
+    "types": {
+      "4199": "sedan"
+    },
+    "year": 2015
+  },
+  "Cadillac_ATS_Coupe": {
+    "engines": {
+      "200700010": "2.0L Inline4 16 Valve Turbocharger Gas Premium Unleaded (recommended) LTG"
+    },
+    "id": "Cadillac_ATS_Coupe",
+    "make": "cadillac",
+    "name": "ats-coupe",
+    "price": 41920,
+    "transmission": "200700012",
+    "types": {
+      "3840": "coup"
+    },
+    "year": 2015
+  },
+  "Cadillac_CTS": {
+    "engines": {
+      "200713087": "Lf3"
+    },
+    "id": "Cadillac_CTS",
+    "make": "cadillac",
+    "name": "cts",
+    "price": 69340,
+    "transmission": "200713090",
+    "types": {
+      "4199": "sedan"
+    },
+    "year": 2015
+  },
+  "Cadillac_CTS_V_Coupe": {
+    "engines": {
+      "200698422": "6.2L V8 16 Valve Supercharger Gas Premium Unleaded (required)"
+    },
+    "id": "Cadillac_CTS_V_Coupe",
+    "make": "cadillac",
+    "name": "cts-v-coupe",
+    "price": 69900,
+    "transmission": "200698424",
+    "types": {
+      "3840": "coup"
+    },
+    "year": 2015
+  },
+  "Cadillac_Escalade": {
+    "engines": {
+      "200467580": "6.2l V8"
+    },
+    "id": "Cadillac_Escalade",
+    "make": "cadillac",
+    "name": "escalade",
+    "price": 75570,
+    "transmission": "200724950",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "Cadillac_Escalade_ESV": {
+    "engines": {
+      "200467580": "6.2l V8"
+    },
+    "id": "Cadillac_Escalade_ESV",
+    "make": "cadillac",
+    "name": "escalade-esv",
+    "price": 78695,
+    "transmission": "200467576",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "Cadillac_SRX": {
+    "engines": {
+      "200704340": "3.6L V6 24 Valve  LFX"
+    },
+    "id": "Cadillac_SRX",
+    "make": "cadillac",
+    "name": "srx",
+    "price": 46135,
+    "transmission": "200704341",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "Cadillac_XTS": {
+    "engines": {
+      "200713098": " 3.6L V6 24 Valve   Gas Regular Unleaded"
+    },
+    "id": "Cadillac_XTS",
+    "make": "cadillac",
+    "name": "xts",
+    "price": 62015,
+    "transmission": "200713099",
+    "types": {
+      "4199": "sedan"
+    },
+    "year": 2015
+  },
+  "Chevrolet_Camaro": {
+    "engines": {
+      "200709659": "3.6L V6 24 Valve   Gas Regular Unleaded"
+    },
+    "id": "Chevrolet_Camaro",
+    "make": "chevrolet",
+    "name": "camaro",
+    "price": 26005,
+    "transmission": "200709665",
+    "types": {
+      "3840": "coup"
+    },
+    "year": 2015
+  },
+  "Chevrolet_City_Express": {
+    "engines": {
+      "200471750": "2.0l"
+    },
+    "id": "Chevrolet_City_Express",
+    "make": "chevrolet",
+    "name": "city-express",
+    "price": 21955,
+    "transmission": "200471751",
+    "types": {
+      "7419": "cargo minivan"
+    },
+    "year": 2015
+  },
+  "Chevrolet_Colorado": {
+    "engines": {
+      "200468545": "3.6L V6 24 Valve   Gas Regular Unleaded"
+    },
+    "id": "Chevrolet_Colorado",
+    "make": "chevrolet",
+    "name": "colorado",
+    "price": 29705,
+    "transmission": "200468544",
+    "types": {
+      "4888": "crew cab pickup"
+    },
+    "year": 2015
+  },
+  "Chevrolet_Corvette": {
+    "engines": {
+      "200713710": "Npp/Z51"
+    },
+    "id": "Chevrolet_Corvette",
+    "make": "chevrolet",
+    "name": "corvette",
+    "price": 68160,
+    "transmission": "200498571",
+    "types": {
+      "3700": "convertible"
+    },
+    "year": 2015
+  },
+  "Chevrolet_Cruze": {
+    "engines": {
+      "200711653": "Luw"
+    },
+    "id": "Chevrolet_Cruze",
+    "make": "chevrolet",
+    "name": "cruze",
+    "price": 16170,
+    "transmission": "200717320",
+    "types": {
+      "4199": "sedan"
+    },
+    "year": 2015
+  },
+  "Chevrolet_Equinox": {
+    "engines": {
+      "200708742": "2.4L Inline4 Engine"
+    },
+    "id": "Chevrolet_Equinox",
+    "make": "chevrolet",
+    "name": "equinox",
+    "price": 24520,
+    "transmission": "200708741",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "Chevrolet_Express": {
+    "engines": {
+      "200717812": "6.6L V8 Diesel"
+    },
+    "id": "Chevrolet_Express",
+    "make": "chevrolet",
+    "name": "express",
+    "price": 49295,
+    "transmission": "200717816",
+    "types": {
+      "6992": "passenger van"
+    },
+    "year": 2015
+  },
+  "Chevrolet_Express_Cargo": {
+    "engines": {
+      "200717837": "4.8l V8"
+    },
+    "id": "Chevrolet_Express_Cargo",
+    "make": "chevrolet",
+    "name": "express-cargo",
+    "price": 29555,
+    "transmission": "200717838",
+    "types": {
+      "6548": "cargo van"
+    },
+    "year": 2015
+  },
+  "Chevrolet_Malibu": {
+    "engines": {
+      "200697536": "2.5L Inline4 16 Valve   Gas Regular Unleaded LCV"
+    },
+    "id": "Chevrolet_Malibu",
+    "make": "chevrolet",
+    "name": "malibu",
+    "price": 23610,
+    "transmission": "200697537",
+    "types": {
+      "4199": "sedan"
+    },
+    "year": 2015
+  },
+  "Chevrolet_SS": {
+    "engines": {
+      "200726524": "6.2L V8 16 Valve   Gas Premium Unleaded (recommended)"
+    },
+    "id": "Chevrolet_SS",
+    "make": "chevrolet",
+    "name": "ss",
+    "price": 45745,
+    "transmission": "200726525",
+    "types": {
+      "4199": "sedan"
+    },
+    "year": 2015
+  },
+  "Chevrolet_Silverado_1500": {
+    "engines": {
+      "200712138": "4.3L V6 12 Valve   Gas Regular Unleaded LV3"
+    },
+    "id": "Chevrolet_Silverado_1500",
+    "make": "chevrolet",
+    "name": "silverado-1500",
+    "price": 32095,
+    "transmission": "200712141",
+    "types": {
+      "5126": "regular cab pickup"
+    },
+    "year": 2015
+  },
+  "Chevrolet_Silverado_2500HD": {
+    "engines": {
+      "200484135": "L96"
+    },
+    "id": "Chevrolet_Silverado_2500HD",
+    "make": "chevrolet",
+    "name": "silverado-2500hd",
+    "price": 36765,
+    "transmission": "200484136",
+    "types": {
+      "4888": "crew cab pickup"
+    },
+    "year": 2015
+  },
+  "Chevrolet_Silverado_3500HD": {
+    "engines": {
+      "200484135": "L96"
+    },
+    "id": "Chevrolet_Silverado_3500HD",
+    "make": "chevrolet",
+    "name": "silverado-3500hd",
+    "price": 40225,
+    "transmission": "200484137",
+    "types": {
+      "4948": "extended cab pickup"
+    },
+    "year": 2015
+  },
+  "Chevrolet_Sonic": {
+    "engines": {
+      "200711653": "Luw"
+    },
+    "id": "Chevrolet_Sonic",
+    "make": "chevrolet",
+    "name": "sonic",
+    "price": 16455,
+    "transmission": "200711655",
+    "types": {
+      "3339": "4dr hatchback"
+    },
+    "year": 2015
+  },
+  "Chevrolet_Spark": {
+    "engines": {
+      "200713758": "Engine"
+    },
+    "id": "Chevrolet_Spark",
+    "make": "chevrolet",
+    "name": "spark",
+    "price": 12270,
+    "transmission": "200713764",
+    "types": {
+      "3339": "4dr hatchback"
+    },
+    "year": 2015
+  },
+  "Chevrolet_Suburban": {
+    "engines": {
+      "200467560": "5.3L Ecotec3 V8"
+    },
+    "id": "Chevrolet_Suburban",
+    "make": "chevrolet",
+    "name": "suburban",
+    "price": 57205,
+    "transmission": "200467562",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "Chevrolet_Tahoe": {
+    "engines": {
+      "200467560": "5.3L Ecotec3 V8"
+    },
+    "id": "Chevrolet_Tahoe",
+    "make": "chevrolet",
+    "name": "tahoe",
+    "price": 64085,
+    "transmission": "200467563",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "Chevrolet_Traverse": {
+    "engines": {
+      "200696755": "3.6l V6"
+    },
+    "id": "Chevrolet_Traverse",
+    "make": "chevrolet",
+    "name": "traverse",
+    "price": 33795,
+    "transmission": "200696757",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "Chevrolet_Trax": {
+    "engines": {
+      "200694038": "ECOTEC Turbo 1.4L"
+    },
+    "id": "Chevrolet_Trax",
+    "make": "chevrolet",
+    "name": "trax",
+    "price": 21620,
+    "transmission": "200723242",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "Chrysler_200": {
+    "engines": {
+      "200490597": "Ed6"
+    },
+    "id": "Chrysler_200",
+    "make": "chrysler",
+    "name": "200",
+    "price": 25170,
+    "transmission": "200490598",
+    "types": {
+      "4199": "sedan"
+    },
+    "year": 2015
+  },
+  "Chrysler_300": {
+    "engines": {
+      "200696408": "3.6L V6 VVT Engine (ERB)"
+    },
+    "id": "Chrysler_300",
+    "make": "chrysler",
+    "name": "300",
+    "price": 44895,
+    "transmission": "200726103",
+    "types": {
+      "4199": "sedan"
+    },
+    "year": 2015
+  },
+  "Chrysler_Town_and_Country": {
+    "engines": {
+      "200704874": "3.6L V6 24V VVT Engine (ERB)"
+    },
+    "id": "Chrysler_Town_and_Country",
+    "make": "chrysler",
+    "name": "town-and-country",
+    "price": 40295,
+    "transmission": "200704350",
+    "types": {
+      "7867": "passenger minivan"
+    },
+    "year": 2015
+  },
+  "Dodge_Challenger": {
+    "engines": {
+      "200705267": "6.2L Engine (ESD)"
+    },
+    "id": "Dodge_Challenger",
+    "make": "dodge",
+    "name": "challenger",
+    "price": 58295,
+    "transmission": "200705198",
+    "types": {
+      "3840": "coup"
+    },
+    "year": 2015
+  },
+  "Dodge_Charger": {
+    "engines": {
+      "200705267": "6.2L Engine (ESD)"
+    },
+    "id": "Dodge_Charger",
+    "make": "dodge",
+    "name": "charger",
+    "price": 62295,
+    "transmission": "200723215",
+    "types": {
+      "4199": "sedan"
+    },
+    "year": 2015
+  },
+  "Dodge_Dart": {
+    "engines": {
+      "200700422": "2.4L I4 Engine"
+    },
+    "id": "Dodge_Dart",
+    "make": "dodge",
+    "name": "dart",
+    "price": 21645,
+    "transmission": "200704572",
+    "types": {
+      "4199": "sedan"
+    },
+    "year": 2015
+  },
+  "Dodge_Durango": {
+    "engines": {
+      "200715851": "5.7L V8 Engine (EZH)"
+    },
+    "id": "Dodge_Durango",
+    "make": "dodge",
+    "name": "durango",
+    "price": 42495,
+    "transmission": "200715852",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "Dodge_Grand_Caravan": {
+    "engines": {
+      "200704874": "3.6L V6 24V VVT Engine (ERB)"
+    },
+    "id": "Dodge_Grand_Caravan",
+    "make": "dodge",
+    "name": "grand-caravan",
+    "price": 30995,
+    "transmission": "200704875",
+    "types": {
+      "7867": "passenger minivan"
+    },
+    "year": 2015
+  },
+  "Dodge_Journey": {
+    "engines": {
+      "200700350": "2.4L Inline4 16 Valve   Gas Regular Unleaded ED3"
+    },
+    "id": "Dodge_Journey",
+    "make": "dodge",
+    "name": "journey",
+    "price": 25195,
+    "transmission": "200700347",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "Dodge_Viper": {
+    "engines": {
+      "200722536": "8.4L V10 SFI Engine (EWG)"
+    },
+    "id": "Dodge_Viper",
+    "make": "dodge",
+    "name": "viper",
+    "price": 94995,
+    "transmission": "200722537",
+    "types": {
+      "3840": "coup"
+    },
+    "year": 2015
+  },
+  "Ford_C_Max_Energi": {
+    "engines": {
+      "200717830": "Engine"
+    },
+    "id": "Ford_C_Max_Energi",
+    "make": "ford",
+    "name": "c-max-energi",
+    "price": 31770,
+    "transmission": "200704989",
+    "types": {
+      "4279": "wagon"
+    },
+    "year": 2015
+  },
+  "Ford_C_Max_Hybrid": {
+    "engines": {
+      "200717830": "Engine"
+    },
+    "id": "Ford_C_Max_Hybrid",
+    "make": "ford",
+    "name": "c-max-hybrid",
+    "price": 27170,
+    "transmission": "200705036",
+    "types": {
+      "4279": "wagon"
+    },
+    "year": 2015
+  },
+  "Ford_Edge": {
+    "engines": {
+      "200495942": "Engine"
+    },
+    "id": "Ford_Edge",
+    "make": "ford",
+    "name": "edge",
+    "price": 31500,
+    "transmission": "200495943",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "Ford_Escape": {
+    "engines": {
+      "200702311": "2.5L Engine (997)"
+    },
+    "id": "Ford_Escape",
+    "make": "ford",
+    "name": "escape",
+    "price": 23450,
+    "transmission": "200702312",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "Ford_Expedition": {
+    "engines": {
+      "200491064": "99t"
+    },
+    "id": "Ford_Expedition",
+    "make": "ford",
+    "name": "expedition",
+    "price": 59370,
+    "transmission": "200495945",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "Ford_Explorer": {
+    "engines": {
+      "200699350": "3.5L Ti-VCT V6"
+    },
+    "id": "Ford_Explorer",
+    "make": "ford",
+    "name": "explorer",
+    "price": 38200,
+    "transmission": "200699352",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "Ford_F_150": {
+    "engines": {
+      "200707245": "5.0l V8"
+    },
+    "id": "Ford_F_150",
+    "make": "ford",
+    "name": "f-150",
+    "price": 49420,
+    "transmission": "200470615",
+    "types": {
+      "4888": "crew cab pickup"
+    },
+    "year": 2015
+  },
+  "Ford_F_250_Super_Duty": {
+    "engines": {
+      "200689571": "6.2L 2-Valve SOHC EFI Triton V8 (996)"
+    },
+    "id": "Ford_F_250_Super_Duty",
+    "make": "ford",
+    "name": "f-250-super-duty",
+    "price": 34995,
+    "transmission": "200690555",
+    "types": {
+      "5126": "regular cab pickup"
+    },
+    "year": 2015
+  },
+  "Ford_F_350_Super_Duty": {
+    "engines": {
+      "200689860": "10,001"
+    },
+    "id": "Ford_F_350_Super_Duty",
+    "make": "ford",
+    "name": "f-350-super-duty",
+    "price": 35735,
+    "transmission": "200689807",
+    "types": {
+      "4948": "extended cab pickup"
+    },
+    "year": 2015
+  },
+  "Ford_F_450_Super_Duty": {
+    "engines": {
+      "200688290": "6.7l V8"
+    },
+    "id": "Ford_F_450_Super_Duty",
+    "make": "ford",
+    "name": "f-450-super-duty",
+    "price": 51910,
+    "transmission": "200688291",
+    "types": {
+      "4888": "crew cab pickup"
+    },
+    "year": 2015
+  },
+  "Ford_Fiesta": {
+    "engines": {
+      "200692531": "1.6L Inline4 16 Valve   Gas Regular Unleaded  "
+    },
+    "id": "Ford_Fiesta",
+    "make": "ford",
+    "name": "fiesta",
+    "price": 14455,
+    "transmission": "200692545",
+    "types": {
+      "4199": "sedan"
+    },
+    "year": 2015
+  },
+  "Ford_Flex": {
+    "engines": {
+      "200714539": "3.5L Ti-VCT V6"
+    },
+    "id": "Ford_Flex",
+    "make": "ford",
+    "name": "flex",
+    "price": 32100,
+    "transmission": "200714540",
+    "types": {
+      "4279": "wagon"
+    },
+    "year": 2015
+  },
+  "Ford_Focus": {
+    "engines": {
+      "200714372": "2.0L Inline4 16 Valve Regular Gas Unleaded"
+    },
+    "id": "Ford_Focus",
+    "make": "ford",
+    "name": "focus",
+    "price": 18960,
+    "transmission": "200714374",
+    "types": {
+      "3339": "4dr hatchback"
+    },
+    "year": 2015
+  },
+  "Ford_Focus_ST": {
+    "engines": {
+      "200717993": "Engine"
+    },
+    "id": "Ford_Focus_ST",
+    "make": "ford",
+    "name": "focus-st",
+    "price": 24370,
+    "transmission": "200717994",
+    "types": {
+      "3339": "4dr hatchback"
+    },
+    "year": 2015
+  },
+  "Ford_Fusion": {
+    "engines": {
+      "200697763": "2.5L Engine (S/SE)"
+    },
+    "id": "Ford_Fusion",
+    "make": "ford",
+    "name": "fusion",
+    "price": 22500,
+    "transmission": "200697200",
+    "types": {
+      "4199": "sedan"
+    },
+    "year": 2015
+  },
+  "Ford_Fusion_Energi": {
+    "engines": {
+      "200717830": "Engine"
+    },
+    "id": "Ford_Fusion_Energi",
+    "make": "ford",
+    "name": "fusion-energi",
+    "price": 36630,
+    "transmission": "200696129",
+    "types": {
+      "4199": "sedan"
+    },
+    "year": 2015
+  },
+  "Ford_Fusion_Hybrid": {
+    "engines": {
+      "200717830": "Engine"
+    },
+    "id": "Ford_Fusion_Hybrid",
+    "make": "ford",
+    "name": "fusion-hybrid",
+    "price": 26575,
+    "transmission": "200696807",
+    "types": {
+      "4199": "sedan"
+    },
+    "year": 2015
+  },
+  "Ford_Mustang": {
+    "engines": {
+      "200465114": "3.7l"
+    },
+    "id": "Ford_Mustang",
+    "make": "ford",
+    "name": "mustang",
+    "price": 29300,
+    "transmission": "200465115",
+    "types": {
+      "3700": "convertible"
+    },
+    "year": 2015
+  },
+  "Ford_Taurus": {
+    "engines": {
+      "200699604": "3.5l V6"
+    },
+    "id": "Ford_Taurus",
+    "make": "ford",
+    "name": "taurus",
+    "price": 31335,
+    "transmission": "200699608",
+    "types": {
+      "4199": "sedan"
+    },
+    "year": 2015
+  },
+  "Ford_Transit_Connect": {
+    "engines": {
+      "200700516": "2.5L Inline4"
+    },
+    "id": "Ford_Transit_Connect",
+    "make": "ford",
+    "name": "transit-connect",
+    "price": 24710,
+    "transmission": "200700518",
+    "types": {
+      "7867": "passenger minivan"
+    },
+    "year": 2015
+  },
+  "Ford_Transit_Van": {
+    "engines": {
+      "200675767": "Std All Exc HD"
+    },
+    "id": "Ford_Transit_Van",
+    "make": "ford",
+    "name": "transit-van",
+    "price": 34440,
+    "transmission": "200675768",
+    "types": {
+      "6548": "cargo van"
+    },
+    "year": 2015
+  },
+  "Ford_Transit_Wagon": {
+    "engines": {
+      "200675767": "Std All Exc HD"
+    },
+    "id": "Ford_Transit_Wagon",
+    "make": "ford",
+    "name": "transit-wagon",
+    "price": 40830,
+    "transmission": "200675769",
+    "types": {
+      "6992": "passenger van"
+    },
+    "year": 2015
+  },
+  "GMC_Acadia": {
+    "engines": {
+      "200696755": "3.6l V6"
+    },
+    "id": "GMC_Acadia",
+    "make": "gmc",
+    "name": "acadia",
+    "price": 42095,
+    "transmission": "200700860",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "GMC_Canyon": {
+    "engines": {
+      "200719512": "2.5l"
+    },
+    "id": "GMC_Canyon",
+    "make": "gmc",
+    "name": "canyon",
+    "price": 20995,
+    "transmission": "200719523",
+    "types": {
+      "4948": "extended cab pickup"
+    },
+    "year": 2015
+  },
+  "GMC_Savana": {
+    "engines": {
+      "200717837": "4.8l V8"
+    },
+    "id": "GMC_Savana",
+    "make": "gmc",
+    "name": "savana",
+    "price": 32190,
+    "transmission": "200720950",
+    "types": {
+      "6992": "passenger van"
+    },
+    "year": 2015
+  },
+  "GMC_Savana_Cargo": {
+    "engines": {
+      "200717837": "4.8l V8"
+    },
+    "id": "GMC_Savana_Cargo",
+    "make": "gmc",
+    "name": "savana-cargo",
+    "price": 32875,
+    "transmission": "200720951",
+    "types": {
+      "6548": "cargo van"
+    },
+    "year": 2015
+  },
+  "GMC_Sierra_1500": {
+    "engines": {
+      "200712138": "4.3L V6 12 Valve   Gas Regular Unleaded LV3"
+    },
+    "id": "GMC_Sierra_1500",
+    "make": "gmc",
+    "name": "sierra-1500",
+    "price": 33595,
+    "transmission": "200715140",
+    "types": {
+      "5126": "regular cab pickup"
+    },
+    "year": 2015
+  },
+  "GMC_Sierra_2500HD": {
+    "engines": {
+      "200484135": "L96"
+    },
+    "id": "GMC_Sierra_2500HD",
+    "make": "gmc",
+    "name": "sierra-2500hd",
+    "price": 38330,
+    "transmission": "200484150",
+    "types": {
+      "4948": "extended cab pickup"
+    },
+    "year": 2015
+  },
+  "GMC_Sierra_3500HD": {
+    "engines": {
+      "200484135": "L96"
+    },
+    "id": "GMC_Sierra_3500HD",
+    "make": "gmc",
+    "name": "sierra-3500hd",
+    "price": 37915,
+    "transmission": "200484151",
+    "types": {
+      "4948": "extended cab pickup"
+    },
+    "year": 2015
+  },
+  "GMC_Terrain": {
+    "engines": {
+      "200708742": "2.4L Inline4 Engine"
+    },
+    "id": "GMC_Terrain",
+    "make": "gmc",
+    "name": "terrain",
+    "price": 24070,
+    "transmission": "200708783",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "GMC_Yukon": {
+    "engines": {
+      "200677156": "L86"
+    },
+    "id": "GMC_Yukon",
+    "make": "gmc",
+    "name": "yukon",
+    "price": 67520,
+    "transmission": "200721101",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "GMC_Yukon_XL": {
+    "engines": {
+      "200467560": "5.3L Ecotec3 V8"
+    },
+    "id": "GMC_Yukon_XL",
+    "make": "gmc",
+    "name": "yukon-xl",
+    "price": 58925,
+    "transmission": "200467547",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "Jeep_Cherokee": {
+    "engines": {
+      "200700422": "2.4L I4 Engine"
+    },
+    "id": "Jeep_Cherokee",
+    "make": "jeep",
+    "name": "cherokee",
+    "price": 27695,
+    "transmission": "200700423",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "Jeep_Compass": {
+    "engines": {
+      "200699562": "2.4L I4 DOHC 16V Dual VVT Engine (ED3)"
+    },
+    "id": "Jeep_Compass",
+    "make": "jeep",
+    "name": "compass",
+    "price": 21790,
+    "transmission": "200699537",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "Jeep_Grand_Cherokee": {
+    "engines": {
+      "200701077": "3.6L V6 Pentastar "
+    },
+    "id": "Jeep_Grand_Cherokee",
+    "make": "jeep",
+    "name": "grand-cherokee",
+    "price": 37065,
+    "transmission": "200701081",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "Jeep_Grand_Cherokee_SRT": {
+    "engines": {
+      "200701079": "6.4L V8 16 Valve   Gas Premium Unleaded (recommended) ESG"
+    },
+    "id": "Jeep_Grand_Cherokee_SRT",
+    "make": "jeep",
+    "name": "grand-cherokee-srt",
+    "price": 64895,
+    "transmission": "200701082",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "Jeep_Patriot": {
+    "engines": {
+      "200699925": "2.0L I4 DOHC 16V Dual VVT Engine (ECN)"
+    },
+    "id": "Jeep_Patriot",
+    "make": "jeep",
+    "name": "patriot",
+    "price": 16895,
+    "transmission": "200699927",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "Jeep_Renegade": {
+    "engines": {
+      "200727153": "1.4L I4 MultiAir Turbo Engine"
+    },
+    "id": "Jeep_Renegade",
+    "make": "jeep",
+    "name": "renegade",
+    "price": 23295,
+    "transmission": "200727152",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "Jeep_Wrangler": {
+    "engines": {
+      "200701473": "3.6L V6 24 Valve   Gas Regular Unleaded ERB"
+    },
+    "id": "Jeep_Wrangler",
+    "make": "jeep",
+    "name": "wrangler",
+    "price": 31495,
+    "transmission": "200701479",
+    "types": {
+      "5638": "convertible"
+    },
+    "year": 2015
+  },
+  "Lincoln_MKC": {
+    "engines": {
+      "200673392": "2.0L I4 Ecoboost"
+    },
+    "id": "Lincoln_MKC",
+    "make": "lincoln",
+    "name": "mkc",
+    "price": 35595,
+    "transmission": "200673393",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "Lincoln_MKS": {
+    "engines": {
+      "200704097": "Engine"
+    },
+    "id": "Lincoln_MKS",
+    "make": "lincoln",
+    "name": "mks",
+    "price": 38850,
+    "transmission": "200711403",
+    "types": {
+      "4199": "sedan"
+    },
+    "year": 2015
+  },
+  "Lincoln_MKT": {
+    "engines": {
+      "200716693": "3.7L V6 24 Valve   Gas Regular Unleaded 99K"
+    },
+    "id": "Lincoln_MKT",
+    "make": "lincoln",
+    "name": "mkt",
+    "price": 43210,
+    "transmission": "200716698",
+    "types": {
+      "4279": "wagon"
+    },
+    "year": 2015
+  },
+  "Lincoln_MKX": {
+    "engines": {
+      "200704097": "Engine"
+    },
+    "id": "Lincoln_MKX",
+    "make": "lincoln",
+    "name": "mkx",
+    "price": 40850,
+    "transmission": "200704098",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  },
+  "Lincoln_MKZ": {
+    "engines": {
+      "200717699": "2.0L Inline4 16 Valve Turbocharger Gas  "
+    },
+    "id": "Lincoln_MKZ",
+    "make": "lincoln",
+    "name": "mkz",
+    "price": 47445,
+    "transmission": "200717739",
+    "types": {
+      "4199": "sedan"
+    },
+    "year": 2015
+  },
+  "Lincoln_Navigator": {
+    "engines": {
+      "200491064": "99t"
+    },
+    "id": "Lincoln_Navigator",
+    "make": "lincoln",
+    "name": "navigator",
+    "price": 67220,
+    "transmission": "200491060",
+    "types": {
+      "5439": "4dr suv"
+    },
+    "year": 2015
+  }
+}
