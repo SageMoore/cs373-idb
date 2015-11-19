@@ -32,7 +32,6 @@ angular.module('crimeCastApp.httpServices', [])
                     console.log('rejection promise');
                     return $q.reject(response.data);
                 });
-            }
         }
 
         function postRequestGeneric(pathParam, data) {
