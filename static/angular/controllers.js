@@ -340,6 +340,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
             $scope.crime_types = [];
             angular.forEach(data, function(value, key) {
                 if (value.desc.indexOf($scope.query) > -1
+                    || value.zip_code.zip_code.toString().indexOf($scope.query) > -1
                     || value.name.indexOf($scope.query) > -1)
                     $scope.crime_types.push(value);
             })
