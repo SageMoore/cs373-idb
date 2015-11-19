@@ -473,18 +473,6 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
         http_service.getCars().then(function(data) {
             console.log('data for cars is: ', data);
             $scope.cars = data;
-
-            angular.forEach($scope.cars, function(value, key) {
-                sortedCarPrices.push(value['price']);
-                $scope.carsArray.push(value);
-            })
-            sortedCarPrices.sort();
-
-            console.log('cars: ', $scope.cars);
-            console.log('sorted cars: ', sortedCarPrices);
-
-            getZips();
-
             $scope.tableParams = new NgTableParams({
                 page: 1,            // show first page
                 count: 10           // count per page
@@ -497,6 +485,16 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
                     $defer.resolve($scope.data);
                 }
             });
+            angular.forEach($scope.cars, function(value, key) {
+                sortedCarPrices.push(value['price']);
+                $scope.carsArray.push(value);
+            })
+            sortedCarPrices.sort();
+
+            console.log('cars: ', $scope.cars);
+            console.log('sorted cars: ', sortedCarPrices);
+
+            getZips();
         })
     };
 
