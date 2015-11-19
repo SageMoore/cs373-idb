@@ -1,10 +1,15 @@
 'use strict';
-crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service) {
+crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, services, http_service) {
 
     services.getMap();
 
     $scope.sortType     = 'id'; // set the default sort type
     $scope.sortReverse  = false;  // set the default sort order
+    $scope.query = "";
+
+    $scope.getResults = function() {
+        $state.go("results", { query: $scope.query })
+    };
 
 }).controller('crimesCtrl', function ($scope, http_service, services, $location, $filter, NgTableParams) {
 
@@ -203,8 +208,13 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
     };
 
     $scope.zip = getZip(zip_id);
-    
-}).controller('resultsCtrl', function ($scope, http_service, services, $location) {
+
+}).controller('resultsCtrl', function ($scope, http_service, services, $location, $stateParams) {
+
+    // Search term(s)
+    $scope.query = $stateParams.query.trim().split(" ");
+
+    // console.log('search term is...: ', $scope.query);
 
     var map = services.getMap();
 
@@ -257,6 +267,12 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, services, http_service
     $scope.crime_types = getCrimesTypes();
     $scope.weeks = getWeeks();
     $scope.zips = getZips();
+
+    $scope.best_matches = [{ name: "Herp derp flerp" }, { name: "Meep boop bop"},
+                            { name: "Herp derp flerp" }, { name: "Meep boop bop"},
+                            { name: "Herp derp flerp" }, { name: "Meep boop bop"},
+                            { name: "Herp derp flerp" }, { name: "Meep boop bop"},
+                            { name: "Herp derp flerp" }, { name: "Meep boop bop"}]
 
 }).controller('aboutCtrl', function ($scope, http_service, $location, $stateParams) {
     $scope.results = "No test results yet..."

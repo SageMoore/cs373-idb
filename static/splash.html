@@ -3,10 +3,13 @@
 
         <div class="container">
             <div class="input-group search-box">
-                <input type="text" class="form-control input-lg" placeholder="Enter zipcode...">
-                <span class="input-group-btn">
-                    <button class="btn btn-default input-lg" type="button">Go!</button>
-                </span>
+                <form ng-submit="getResults()">
+                    <input type="text" class="form-control input-lg" placeholder="Enter zipcode..." ng-model="query">
+                    <span class="input-group-btn">
+                        <input class="btn btn-default input-lg" type="submit" id="submit" value="Go!"/>
+                        <!--button class="btn btn-default input-lg" ng-submit="getResults()" type="button">Go!</button-->
+                    </span>
+                </form>
             </div><!-- /input-group -->
         </div>
 
