@@ -397,6 +397,8 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
 
     $scope.cars = [];
     $scope.zips = [];
+    var sortedCarPrices = [];
+    var sortedZipIncome = [];
     //$.getJSON('/../cars.json', function(json) {
     //    console.log(json);
     //    $scope.cars = json;
@@ -407,6 +409,11 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
         http_service.getCars().then(function(data) {
             console.log('data for cars is: ', data);
             $scope.cars = data;
+
+            angular.forEach($scope.cars, function(value, key) {
+                sortedCarPrices.push(value['price']);
+            })
+            sortedCarPrices.sort();
         })
     };
 
@@ -418,28 +425,22 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
             //    if (value.zip_code.toString().indexOf($scope.query) > -1)
             //        $scope.zips.push(value);
             //})
+            angular.forEach($scope.zips, function(value, key) {
+                sortedZipIncome.push(value['family_income']);
+            })
+            sortedZipIncome.sort();
         })
     }
 
     getCars();
     getZips();
 
-    var sortedCarPrices = [];
-    var sortedZipIncome = [];
+
 
     console.log('cars: ', $scope.cars)
     console.log('zips: ', $scope.zips);
 
-    angular.forEach($scope.cars, function(value, key) {
-        sortedCarPrices.push(value['price']);
-    })
 
-    angular.forEach($scope.zips, function(value, key) {
-        sortedZipIncome.push(value['family_income']);
-    })
-
-    $scope.cars.sort();
-    $scope.zips.sort();
 
     console.log('sorted cars: ', sortedCarPrices);
     console.log('sorted zips: ', sortedZipIncome);
