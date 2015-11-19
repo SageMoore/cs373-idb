@@ -237,10 +237,11 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
         http_service.getRequestGeneric('crimes').then(function(data) {
             console.log('data for crimes is...: ', data);
             //$scope.crimes = data;
+            $scope.crimes = [];
             angular.forEach(data, function(value, key) {
                 if (value.description.indexOf($scope.query) > -1
                     || value.crime_type.name.indexOf($scope.query) > -1)
-                    $scope.best_matches.push(value);
+                    $scope.crimes.push(value);
             })
             /*angular.forEach($scope.crimes, function(value, key) {
                 services.addMarker(value.lat, value.lng, value.address, map, value.crime_type.crime_type_name);
