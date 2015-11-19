@@ -464,12 +464,13 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
                 var zipsvar = $scope.zips;
                 var carvar = $scope.carsArray;
                 var zip = zipsvar.filter(function(data) { return data['family_income'] == sortedZipIncome[i]})
-                console.log('zip: ', zip);
+                //console.log('zip: ', zip);
                 var car = carvar.filter(function(data) { return data['price'] == sortedCarPrices[i]})
-                console.log('zip: ', zip);
-                console.log('car: ', car);
+                //console.log('zip: ', zip);
+                //console.log('car: ', car);
                 $scope.zipcar.push({zip_code: zip['zip_code'], make: car['make'], model: car['id']})
             }
+            console.log('zipcars: ', $scope.zipcar);
         })
     }
 
