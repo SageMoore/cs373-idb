@@ -252,7 +252,7 @@ class Tests(Resource):
 
         res = ''
         path = os.path.dirname(os.path.realpath(__file__))
-        for i in run_command(('python3 ' + path + '/tests.py').split()):
+        for i in run_command(('make crimecast-test.tmp').split()):
             res += i.decode("utf-8")
 #        for i in run_command(('coverage3 run --branch ' + path + '/tests.py 2>&1').split()):
 #            res += i.decode("utf-8")
