@@ -342,4 +342,15 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
 
     destroyAllWidgets();
     loadAllWidgets();
+
+    $scope.cars = [];
+
+    var getCars = function() {
+        http_service.getCars().then(function(data) {
+            console.log('data for cars is: ', data);
+            $scope.cars = data;
+        })
+    };
+
+    getCars();
 });
