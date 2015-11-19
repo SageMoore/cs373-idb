@@ -17,9 +17,10 @@
         <div class="bs-docs-grid ">
             <div class="row show-grid" style="margin-left: auto">
 
-                <!-- Best matches -->
+                
 
                 <div class="col-md-8">
+                    <!-- Best matches -->
                     <div class="well" style="min-height: 350px; margin-left: 50px">
                         <h2>'AND' matches:</h2>
                         <ul>
@@ -31,24 +32,8 @@
                                 {{ result.crime_type.name }} @ {{ result.address }} </a></li>
                         </ul>
                     </div>
-                </div>
 
-                <!-- Map -->
-
-                <div class="col-md-4 ">
-                    <div class="well" style="height: 350px">
-                        <div class="gmap" id="map"></div>
-                    </div>
-                    <div class="well" class="center">
-                        <a class="twitter-timeline" data-dnt="true" ng-init="get_twitter()"
-                           href="https://twitter.com/Austin_Police"
-                           data-widget-id="657287406689763329">Tweets by @Austin_Police</a>
-                    </div>
-                </div>
-
-                <!-- Partial matches -->
-
-                <div class="col-md-8">
+                    <!-- Partial matches -->
                     <div class="well" style="margin-left: 50px">
                         <h2>'OR' matches:</h2>
                         <ul>
@@ -61,6 +46,23 @@
                         </ul>
                     </div>
                 </div>
+
+                
+
+                <div class="col-md-4 ">
+                    <!-- Map -->
+                    <div class="well" style="height: 350px">
+                        <div class="gmap" id="map"></div>
+                    </div>
+                    <!-- Twitter -->
+                    <div class="well" class="center">
+                        <a class="twitter-timeline" data-dnt="true" ng-init="get_twitter()"
+                           href="https://twitter.com/Austin_Police"
+                           data-widget-id="657287406689763329">Tweets by @Austin_Police</a>
+                    </div>
+                </div>
+
+                
             </div>
         </div>
 
