@@ -7,7 +7,7 @@
                         <h1 class="left page-header" >Cars</h1>
                     </div>
                     <div class="col-sm-4">
-                        <img class="page-image" src="http://d2wss9bif9q3el.cloudfront.net/124/039/images/crime.gif">
+                        <img class="page-image" src="http://static3.businessinsider.com/image/52530ef369bedde71346cbfd-480/beverly-hills-cars.jpg">
                     </div>
                 </div>
             </div>
@@ -20,14 +20,10 @@
                         <div class="well" style="min-height: 350px; margin-left: 50px">
                             <table ng-table="tableParams" show-filter="true" class="table table-hover table-striped">
 
-                                <tr ng-repeat="crime in data">
-                                    <td title="'Id'" filter="{ crime_id: 'text'}" sortable="'crime_id'">guyguy</td>
-                                    <td title="'Description'" filter="{ description: 'text'}" sortable="'description'">uihuiho/td>
-                                    <td title="'Time'" filter="{ time: 'text'}" sortable="'time'">ijij</td>
-                                    <td title="'Address'" filter="{ address: 'text'}" sortable="'address'"> uhiuhiuh</td>
-                                    <td title="'Crime Type'" filter="{ crime_type.name: 'text'}" sortable="'crime_type.name'">jojoijiojijoi</td>
-                                    <td title="'Zip Code'" filter="{ zip_code.zip_code: 'text'}" sortable="'zip_code.zip_code'">jojoijoij</td>
-                                    <td title="'Week'" filter="{ week.start: 'text'}" sortable="'week.start'">oiphuiph</td>
+                                <tr ng-repeat="zip in data">
+                                    <td title="'Zip Code'" filter="{ description: 'text'}" sortable="'description'">uihuiho/td>
+                                    <td title="'Popular Make'" filter="{ address: 'text'}" sortable="'address'"> uhiuhiuh</td>
+                                    <td title="'Popular Model'" filter="{ crime_type.name: 'text'}" sortable="'crime_type.name'">jojoijiojijoi</td>
                                 </tr>
 
                             </table>
