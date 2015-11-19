@@ -438,11 +438,38 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
     $scope.zips = [];
     var sortedCarPrices = [];
     var sortedZipIncome = [];
+    $scope.zipcar = [];
     //$.getJSON('/../cars.json', function(json) {
     //    console.log(json);
     //    $scope.cars = json;
     //});
 
+    var getZips = function() {
+        http_service.getRequestGeneric('zips').then(function(data) {
+            console.log('data for zips is...: ', data);
+            $scope.zips = data;
+            //angular.forEach(data, function(value, key) {
+            //    if (value.zip_code.toString().indexOf($scope.query) > -1)
+            //        $scope.zips.push(value);
+            //})
+            angular.forEach($scope.zips, function(value) {
+                sortedZipIncome.push(value['family_income']);
+            })
+            sortedZipIncome.sort();
+            console.log('zips: ', $scope.zips);
+            console.log('sorted zips: ', sortedZipIncome);
+
+            for (var i = 0; i < sortedZipIncome.length; i ++) {
+                var zipsvar = $scope.zips;
+                var carvar = $scope.cars;
+                var zip = zipsvar.filter(function(data) { return data['family_income'] == sortedZipIncome[i]})
+                var car = carvar.filter(function(data) { return data['price'] == sortedCarPrices[i]})
+                console.log('zip: ', zip);
+                console.log('car: ', car);
+                $scope.zipcar.push({zip_code: zip['zip_code'], make: car['make'], model: car['id']})
+            }
+        })
+    }
 
     var getCars = function() {
         http_service.getCars().then(function(data) {
@@ -456,28 +483,13 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
 
             console.log('cars: ', $scope.cars);
             console.log('sorted cars: ', sortedCarPrices);
+
+            getZips();
         })
     };
 
-    var getZips = function() {
-        http_service.getRequestGeneric('zips').then(function(data) {
-            console.log('data for zips is...: ', data);
-            $scope.zips = data;
-            //angular.forEach(data, function(value, key) {
-            //    if (value.zip_code.toString().indexOf($scope.query) > -1)
-            //        $scope.zips.push(value);
-            //})
-            angular.forEach($scope.zips, function(value, key) {
-                sortedZipIncome.push(value['family_income']);
-            })
-            sortedZipIncome.sort();
-            console.log('zips: ', $scope.zips);
-            console.log('sorted zips: ', sortedZipIncome);
-        })
-    }
-
     getCars();
-    getZips();
+
 
 
 
