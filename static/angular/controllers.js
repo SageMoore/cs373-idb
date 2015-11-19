@@ -337,7 +337,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
             console.log('data for crime types is...: ', data);
             //$scope.crime_types = data;
             angular.forEach(data, function(value, key) {
-                if (value.description.indexOf($scope.query) > -1
+                if (value.desc.indexOf($scope.query) > -1
                     || value.name.indexOf($scope.query) > -1)
                     $scope.crime_types.push(value);
             })
