@@ -132,7 +132,6 @@ class CrimeTypeList(Resource):
 class CrimeTypeById(Resource):
     def get(self, crime_type_id):
         # select * from CRIMETYPES as c where crime_id = c.id
-        print("Getting things")
         crime_type = session.query(CrimeType).from_statement(text("select * from crime_type where crime_type_id=:crime_type_id")).params(crime_type_id=crime_type_id).first()
         worst_week = session.query(Week).from_statement(text("select * from week where week_id=:week_id")).params(week_id=crime_type.worst_week).first()
         worst_zip = session.query(Zip).from_statement(text("select * from zip where zip_id=:zip_id")).params(zip_id=crime_type.worst_zip).first()
@@ -253,12 +252,12 @@ class Tests(Resource):
 
         res = ''
         path = os.path.dirname(os.path.realpath(__file__))
-        for i in run_command(('python3 ' + path + '/tests.py').split()):
-            res += i.decode("utf-8")
+#        for i in run_command(('python3 ' + path + '/tests.py').split()):
+#            res += i.decode("utf-8")
         for i in run_command(('coverage3 run --branch ' + path + '/tests.py 2>&1').split()):
             res += i.decode("utf-8")
-        for i in run_command(('coverage3 report -m').split()):
-            res += i.decode("utf-8")
+#        for i in run_command(('coverage3 report -m').split()):
+#            res += i.decode("utf-8")
 
         return json.dumps({ 'results': res })
 
