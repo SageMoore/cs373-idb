@@ -382,8 +382,16 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
             console.log('data for zips is...: ', data);
             $scope.zips = [];
             angular.forEach(data, function(value, key) {
-                if (value.zip_code.toString().indexOf($scope.query) > -1)
+                var matching_keywords = 0;
+                for (var i = 0; i < $scope.query_items.length; i++) {
+                    var word = $scope.query_items[i];
+                    if (value.zip_code.toString().indexOf(word) > -1)
+                        matching_keywords += 1;
+                }
+                if (matching_keywords == $scope.query_items.length)
                     $scope.zips.push(value);
+                else if (matching_keywords > 0)
+                    $scope.partial_zips.push(value);
             })
         })
     }   

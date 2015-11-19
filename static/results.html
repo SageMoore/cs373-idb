@@ -41,6 +41,8 @@
                         <ul>
                             <li ng-repeat="result in partial_crime_types">Crime Type: <a href="crime_types/{{ result.crime_type_id }}">
                                 {{ result.name }} : {{ result.desc }}</a></li>
+                            <li ng-repeat="result in partial_zips">Zip: <a href="zips/{{result.zip_code.zip_id}}">
+                                {{ result.zip_code }} </a></li>
                             <li ng-repeat="result in partial_crimes">Crime: <a href="crimes/{{ result.crime_id }}">
                                 {{ result.crime_type.name }} @ {{ result.address }} </a></li>
                         </ul>
