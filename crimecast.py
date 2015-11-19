@@ -235,7 +235,9 @@ class ZipById(Resource):
     def post(self):
         pass
 
-class Cars(Resource):
+# Cars
+# returns a list of cars
+class CarsList(Resource):
     def get(self):
         data = json.load(urllib.urlopen('http://162.242.248.195/model_api'))
         print(data)
@@ -292,7 +294,7 @@ api.add_resource(WeekById, '/api/v1/weeks/<week_id>')
 api.add_resource(ZipList, '/api/v1/zips')
 api.add_resource(ZipById, '/api/v1/zips/<zip_id>')
 api.add_resource(Tests, '/api/v1/tests')
-api.add_resource(Cars, '/api/v1/cars')
+api.add_resource(CarsList, '/api/v1/cars')
 api.init_app(app)
 
 
