@@ -375,7 +375,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
             $scope.results = data.results;
         })
     };
-}).controller('carCtrl', function ($scope, http_service, services) {
+}).controller('carCtrl', function ($scope, http_service, services, $http) {
     var map = services.getMap();
 
     var loadAllWidgets = function() {
@@ -393,18 +393,18 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
     loadAllWidgets();
 
     $scope.cars = [];
-    $.getJSON('/../cars.json', function(json) {
-        console.log(json);
-        $scope.cars = json;
-    });
+    //$.getJSON('/../cars.json', function(json) {
+    //    console.log(json);
+    //    $scope.cars = json;
+    //});
 
 
-    //var getCars = function() {
-    //    http_service.getCars().then(function(data) {
-    //        console.log('data for cars is: ', data);
-    //        $scope.cars = data;
-    //    })
-    //};
-    //
-    //getCars();
+    var getCars = function() {
+        http_service.getCars().then(function(data) {
+            console.log('data for cars is: ', data);
+            $scope.cars = data;
+        })
+    };
+
+    getCars();
 });
