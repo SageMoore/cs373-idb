@@ -269,7 +269,9 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
             console.log('data for zips is...: ', data);
             $scope.zips = data;
         })
-    }    
+    }   
+
+    $scope.crimes = getCrimes(); 
 
 }).controller('aboutCtrl', function ($scope, http_service, $location, $stateParams) {
     $scope.results = "No test results yet..."
