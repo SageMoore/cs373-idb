@@ -37,6 +37,7 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
             $scope.tableParams = new NgTableParams({
                 page: 1,            // show first page
                 count: 10           // count per page
+                filter: {'crime_type' : 'name'}
             }, {
                 total: data.length, // length of data
                 getData: function($defer, params) {
