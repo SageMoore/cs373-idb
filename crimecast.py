@@ -240,32 +240,15 @@ class ZipById(Resource):
 # returns a list of cars
 class CarList(Resource):
     def get(self):
-        print('in carslist....ccc')
-        request = 'http://162.242.248.195/model_api'
+        request = 'http://murikinmade/model_api'
         r = requests.get(request)
         print('got r')
-        data = r.json()
-        print(str(data))
-        # print('for request: ' + request)
-        # urlopen = urllib.request.urlopen(request)
-        # print('url opened')
-        # print(urlopen)
-        # data = json.loads(urlopen)
-        # response = urllib.request.urlopen(request)
-        # print(str(response.data))
-        # try:
-        #     obj = json.load(response)
-        #     print(obj)
-        #     str_response = response.readall().decode('utf-8')
-        #     data = json.loads(str_response)
-        #     print('attempt to get data successful')
-        # except Exception as e:
-        #     print('something went wrong')
-        #     print(e)
-        #
-        # print(str(data))
-        print('got the data')
-        print(json.dumps(data))
+        try:
+            data = r.json()
+        except Exception:
+            print('car site down. loading from saved data')
+            with open("/static/cars.json") as data_file:
+                    data = json.load(data_file)
         return json.dumps(data)
 
 # Helper method, converts SQLAlchemy row to a dictionary
