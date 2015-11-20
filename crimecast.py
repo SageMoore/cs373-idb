@@ -241,7 +241,10 @@ class CarList(Resource):
     def get(self):
         print('in carslist....ccc')
         request = 'http://162.242.248.195/model_api'
-        data = json.load(urllib.urlopen(request))
+        urlopen = urllib.urlopen(request)
+        print('url opened')
+        print(urlopen)
+        data = json.load(urlopen)
         # response = urllib.request.urlopen(request)
         # print(str(response.data))
         # try:
