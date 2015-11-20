@@ -241,6 +241,7 @@ class CarList(Resource):
     def get(self):
         print('in carslist....ccc')
         request = 'http://162.242.248.195/model_api'
+        print('for request: ' + request)
         urlopen = urllib.urlopen(request)
         print('url opened')
         print(urlopen)
