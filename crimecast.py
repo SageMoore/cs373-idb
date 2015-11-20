@@ -239,22 +239,25 @@ class ZipById(Resource):
 # returns a list of cars
 class CarList(Resource):
     def get(self):
-        print('in carslist....')
+        print('in carslist....ccc')
         request = 'http://162.242.248.195/model_api'
-        response = urllib.request.urlopen(request)
-        print(str(response.data))
-        try:
-            obj = json.load(response)
-            print(obj)
-            str_response = response.readall().decode('utf-8')
-            data = json.loads(str_response)
-            print('attempt to get data successful')
-        except Exception as e:
-            print('something went wrong')
-            print(e)
-
-        print(str(data))
-        return data
+        data = json.load(urllib.urlopen(request))
+        # response = urllib.request.urlopen(request)
+        # print(str(response.data))
+        # try:
+        #     obj = json.load(response)
+        #     print(obj)
+        #     str_response = response.readall().decode('utf-8')
+        #     data = json.loads(str_response)
+        #     print('attempt to get data successful')
+        # except Exception as e:
+        #     print('something went wrong')
+        #     print(e)
+        #
+        # print(str(data))
+        print('got the data')
+        print(json.dumps(data))
+        return json.dumps(data)
 
 # Helper method, converts SQLAlchemy row to a dictionary
 def row_to_dict(row):
