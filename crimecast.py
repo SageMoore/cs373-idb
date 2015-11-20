@@ -248,8 +248,9 @@ class CarList(Resource):
             data = r.json()
         except Exception:
             print('car site down. loading from saved data')
-            with open("/static/cars.json") as data_file:
-                    data = json.load(data_file)
+            with open("static/cars.json") as data_file:
+                data = json.load(data_file)
+                print(str(data))
 
         print(json.dumps(data))
         return json.dumps(data)
