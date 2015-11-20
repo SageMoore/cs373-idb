@@ -51,8 +51,8 @@ test: crimecast_test.tmp
 model.html: models.py
 	pydoc -w models
 
-IDB1.log:
-	git log > IDB1.log
+IDB3.log:
+	git log > IDB3.log
 
 crimecast-test.tmp: tests.py
 	coverage3 run    --branch tests.py >  crimecast-test.tmp 2>&1
