@@ -19,7 +19,7 @@
                     <div class="col-md-8">
                         <div class="well" style="min-height: 350px; margin-left: 50px">
                             <table ng-table="tableParams" show-filter="true" class="table table-hover table-striped">
-                                <tr ng-repeat="zc in zipcar">
+                                <tr ng-repeat="zc in data">
                                     <td title="'Zip Code'" filter="{ zip_code: 'text'}" sortable="'zip_code'">{{zc.zip_code}}</td>
                                     <td title="'Popular Make'" filter="{ make: 'text'}" sortable="'make'"> {{zc.make}}</td>
                                     <td title="'Popular Model'" filter="{ model: 'text'}" sortable="'model'">{{zc.model}}</td>
