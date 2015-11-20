@@ -249,6 +249,8 @@ class CarList(Resource):
             print('car site down. loading from saved data')
             with open("/static/cars.json") as data_file:
                     data = json.load(data_file)
+
+        print(json.dumps(data))
         return json.dumps(data)
 
 # Helper method, converts SQLAlchemy row to a dictionary
