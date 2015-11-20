@@ -245,8 +245,10 @@ class CarList(Resource):
         print(str(response.data))
         try:
             obj = json.load(response)
+            print(obj)
             str_response = response.readall().decode('utf-8')
             data = json.loads(str_response)
+            print('attempt to get data successful')
         except Exception as e:
             print('something went wrong')
             print(e)
