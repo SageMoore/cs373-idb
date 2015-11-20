@@ -8,11 +8,9 @@ from flask import json, jsonify
 
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
-
 from sqlalchemy.ext.declarative import declarative_base
 
 from models import CrimeType, Crime, Week, Zip, drop_tables, create_tables
-
 class CrimecastDBTestCase(unittest.TestCase):
 
     def setUp(self):

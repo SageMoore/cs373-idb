@@ -9,6 +9,7 @@ from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
 from models import db_connect, Crime, Week, Zip, CrimeType
 import urllib.request
+import requests
 
 app = Flask(__name__, static_url_path="")
 api = Api(app)
@@ -239,20 +240,15 @@ class ZipById(Resource):
 # returns a list of cars
 class CarList(Resource):
     def get(self):
-        print('in carslist....')
-        request = 'http://162.242.248.195/model_api'
-        response = urllib.request.urlopen(request)
-        print(str(response.data))
+        request = 'http://murikinmade/model_api'
         try:
-            obj = json.load(response)
-            str_response = response.readall().decode('utf-8')
-            data = json.loads(str_response)
-        except Exception as e:
-            print('something went wrong')
-            print(e)
+            r = requests.get(request)
+            data = r.json()
+        except Exception:
+            with open("static/cars.json") as data_file:
+                data = json.load(data_file)
 
-        print(str(data))
-        return data
+        return json.dumps(data)
 
 # Helper method, converts SQLAlchemy row to a dictionary
 def row_to_dict(row):
