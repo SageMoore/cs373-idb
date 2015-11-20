@@ -464,20 +464,19 @@ crimeCastApp.controller('crimeCastCtrl', function($scope, $state, $stateParams, 
                 //console.log('zip: ', zip);
                 //console.log('car: ', car[0]);
                 $scope.zipcar.push({zip_code: zip[0].zip_code, make: car[0].make, model: car[0].name});
-
-                $scope.tableParams = new NgTableParams({
-                    page: 1,            // show first page
-                    count: 10           // count per page
-                }, {
-                    total: data.length, // length of data
-                    getData: function($defer, params) {
-                        $scope.data = params.sorting() ? $filter('orderBy')($scope.zipcar, params.orderBy()) : $scope.data;
-                        $scope.data = params.filter() ? $filter('filter')($scope.data, params.filter()) : $scope.data;
-                        $scope.data = $scope.data.slice((params.page() - 1) * params.count(), params.page() * params.count());
-                        $defer.resolve($scope.data);
-                    }
-                });
             }
+            $scope.tableParams = new NgTableParams({
+                page: 1,            // show first page
+                count: 10           // count per page
+            }, {
+                total: data.length, // length of data
+                getData: function($defer, params) {
+                    $scope.data = params.sorting() ? $filter('orderBy')($scope.zipcar, params.orderBy()) : $scope.data;
+                    $scope.data = params.filter() ? $filter('filter')($scope.data, params.filter()) : $scope.data;
+                    $scope.data = $scope.data.slice((params.page() - 1) * params.count(), params.page() * params.count());
+                    $defer.resolve($scope.data);
+                }
+            });
             console.log('zipcars: ', $scope.zipcar);
         })
     }
