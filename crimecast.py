@@ -240,10 +240,11 @@ class ZipById(Resource):
 # returns a list of cars
 class CarList(Resource):
     def get(self):
+        print('in carlist')
         request = 'http://murikinmade/model_api'
-        r = requests.get(request)
-        print('got r')
         try:
+            r = requests.get(request)
+            print('got r')
             data = r.json()
         except Exception:
             print('car site down. loading from saved data')
