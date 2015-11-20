@@ -214,49 +214,49 @@ class CrimecastAPITestCase(unittest.TestCase):
         assert len(data) > 0
 
     def test_crimes_has_id(self):
-        rv = self.app.get('/api/v1/crimes/1')
+        rv = self.app.get('/api/v1/crimes/1040')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["crime_id"], "1")
+        self.assertEqual(data["crime_id"], "1040")
 
     def test_crimes_has_address(self):
-        rv = self.app.get('/api/v1/crimes/1')
+        rv = self.app.get('/api/v1/crimes/1040')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["address"], "gdc")
+        self.assertEqual(data["address"], "5800 BLOCK OF TECHNI CENTER DR, 78721")
 
     def test_crimes_has_type(self):
-        rv = self.app.get('/api/v1/crimes/1')
+        rv = self.app.get('/api/v1/crimes/1040')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["crime_type"],  {'crime_type_id': '1',
-                'desc': 'Vandalism is bad',
+        self.assertEqual(data["crime_type"],  {'crime_type_id': '262',
+                'desc': 'Vandalism is an action involving deliberate destruction of or damage to public or private property',
                 'name': 'Vandalism',
-                'worst_week': '3',
-                'worst_zip': '1'
+                'worst_week': '770',
+                'worst_zip': '246'
             })
 
     def test_crimes_has_zip(self):
-        rv = self.app.get('/api/v1/crimes/1')
+        rv = self.app.get('/api/v1/crimes/1040')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["zip_code"], {'family_income': '50000',
-                'lat': '32.123',
-                'lng': '32.123',
-                'pop': '20000',
-                'zip_code': '78704',
-                'zip_id': '1'
+        self.assertEqual(data["zip_code"], {'family_income': '41025',
+                'lat': '30.274502199806',
+                'lng': '-97.683778095778',
+                'pop': '11482',
+                'zip_code': '78721',
+                'zip_id': '255'
             })
 
     def test_crimes_has_week(self):
-        rv = self.app.get('/api/v1/crimes/1')
+        rv = self.app.get('/api/v1/crimes/1040')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["week"], {'end': '2015-10-31 00:00:00',
-                'most_popular': '1',
-                'start': '2015-10-25 00:00:00',
-                'week_id': '3',
-                'worst_zip': '1'
+        self.assertEqual(data["week"], {'end': '2015-10-24 00:00:00',
+                'most_popular': '259',
+                'start': '2015-10-18 00:00:00',
+                'week_id': '769',
+                'worst_zip': '246'
             })
 
     # ----------------------
@@ -270,16 +270,16 @@ class CrimecastAPITestCase(unittest.TestCase):
         assert len(data) > 0
 
     def test_crime_types_has_name(self):
-        rv = self.app.get('/api/v1/crime_types/1')
+        rv = self.app.get('/api/v1/crime_types/262')
         data = json.loads(rv.data)
         data = json.loads(data)
         self.assertEqual(data["name"], "Vandalism")
 
     def test_crime_types_has_desc(self):
-        rv = self.app.get('/api/v1/crime_types/1')
+        rv = self.app.get('/api/v1/crime_types/262')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["desc"], "Vandalism is bad") # Testing here
+        self.assertEqual(data["desc"], "Vandalism is an action involving deliberate destruction of or damage to public or private property") # Testing here
 
     # ---------------
     # Zips unit tests
@@ -292,37 +292,37 @@ class CrimecastAPITestCase(unittest.TestCase):
         assert len(data) > 0
 
     def test_zips_has_id(self):
-        rv = self.app.get('/api/v1/zips/1')
+        rv = self.app.get('/api/v1/zips/268')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["zip_id"], "1")
+        self.assertEqual(data["zip_id"], "268")
 
     def test_zips_has_zip(self):
-        rv = self.app.get('/api/v1/zips/1')
+        rv = self.app.get('/api/v1/zips/268')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["zip_code"], "78704")
+        self.assertEqual(data["zip_code"], "75735")
 
     def test_zips_has_lat(self):
-        rv = self.app.get('/api/v1/zips/1')
+        rv = self.app.get('/api/v1/zips/268')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["lat"], "32.123")
+        self.assertEqual(data["lat"], "30.240702922532")
 
     def test_zips_has_lng(self):
-        rv = self.app.get('/api/v1/zips/1')
+        rv = self.app.get('/api/v1/zips/268')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["lng"], "32.123")
+        self.assertEqual(data["lng"], "-97.835307667753")
 
     def test_zips_has_pop(self):
-        rv = self.app.get('/api/v1/zips/1')
+        rv = self.app.get('/api/v1/zips/268')
         data = json.loads(rv.data)
         data = json.loads(data)
         self.assertEqual(data["pop"], "20000")
 
     def test_zips_has_family_income(self):
-        rv = self.app.get('/api/v1/zips/1')
+        rv = self.app.get('/api/v1/zips/268')
         data = json.loads(rv.data)
         data = json.loads(data)
         self.assertEqual(data["family_income"], "50000")
@@ -338,22 +338,22 @@ class CrimecastAPITestCase(unittest.TestCase):
         assert len(data) > 0
 
     def test_weeks_has_id(self):
-        rv = self.app.get('/api/v1/weeks/1')
+        rv = self.app.get('/api/v1/weeks/769')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["week_id"],  "1")
+        self.assertEqual(data["week_id"],  "769")
 
     def test_weeks_has_start_date(self):
-        rv = self.app.get('/api/v1/weeks/1')
+        rv = self.app.get('/api/v1/weeks/769')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["start"], "2015-10-11 00:00:00")
+        self.assertEqual(data["start"], "2015-10-18 00:00:00")
 
     def test_weeks_has_end_date(self):
-        rv = self.app.get('/api/v1/weeks/1')
+        rv = self.app.get('/api/v1/weeks/769')
         data = json.loads(rv.data)
         data = json.loads(data)
-        self.assertEqual(data["end"], "2015-10-17 00:00:00")
+        self.assertEqual(data["end"], "2015-10-24 00:00:00")
 
 if __name__ == '__main__':
     unittest.main() 

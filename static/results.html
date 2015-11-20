@@ -1,0 +1,72 @@
+<div class="overlay-red" style="padding-top: 0px">
+<div class="jumbotron overlay-red" style="padding-top: 0px; ">
+    <div class="overlay" >
+        <div class="row show-grid" >
+            <div class="bs-docs-grid " >
+                <div class="col-sm-8">
+                    <h1 class="left page-header" >Search Results</h1>
+                </div>
+                <div class="col-sm-4">
+                    <img class="page-image" src="http://redbricktown.com/wp-content/uploads/2015/08/Crime_Scene.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="well overlay-aliceblue">
+        <div class="bs-docs-grid ">
+            <div class="row show-grid" style="margin-left: auto">
+
+                
+
+                <div class="col-md-8">
+                    <!-- Best matches -->
+                    <div class="well" style="min-height: 350px; margin-left: 50px">
+                        <h2>'AND' matches:</h2>
+                        <ul>
+                            <li ng-repeat="result in crime_types">Crime Type: <a href="crime_types/{{ result.crime_type_id }}">
+                                {{ result.name }} : {{ result.desc }}</a></li>
+                            <li ng-repeat="result in zips">Zip: <a href="zips/{{result.zip_id}}">
+                                {{ result.zip_code }} </a></li>
+                            <li ng-repeat="result in crimes">Crime: <a href="crimes/{{result.crime_id}}">
+                                {{ result.crime_type.name }} @ {{ result.address }} </a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Partial matches -->
+                    <div class="well" style="margin-left: 50px">
+                        <h2>'OR' matches:</h2>
+                        <ul>
+                            <li ng-repeat="result in partial_crime_types">Crime Type: <a href="crime_types/{{ result.crime_type_id }}">
+                                {{ result.name }} : {{ result.desc }}</a></li>
+                            <li ng-repeat="result in partial_zips">Zip: <a href="zips/{{result.zip_id}}">
+                                {{ result.zip_code }} </a></li>
+                            <li ng-repeat="result in partial_crimes">Crime: <a href="crimes/{{ result.crime_id }}">
+                                {{ result.crime_type.name }} @ {{ result.address }} </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+
+                <div class="col-md-4 ">
+                    <!-- Map -->
+                    <div class="well" style="height: 350px">
+                        <div class="gmap" id="map"></div>
+                    </div>
+                    <!-- Twitter -->
+                    <div class="well" class="center">
+                        <a class="twitter-timeline" data-dnt="true" ng-init="get_twitter()"
+                           href="https://twitter.com/Austin_Police"
+                           data-widget-id="657287406689763329">Tweets by @Austin_Police</a>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+
+
+    </div>
+</div>
+</div>

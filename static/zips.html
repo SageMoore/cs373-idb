@@ -7,7 +7,7 @@
                         <h1 class="left page-header" >Zipcodes</h1>
                     </div>
                     <div class="col-sm-4">
-                        <img class="page-image" src="http://www.austinchronicle.com/binary/1a22/pols_feature24-2.gif">
+                        <img class="page-image" src="http://www.unitedwayaustin.org/wp-content/uploads/2015/06/ZipcodesMap_Updated-738x410.jpg">
                     </div>
                 </div>
             </div>
@@ -18,46 +18,16 @@
                 <div class="row show-grid" style="margin-left: auto">
                     <div class="col-md-8">
                         <div class="well" style="min-height: 350px; margin-left: 50px">
-                            <table class="table table-hover table-striped">
-                                <thead>
-                                <tr>
-                                    <td><a ng-click="sortType = 'zip_id'; sortReverse = !sortReverse">
-                                        Zipcode Id
-                                        <span ng-show="sortType == 'zip_id'"  class="caret"></span>
-                                    </a></td>
-                                    <td><a href= "" ng-click="sortType = 'zip_code'; sortReverse = !sortReverse">
-                                        Zipcode
-                                        <span ng-show="sortType == 'zip_code'" class="caret"></span>
-                                    </a></td>
-                                    <td><a ng-click="sortType = 'lat'; sortReverse = !sortReverse">
-                                        Latitude
-                                        <span ng-show="sortType == 'lat'" class="caret"></span>
-                                    </a></td>
-                                    <td><a ng-click="sortType = 'lng'; sortReverse = !sortReverse">
-                                        Longitude
-                                        <span ng-show="sortType == 'lng'" class="caret"></span>
-                                    </a></td>
-                                    <td><a ng-click="sortType = 'pop'; sortReverse = !sortReverse">
-                                        Population
-                                        <span ng-show="sortType == 'pop'" class="caret"></span>
-                                    </a></td>
-                                    <td><a ng-click="sortType = 'family_income'; sortReverse = !sortReverse">
-                                        Average Income
-                                        <span ng-show="sortType == 'family_income'" class="caret"></span>
-                                    </a></td>
-                                </tr>
-                                </thead>
+                            <table ng-table="tableParams" show-filter="true" class="table table-hover table-striped">
 
-                                <tbody>
-                                <tr ng-repeat="zip in zips | orderBy:sortType:sortReverse">
-                                    <td><a href="/zips/{{zip.zip_id}}">{{ zip.zip_id }}</a></td>
-                                    <td><a href="/zips/{{zip.zip_id}}">{{ zip.zip_code }}</a></td>
-                                    <td>{{ zip.lat }}</td>
-                                    <td>{{ zip.lng }}</td>
-                                    <td>{{ zip.pop }}</td>
-                                    <td>{{ zip.family_income }}</td>
+                                <tr ng-repeat="zip in data">
+                                    <td title="'Zipcode Id'" filter="{ zip_id: 'text'}" sortable="'zip_id'"><a href="zips/{{ zip.zip_id }}">{{ zip.zip_id }}</a></td>
+                                    <td title="'Zipcode'" filter="{ zip_code: 'text'}" sortable="'zip_code'"><a href="zips/{{ zip.zip_id }}">{{ zip.zip_code }}</a></td>
+                                    <td title="'Latitude'" filter="{ lat: 'text'}" sortable="'lat'">{{ zip.lat }}</td>
+                                    <td title="'Longitude'" filter="{ lng: 'text'}" sortable="'lng'">{{ zip.lng }}</td>
+                                    <td title="'Population'" filter="{ pop: 'text'}" sortable="'pop'">{{ zip.pop }}</td>
+                                    <td title="'Average Income'" filter="{ family_income: 'text'}" sortable="'family_income'">{{ zip.family_income }}</td>
                                 </tr>
-                                </tbody>
                             </table>
                         </div>
                     </div>

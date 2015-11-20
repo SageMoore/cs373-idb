@@ -1,7 +1,7 @@
 /**
  * Created by markdaniel on 10/17/15.
  */
-var crimeCastApp = angular.module('crimeCastApp', ['ui.router', 'ngRoute', 'crimeCastApp.httpServices', 'crimeCastApp.services']);
+var crimeCastApp = angular.module('crimeCastApp', ['ui.router', 'ngRoute', 'crimeCastApp.httpServices', 'crimeCastApp.services', 'ngTable']);
 
 crimeCastApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
     function($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -12,6 +12,10 @@ crimeCastApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider'
             url: '/splash',
             templateUrl: 'splash.html',
             controller: 'crimeCastCtrl'
+        }).state('results', {
+            url: '/results/:query',
+            templateUrl: 'results.html',
+            controller: 'resultsCtrl'
         }).state('about', {
             url: '/about',
             templateUrl: 'about.html',
@@ -48,6 +52,10 @@ crimeCastApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider'
             url: '/zips/:zip_id',
             templateUrl: 'zip.html',
             controller: 'zipCtrl'
+        }).state('cars', {
+            url: '/cars',
+            templateUrl: 'cars.html',
+            controller: 'carCtrl'
         });
         $urlRouterProvider.otherwise('splash');
 

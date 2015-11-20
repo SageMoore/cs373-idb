@@ -8,6 +8,7 @@ import subprocess, os
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
 from models import db_connect, Crime, Week, Zip, CrimeType
+import urllib.request
 
 app = Flask(__name__, static_url_path="")
 api = Api(app)
@@ -54,7 +55,6 @@ def page_not_found(e):
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def index(path):
-    print('in default')
     return app.send_static_file('index.html')
 
 
@@ -235,6 +235,25 @@ class ZipById(Resource):
     def post(self):
         pass
 
+# Cars
+# returns a list of cars
+class CarList(Resource):
+    def get(self):
+        print('in carslist....')
+        request = 'http://162.242.248.195/model_api'
+        response = urllib.request.urlopen(request)
+        print(str(response.data))
+        try:
+            obj = json.load(response)
+            str_response = response.readall().decode('utf-8')
+            data = json.loads(str_response)
+        except Exception as e:
+            print('something went wrong')
+            print(e)
+
+        print(str(data))
+        return data
+
 # Helper method, converts SQLAlchemy row to a dictionary
 def row_to_dict(row):
     d = {}
@@ -253,8 +272,12 @@ class Tests(Resource):
 
         res = ''
         path = os.path.dirname(os.path.realpath(__file__))
-        for i in run_command(('python3 ' + path + '/tests.py').split()):
+        for i in run_command(('make crimecast-test.tmp').split()):
             res += i.decode("utf-8")
+#        for i in run_command(('coverage3 run --branch ' + path + '/tests.py 2>&1').split()):
+#            res += i.decode("utf-8")
+#        for i in run_command(('coverage3 report -m').split()):
+#            res += i.decode("utf-8")
 
         return json.dumps({ 'results': res })
 
@@ -279,6 +302,7 @@ api.add_resource(WeekById, '/api/v1/weeks/<week_id>')
 api.add_resource(ZipList, '/api/v1/zips')
 api.add_resource(ZipById, '/api/v1/zips/<zip_id>')
 api.add_resource(Tests, '/api/v1/tests')
+api.add_resource(CarList, '/api/v1/carlist')
 api.init_app(app)
 
 

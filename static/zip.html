@@ -3,35 +3,50 @@
         <h1 class="left" style="font-family: 'Passion One';"  ng-model="zip" class="add-margins">{{zip.zip_code}}</h1>
     </div>
     <br>
-
-    <div class="well" style="margin-left: auto">
-        <div class="bs-docs-grid add-margins" style="margin-left: auto">
-            <div class="row show-grid" id="menu-keys" style="margin-left: auto">
-                <div class="col-md-2" id="population-key">Population</div>
-                <div class="col-md-1 col-md-offset-1">Latitude</div>
-                <div class="col-md-1">Longitude</div>
-                <div class="col-md-2">Family Income</div>
-                <div class="col-md-5">Crimes</div>
+    <div class="bs-docs-grid add-margins">
+        <div class="row show-grid" id="full-keys">
+            <div class="col-md-8">
+                <div class="well">
+                    <div class="bs-docs-grid add-margins">
+                        <div class="row show-grid" id="menu-keys">
+                            <div class="col-md-3" id="population-key">Population</div>
+                            <div class="col-md-2 col-md-offset-1">Latitude</div>
+                            <div class="col-md-2">Longitude</div>
+                            <div class="col-md-3">Family Income</div>
+                            <div class="col-md-1">Id</div>
+                        </div>
+                        <div ng-model="zip" class="row show-grid" id="menu-vals">
+                            <div class="col-md-3 field alert-danger" id="population-val">{{zip.pop}}</div>
+                            <div class="col-md-2 col-md-offset-1 field alert-info truncate">{{zip.lat}}</div>
+                            <div class="col-md-2 field alert-info truncate">{{zip.lng}}</div>
+                            <div class="col-md-3 field alert-info">{{zip.family_income}}</div>
+                            <div class="col-md-1 field alert-info">{{zip.zip_id}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gmap" id="map" style="padding:20px"></div>
             </div>
-            <div ng-model="crime_type" class="row show-grid" id="menu-vals" style="margin-left: auto">
-                <div class="col-md-2 field alert-danger" id="population-val">{{zip.pop}}</div>
-                <div class="col-md-1 col-md-offset-1 field alert-info ">{{zip.lat}}</div>
-                <div class="col-md-1 field alert-info">{{zip.lng}}</div>
-                <div class="col-md-2 field alert-info">{{zip.family_income}}</div>
-                <div class="col-md-5 field alert-info">
-                    <table class="table table-hover">
-                        <tbody>
-                        <tr ng-repeat="crime in zip.crimes">
-                            <td><a href="/crimes/{{crime.crime_id}}">{{ crime.crime_id }}</a></td>
-                            <td><a href="/crimes/{{crime.crime_id}}">{{ crime.description }}</a></td>
-                        </tr>
-                        </tbody>
-                    </table>
+            <div class="col-md-4">
+                <div class="well">
+                    <div class="bs-docs-grid add-margins">
+                        <div class="row show-grid" id="other-keys">
+                            <div class="col-md-12">Crimes</div>
+                        </div>
+                        <div ng-model="zip" class="row show-grid" id="crimes-vals">
+                            <div class="col-md-12 field alert-info">
+                                <table class="table table-hover">
+                                    <tbody>
+                                    <tr ng-repeat="crime in zip.crimes">
+                                        <td><a href="/crimes/{{crime.crime_id}}">{{ crime.crime_id }}</a></td>
+                                        <td><a href="/crimes/{{crime.crime_id}}">{{ crime.description }}</a></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="well" style="height: 350px">
-        <div class="gmap" id="map"></div>
     </div>
 </div>
