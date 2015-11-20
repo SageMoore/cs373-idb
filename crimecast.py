@@ -9,6 +9,7 @@ from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
 from models import db_connect, Crime, Week, Zip, CrimeType
 import urllib.request
+import requests
 
 app = Flask(__name__, static_url_path="")
 api = Api(app)
@@ -241,11 +242,15 @@ class CarList(Resource):
     def get(self):
         print('in carslist....ccc')
         request = 'http://162.242.248.195/model_api'
-        print('for request: ' + request)
-        urlopen = urllib.request.urlopen(request)
-        print('url opened')
-        print(urlopen)
-        data = json.loads(urlopen)
+        r = requests.get(request)
+        print('got r')
+        data = r.json()
+        print(str(data))
+        # print('for request: ' + request)
+        # urlopen = urllib.request.urlopen(request)
+        # print('url opened')
+        # print(urlopen)
+        # data = json.loads(urlopen)
         # response = urllib.request.urlopen(request)
         # print(str(response.data))
         # try:
